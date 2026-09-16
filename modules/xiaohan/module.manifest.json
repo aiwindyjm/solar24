@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "xiaohan",
+  "slug": "xiaohan",
+  "name": "小寒",
+  "name_en": "Minor Cold",
+  "season": "winter",
+  "order": 23,
+  "version": "0.1.0",
+  "status": "Planned",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}

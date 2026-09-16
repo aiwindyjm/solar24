@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "liqiu",
+  "slug": "liqiu",
+  "name": "立秋",
+  "name_en": "Beginning of Autumn",
+  "season": "autumn",
+  "order": 13,
+  "version": "0.1.0",
+  "status": "Planned",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}

@@ -1,0 +1,730 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "SolarTerm",
+        "CulturalFact",
+        "ScientificFact",
+        "HistoricalRecord",
+        "Tradition",
+        "RegionalExpression",
+        "GlobalExpression",
+        "VisualAsset",
+        "AudioAsset",
+        "InteractionIdea",
+        "ResearchNote",
+        "Source"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "solar_terms": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$"
+      }
+    },
+    "season": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "spring",
+            "summer",
+            "autumn",
+            "winter"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "dimensions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "astronomy",
+          "climate",
+          "phenology",
+          "agriculture",
+          "ecology",
+          "chinese-life",
+          "customs",
+          "food",
+          "history",
+          "literature-art",
+          "regional-differences",
+          "scientific-interpretation",
+          "global-expressions",
+          "visual-assets",
+          "audio-assets",
+          "interaction-ideas",
+          "references",
+          "ai-research-log"
+        ]
+      }
+    },
+    "region": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "period": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "language": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "in-review",
+        "approved",
+        "withdrawn"
+      ]
+    },
+    "epistemic": {
+      "type": "string",
+      "enum": [
+        "fact",
+        "interpretation",
+        "opinion",
+        "tradition",
+        "legend",
+        "scientific-explanation",
+        "unverified"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "contested": {
+      "type": "boolean"
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$"
+      }
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+    },
+    "human_review": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "reviewer": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reviewed_at": {
+              "type": "string",
+              "format": "date",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+            },
+            "decision": {
+              "type": "string",
+              "enum": [
+                "approved",
+                "changes-requested"
+              ]
+            },
+            "notes": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "reviewer",
+            "reviewed_at",
+            "decision",
+            "notes"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "publisher": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "published": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "url": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "citation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "historical",
+            "scientific",
+            "cultural",
+            "institutional",
+            "fieldwork",
+            "personal-observation"
+          ]
+        },
+        "accessed": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "original_excerpt": {
+          "type": "string"
+        },
+        "locator": {
+          "type": "string"
+        },
+        "ai_summary": {
+          "type": "string"
+        },
+        "rights": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verification": {
+          "type": "string",
+          "enum": [
+            "unverified",
+            "cross-checked",
+            "human-verified"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "authors",
+        "publisher",
+        "published",
+        "url",
+        "citation",
+        "source_type",
+        "accessed",
+        "original_excerpt",
+        "locator",
+        "ai_summary",
+        "rights",
+        "verification"
+      ],
+      "additionalProperties": false
+    },
+    "links": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        }
+      }
+    },
+    "claim": {
+      "type": "object",
+      "properties": {
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exceptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "statement",
+        "exceptions"
+      ],
+      "additionalProperties": false
+    },
+    "expression": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "type": "string",
+          "const": "0.1.0"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "editorial_layer": {
+          "type": "string",
+          "const": "community"
+        },
+        "term_ids": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          }
+        },
+        "title": {
+          "type": "object",
+          "properties": {
+            "zh-CN": {
+              "type": "string",
+              "minLength": 1
+            },
+            "en": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "zh-CN",
+            "en"
+          ],
+          "additionalProperties": false
+        },
+        "location": {
+          "type": "string",
+          "minLength": 1
+        },
+        "country": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "region": {
+          "type": "string",
+          "minLength": 1
+        },
+        "culture": {
+          "type": "string",
+          "minLength": 1
+        },
+        "creators": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "role": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "name",
+              "url",
+              "role"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "time_period": {
+          "type": "string",
+          "minLength": 1
+        },
+        "natural_context": {
+          "type": "string",
+          "minLength": 1
+        },
+        "cultural_expression": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relationship_to_solar_term": {
+          "type": "string",
+          "enum": [
+            "same-time",
+            "nearby-time",
+            "shared-nature",
+            "seasonal-experience",
+            "life-cycle",
+            "other"
+          ]
+        },
+        "relationship_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "difference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "similarity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          }
+        },
+        "license": {
+          "type": "string",
+          "minLength": 1
+        },
+        "media_types": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "text",
+              "image",
+              "audio",
+              "video",
+              "interactive"
+            ]
+          }
+        },
+        "asset_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          }
+        },
+        "consent": {
+          "type": "string",
+          "enum": [
+            "pending",
+            "confirmed",
+            "not-applicable"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "submitted",
+            "reviewing",
+            "published",
+            "withdrawn"
+          ]
+        },
+        "featured": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "curator": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "date": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+                }
+              },
+              "required": [
+                "reason",
+                "curator",
+                "date"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "schema_version",
+        "id",
+        "editorial_layer",
+        "term_ids",
+        "title",
+        "location",
+        "country",
+        "region",
+        "culture",
+        "creators",
+        "time_period",
+        "natural_context",
+        "cultural_expression",
+        "relationship_to_solar_term",
+        "relationship_reason",
+        "difference",
+        "similarity",
+        "source_ids",
+        "license",
+        "media_types",
+        "asset_ids",
+        "consent",
+        "status",
+        "featured"
+      ],
+      "additionalProperties": false
+    },
+    "asset": {
+      "type": "object",
+      "properties": {
+        "creator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "media_type": {
+          "type": "string",
+          "enum": [
+            "image",
+            "audio"
+          ]
+        },
+        "ai_generated": {
+          "type": "boolean"
+        },
+        "generation_record": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "creator",
+        "license",
+        "source",
+        "media_type",
+        "ai_generated",
+        "generation_record"
+      ],
+      "additionalProperties": false
+    },
+    "research": {
+      "type": "object",
+      "properties": {
+        "task": {
+          "type": "string",
+          "minLength": 1
+        },
+        "queries": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "discovered_source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          }
+        },
+        "conflicts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "conclusions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "human_questions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "task",
+        "queries",
+        "discovered_source_ids",
+        "conflicts",
+        "conclusions",
+        "human_questions"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "type",
+    "title",
+    "solar_terms",
+    "season",
+    "dimensions",
+    "region",
+    "period",
+    "language",
+    "status",
+    "epistemic",
+    "confidence",
+    "contested",
+    "source_ids",
+    "author",
+    "created",
+    "updated",
+    "human_review"
+  ],
+  "additionalProperties": false
+}

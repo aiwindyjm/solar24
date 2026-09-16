@@ -1,0 +1,41 @@
+[
+  {
+    "id": "four-seasons",
+    "path": "four-seasons.svg",
+    "creator": "Solar24 contributors (AI-assisted code drawing)",
+    "source": "Original local explanatory SVG",
+    "license": "MIT",
+    "rights_status": "cleared",
+    "sha256": "eb0fc4886ec1be44a2be10563b64314af616fa188437c1f984c3cec88d711464",
+    "bytes": 3764,
+    "alt": "four-seasons",
+    "kind": "editorial-diagram",
+    "not_a_demo": true
+  },
+  {
+    "id": "hero",
+    "path": "hero.svg",
+    "creator": "Solar24 contributors (AI-assisted code drawing)",
+    "source": "Original local explanatory SVG",
+    "license": "MIT",
+    "rights_status": "cleared",
+    "sha256": "8aa632b8dbe7044a7a31f55e1922f51e04fade33474c839a483275431281a52c",
+    "bytes": 3113,
+    "alt": "hero",
+    "kind": "editorial-diagram",
+    "not_a_demo": true
+  },
+  {
+    "id": "term-circle",
+    "path": "term-circle.svg",
+    "creator": "Solar24 contributors (AI-assisted code drawing)",
+    "source": "Original local explanatory SVG",
+    "license": "MIT",
+    "rights_status": "cleared",
+    "sha256": "e194726a00322cc3c7db7a2a9880106a3080143031956a00b227ade8ea394125",
+    "bytes": 4889,
+    "alt": "term-circle",
+    "kind": "editorial-diagram",
+    "not_a_demo": true
+  }
+]

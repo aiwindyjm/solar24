@@ -1,0 +1,15 @@
+{
+  "name": "@solar24/module-bailu",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node ../../scripts/module.mjs dev bailu",
+    "build": "node ../../scripts/module.mjs build bailu",
+    "test": "node ../../scripts/module.mjs test bailu"
+  },
+  "dependencies": {
+    "@solar24/module-runtime": "workspace:*",
+    "@solar24/protocol": "workspace:*"
+  }
+}

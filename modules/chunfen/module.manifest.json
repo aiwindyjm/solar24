@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "chunfen",
+  "slug": "chunfen",
+  "name": "春分",
+  "name_en": "Spring Equinox",
+  "season": "spring",
+  "order": 4,
+  "version": "0.1.0",
+  "status": "Planned",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}

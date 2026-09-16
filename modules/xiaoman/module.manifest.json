@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "xiaoman",
+  "slug": "xiaoman",
+  "name": "小满",
+  "name_en": "Grain Full",
+  "season": "summer",
+  "order": 8,
+  "version": "0.1.0",
+  "status": "Planned",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}

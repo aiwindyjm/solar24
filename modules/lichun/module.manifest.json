@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "lichun",
+  "slug": "lichun",
+  "name": "立春",
+  "name_en": "Beginning of Spring",
+  "season": "spring",
+  "order": 1,
+  "version": "0.1.0",
+  "status": "Prototype",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}

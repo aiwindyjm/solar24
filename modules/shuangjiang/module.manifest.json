@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "shuangjiang",
+  "slug": "shuangjiang",
+  "name": "霜降",
+  "name_en": "Frost Descent",
+  "season": "autumn",
+  "order": 18,
+  "version": "0.1.0",
+  "status": "Planned",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}

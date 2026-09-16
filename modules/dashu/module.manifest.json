@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "dashu",
+  "slug": "dashu",
+  "name": "大暑",
+  "name_en": "Major Heat",
+  "season": "summer",
+  "order": 12,
+  "version": "0.1.0",
+  "status": "Planned",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}

@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "protocolVersion": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name_en": {
+      "type": "string",
+      "minLength": 1
+    },
+    "season": {
+      "type": "string",
+      "enum": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
+      ]
+    },
+    "order": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 24
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Planned",
+        "Researching",
+        "Prototype",
+        "In Development",
+        "Interactive",
+        "Released"
+      ]
+    },
+    "entry": {
+      "type": "string",
+      "const": "src/index.ts"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "static",
+          "interaction",
+          "webgl",
+          "audio"
+        ]
+      }
+    },
+    "content": {
+      "type": "string",
+      "const": "content/zh-CN.json"
+    },
+    "assets": {
+      "type": "string",
+      "const": "assets/manifest.json"
+    },
+    "references": {
+      "type": "string",
+      "const": "references.json"
+    },
+    "locales": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "zh-CN",
+          "en"
+        ]
+      }
+    }
+  },
+  "required": [
+    "protocolVersion",
+    "id",
+    "slug",
+    "name",
+    "name_en",
+    "season",
+    "order",
+    "version",
+    "status",
+    "entry",
+    "capabilities",
+    "content",
+    "assets",
+    "references",
+    "locales"
+  ],
+  "additionalProperties": false
+}

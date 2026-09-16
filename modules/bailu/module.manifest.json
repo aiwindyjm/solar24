@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "bailu",
+  "slug": "bailu",
+  "name": "白露",
+  "name_en": "White Dew",
+  "season": "autumn",
+  "order": 15,
+  "version": "0.1.0",
+  "status": "Planned",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}

@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "term_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "locale": {
+      "type": "string",
+      "const": "zh-CN"
+    },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "approved"
+      ]
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "what",
+              "why",
+              "nature",
+              "people",
+              "culture",
+              "science"
+            ]
+          },
+          "title": {
+            "type": "object",
+            "properties": {
+              "zh-CN": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "zh-CN",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "claim_ids": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]*$"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "claim_ids"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "fact",
+              "interpretation",
+              "opinion",
+              "tradition",
+              "legend",
+              "scientific-explanation"
+            ]
+          },
+          "text": {
+            "type": "object",
+            "properties": {
+              "zh-CN": {
+                "type": "string",
+                "minLength": 1
+              },
+              "en": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "zh-CN",
+              "en"
+            ],
+            "additionalProperties": false
+          },
+          "region": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "period": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ids": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]*$"
+            }
+          },
+          "knowledge_ids": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]*$"
+            }
+          },
+          "reviewer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reviewed_at": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "text",
+          "region",
+          "period",
+          "source_ids",
+          "knowledge_ids",
+          "reviewer",
+          "reviewed_at"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "term_id",
+    "locale",
+    "review_status",
+    "sections",
+    "claims"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "editorial_layer": {
+      "type": "string",
+      "const": "community"
+    },
+    "term_ids": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$"
+      }
+    },
+    "title": {
+      "type": "object",
+      "properties": {
+        "zh-CN": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "zh-CN",
+        "en"
+      ],
+      "additionalProperties": false
+    },
+    "location": {
+      "type": "string",
+      "minLength": 1
+    },
+    "country": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "region": {
+      "type": "string",
+      "minLength": 1
+    },
+    "culture": {
+      "type": "string",
+      "minLength": 1
+    },
+    "creators": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "name",
+          "url",
+          "role"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "time_period": {
+      "type": "string",
+      "minLength": 1
+    },
+    "natural_context": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cultural_expression": {
+      "type": "string",
+      "minLength": 1
+    },
+    "relationship_to_solar_term": {
+      "type": "string",
+      "enum": [
+        "same-time",
+        "nearby-time",
+        "shared-nature",
+        "seasonal-experience",
+        "life-cycle",
+        "other"
+      ]
+    },
+    "relationship_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "difference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "similarity": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$"
+      }
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1
+    },
+    "media_types": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "text",
+          "image",
+          "audio",
+          "video",
+          "interactive"
+        ]
+      }
+    },
+    "asset_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$"
+      }
+    },
+    "consent": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "confirmed",
+        "not-applicable"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "submitted",
+        "reviewing",
+        "published",
+        "withdrawn"
+      ]
+    },
+    "featured": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            },
+            "curator": {
+              "type": "string",
+              "minLength": 1
+            },
+            "date": {
+              "type": "string",
+              "format": "date",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+            }
+          },
+          "required": [
+            "reason",
+            "curator",
+            "date"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "editorial_layer",
+    "term_ids",
+    "title",
+    "location",
+    "country",
+    "region",
+    "culture",
+    "creators",
+    "time_period",
+    "natural_context",
+    "cultural_expression",
+    "relationship_to_solar_term",
+    "relationship_reason",
+    "difference",
+    "similarity",
+    "source_ids",
+    "license",
+    "media_types",
+    "asset_ids",
+    "consent",
+    "status",
+    "featured"
+  ],
+  "additionalProperties": false
+}

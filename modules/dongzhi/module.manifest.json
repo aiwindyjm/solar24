@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "dongzhi",
+  "slug": "dongzhi",
+  "name": "冬至",
+  "name_en": "Winter Solstice",
+  "season": "winter",
+  "order": 22,
+  "version": "0.1.0",
+  "status": "Planned",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}

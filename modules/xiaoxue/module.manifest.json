@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "xiaoxue",
+  "slug": "xiaoxue",
+  "name": "小雪",
+  "name_en": "Minor Snow",
+  "season": "winter",
+  "order": 20,
+  "version": "0.1.0",
+  "status": "Planned",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}

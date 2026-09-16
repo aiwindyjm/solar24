@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "lixia",
+  "slug": "lixia",
+  "name": "立夏",
+  "name_en": "Beginning of Summer",
+  "season": "summer",
+  "order": 7,
+  "version": "0.1.0",
+  "status": "Planned",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}

@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "publisher": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "published": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "url": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uri"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "citation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "historical",
+        "scientific",
+        "cultural",
+        "institutional",
+        "fieldwork",
+        "personal-observation"
+      ]
+    },
+    "accessed": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "original_excerpt": {
+      "type": "string"
+    },
+    "locator": {
+      "type": "string"
+    },
+    "ai_summary": {
+      "type": "string"
+    },
+    "rights": {
+      "type": "string",
+      "minLength": 1
+    },
+    "verification": {
+      "type": "string",
+      "enum": [
+        "unverified",
+        "cross-checked",
+        "human-verified"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "authors",
+    "publisher",
+    "published",
+    "url",
+    "citation",
+    "source_type",
+    "accessed",
+    "original_excerpt",
+    "locator",
+    "ai_summary",
+    "rights",
+    "verification"
+  ],
+  "additionalProperties": false
+}

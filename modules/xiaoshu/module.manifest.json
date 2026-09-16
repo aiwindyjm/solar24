@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "xiaoshu",
+  "slug": "xiaoshu",
+  "name": "小暑",
+  "name_en": "Minor Heat",
+  "season": "summer",
+  "order": 11,
+  "version": "0.1.0",
+  "status": "Planned",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}

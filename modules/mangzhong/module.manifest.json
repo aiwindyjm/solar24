@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "mangzhong",
+  "slug": "mangzhong",
+  "name": "芒种",
+  "name_en": "Grain in Ear",
+  "season": "summer",
+  "order": 9,
+  "version": "0.1.0",
+  "status": "Planned",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}

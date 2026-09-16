@@ -1,0 +1,38 @@
+{
+  "name": "solar24",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.34.5",
+  "engines": {
+    "node": "^22.13.0 || >=24.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @solar24/host dev",
+    "lint": "eslint . && tsc --noEmit && pnpm validate",
+    "validate": "tsx scripts/validate.ts",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "build": "pnpm validate && pnpm --filter @solar24/host build",
+    "schemas": "tsx scripts/export-schemas.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^10.10.0",
+    "jsdom": "^26.1.0",
+    "prettier": "^3.6.0",
+    "react": "^19.3.0",
+    "tsx": "^4.20.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^3.2.4",
+    "yaml": "^2.8.0",
+    "zod": "^4.1.0"
+  }
+}

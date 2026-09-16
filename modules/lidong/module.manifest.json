@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "lidong",
+  "slug": "lidong",
+  "name": "立冬",
+  "name_en": "Beginning of Winter",
+  "season": "winter",
+  "order": 19,
+  "version": "0.1.0",
+  "status": "Planned",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}

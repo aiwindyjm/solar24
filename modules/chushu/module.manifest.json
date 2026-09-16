@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "chushu",
+  "slug": "chushu",
+  "name": "处暑",
+  "name_en": "Limit of Heat",
+  "season": "autumn",
+  "order": 14,
+  "version": "0.1.0",
+  "status": "Planned",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}

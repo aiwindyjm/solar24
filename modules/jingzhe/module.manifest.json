@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "jingzhe",
+  "slug": "jingzhe",
+  "name": "惊蛰",
+  "name_en": "Awakening of Insects",
+  "season": "spring",
+  "order": 3,
+  "version": "0.1.0",
+  "status": "Planned",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}

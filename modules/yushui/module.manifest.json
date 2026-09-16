@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "yushui",
+  "slug": "yushui",
+  "name": "雨水",
+  "name_en": "Rain Water",
+  "season": "spring",
+  "order": 2,
+  "version": "0.1.0",
+  "status": "Planned",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}

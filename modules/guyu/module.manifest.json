@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "guyu",
+  "slug": "guyu",
+  "name": "谷雨",
+  "name_en": "Grain Rain",
+  "season": "spring",
+  "order": 6,
+  "version": "0.1.0",
+  "status": "Planned",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}

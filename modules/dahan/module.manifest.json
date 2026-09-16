@@ -1,0 +1,17 @@
+{
+  "protocolVersion": "0.1.0",
+  "id": "dahan",
+  "slug": "dahan",
+  "name": "大寒",
+  "name_en": "Major Cold",
+  "season": "winter",
+  "order": 24,
+  "version": "0.1.0",
+  "status": "Planned",
+  "entry": "src/index.ts",
+  "capabilities": ["static"],
+  "content": "content/zh-CN.json",
+  "assets": "assets/manifest.json",
+  "references": "references.json",
+  "locales": ["zh-CN"]
+}
