@@ -8,6 +8,7 @@
 - [社区入口](docs/community/README.md)区分 Discussions 的讨论与 Issues 的结构化投稿；[流程](docs/community/workflow.md)区分接受、发布、精选与撤回。
 - 代码/设计改动同时记录 [Development Journey](docs/development-journey/README.md)，不仅写做了什么，也写为什么改变；重大取舍写 [ADR](docs/decisions/README.md)。
 - Git 提交遵循轻量 [Commit Convention](docs/development/commit-convention.md)，发布遵循 [Release Process](docs/development/release-process.md)。
+- GitHub Releases 只记录经过验证的版本里程碑；普通提交、PR 合并和 CI 通过不会自动生成 Release。准备发布时必须按 [GitHub Releases 策略](docs/development/release-process.md#github-releases-策略)创建唯一的 SemVer tag、Release Notes，并核验发布页。
 - 贡献者保留 [Credits](docs/community/credits.md)，遵守 [社区规则](COMMUNITY_GUIDELINES.md)，公开许可与 AI 参与。
 
 元数据 PR 使用 [Community Expression Protocol](docs/protocol/community-expression.md)；先运行 `pnpm community:check <metadata.json>`，目录记录由 `pnpm validate` 接入现有 CI。机器通过只表示结构有效，不能代替文化、艺术或授权审核。

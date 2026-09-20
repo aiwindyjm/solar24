@@ -45,7 +45,7 @@ Demo 位于 [`docs/design/solar24-v5`](docs/design/solar24-v5/)，采用 React�
 
 [查看完整制作过程](docs/development-journey/README.md) · [V1–V5 设计演进](docs/development-journey/prototype-evolution.md) · [版本交付记录](docs/development/v5-demo-release.md)
 
-下一轮聚焦立春读者观察、生产内容核验与真机性能测量，见[当前路线图](docs/architecture/roadmap.md)。
+下一轮聚焦立春读者观察、生产内容核验与真机性能测量，见[当前路线图](docs/architecture/roadmap.md)。版本里程碑统一记录在 [GitHub Releases](https://github.com/aiwindyjm/solar24/releases)；普通提交和 CI 检查不会自动生成 Release。
 
 ## 项目与参与
 

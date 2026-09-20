@@ -45,7 +45,7 @@ From a world-calendar concept to an ink landscape, then a butterfly year wheel, 
 
 [Follow the making process](docs/development-journey/README.en.md) · [Design evolution](docs/development-journey/prototype-evolution.md) · [V0.1.0 public release](docs/releases/solar24-v0.1.0-demo.md) · [Release record](docs/development/v5-demo-release.md)
 
-Next: reader observation with Lichun, production content review, and performance measurements on real devices. [Current roadmap](docs/architecture/roadmap.md).
+Next: reader observation with Lichun, production content review, and performance measurements on real devices. [Current roadmap](docs/architecture/roadmap.md). Version milestones are recorded in [GitHub Releases](https://github.com/aiwindyjm/solar24/releases); routine commits and CI checks do not create releases automatically.
 
 ## Project
 
