@@ -6,7 +6,15 @@ English · [简体中文](README.zh-CN.md)
 
 [Open the English demo](https://solar24-demo.solar24.workers.dev/?lang=en#lichun/seasons) · [中文 Demo](https://solar24-demo.solar24.workers.dev/?lang=zh#lichun/seasons)
 
-![Solar24 in motion: seasons, the cosmos and everyday life](assets/demo/solar24-en.gif)
+## Demo walkthrough
+
+**Animated preview · Seasons → reading scroll → Cosmos → Human life**
+
+![Animated Solar24 walkthrough in English](assets/demo/walkthrough-en.gif)
+
+[Open the GIF directly](https://github.com/aiwindyjm/solar24/raw/refs/heads/main/assets/demo/walkthrough-en.gif) · [Try the live demo](https://solar24-demo.solar24.workers.dev/?lang=en#lichun/seasons)
+
+If GitHub pauses the animation, use the image's play button or open the GIF directly.
 
 Follow a butterfly through the year. Open a translucent reading scroll. Rise from an ink landscape to the Sun and Earth, then return to small acts of everyday life.
 

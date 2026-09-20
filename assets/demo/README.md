@@ -1,5 +1,7 @@
 # Demo recordings
 
+The READMEs use `walkthrough-en.gif` and `walkthrough-zh.gif`: compact 640-pixel-wide, 6 fps versions, with the first three seconds removed and playback at 1.25× speed. These use the same actual browser recordings described below; the original larger GIFs remain available. Each compact preview is approximately 2.5 MB.
+
 `solar24-en.gif` and `solar24-zh.gif` are recordings of real interactions with Solar24 V5 on 2026-09-20. Each shows choosing solar terms, opening a reading scroll, entering the cosmos, approaching Earth and interacting with a seasonal drawing.
 
 Recorded with Playwright CLI at 1280×800, exported at 960×600, then encoded with FFmpeg as 800-pixel-wide, 8 fps GIFs. No generated mockup frames, external footage or sound recordings are used. The original WebM captures remain in ignored `output/playwright/`.

@@ -6,7 +6,15 @@
 
 [进入中文 Demo](https://solar24-demo.solar24.workers.dev/?lang=zh#lichun/seasons) · [English Demo](https://solar24-demo.solar24.workers.dev/?lang=en#lichun/seasons)
 
-![Solar24 操作演示：观四时、望天地、听人间](assets/demo/solar24-zh.gif)
+## 操作动图
+
+**动态演示 · 观四时 → 展开手卷 → 望天地 → 听人间**
+
+![Solar24 中文操作动图](assets/demo/walkthrough-zh.gif)
+
+[直接打开动图](https://github.com/aiwindyjm/solar24/raw/refs/heads/main/assets/demo/walkthrough-zh.gif) · [进入在线 Demo](https://solar24-demo.solar24.workers.dev/?lang=zh#lichun/seasons)
+
+如果 GitHub 暂停了动画，可点击图片上的播放按钮，或直接打开动图查看。
 
 跟随蝴蝶走过一年，在水墨山水中舒展阅读。从山间升向太阳与地球，再回到日常生活里的微小变化。
 
