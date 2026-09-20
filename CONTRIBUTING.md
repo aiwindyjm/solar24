@@ -1,6 +1,16 @@
 # Contributing to Solar24
 
-先读 [README](README.md) 与 [项目原则](PRINCIPLES.md)。你可以贡献研究、翻译、声音、视觉、交互、代码或当地的季节经验。当前正式社区作品收录尚未开放，邀请与协议已经存在。
+先读 [README](README.md) 与 [项目原则](PRINCIPLES.md)。你可以贡献研究、翻译、声音、视觉、交互、代码或当地的季节经验。音乐投稿规范与 Issue Form 已建立，合入默认分支后可在 GitHub New issue 使用；尚无真实社区作品或精选名单。
+
+## 创作者与制作过程
+
+- 音乐先看 [简单贡献指南](docs/community/music-contribution.md)，回答“为什么用这段声音表达这个节气？”；一句想法也欢迎。
+- [社区入口](docs/community/README.md)区分 Discussions 的讨论与 Issues 的结构化投稿；[流程](docs/community/workflow.md)区分接受、发布、精选与撤回。
+- 代码/设计改动同时记录 [Development Journey](docs/development-journey/README.md)，不仅写做了什么，也写为什么改变；重大取舍写 [ADR](docs/decisions/README.md)。
+- Git 提交遵循轻量 [Commit Convention](docs/development/commit-convention.md)，发布遵循 [Release Process](docs/development/release-process.md)。
+- 贡献者保留 [Credits](docs/community/credits.md)，遵守 [社区规则](COMMUNITY_GUIDELINES.md)，公开许可与 AI 参与。
+
+元数据 PR 使用 [Community Expression Protocol](docs/protocol/community-expression.md)；先运行 `pnpm community:check <metadata.json>`，目录记录由 `pnpm validate` 接入现有 CI。机器通过只表示结构有效，不能代替文化、艺术或授权审核。
 
 ## 一个可审阅的贡献
 

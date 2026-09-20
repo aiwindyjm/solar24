@@ -15,6 +15,7 @@
     "test:e2e": "playwright test",
     "build": "pnpm validate && pnpm --filter @solar24/host build",
     "schemas": "tsx scripts/export-schemas.ts",
+    "community:check": "tsx scripts/community-music.ts",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

@@ -32,6 +32,7 @@ solar24/（当前目录保持原名 24节气）
 ├── assets/docs/                  # 实际存在的 SVG 说明图、资产记录
 ├── knowledge-base/              # 独立 Obsidian Vault
 ├── docs/{architecture,protocol,design,research,contributing}/
+├── docs/{development-journey,development,decisions,community}/ # 制作过程与参与规范
 ├── scripts/                     # 校验、schema 导出、单模块命令
 ├── scripts/content-pipeline/     # 审核到产品的未来转换契约
 ├── tests/                       # 共享契约与 E2E
@@ -44,3 +45,7 @@ solar24/（当前目录保持原名 24节气）
 Host → protocol；modules → module-runtime → protocol。禁止 modules 互相依赖、packages 反向依赖 Host，以及生产入口引用 knowledge-base。共享能力有实际第二个使用者再抽包，Three.js/GSAP/音频等在体验需求明确后按需接入。
 
 每个模块使用相同 Host 单模块模式独立 dev/build，通过过滤运行契约测试。避免复制 24 套 Vite、React 和 CI。静态部署采用相对资源路径和 hash 路由，无服务器重写要求。
+
+## 制作过程与社区声音
+
+[Journey](../development-journey/README.md)引用研究/原型/实现，不复制生产内容。音乐真实投稿未来通过显式 PR 放本节气 `community/music/<id>.json`；没有作品时不建空目录。权威 schema 与审核门槛位于现有 protocol 包，校验脚本与现有 CI 消费；Host 当前不导入这些投稿，也不读取研究 Vault。详见 [Community Expression Protocol](../protocol/community-expression.md)。

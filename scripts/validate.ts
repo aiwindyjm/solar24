@@ -9,6 +9,8 @@ import {
   assertPublishableNote,
 } from '../packages/protocol/src/index.js';
 import { readNote } from './knowledge.js';
+import { checkMusicFiles } from './community-music.js';
+import { solarTermSlugs } from '../packages/protocol/src/index.js';
 
 const json = (path: string) => JSON.parse(readFileSync(path, 'utf8'));
 function files(dir: string): string[] {
@@ -32,6 +34,17 @@ check(byId.size === notes.length, 'Duplicate knowledge IDs');
 noteFiles.forEach(readNote);
 const modules = readdirSync('modules').filter((s) => !s.startsWith('_'));
 check(modules.length === 24, 'Expected 24 modules');
+check(solarTermSlugs.every(slug => modules.includes(slug)), 'Community solar term IDs must match modules');
+const musicPaths = modules.flatMap(slug => {
+  const dir = `modules/${slug}/community/music`;
+  return existsSync(dir) ? files(dir).filter(path => path.endsWith('.json')) : [];
+});
+const musicChecks = checkMusicFiles(musicPaths);
+musicChecks.entries.forEach((entry, index) => {
+  const expected = resolve(`modules/${entry.solar_term}/community/music/${entry.id}.json`);
+  check(resolve(musicPaths[index]) === expected, `Music path/term/ID mismatch: ${entry.id}`);
+});
+musicChecks.warnings.forEach(warning => console.warn(warning));
 const seen = new Set<number>();
 for (const slug of modules) {
   const base = `modules/${slug}`;
@@ -139,6 +152,7 @@ for (const path of vaultFiles) {
 const docFiles = [
   'README.md',
   'CONTRIBUTING.md',
+  'COMMUNITY_GUIDELINES.md',
   'AGENTS.md',
   ...files('docs'),
   ...files('modules'),

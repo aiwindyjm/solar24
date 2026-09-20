@@ -12,7 +12,7 @@ Solar24 是一个以中国二十四节气为起点的开源文化表达实验：
 
 **China shares a story. The world brings its own.** We begin with China's twenty-four solar terms, then invite people everywhere to share different experiences of nature and time.
 
-[认识24节气](#24-solar-terms) · [体验进度](#experience) · [世界的表达](#an-open-invitation) · [知识库](knowledge-base/README.md) · [贡献](CONTRIBUTING.md)
+[认识24节气](#24-solar-terms) · [体验进度](#experience) · [制作过程](#how-solar24-is-made) · [社区声音](docs/community/music-contribution.md) · [世界的表达](#an-open-invitation) · [知识库](knowledge-base/README.md) · [贡献](CONTRIBUTING.md)
 
 ## What are the Twenty-Four Solar Terms?
 
@@ -58,7 +58,31 @@ Solar24 希望通过有来源的具体故事，探索中国人如何观察、记
 
 Open Source Cultural Expression Protocol 是让文化内容、证据、艺术作品和代码可以被理解、引用、修改与协作的方法。它记录创作者、地点、文化背景、关联理由、差异、来源和许可。
 
-邀请从一开始存在，社区投稿和人工精选后续开放。[全球表达协议](docs/protocol/global-expression.md)已定义，当前没有收录作品或在线投稿平台。
+邀请从一开始存在。[社区音乐指南](docs/community/music-contribution.md)与结构化 Issue Form 已在仓库建立，合入 GitHub 默认分支后可从 New issue 投稿；[全球表达协议](docs/protocol/global-expression.md)保留文化关系边界。当前没有收录作品、精选名单或独立在线投稿平台。
+
+## How Solar24 Is Made
+
+这里不仅保存代码，也展示一个文化数字体验如何从研究走向作品，以及多个原型为什么改变。你可以沿着真实材料、设计取舍与检查记录学习 AI 辅助开发过程；草稿、原型与正式发布始终分开。
+
+```text
+Research
+↓
+Story
+↓
+Visual
+↓
+Sound
+↓
+Interaction
+↓
+Code
+↓
+Experience
+```
+
+[Development Journey · 完整11阶段与模板](docs/development-journey/README.md) · [V1–V4 设计演进](docs/development-journey/prototype-evolution.md) · [立春制作记录](docs/development-journey/lichun/00-overview.md) · [重大决策 ADR](docs/decisions/README.md)
+
+体验之后，邀请你带来自己的表达：**为什么这段声音属于你对这个节气的理解？** 一句话创意、Demo、原创音乐、实录或 AI 辅助创作都可参与；不要求专业音乐背景。[参与音乐贡献](docs/community/music-contribution.md) · [社区入口与署名](docs/community/README.md)。Accepted 不等于 Featured，精选由真实 Curator 说明理由。
 
 ## 24 Solar Terms
 
@@ -115,7 +139,7 @@ modules/lichun/
 | 立春研究        | 可核查来源、小颗粒节点、人审   | 任务草案 |
 | 立春参考体验    | 已审核文化内容＋一个解释性互动 | 待开发   |
 | 24 模块逐步完善 | 按季节批次研究与实现           | Planned  |
-| 世界参与与档案  | 社区表达、精选、更正与撤回     | 协议预留 |
+| 制作过程与社区声音 | Journey、原型演进、音乐投稿与校验 | 规范、模板与数据契约已建立；尚无真实收录（现有全球研究候选不是社区投稿） |
 
 ## Technical details
 

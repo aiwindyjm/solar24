@@ -46,6 +46,8 @@ TODO：科学解释与传统象征分开，明确概念、局限与来源。
 
 ## Open Source
 
+[How it is made · 立春 Journey](../../docs/development-journey/lichun/00-overview.md) · [用声音表达立春](../../docs/community/music-contribution.md)。当前没有正式音乐或精选作品。
+
 [贡献指南](../../CONTRIBUTING.md) · [README 标准](../../docs/contributing/readme-template.md) · [许可规则](../../docs/contributing/licensing.md)。
 
 ## Technical Details

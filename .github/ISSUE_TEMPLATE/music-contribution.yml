@@ -1,0 +1,257 @@
+name: '🎵 Submit a Solar24 Seasonal Sound'
+description: 'Share why a sound belongs to your interpretation of a solar term. Ideas welcome.'
+title: '[Sound] '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Music, field recording, soundscape or a one-sentence idea: all are welcome.
+        Tell us Who / Where / What / Why / How. You do not need to imitate Chinese music.
+        Read docs/community/music-contribution.md and COMMUNITY_GUIDELINES.md in this repository.
+        This Issue is public. Submission is not automatic acceptance, publication or featuring.
+        Automated metadata checks run in local/PR review; no Issue bot or audio download is enabled.
+  - type: dropdown
+    id: solar-term
+    attributes:
+      label: 'Solar Term / 节气'
+      description: 'Choose the solar term you are interpreting.'
+      options:
+        - 'lichun'
+        - 'yushui'
+        - 'jingzhe'
+        - 'chunfen'
+        - 'qingming'
+        - 'guyu'
+        - 'lixia'
+        - 'xiaoman'
+        - 'mangzhong'
+        - 'xiazhi'
+        - 'xiaoshu'
+        - 'dashu'
+        - 'liqiu'
+        - 'chushu'
+        - 'bailu'
+        - 'qiufen'
+        - 'hanlu'
+        - 'shuangjiang'
+        - 'lidong'
+        - 'xiaoxue'
+        - 'daxue'
+        - 'dongzhi'
+        - 'xiaohan'
+        - 'dahan'
+    validations:
+      required: true
+  - type: dropdown
+    id: layer
+    attributes:
+      label: 'Contribution Layer / 投稿层级'
+      description: 'Featured is a human curatorial decision, not a submission option.'
+      options:
+        - 'sound-idea'
+        - 'sound-sketch'
+        - 'seasonal-track'
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: 'Work Title / 作品名称'
+      description: 'A working title is fine.'
+    validations:
+      required: true
+  - type: input
+    id: creator
+    attributes:
+      label: 'Creator / 作者'
+      description: 'Your chosen public name; credit collaborators below.'
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: 'Location / 地点'
+      description: 'A broad region is enough; you may write undisclosed. Do not share your home address.'
+    validations:
+      required: true
+  - type: input
+    id: country
+    attributes:
+      label: 'Country / 国家'
+      description: 'Self-described and optional to disclose; write undisclosed if preferred.'
+    validations:
+      required: true
+  - type: textarea
+    id: creator-description
+    attributes:
+      label: 'About You / 创作者介绍'
+      description: 'Anyone can join. Briefly tell us who you are; no professional background required.'
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 'Music Description / 声音说明'
+      description: 'What will we hear, or what is your sound idea? Include a text description for people who cannot listen.'
+    validations:
+      required: true
+  - type: textarea
+    id: inspiration
+    attributes:
+      label: 'Cultural Inspiration / 文化灵感'
+      description: 'What does this solar term mean to you? Separate personal memory from cultural or historical claims.'
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: 'Why This Solar Term? / 为什么用这段声音表达这个节气？'
+      description: 'Why does this sound belong to YOUR interpretation of this solar term? This is the core question; a Chinese-style label is not enough.'
+    validations:
+      required: true
+  - type: textarea
+    id: intention
+    attributes:
+      label: 'Creative Intention / 创作意图'
+      description: 'What do you hope someone will feel or understand?'
+    validations:
+      required: true
+  - type: dropdown
+    id: basis
+    attributes:
+      label: 'Interpretation Basis / 灵感依据'
+      description: 'Select one or more.'
+      multiple: true
+      options:
+        - 'chinese-cultural-research'
+        - 'local-seasonal-experience'
+        - 'nature'
+        - 'personal-memory'
+        - 'traditional-music'
+        - 'modern-composition'
+        - 'other'
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 'Cultural Scope / 表达范围'
+      description: 'Is this personal, local, historical or community knowledge? Explain place/time, similarities and differences; do not speak for a whole country.'
+    validations:
+      required: true
+  - type: textarea
+    id: instrumentation
+    attributes:
+      label: 'Instrumentation / 乐器与声音材料'
+      description: 'Name instruments, voice, field recordings, samples or synthesis; write none/planned for an idea.'
+    validations:
+      required: true
+  - type: input
+    id: audio
+    attributes:
+      label: 'Audio Link / 音频链接'
+      description: 'Public HTTPS listening link. For sound-idea only, write N/A. Do not attach large WAV masters or private links.'
+    validations:
+      required: true
+  - type: textarea
+    id: audio-details
+    attributes:
+      label: 'Audio Details / 音频参数'
+      description: 'State duration in seconds; format (mp3/ogg/flac/wav/m4a/webm); bytes if known (50 MiB maximum); SHA-256 if known. Unknown size/hash is allowed for review; idea with no audio: N/A.'
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: 'Source or Generation Method / 制作方式'
+      description: 'How did you make it, or how do you plan to? Include recording conditions where relevant. Do not label synthetic sound as historical field recording.'
+    validations:
+      required: true
+  - type: dropdown
+    id: original
+    attributes:
+      label: 'Original Work / 原创声明'
+      description: 'If adapted or sampled, provide sources and permissions below. Original work does not automatically clear all rights.'
+      options:
+        - 'yes'
+        - 'no'
+    validations:
+      required: true
+  - type: dropdown
+    id: license
+    attributes:
+      label: 'License / 许可证'
+      description: 'Select your proposed license. CC BY-NC/custom uses require individual review.'
+      options:
+        - 'CC0-1.0'
+        - 'CC-BY-4.0'
+        - 'CC-BY-NC-4.0'
+        - 'Other / Custom'
+    validations:
+      required: true
+  - type: textarea
+    id: license-details
+    attributes:
+      label: 'License Details / 授权说明'
+      description: 'License URL or full terms/version; requested attribution; permission for samples, recordings and collaborators. If unclear, explain what is unresolved; rights remain needs-review.'
+    validations:
+      required: true
+  - type: dropdown
+    id: ai
+    attributes:
+      label: 'AI Assistance / 是否使用 AI'
+      description: 'AI-assisted work is welcome; transparency is required.'
+      options:
+        - 'yes'
+        - 'no'
+    validations:
+      required: true
+  - type: textarea
+    id: ai-details
+    attributes:
+      label: 'AI Disclosure / AI 使用详情'
+      description: 'If yes: Tool; Model (or unknown); Generation date; Terms/license reference; Human contribution; Input/reference material. If no: N/A. Unknown date/terms need follow-up before rights clearance.'
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: 'References / 参考资料'
+      description: 'For each reference: citation/link, how used, rights where relevant. Write none for wholly personal inspiration. Cultural/historical claims need sources.'
+    validations:
+      required: true
+  - type: textarea
+    id: credits
+    attributes:
+      label: 'Credits / 共同创作者'
+      description: 'Each actual contributor: Name / Location / Music, Visual, Research, Code or Translation / specific work / License / optional public URL. An idea may say to be confirmed; acceptance needs complete credits.'
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: 'Contact / 公开联系'
+      description: 'GitHub handle or public profile. This Issue is public; do not post private email, phone numbers or credentials.'
+    validations:
+      required: true
+  - type: dropdown
+    id: publication
+    attributes:
+      label: 'Website Publication Consent / 是否同意网站展示'
+      description: 'This is separate from submitting a public Issue. Choosing no does not prevent participation; no publication until consent and review.'
+      options:
+        - 'yes'
+        - 'no'
+    validations:
+      required: true
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: 'Consent / 确认'
+      options:
+        - label: 'I understand this submission and chosen public details are public, and I follow the community guidelines.'
+          required: true
+        - label: 'I have disclosed sources and rights honestly, have permission to share submitted material for review, and have identified unresolved licensing questions.'
+          required: true
+        - label: 'I have disclosed AI use honestly. Acceptance, publication and featuring require separate human decisions.'
+          required: true

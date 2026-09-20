@@ -1,0 +1,641 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "editorial_layer": {
+      "type": "string",
+      "const": "community"
+    },
+    "solar_term": {
+      "type": "string",
+      "enum": [
+        "lichun",
+        "yushui",
+        "jingzhe",
+        "chunfen",
+        "qingming",
+        "guyu",
+        "lixia",
+        "xiaoman",
+        "mangzhong",
+        "xiazhi",
+        "xiaoshu",
+        "dashu",
+        "liqiu",
+        "chushu",
+        "bailu",
+        "qiufen",
+        "hanlu",
+        "shuangjiang",
+        "lidong",
+        "xiaoxue",
+        "daxue",
+        "dongzhi",
+        "xiaohan",
+        "dahan"
+      ]
+    },
+    "layer": {
+      "type": "string",
+      "enum": [
+        "sound-idea",
+        "sound-sketch",
+        "seasonal-track"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "creator": {
+      "type": "string",
+      "minLength": 1
+    },
+    "creator_location": {
+      "type": "string",
+      "minLength": 1
+    },
+    "creator_country": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "creator_description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "music_description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cultural_inspiration": {
+      "type": "string",
+      "minLength": 1
+    },
+    "creative_intention": {
+      "type": "string",
+      "minLength": 1
+    },
+    "why_this_solar_term": {
+      "type": "string",
+      "minLength": 1
+    },
+    "interpretation_basis": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "chinese-cultural-research",
+          "local-seasonal-experience",
+          "nature",
+          "personal-memory",
+          "traditional-music",
+          "modern-composition",
+          "other"
+        ]
+      }
+    },
+    "cultural_scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "instrumentation": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "duration": {
+      "anyOf": [
+        {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "format": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "mp3",
+            "ogg",
+            "flac",
+            "wav",
+            "m4a",
+            "webm"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "audio": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "bytes": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 52428800
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "sha256": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "url",
+            "bytes",
+            "sha256"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "source_or_generation_method": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ai_assisted": {
+      "type": "boolean"
+    },
+    "ai_tool": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "ai_disclosure": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "model": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "generation_date": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "terms_reference": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "human_contribution": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reference_material": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "required": [
+            "model",
+            "generation_date",
+            "terms_reference",
+            "human_contribution",
+            "reference_material"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "original_work": {
+      "type": "boolean"
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "citation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "usage": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "citation",
+          "url",
+          "usage"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "license": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "enum": [
+            "CC0-1.0",
+            "CC-BY-4.0",
+            "CC-BY-NC-4.0",
+            "Other / Custom"
+          ]
+        },
+        "reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "attribution": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "reference",
+        "attribution"
+      ],
+      "additionalProperties": false
+    },
+    "contact": {
+      "type": "string",
+      "minLength": 1
+    },
+    "consent": {
+      "type": "object",
+      "properties": {
+        "public_submission": {
+          "type": "boolean",
+          "const": true
+        },
+        "rights_declaration": {
+          "type": "boolean",
+          "const": true
+        },
+        "publication": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "public_submission",
+        "rights_declaration",
+        "publication"
+      ],
+      "additionalProperties": false
+    },
+    "rights": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "needs-review",
+            "cleared"
+          ]
+        },
+        "review": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "reviewer": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "date": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "reviewer",
+                "date",
+                "reason"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "review"
+      ],
+      "additionalProperties": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "submitted",
+        "screening",
+        "needs-info",
+        "community-review",
+        "curator-review",
+        "accepted",
+        "featured",
+        "rejected",
+        "withdrawn"
+      ]
+    },
+    "review_history": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "submitted",
+              "screening",
+              "needs-info",
+              "community-review",
+              "curator-review",
+              "accepted",
+              "featured",
+              "rejected",
+              "withdrawn"
+            ]
+          },
+          "actor": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "submitter",
+              "community",
+              "curator",
+              "maintainer"
+            ]
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "status",
+          "actor",
+          "role",
+          "date",
+          "reason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "publication": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "published_by": {
+              "type": "string",
+              "minLength": 1
+            },
+            "date": {
+              "type": "string",
+              "format": "date",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+            }
+          },
+          "required": [
+            "url",
+            "published_by",
+            "date"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "featured": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "reviewer": {
+              "type": "string",
+              "minLength": 1
+            },
+            "date": {
+              "type": "string",
+              "format": "date",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "reviewer",
+            "date",
+            "reason"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "credits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "location": {
+            "type": "string",
+            "minLength": 1
+          },
+          "contribution": {
+            "type": "string",
+            "enum": [
+              "Music",
+              "Visual",
+              "Research",
+              "Code",
+              "Translation"
+            ]
+          },
+          "detail": {
+            "type": "string",
+            "minLength": 1
+          },
+          "license": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "location",
+          "contribution",
+          "detail",
+          "license",
+          "url"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "editorial_layer",
+    "solar_term",
+    "layer",
+    "title",
+    "creator",
+    "creator_location",
+    "creator_country",
+    "creator_description",
+    "music_description",
+    "cultural_inspiration",
+    "creative_intention",
+    "why_this_solar_term",
+    "interpretation_basis",
+    "cultural_scope",
+    "instrumentation",
+    "duration",
+    "format",
+    "audio",
+    "source_or_generation_method",
+    "ai_assisted",
+    "ai_tool",
+    "ai_disclosure",
+    "original_work",
+    "references",
+    "license",
+    "contact",
+    "consent",
+    "rights",
+    "status",
+    "review_history",
+    "publication",
+    "featured",
+    "credits"
+  ],
+  "additionalProperties": false
+}

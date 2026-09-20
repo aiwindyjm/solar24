@@ -1,0 +1,56 @@
+{
+  "schema_version": "0.1.0",
+  "id": "<submission-id>",
+  "editorial_layer": "community",
+  "solar_term": "<solar-term-slug>",
+  "layer": "sound-idea",
+  "title": "<title>",
+  "creator": "<public-name>",
+  "creator_location": "<broad-location-or-undisclosed>",
+  "creator_country": null,
+  "creator_description": "<who-you-are>",
+  "music_description": "<sound-idea-or-description>",
+  "cultural_inspiration": "<inspiration>",
+  "creative_intention": "<what-you-want-to-express>",
+  "why_this_solar_term": "<why-this-sound-belongs-to-your-interpretation>",
+  "interpretation_basis": ["personal-memory"],
+  "cultural_scope": "<personal-local-historical-context-and-differences>",
+  "instrumentation": [],
+  "duration": null,
+  "format": null,
+  "audio": null,
+  "source_or_generation_method": "<how-you-created-or-plan-to-create>",
+  "ai_assisted": false,
+  "ai_tool": null,
+  "ai_disclosure": null,
+  "original_work": true,
+  "references": [],
+  "license": {
+    "id": "Other / Custom",
+    "reference": "<license-terms-or-unresolved-explanation>",
+    "attribution": "<requested-credit>"
+  },
+  "contact": "<public-github-handle-or-profile>",
+  "consent": {
+    "public_submission": true,
+    "rights_declaration": true,
+    "publication": false
+  },
+  "rights": {
+    "status": "needs-review",
+    "review": null
+  },
+  "status": "submitted",
+  "review_history": [
+    {
+      "status": "submitted",
+      "actor": "<actual-submitter>",
+      "role": "submitter",
+      "date": "<YYYY-MM-DD>",
+      "reason": "<actual-issue-link-and-submission-context>"
+    }
+  ],
+  "publication": null,
+  "featured": null,
+  "credits": []
+}

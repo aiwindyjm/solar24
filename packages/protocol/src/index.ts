@@ -1,5 +1,7 @@
 import { z } from 'zod';
 
+export * from './community-music.ts';
+
 export const statuses = [
   'Planned',
   'Researching',
