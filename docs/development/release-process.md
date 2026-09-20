@@ -1,6 +1,6 @@
 # Release Process
 
-发布是一次明确的人工作品选择，不能由构建成功、投稿 accepted 或设计 Final 自动触发。本阶段建立约定，不创建 tag 或 GitHub Release。
+发布是一次明确的人工作品选择，不能由构建成功、投稿 accepted 或设计 Final 自动触发。本文是持续适用的发布约定。V5 共享 Demo 已部署，见[实际交付记录](v5-demo-release.md)；本轮文档同步不创建新的应用版本号或 GitHub Release。
 
 ## 版本与范围
 

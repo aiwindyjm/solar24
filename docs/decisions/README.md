@@ -16,3 +16,4 @@
 - [ADR-004 季节色彩角色](ADR-004-seasonal-color-system.md)
 - [ADR-005 声音语言与无声路径](ADR-005-sound-language.md)
 - [ADR-006 社区投稿、发布与精选分离](ADR-006-community-expression.md)
+- [ADR-007 共享 Demo 独立构建与静态发布](ADR-007-public-demo.md)

@@ -1,5 +1,7 @@
 # Solar24 初始化交付记录 · 2026-09-16
 
+> 历史记录：以下为初始化时的交付快照。当前 V5 Demo、GitHub 与部署状态见 [版本交付](../development/v5-demo-release.md)。
+
 ## 1. 读取的既有材料
 
 完整扫描当前目录（含隐藏项），阅读 `Solar24-24节气项目简述.md` 与 `01-project-understanding.md` 至 `12-open-source-guidelines.md` 共13份既有规划文档；读取中断留下的 Host 源码、CSS、Vite 配置、protocol、module-runtime、24模块 manifest/content/references/assets/README/package/src/test 占位、根构建/lint/test/format/workspace 配置与脚本。扫描时已有 .git 和部分骨架，未把目录当空目录覆盖。

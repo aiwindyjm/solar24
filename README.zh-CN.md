@@ -39,11 +39,19 @@ pnpm demo:dev
 
 Demo 位于 [`docs/design/solar24-v5`](docs/design/solar24-v5/)，采用 React、TypeScript、Vite、Three.js 和 Web Audio，通过 Cloudflare 分发静态资源。浏览无需账号，不依赖后端。
 
+## How Solar24 Is Made · 制作过程
+
+从世界历法概念，到水墨山水、蝴蝶年轮、连续三维空间，再到可交互的节气介绍书，五版迭代逐步形成了当前 Demo。阅读、天文解释、节气生活与双语发布已经连成一条体验路径。
+
+[查看完整制作过程](docs/development-journey/README.md) · [V1–V5 设计演进](docs/development-journey/prototype-evolution.md) · [版本交付记录](docs/development/v5-demo-release.md)
+
+下一轮聚焦立春读者观察、生产内容核验与真机性能测量，见[当前路线图](docs/architecture/roadmap.md)。
+
 ## 项目与参与
 
 Solar24 从中国二十四节气出发，邀请不同地方的人分享对时间与自然的观察。文化、体验、设计先于技术。
 
-- [项目背景与原始概览](PROJECT.md)
+- [项目背景 · 历史概览](PROJECT.md)
 - [总体架构](docs/architecture/overview.md)
 - [制作过程](docs/development-journey/README.md)
 - [社区声音投稿](docs/community/music-contribution.md)

@@ -39,13 +39,21 @@ Open `http://127.0.0.1:5176/`. Build with `pnpm demo:build`, preview with `pnpm 
 
 The demo lives in [`docs/design/solar24-v5`](docs/design/solar24-v5/). It uses React, TypeScript, Vite, Three.js and Web Audio, hosted as static assets on Cloudflare. No backend or account is needed to explore it.
 
+## How Solar24 Is Made
+
+From a world-calendar concept to an ink landscape, then a butterfly year wheel, continuous 3D space and an interactive book: five iterations shaped the live demo. Reading, astronomy, seasonal participation and bilingual publishing now form one connected experience.
+
+[Follow the making process](docs/development-journey/README.en.md) · [Design evolution](docs/development-journey/prototype-evolution.md) · [Release record](docs/development/v5-demo-release.md)
+
+Next: reader observation with Lichun, production content review, and performance measurements on real devices. [Current roadmap](docs/architecture/roadmap.md).
+
 ## Project
 
 Solar24 is an open-source cultural expression project: China shares a story, and people everywhere can bring their own observations of time and nature. Culture, experience and design guide the technology.
 
-- [Project background and original overview](PROJECT.md)
+- [Project background · archived overview](PROJECT.md)
 - [Architecture](docs/architecture/overview.md)
-- [Development journey](docs/development-journey/README.md)
+- [Development journey](docs/development-journey/README.en.md)
 - [Community sound contributions](docs/community/music-contribution.md)
 - [Contributing](CONTRIBUTING.md)
 - [Deployment guide](docs/design/solar24-v5/DEPLOYMENT.md)

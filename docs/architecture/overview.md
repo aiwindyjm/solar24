@@ -46,6 +46,12 @@ Host → protocol；modules → module-runtime → protocol。禁止 modules 互
 
 每个模块使用相同 Host 单模块模式独立 dev/build，通过过滤运行契约测试。避免复制 24 套 Vite、React 和 CI。静态部署采用相对资源路径和 hash 路由，无服务器重写要求。
 
+## 已上线的共享 Demo
+
+第五版位于 `docs/design/solar24-v5/`，以独立 Vite 构建部署到 Cloudflare Workers Static Assets。React/Three.js 场景、HTML 阅读层、Web Audio 和本地引用快照构成同一静态站点。没有服务器端应用逻辑，也没有运行时知识库读取。
+
+`pnpm demo:build` 与生产 Host 的 `pnpm build` 使用不同输出目录。公开 Demo 验证体验，生产 Host 继续消费 modules/protocol；本轮没有新增共享包或修改模块审核门槛。[当前路线](roadmap.md)按立春先行安排后续接入。
+
 ## 制作过程与社区声音
 
 [Journey](../development-journey/README.md)引用研究/原型/实现，不复制生产内容。音乐真实投稿未来通过显式 PR 放本节气 `community/music/<id>.json`；没有作品时不建空目录。权威 schema 与审核门槛位于现有 protocol 包，校验脚本与现有 CI 消费；Host 当前不导入这些投稿，也不读取研究 Vault。详见 [Community Expression Protocol](../protocol/community-expression.md)。

@@ -2,7 +2,7 @@
 
 先解释中国的二十四节气，再邀请世界分享自己的声音、视觉和代码。你无需代表一个国家或社群，也无需专业背景。
 
-本阶段已建立音乐投稿指南、GitHub Issue Form、元数据 schema 和本地/PR 校验。没有收录作品、精选名单、在线投稿服务或正式音频。表单在合入 GitHub 默认分支后才会出现在 New issue 中；本地文件存在不表示线上已启用。
+音乐投稿指南、GitHub Issue Form、元数据 schema 和本地/PR 校验已随仓库发布。[音乐投稿入口](https://github.com/aiwindyjm/solar24/issues/new?template=music-contribution.yml)可登记想法与作品链接。V5 的声音是合成环境音；当前没有声称收录社区曲目或建立精选名单，也没有独立音频上传服务。
 
 | 方向              | 当前入口                                                                          |
 | ----------------- | --------------------------------------------------------------------------------- |
@@ -16,7 +16,7 @@
 
 ## Discussions 与 Issues 各做什么
 
-**GitHub Discussions**：一句话声音创意、理解节气、文化表达交流、寻找伙伴、发布征集主题。尚未确认仓库是否启用 Discussions，维护者可启用 Ideas / Cultural questions / Collaborations / Calls 等类别；本阶段不修改远程设置。
+**[GitHub Discussions](https://github.com/aiwindyjm/solar24/discussions)**：仓库已启用，可用于一句话声音创意、理解节气、文化表达交流和寻找伙伴。具体征集安排以维护者公告为准；本轮只核对已有入口，没有更改远程讨论设置。
 
 **GitHub Issues**：结构化音乐投稿、Bug、明确贡献任务、审核状态与补充信息。进入仓库 New issue → **🎵 Submit a Solar24 Seasonal Sound**；[表单源码](../../.github/ISSUE_TEMPLATE/music-contribution.yml)。没有音频也可选 Sound Idea 正式登记，避免 Discussions 未启用时无入口。
 

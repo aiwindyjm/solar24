@@ -34,7 +34,7 @@ TODO：科学解释与传统象征分开，明确概念、局限与来源。
 
 ## Experience
 
-当前为可运行的静态骨架，尚无完成的文化故事/交互。没有在线 Demo。
+本模块仍为生产 Host 的静态骨架。共享 V5 已提供[立春在线体验](https://solar24-demo.solar24.workers.dev/?lang=zh#lichun/seasons)，包括三种尺度、五类阅读和迎春参与；它的代码位于 `docs/design/solar24-v5/`，尚未迁入本模块。
 
 ## Global Expressions
 
@@ -64,4 +64,4 @@ pnpm --filter @solar24/module-lichun build
 
 ## Reference scope
 
-Prototype 表示挂载、导航、设置和销毁合同可运行，不代表立春文化内容已完成。[首个研究任务](../../knowledge-base/07_research/research-lichun-astronomy-plan.md) 尚未执行；下一阶段先证据后交互。
+Prototype 表示挂载、导航、设置和销毁合同可运行，不代表立春文化内容已完成。[首个研究任务](../../knowledge-base/07_research/research-lichun-astronomy-plan.md)保留初始化计划；当前共享 Demo 的选编依据见[引用快照](../../docs/design/solar24-v5/src/book-provenance.json)，生产模块接入按[当前路线](../../docs/architecture/roadmap.md)执行。

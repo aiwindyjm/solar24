@@ -26,7 +26,7 @@ Solar24 从中国二十四节气出发，邀请世界各地的人说说自己如
 3. 在本仓库 New issue 选择 **🎵 Submit a Solar24 Seasonal Sound**，回答下面的核心问题，填写许可和 AI 使用情况。
 4. 等待补充资料、社区交流和 Curator 审阅。通过检查或被接收，都不等于已发布或已精选。
 
-表单需合入 GitHub 默认分支才可使用。本仓库当前不提供独立上传页面。不会要求你把大 WAV 文件塞进 Issue 或普通 Git；支持 MP3、OGG、FLAC、WAV、M4A、WebM，供审听文件最多 50 MiB。优先压缩预览；大体积原始母带先保留，确有需要时与维护者协商授权存储。播放器页面链接也可提交，说明实际音频格式与时长；不知道体积/哈希可以写 unknown，审核会补核。
+[表单已在 GitHub 主分支提供](https://github.com/aiwindyjm/solar24/issues/new?template=music-contribution.yml)。本仓库当前不提供独立上传页面。不会要求你把大 WAV 文件塞进 Issue 或普通 Git；支持 MP3、OGG、FLAC、WAV、M4A、WebM，供审听文件最多 50 MiB。优先压缩预览；大体积原始母带先保留，确有需要时与维护者协商授权存储。播放器页面链接也可提交，说明实际音频格式与时长；不知道体积/哈希可以写 unknown，审核会补核。
 
 ## 最重要的说明
 

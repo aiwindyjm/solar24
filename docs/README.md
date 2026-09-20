@@ -1,6 +1,7 @@
 # Solar24 文档入口
 
-- [How Solar24 Is Made · Development Journey](development-journey/README.md) / [V1–V4 演进](development-journey/prototype-evolution.md)
+- [制作过程](development-journey/README.md) / [How Solar24 Is Made](development-journey/README.en.md) / [V1–V5 演进](development-journey/prototype-evolution.md)
+- [V5 Demo 交付](development/v5-demo-release.md) / [部署与验证](design/solar24-v5/DEPLOYMENT-VALIDATION.md)
 - [社区入口](community/README.md) / [音乐贡献](community/music-contribution.md) / [征集模板](community/music-call-template.md)
 - [Community Expression Protocol · Music](protocol/community-expression.md) / [音乐元数据 Schema](protocol/schemas/music-submission.schema.json)
 - [ADR](decisions/README.md) / [Commit Convention](development/commit-convention.md) / [Release Process](development/release-process.md)
