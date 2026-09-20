@@ -43,7 +43,7 @@ The demo lives in [`docs/design/solar24-v5`](docs/design/solar24-v5/). It uses R
 
 From a world-calendar concept to an ink landscape, then a butterfly year wheel, continuous 3D space and an interactive book: five iterations shaped the live demo. Reading, astronomy, seasonal participation and bilingual publishing now form one connected experience.
 
-[Follow the making process](docs/development-journey/README.en.md) · [Design evolution](docs/development-journey/prototype-evolution.md) · [Release record](docs/development/v5-demo-release.md)
+[Follow the making process](docs/development-journey/README.en.md) · [Design evolution](docs/development-journey/prototype-evolution.md) · [V0.1.0 public release](docs/releases/solar24-v0.1.0-demo.md) · [Release record](docs/development/v5-demo-release.md)
 
 Next: reader observation with Lichun, production content review, and performance measurements on real devices. [Current roadmap](docs/architecture/roadmap.md).
 
