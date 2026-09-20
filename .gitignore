@@ -35,3 +35,8 @@ knowledge-base/.obsidian.sync/
 knowledge-base/attachments/private/
 output/playwright/
 .playwright-cli/
+
+.wrangler/
+.tmp/
+output/playwright/
+.playwright-cli/

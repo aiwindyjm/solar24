@@ -1,0 +1,50 @@
+.reading-references {
+  margin-top: 22px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.reading-references summary {
+  cursor: pointer;
+  padding-block: 8px;
+}
+.reading-references ol {
+  padding-left: 22px;
+  margin: 14px 0;
+}
+.reading-references li {
+  padding-left: 4px;
+  margin-block: 16px;
+  overflow-wrap: anywhere;
+}
+.reading-references cite {
+  display: block;
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.8;
+}
+.reading-references .reference-publisher {
+  display: block;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+.reading-references small {
+  display: block;
+  font-size: 11px;
+  opacity: 0.75;
+}
+.reading-references .reference-originals {
+  margin-top: 18px;
+  border-top: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
+}
+.reading-references .reference-originals p {
+  font-size: 12px;
+  line-height: 1.8;
+}
+.reading-references a {
+  text-underline-offset: 4px;
+}
+.reading-references summary:focus-visible,
+.reading-references a:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 4px;
+}

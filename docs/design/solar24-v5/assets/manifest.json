@@ -1,0 +1,517 @@
+{
+  "source": "24节气图标.png",
+  "sourceSha256": "c9d2af13bf002b20d203c5280a289070595af07143861a580c5de4c58b25eca9",
+  "rights": "User supplied for local prototype; public redistribution permission unconfirmed.",
+  "mapping": "Row-major assignment inherited from V3; original has no labels, pending owner confirmation.",
+  "processing": "Per-column white gutter detection; neutral background suppression; white matte decontamination; centered 600px canvas.",
+  "assets": [
+    {
+      "slug": "lichun",
+      "sourceRect": [
+        0,
+        0,
+        640,
+        600
+      ],
+      "contentBox": [
+        42,
+        100,
+        590,
+        598
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "lichun-mask.png",
+      "file": "lichun.webp"
+    },
+    {
+      "slug": "yushui",
+      "sourceRect": [
+        640,
+        0,
+        640,
+        605
+      ],
+      "contentBox": [
+        42,
+        99,
+        592,
+        603
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "yushui-mask.png",
+      "file": "yushui.webp"
+    },
+    {
+      "slug": "jingzhe",
+      "sourceRect": [
+        1280,
+        0,
+        640,
+        597
+      ],
+      "contentBox": [
+        41,
+        99,
+        588,
+        595
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "jingzhe-mask.png",
+      "file": "jingzhe.webp"
+    },
+    {
+      "slug": "chunfen",
+      "sourceRect": [
+        1920,
+        0,
+        640,
+        599
+      ],
+      "contentBox": [
+        39,
+        102,
+        590,
+        597
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "chunfen-mask.png",
+      "file": "chunfen.webp"
+    },
+    {
+      "slug": "qingming",
+      "sourceRect": [
+        2560,
+        0,
+        640,
+        606
+      ],
+      "contentBox": [
+        39,
+        94,
+        590,
+        604
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "qingming-mask.png",
+      "file": "qingming.webp"
+    },
+    {
+      "slug": "guyu",
+      "sourceRect": [
+        3200,
+        0,
+        640,
+        606
+      ],
+      "contentBox": [
+        39,
+        100,
+        588,
+        604
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "guyu-mask.png",
+      "file": "guyu.webp"
+    },
+    {
+      "slug": "lixia",
+      "sourceRect": [
+        0,
+        600,
+        640,
+        524
+      ],
+      "contentBox": [
+        41,
+        39,
+        589,
+        522
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "lixia-mask.png",
+      "file": "lixia.webp"
+    },
+    {
+      "slug": "xiaoman",
+      "sourceRect": [
+        640,
+        605,
+        640,
+        520
+      ],
+      "contentBox": [
+        41,
+        29,
+        590,
+        518
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "xiaoman-mask.png",
+      "file": "xiaoman.webp"
+    },
+    {
+      "slug": "mangzhong",
+      "sourceRect": [
+        1280,
+        597,
+        640,
+        532
+      ],
+      "contentBox": [
+        41,
+        43,
+        588,
+        530
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "mangzhong-mask.png",
+      "file": "mangzhong.webp"
+    },
+    {
+      "slug": "xiazhi",
+      "sourceRect": [
+        1920,
+        599,
+        640,
+        526
+      ],
+      "contentBox": [
+        40,
+        38,
+        592,
+        524
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "xiazhi-mask.png",
+      "file": "xiazhi.webp"
+    },
+    {
+      "slug": "xiaoshu",
+      "sourceRect": [
+        2560,
+        606,
+        640,
+        524
+      ],
+      "contentBox": [
+        38,
+        27,
+        589,
+        522
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "xiaoshu-mask.png",
+      "file": "xiaoshu.webp"
+    },
+    {
+      "slug": "dashu",
+      "sourceRect": [
+        3200,
+        606,
+        640,
+        527
+      ],
+      "contentBox": [
+        34,
+        31,
+        587,
+        525
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "dashu-mask.png",
+      "file": "dashu.webp"
+    },
+    {
+      "slug": "liqiu",
+      "sourceRect": [
+        0,
+        1124,
+        640,
+        517
+      ],
+      "contentBox": [
+        39,
+        44,
+        597,
+        515
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "liqiu-mask.png",
+      "file": "liqiu.webp"
+    },
+    {
+      "slug": "chushu",
+      "sourceRect": [
+        640,
+        1125,
+        640,
+        522
+      ],
+      "contentBox": [
+        40,
+        2,
+        591,
+        520
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "chushu-mask.png",
+      "file": "chushu.webp"
+    },
+    {
+      "slug": "bailu",
+      "sourceRect": [
+        1280,
+        1129,
+        640,
+        517
+      ],
+      "contentBox": [
+        41,
+        32,
+        590,
+        515
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "bailu-mask.png",
+      "file": "bailu.webp"
+    },
+    {
+      "slug": "qiufen",
+      "sourceRect": [
+        1920,
+        1125,
+        640,
+        515
+      ],
+      "contentBox": [
+        37,
+        2,
+        591,
+        513
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "qiufen-mask.png",
+      "file": "qiufen.webp"
+    },
+    {
+      "slug": "hanlu",
+      "sourceRect": [
+        2560,
+        1130,
+        640,
+        516
+      ],
+      "contentBox": [
+        37,
+        40,
+        587,
+        513
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "hanlu-mask.png",
+      "file": "hanlu.webp"
+    },
+    {
+      "slug": "shuangjiang",
+      "sourceRect": [
+        3200,
+        1133,
+        640,
+        515
+      ],
+      "contentBox": [
+        35,
+        2,
+        585,
+        513
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "shuangjiang-mask.png",
+      "file": "shuangjiang.webp"
+    },
+    {
+      "slug": "lidong",
+      "sourceRect": [
+        0,
+        1641,
+        640,
+        519
+      ],
+      "contentBox": [
+        41,
+        4,
+        588,
+        505
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "lidong-mask.png",
+      "file": "lidong.webp"
+    },
+    {
+      "slug": "xiaoxue",
+      "sourceRect": [
+        640,
+        1647,
+        640,
+        513
+      ],
+      "contentBox": [
+        40,
+        27,
+        588,
+        496
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "xiaoxue-mask.png",
+      "file": "xiaoxue.webp"
+    },
+    {
+      "slug": "daxue",
+      "sourceRect": [
+        1280,
+        1646,
+        640,
+        514
+      ],
+      "contentBox": [
+        42,
+        29,
+        588,
+        496
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "daxue-mask.png",
+      "file": "daxue.webp"
+    },
+    {
+      "slug": "dongzhi",
+      "sourceRect": [
+        1920,
+        1640,
+        640,
+        520
+      ],
+      "contentBox": [
+        39,
+        4,
+        588,
+        505
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "dongzhi-mask.png",
+      "file": "dongzhi.webp"
+    },
+    {
+      "slug": "xiaohan",
+      "sourceRect": [
+        2560,
+        1646,
+        640,
+        514
+      ],
+      "contentBox": [
+        38,
+        23,
+        586,
+        498
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "xiaohan-mask.png",
+      "file": "xiaohan.webp"
+    },
+    {
+      "slug": "dahan",
+      "sourceRect": [
+        3200,
+        1648,
+        640,
+        512
+      ],
+      "contentBox": [
+        37,
+        23,
+        584,
+        497
+      ],
+      "output": [
+        600,
+        600
+      ],
+      "mask": "dahan-mask.png",
+      "file": "dahan.webp"
+    }
+  ],
+  "publication": {
+    "date": "2026-09-20",
+    "scope": "Public Solar24 V5 demo and repository walkthroughs explicitly requested by project owner in this session. No general reuse license is granted or inferred."
+  }
+}

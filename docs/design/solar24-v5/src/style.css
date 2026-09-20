@@ -1,0 +1,2369 @@
+@property --sky {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #edf0e5;
+}
+@property --mist {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #bed3bc;
+}
+@property --accent {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #3d6550;
+}
+@property --water {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #c3d9da;
+}
+@property --light {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #e7d5a7;
+}
+:root {
+  font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  color: #3d6550;
+  font-synthesis: none;
+  font-size: 14px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+button {
+  color: inherit;
+  font: inherit;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  min-height: 44px;
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+.world {
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: var(--sky);
+  color: var(--accent);
+  transition:
+    --sky 1.4s,
+    --mist 1.4s,
+    --accent 1.4s,
+    --water 1.4s,
+    --light 1.4s,
+    background 1.8s,
+    color 1.8s;
+  overflow: clip;
+}
+.world.view-cosmos {
+  background: #162c31;
+  color: #d9decb;
+}
+.skip {
+  position: fixed;
+  left: 20px;
+  top: -80px;
+  padding: 12px;
+  background: var(--sky);
+  z-index: 30;
+}
+.skip:focus {
+  top: 10px;
+}
+.skip:not(:focus) {
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.sr-only {
+  position: absolute;
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+header {
+  height: 86px;
+  margin: 0 4.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 19%, transparent);
+  z-index: 10;
+}
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  text-align: left;
+  padding: 0;
+}
+.seal {
+  font:
+    17px/1 'KaiTi',
+    'STKaiti',
+    serif;
+  color: #f6efe1;
+  background: #965a47;
+  border: 3px double #f6efe1;
+  width: 34px;
+  height: 42px;
+  text-align: center;
+  padding-top: 2px;
+}
+.brand b {
+  font:
+    25px 'KaiTi',
+    'STKaiti',
+    serif;
+  letter-spacing: 5px;
+}
+.brand small {
+  display: block;
+  font:
+    9px Georgia,
+    serif;
+  letter-spacing: 4px;
+  margin-top: 6px;
+}
+nav {
+  display: flex;
+  gap: 34px;
+}
+nav button {
+  font:
+    18px 'KaiTi',
+    'STKaiti',
+    serif;
+  letter-spacing: 3px;
+  position: relative;
+  padding: 12px 3px;
+}
+nav small {
+  font:
+    9px Georgia,
+    serif;
+  letter-spacing: 1px;
+  margin-right: 8px;
+  opacity: 0.55;
+}
+nav button[aria-pressed='true']:after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background: currentColor;
+  border-radius: 50%;
+}
+.settings {
+  display: flex;
+  gap: 7px;
+}
+.settings button {
+  min-width: 34px;
+  font-size: 13px;
+}
+.hero {
+  position: relative;
+  flex: 1;
+  min-height: 520px;
+  height: calc(100svh - 260px);
+  isolation: isolate;
+}
+.render-surface,
+.fallback-scene {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  overflow: hidden;
+}
+.render-surface canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.fallback-scene {
+  z-index: -4;
+  background: radial-gradient(ellipse at 75% 30%, var(--light), transparent 55%), var(--sky);
+}
+.fallback-scene svg {
+  width: 100%;
+  height: 100%;
+}
+.view-cosmos .fallback-scene {
+  background: #162c31;
+}
+.view-cosmos .fallback-scene svg {
+  opacity: 0.12;
+}
+.fallback-message {
+  position: absolute;
+  left: 34%;
+  right: 28%;
+  top: 40%;
+  text-align: center;
+  line-height: 2;
+}
+.fallback-message b {
+  font:
+    24px 'KaiTi',
+    serif;
+}
+.fallback-message p {
+  font-size: 13px;
+}
+.paper {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath filter='url(%23n)' opacity='.6' d='M0 0h170v170H0z'/%3E%3C/svg%3E");
+}
+.chapter {
+  position: absolute;
+  top: 22px;
+  left: 5%;
+  right: 5%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+.poem {
+  position: absolute;
+  top: 26%;
+  left: 5.3%;
+  width: 24%;
+  z-index: 2;
+  pointer-events: none;
+  transition:
+    opacity 0.8s,
+    transform 1.5s;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  line-height: 1.8;
+  opacity: 0.75;
+}
+.poem h1 {
+  font:
+    clamp(28px, 2.6vw, 40px)/1.7 'KaiTi',
+    'STKaiti',
+    'SimSun',
+    serif;
+  letter-spacing: 4px;
+  white-space: pre-line;
+  font-weight: 400;
+  margin: 20px 0 24px;
+  word-break: keep-all;
+}
+.poem p {
+  font-size: 11px;
+  letter-spacing: 2px;
+  line-height: 2;
+}
+.poem-stamp {
+  display: inline-block;
+  writing-mode: vertical-rl;
+  font:
+    13px 'KaiTi',
+    serif;
+  color: #995c48;
+  border: 1px solid #995c48;
+  padding: 6px 4px;
+  letter-spacing: 4px;
+  margin-top: 20px;
+}
+.wheel-layer {
+  position: absolute;
+  left: 51%;
+  top: 47%;
+  width: min(58vw, max(500px, calc(100svh - 285px)), 760px);
+  transform: translate(-50%, -50%) scale(0.9);
+  opacity: 0;
+  transition:
+    opacity 0.8s,
+    transform 1.8s;
+  pointer-events: none;
+}
+.wheel-layer.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+.dial {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+}
+.dial > svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.butterfly {
+  position: absolute;
+  width: 44%;
+  left: 28%;
+  top: 25%;
+  pointer-events: none;
+  animation: appear 1.1s ease both;
+}
+.butterfly img {
+  width: 100%;
+  height: auto;
+  display: block;
+  animation: breathe 10s ease-in-out infinite;
+}
+.longitude {
+  position: absolute;
+  top: 67%;
+  left: 22%;
+  right: 22%;
+  text-align: center;
+  pointer-events: none;
+}
+.longitude small {
+  font:
+    8px Georgia,
+    serif;
+  letter-spacing: 2px;
+  display: block;
+}
+.longitude b {
+  font:
+    25px Georgia,
+    serif;
+  display: block;
+  margin: 5px 0;
+}
+.longitude span {
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+.term-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font:
+    17px/1.2 'KaiTi',
+    'STKaiti',
+    'SimSun',
+    serif;
+  min-width: 50px;
+  padding: 0;
+  gap: 0;
+}
+.term-node img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  transition: transform 0.4s;
+  opacity: 0.8;
+}
+.term-node[aria-pressed='true'] img,
+.term-node:hover img {
+  transform: scale(1.2);
+  opacity: 1;
+}
+.term-node[aria-pressed='true'] {
+  font-weight: 700;
+}
+.term-node[aria-pressed='true']:after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  width: 4px;
+  height: 4px;
+  background: #9b6147;
+  border-radius: 50%;
+}
+.term-title {
+  position: absolute;
+  right: 5.5%;
+  top: 24%;
+  width: 150px;
+  text-align: center;
+  pointer-events: none;
+  transition: opacity 1s;
+}
+.term-title > span {
+  font:
+    12px Georgia,
+    serif;
+  letter-spacing: 3px;
+}
+.term-title h2 {
+  font:
+    65px/1.2 'KaiTi',
+    'STKaiti',
+    'SimSun',
+    serif;
+  font-weight: 400;
+  writing-mode: vertical-rl;
+  letter-spacing: 18px;
+  margin: 18px auto;
+}
+.term-title p {
+  font:
+    italic 13px/1.6 Georgia,
+    serif;
+  margin: 12px auto;
+  max-width: 150px;
+}
+.red-seal {
+  font:
+    20px 'KaiTi',
+    serif;
+  display: inline-block;
+  color: #985642;
+  border: 1px solid;
+  padding: 1px 3px;
+  margin-top: 10px;
+}
+.dial-tools {
+  position: absolute;
+  bottom: 5px;
+  left: 30%;
+  right: 26%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  font-size: 10px;
+}
+.dial-tools small {
+  font-size: 9px;
+  opacity: 0.7;
+  text-align: center;
+  line-height: 1.6;
+}
+.dial-tools button {
+  font-size: 11px;
+  white-space: nowrap;
+}
+.cosmos-interaction {
+  position: absolute;
+  left: 29%;
+  right: 21%;
+  top: 11%;
+  bottom: 22%;
+  pointer-events: none;
+  touch-action: none;
+  border-radius: 50%;
+  z-index: 1;
+}
+.view-cosmos .cosmos-interaction {
+  pointer-events: auto;
+  cursor: grab;
+}
+.view-cosmos .cosmos-interaction:active {
+  cursor: grabbing;
+}
+.cosmos-tools {
+  position: absolute;
+  left: 34%;
+  right: 28%;
+  bottom: 12px;
+  text-align: center;
+  z-index: 3;
+}
+.lens-switch {
+  display: inline-flex;
+  border: 1px solid #bbc3b14a;
+  padding: 3px;
+  gap: 3px;
+}
+.lens-switch button {
+  font:
+    14px 'KaiTi',
+    serif;
+  min-width: 90px;
+  letter-spacing: 2px;
+}
+.lens-switch button:last-child {
+  min-width: 40px;
+}
+.lens-switch button[aria-pressed='true'] {
+  background: #ced8c71c;
+}
+.cosmos-tools p {
+  font-size: 11px;
+  letter-spacing: 1px;
+  line-height: 2;
+  opacity: 0.8;
+  margin: 9px 0;
+}
+.cosmos-tools p span {
+  display: block;
+  font-size: 10px;
+  opacity: 0.7;
+}
+.view-life .poem {
+  top: 17%;
+  width: 27%;
+}
+.view-life .term-title {
+  opacity: 0.55;
+}
+.hotspots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+}
+.hotspots > button {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 4px;
+  background: transparent;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  font:
+    16px 'KaiTi',
+    'STKaiti',
+    serif;
+  text-shadow:
+    0 1px 8px var(--sky),
+    0 0 16px var(--sky);
+}
+.hotspots i {
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+  border-radius: 50%;
+}
+.hotspots small {
+  font:
+    10px Georgia,
+    serif;
+  opacity: 0.7;
+}
+.hotspots > button[aria-pressed='true'] {
+  border-bottom-color: var(--accent);
+  font-weight: 700;
+}
+.static-hotspots > button:nth-child(1) {
+  left: 36%;
+  top: 65%;
+}
+.static-hotspots > button:nth-child(2) {
+  left: 52%;
+  top: 54%;
+}
+.static-hotspots > button:nth-child(3) {
+  left: 68%;
+  top: 48%;
+}
+.life-invitation {
+  position: absolute;
+  left: 34%;
+  right: 24%;
+  bottom: 12px;
+  text-align: center;
+  pointer-events: none;
+}
+.life-invitation span {
+  font:
+    14px 'KaiTi',
+    serif;
+  letter-spacing: 3px;
+}
+.life-invitation p {
+  font-size: 10px;
+  line-height: 1.8;
+  opacity: 0.7;
+}
+.reading-rail {
+  position: absolute;
+  z-index: 8;
+  right: 4.5%;
+  top: 145px;
+  width: clamp(420px, 38vw, 540px);
+  max-height: calc(100svh - 335px);
+  overflow: auto;
+  padding: 34px 38px;
+  background: color-mix(in srgb, var(--sky) 46%, transparent);
+  -webkit-backdrop-filter: blur(10px) saturate(85%);
+  backdrop-filter: blur(10px) saturate(85%);
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--sky) 55%, transparent);
+  border-top-color: color-mix(in srgb, var(--accent) 16%, transparent);
+  border-radius: 3px;
+  box-shadow:
+    0 12px 48px #213c3309,
+    inset 0 1px 0 #ffffff30;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--accent) 30%, transparent) transparent;
+  animation: reading-in 0.7s backwards;
+  scroll-margin-top: 24px;
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .reading-rail {
+    background: color-mix(in srgb, var(--sky) 92%, transparent);
+  }
+}
+.view-cosmos .reading-rail {
+  background: rgb(23 46 52 / 68%);
+  color: #d9decb;
+  border-color: rgb(217 222 203 / 14%);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .view-cosmos .reading-rail {
+    background: rgb(23 46 52 / 94%);
+  }
+}
+.reading-close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 24px;
+  min-width: 40px;
+}
+.reading-rail h3 {
+  font:
+    26px/1.55 'KaiTi',
+    'STKaiti',
+    'SimSun',
+    serif;
+  font-weight: 400;
+  margin: 25px 0 18px;
+}
+.reading-rail p {
+  font-size: 14px;
+  line-height: 2;
+}
+.reading-rail details {
+  border-top: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  margin-top: 24px;
+  padding-top: 12px;
+}
+.reading-rail summary {
+  cursor: pointer;
+  font-size: 11px;
+  line-height: 2;
+}
+.reading-rail details p,
+.reading-rail details a {
+  font-size: 11px;
+  line-height: 1.8;
+}
+.note-id {
+  overflow-wrap: anywhere;
+}
+.reading-rail .book-intro {
+  font-size: 13px;
+  line-height: 1.9;
+  margin-bottom: 25px;
+}
+.reading-rail .book-chapter {
+  margin-top: 0;
+  padding-top: 0;
+  scroll-margin-top: 12px;
+}
+.reading-rail .book-chapter > summary {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  list-style: none;
+  padding: 17px 0;
+  font-size: 16px;
+}
+.book-chapter > summary::-webkit-details-marker {
+  display: none;
+}
+.book-chapter > summary b {
+  font-weight: 400;
+}
+.book-chapter > summary small {
+  display: block;
+  font-size: 10px;
+  opacity: 0.7;
+  line-height: 1.5;
+}
+.chapter-number {
+  font-size: 11px;
+  opacity: 0.55;
+  font-variant-numeric: tabular-nums;
+}
+.chapter-toggle {
+  margin-left: auto;
+  font-size: 20px;
+  font-weight: 300;
+}
+.reading-rail .chapter-body > p {
+  font-size: 14px;
+  line-height: 1.95;
+  margin: 3px 0 18px;
+}
+.reading-rail .chapter-body > .chapter-context {
+  font-size: 12px;
+  opacity: 0.8;
+}
+.reading-rail .chapter-provenance {
+  border-top: 0;
+  margin: 0 0 20px;
+  padding: 0;
+}
+.reading-rail .chapter-provenance > summary {
+  font-size: 10px;
+  opacity: 0.8;
+}
+.source-note {
+  border-left: 1px solid currentColor;
+  padding-left: 10px;
+  margin: 16px 0;
+}
+.source-note b {
+  font-size: 11px;
+  font-weight: 400;
+}
+.source-note small {
+  font-size: 9px;
+}
+.reading-rail .source-note p {
+  margin: 6px 0;
+}
+.chapter-provenance ul {
+  padding-left: 18px;
+}
+.chapter-provenance li {
+  margin: 8px 0;
+}
+.date-trigger > b {
+  font-variant-numeric: tabular-nums;
+}
+.calendar-heading > b {
+  white-space: nowrap;
+  font-size: 22px;
+}
+.calendar-heading > button:not(:last-child) {
+  font-size: 11px;
+  white-space: nowrap;
+  padding: 0 10px;
+}
+.reading-rail .eyebrow {
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+.swatches {
+  display: flex;
+  gap: 5px;
+  margin: 25px 0;
+}
+.swatches span {
+  height: 30px;
+  flex: 1;
+  border: 1px solid #45614f20;
+}
+.has-reading .term-title {
+  opacity: 0;
+}
+.culture-strip {
+  position: relative;
+  z-index: 7;
+  margin: 0 5%;
+  height: 75px;
+  display: grid;
+  grid-template-columns: 100px repeat(5, 1fr);
+  align-items: center;
+  border-block: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  background: color-mix(in srgb, var(--sky) 20%, transparent);
+}
+.culture-strip > span {
+  font:
+    13px 'KaiTi',
+    serif;
+  letter-spacing: 3px;
+}
+.culture-strip button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-left: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+}
+.culture-strip b {
+  font:
+    18px 'KaiTi',
+    serif;
+  white-space: nowrap;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+.culture-strip i {
+  font-style: normal;
+  font-size: 23px;
+  opacity: 0.6;
+}
+.culture-strip small {
+  font:
+    10px Georgia,
+    serif;
+  opacity: 0.75;
+}
+.culture-strip button > span {
+  margin-left: auto;
+}
+.culture-strip button[aria-pressed='true'] {
+  background: color-mix(in srgb, currentColor 7%, transparent);
+}
+.time-dock {
+  margin: 0 5%;
+  height: 74px;
+  display: grid;
+  grid-template-columns: 185px 1fr 150px;
+  gap: 30px;
+  align-items: center;
+  position: relative;
+  z-index: 7;
+}
+.date-trigger {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+}
+.date-trigger b {
+  font:
+    36px Georgia,
+    serif;
+}
+.date-trigger > span {
+  font:
+    11px Georgia,
+    serif;
+  letter-spacing: 2px;
+}
+.date-trigger small {
+  display: block;
+  font-size: 10px;
+  margin-top: 8px;
+  letter-spacing: 1px;
+}
+.month-ruler {
+  display: flex;
+  justify-content: space-between;
+}
+.month-ruler button {
+  font:
+    11px Georgia,
+    serif;
+  min-width: 32px;
+  opacity: 0.7;
+}
+.month-ruler i {
+  display: block;
+  width: 1px;
+  height: 6px;
+  background: currentColor;
+  margin: 8px auto 0;
+}
+.month-ruler button[aria-pressed='true'] {
+  opacity: 1;
+  font-weight: bold;
+}
+.month-ruler button[aria-pressed='true'] i {
+  height: 11px;
+  background: #9b6147;
+}
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.stepper button {
+  font-size: 22px;
+  min-width: 44px;
+}
+.stepper span {
+  font:
+    16px 'KaiTi',
+    serif;
+  letter-spacing: 3px;
+}
+.colophon {
+  margin: 0 5%;
+  min-height: 25px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  font-size: 9px;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  padding-bottom: 5px;
+}
+.term-ribbon {
+  display: none;
+}
+.calendar {
+  position: absolute;
+  left: 5%;
+  bottom: 126px;
+  width: 340px;
+  padding: 22px;
+  background: var(--sky);
+  color: var(--accent);
+  border: 1px solid var(--mist);
+  box-shadow: 0 12px 60px #18352d26;
+  z-index: 14;
+}
+.calendar-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.calendar-heading b {
+  font:
+    24px Georgia,
+    'KaiTi',
+    serif;
+}
+.calendar-heading button {
+  font-size: 26px;
+  min-width: 44px;
+}
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.calendar-grid small {
+  text-align: center;
+  font-size: 11px;
+  padding: 13px 0;
+}
+.calendar-grid button {
+  font:
+    14px Georgia,
+    serif;
+  min-height: 43px;
+}
+.calendar-grid button[aria-pressed='true'] {
+  background: var(--accent);
+  color: var(--sky);
+}
+.calendar p {
+  font-size: 11px;
+  line-height: 1.8;
+}
+.english .poem h1 {
+  font:
+    30px/1.5 Georgia,
+    serif;
+  letter-spacing: 0;
+}
+.english .culture-strip b {
+  font:
+    12px Georgia,
+    serif;
+  letter-spacing: 0;
+}
+.english .culture-strip small {
+  display: none;
+}
+@keyframes breathe {
+  50% {
+    transform: translateY(-5px);
+  }
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes reading-in {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.still * {
+  animation-play-state: paused !important;
+  transition: none !important;
+}
+.still .butterfly,
+.still .reading-rail {
+  animation: none;
+}
+@media (min-width: 701px) and (max-height: 800px) {
+  header {
+    height: 74px;
+  }
+  .hero {
+    height: calc(100svh - 248px);
+    min-height: 472px;
+  }
+  .wheel-layer {
+    width: 470px;
+    top: 44%;
+  }
+  .term-node {
+    font-size: 15px;
+  }
+  .term-node img {
+    width: 28px;
+    height: 28px;
+  }
+  .term-title h2 {
+    font-size: 55px;
+  }
+  .longitude {
+    top: 66%;
+  }
+  .longitude b {
+    font-size: 21px;
+  }
+  .dial-tools {
+    bottom: 0;
+  }
+  .poem h1 {
+    font-size: 29px;
+  }
+  .poem-stamp {
+    margin-top: 5px;
+  }
+  .reading-rail {
+    top: 108px;
+    max-height: 400px;
+  }
+}
+@media (max-width: 1100px) {
+  nav {
+    gap: 15px;
+  }
+  nav small {
+    display: none;
+  }
+  .brand b {
+    font-size: 22px;
+  }
+  .culture-strip {
+    grid-template-columns: 70px repeat(5, 1fr);
+  }
+  .culture-strip small {
+    display: none;
+  }
+  .culture-strip button {
+    padding: 10px;
+    gap: 8px;
+  }
+  .term-title {
+    right: 3%;
+    width: 110px;
+  }
+  .term-title h2 {
+    font-size: 55px;
+  }
+  .poem {
+    width: 23%;
+    left: 4%;
+  }
+  .poem h1 {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+  .poem p {
+    font-size: 10px;
+  }
+  .wheel-layer {
+    width: 60vw;
+  }
+  .reading-rail {
+    width: clamp(370px, 43vw, 465px);
+    right: 3%;
+    padding: 30px;
+  }
+  .has-reading .poem {
+    opacity: 0.25;
+  }
+}
+@media (max-width: 700px) {
+  header {
+    height: 117px;
+    margin: 0 6%;
+    gap: 8px;
+    align-items: flex-start;
+    padding-top: 18px;
+    position: relative;
+    flex-wrap: wrap;
+  }
+  .brand b {
+    font-size: 19px;
+    letter-spacing: 3px;
+  }
+  .brand small {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+  .seal {
+    width: 28px;
+    height: 35px;
+    font-size: 14px;
+  }
+  .settings {
+    margin-left: auto;
+    gap: 3px;
+  }
+  .settings button {
+    min-width: 30px;
+  }
+  .brand {
+    gap: 8px;
+  }
+  .brand button {
+    min-height: 36px;
+  }
+  nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    gap: 28px;
+  }
+  nav button {
+    font-size: 16px;
+    letter-spacing: 2px;
+    min-height: 40px;
+    padding: 8px 0;
+  }
+  nav small {
+    display: inline;
+    font-size: 8px;
+    margin-right: 5px;
+  }
+  .hero {
+    height: 705px;
+    min-height: 705px;
+    flex: none;
+  }
+  .chapter {
+    top: 20px;
+    left: 7%;
+    right: 7%;
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+  .poem,
+  .view-life .poem {
+    top: 56px;
+    left: 7%;
+    width: 86%;
+  }
+  .eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+  .poem h1 {
+    font-size: 31px;
+    letter-spacing: 4px;
+    line-height: 1.6;
+    margin: 12px 0 13px;
+  }
+  .poem p {
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+  .poem-stamp {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    font-size: 11px;
+    margin: 0;
+  }
+  .english .poem h1 {
+    font-size: 27px;
+    max-width: 270px;
+    line-height: 1.4;
+  }
+  .wheel-layer {
+    top: 55%;
+    width: 108vw;
+    max-width: 480px;
+    left: 50%;
+  }
+  .term-node {
+    display: none;
+  }
+  .butterfly {
+    width: 53%;
+    left: 23.5%;
+    top: 23%;
+  }
+  .longitude {
+    top: 66%;
+    left: 20%;
+    right: 20%;
+  }
+  .longitude small {
+    font-size: 7px;
+  }
+  .longitude b {
+    font-size: 21px;
+  }
+  .longitude span {
+    font-size: 9px;
+  }
+  .term-title {
+    top: auto;
+    bottom: 58px;
+    left: 7%;
+    right: 7%;
+    width: auto;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 14px;
+  }
+  .term-title > span {
+    font-size: 10px;
+  }
+  .term-title h2 {
+    font-size: 40px;
+    writing-mode: horizontal-tb;
+    letter-spacing: 5px;
+    margin: 0;
+  }
+  .term-title p {
+    font-size: 11px;
+    margin: 0;
+    max-width: 140px;
+  }
+  .red-seal {
+    display: none;
+  }
+  .dial-tools {
+    left: 7%;
+    right: 7%;
+    bottom: 0;
+    gap: 8px;
+  }
+  .dial-tools small {
+    display: none;
+  }
+  .dial-tools button {
+    font-size: 11px;
+  }
+  .cosmos-interaction {
+    top: 32%;
+    left: 7%;
+    right: 7%;
+    bottom: 24%;
+    border-radius: 20%;
+    touch-action: none;
+  }
+  .cosmos-tools {
+    left: 6%;
+    right: 6%;
+    bottom: 70px;
+  }
+  .lens-switch button {
+    font-size: 13px;
+    min-width: 90px;
+  }
+  .cosmos-tools p {
+    font-size: 10px;
+  }
+  .cosmos-tools p span {
+    font-size: 9px;
+  }
+  .view-cosmos .term-title {
+    bottom: 12px;
+  }
+  .view-cosmos .hero {
+    height: 750px;
+  }
+  .view-life .hero {
+    height: 790px;
+  }
+  .view-life .term-title {
+    bottom: 76px;
+    opacity: 0.8;
+  }
+  .life-invitation {
+    left: 7%;
+    right: 7%;
+    bottom: 10px;
+  }
+  .life-invitation span {
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+  .life-invitation p {
+    font-size: 10px;
+  }
+  .hotspots > button {
+    font-size: 12px;
+    padding: 6px 8px;
+    gap: 5px;
+    min-height: 44px;
+  }
+  .hotspots small {
+    display: none;
+  }
+  .hotspots i {
+    width: 4px;
+    height: 4px;
+  }
+  .reading-rail {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 0 4% 22px;
+    width: auto;
+    max-height: none;
+    padding: 28px 24px;
+    box-shadow: none;
+    z-index: 8;
+    animation: none;
+  }
+  .reading-rail h3 {
+    font-size: 25px;
+  }
+  .reading-rail p {
+    font-size: 14px;
+  }
+  .has-reading .term-title {
+    opacity: 0.7;
+  }
+  .has-reading .poem {
+    opacity: 1;
+  }
+  .term-ribbon {
+    display: flex;
+    gap: 12px;
+    overflow: auto;
+    padding: 8px 6% 14px;
+    scrollbar-width: thin;
+    position: relative;
+    z-index: 7;
+  }
+  .term-ribbon button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 49px;
+    font:
+      14px 'KaiTi',
+      serif;
+    padding: 0 2px 6px;
+    gap: 2px;
+    border-bottom: 1px solid transparent;
+  }
+  .term-ribbon button[aria-pressed='true'] {
+    border-color: currentColor;
+  }
+  .term-ribbon img {
+    object-fit: contain;
+    width: 38px;
+    height: 38px;
+  }
+  .culture-strip {
+    height: 77px;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 0 6%;
+  }
+  .culture-strip > span {
+    display: none;
+  }
+  .culture-strip button {
+    flex-direction: column;
+    gap: 2px;
+    border: 0;
+    padding: 5px;
+  }
+  .culture-strip b {
+    font-size: 15px;
+  }
+  .culture-strip button > span {
+    display: none;
+  }
+  .culture-strip i {
+    font-size: 22px;
+  }
+  .time-dock {
+    margin: 0 7%;
+    height: 130px;
+    grid-template-columns: 1fr 140px;
+    gap: 0;
+  }
+  .date-trigger {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .date-trigger b {
+    font-size: 32px;
+  }
+  .date-trigger > span {
+    font-size: 10px;
+  }
+  .stepper {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  .month-ruler {
+    grid-row: 2;
+    grid-column: 1/3;
+  }
+  .month-ruler button {
+    min-width: 0;
+    flex: 1;
+    font-size: 10px;
+  }
+  .colophon {
+    display: block;
+    margin: 0 7%;
+    font-size: 8px;
+    line-height: 2;
+    padding: 8px 0 13px;
+  }
+  .colophon span {
+    display: block;
+  }
+  .calendar {
+    left: 5%;
+    right: 5%;
+    width: auto;
+    bottom: 190px;
+    padding: 18px;
+  }
+  .calendar-grid button {
+    min-height: 44px;
+  }
+  .fallback-message {
+    left: 12%;
+    right: 12%;
+    top: 43%;
+  }
+  .fallback-message b {
+    font-size: 22px;
+  }
+  .static-hotspots > button:nth-child(1) {
+    left: 22%;
+    top: 55%;
+  }
+  .static-hotspots > button:nth-child(2) {
+    left: 50%;
+    top: 62%;
+  }
+  .static-hotspots > button:nth-child(3) {
+    left: 75%;
+    top: 50%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* V5: locally hosted, licensed typefaces; English and Chinese have independent choices. */
+@font-face {
+  font-family: 'Solar24 Reading';
+  src: url('../assets/fonts/LXGWWenKai-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Solar24 Seal';
+  src: url('../assets/fonts/LXGWSeal-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Solar24 Brush';
+  src: url('../assets/fonts/MaShanZheng-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('../assets/fonts/LibreBaskerville[wght].woff2') format('woff2');
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('../assets/fonts/CormorantGaramond[wght].woff2') format('woff2');
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  src: url('../assets/fonts/SourceSans3[wght].woff2') format('woff2');
+  font-weight: 200 900;
+  font-display: swap;
+}
+.font-baskerville {
+  --page-font: 'Libre Baskerville', 'Solar24 Reading', serif;
+}
+.font-cormorant {
+  --page-font: 'Cormorant Garamond', 'Solar24 Reading', serif;
+}
+.font-source {
+  --page-font: 'Source Sans 3', 'Solar24 Reading', sans-serif;
+}
+.font-wenkai {
+  --page-font: 'Solar24 Reading', serif;
+}
+.font-mashan {
+  --page-font: 'Solar24 Brush', 'Solar24 Reading', serif;
+}
+.font-seal {
+  --page-font: 'Solar24 Seal', 'Solar24 Reading', serif;
+}
+.world,
+.world button,
+.world h1,
+.world h2,
+.world h3,
+.world p,
+.world .brand b,
+.world nav button,
+.world .term-node,
+.world .culture-strip b,
+.world .term-title p,
+.world .hotspots > button,
+.world .life-invitation span,
+.world .reading-rail,
+.world .calendar,
+.world .term-ribbon button {
+  font-family: var(--page-font);
+}
+.world .seal,
+.world .poem-stamp,
+.world .red-seal {
+  font-family: 'Solar24 Seal', 'Solar24 Reading', serif;
+  font-style: normal;
+  font-weight: 400;
+}
+.world .seal {
+  font-size: 19px;
+  line-height: 1;
+}
+.world .poem-stamp {
+  font-size: 19px;
+  letter-spacing: 3px;
+  padding: 7px 4px;
+}
+.world .red-seal {
+  font-size: 25px;
+}
+.world .term-node {
+  font-family: 'Solar24 Reading', serif;
+}
+.world:not(.english) .term-node {
+  font-family: var(--page-font);
+}
+.world .term-title h2 {
+  font-family: 'Solar24 Reading', serif;
+}
+.world:not(.english) .term-title h2 {
+  font-family: var(--page-font);
+}
+.typography-control {
+  position: relative;
+}
+.font-panel {
+  position: absolute;
+  z-index: 30;
+  right: 0;
+  top: 50px;
+  width: 290px;
+  padding: 24px;
+  background: var(--sky);
+  color: var(--accent);
+  border: 1px solid var(--mist);
+  box-shadow: 0 12px 32px #23352e18;
+}
+.font-panel b {
+  font-size: 19px;
+  font-weight: 400;
+}
+.font-panel [role='group'] {
+  display: grid;
+  margin-top: 14px;
+}
+.font-panel .font-preview {
+  text-align: left;
+  padding: 12px 8px;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+  font-family: var(--page-font);
+}
+.font-preview span {
+  font-size: 18px;
+  display: block;
+}
+.font-preview small {
+  font-size: 11px;
+  opacity: 0.75;
+  display: block;
+  margin-top: 5px;
+}
+.font-preview[aria-pressed='true'] {
+  border-left: 2px solid #9b6147;
+  background: color-mix(in srgb, var(--mist) 20%, transparent);
+}
+.font-panel p {
+  font-size: 11px;
+  line-height: 1.7;
+}
+.font-panel .font-done {
+  min-width: 70px;
+  border-bottom: 1px solid;
+}
+.compass-layer {
+  cursor: pointer;
+  outline: none;
+}
+.ring-hit {
+  stroke: transparent;
+  stroke-width: 24px;
+  fill: none;
+  pointer-events: stroke;
+}
+.ring-ink {
+  fill: none;
+  stroke: currentColor;
+  opacity: 0.16;
+  stroke-width: 1;
+  transition:
+    opacity 0.3s,
+    stroke-width 0.3s;
+  pointer-events: none;
+}
+.ring-detail {
+  stroke: currentColor;
+  opacity: 0.26;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.ring-caption {
+  text-anchor: middle;
+  dominant-baseline: central;
+  font:
+    11px 'Solar24 Reading',
+    serif;
+  fill: currentColor;
+  opacity: 0.45;
+  pointer-events: none;
+}
+.trigram {
+  font: 25px serif;
+  text-anchor: middle;
+  dominant-baseline: central;
+  fill: currentColor;
+  stroke: none;
+}
+.compass-layer.active .ring-ink {
+  opacity: 0.9;
+  stroke-width: 2;
+}
+.compass-layer.active .ring-detail,
+.compass-layer.active .ring-caption {
+  opacity: 1;
+}
+.compass-layer:focus-visible .ring-hit {
+  stroke: #a5754429;
+}
+.ring-reading {
+  position: absolute;
+  top: 97%;
+  left: 8%;
+  right: 8%;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.7;
+  min-height: 55px;
+  pointer-events: none;
+}
+.ring-reading b {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 3px;
+}
+.ring-reading span {
+  opacity: 0.8;
+}
+.poem {
+  left: 4.5%;
+  width: 19%;
+}
+.poem h1,
+.english .poem h1 {
+  word-break: normal;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+}
+.english .poem h1 {
+  font-size: clamp(24px, 2.3vw, 34px);
+  line-height: 1.5;
+  letter-spacing: -0.5px;
+}
+.english .poem p {
+  letter-spacing: 0.5px;
+  font-size: 11px;
+}
+.english .eyebrow {
+  letter-spacing: 1.5px;
+  font-size: 9px;
+}
+.english nav button {
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.english .brand b {
+  letter-spacing: 2px;
+}
+.english .term-title p {
+  font-size: 12px;
+  line-height: 1.8;
+}
+.english .culture-strip b {
+  font-size: 12px;
+}
+.wheel-layer {
+  left: 52%;
+  width: min(54vw, max(480px, calc(100svh - 330px)), 700px);
+  top: 44%;
+}
+.dial-tools {
+  left: 27%;
+  right: 25%;
+  bottom: 3px;
+}
+.dial-tools small {
+  display: none;
+}
+.astronomy-note {
+  position: absolute;
+  left: 4.5%;
+  top: 17%;
+  width: 23%;
+  max-height: 75%;
+  overflow: auto;
+  padding-right: 12px;
+  z-index: 4;
+}
+.astronomy-note h3 {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.astronomy-note h3 span {
+  display: block;
+  color: #dcbf89;
+  font-size: 34px;
+  margin-top: 8px;
+}
+.astronomy-note p {
+  font-size: 12px;
+  line-height: 1.85;
+}
+.astronomy-note details {
+  margin-top: 22px;
+  font-size: 11px;
+  line-height: 1.8;
+}
+.astronomy-note summary {
+  cursor: pointer;
+}
+.astronomy-note a {
+  font-size: 10px;
+}
+.orbit-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 10px;
+  margin-top: 16px;
+}
+.orbit-key span {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.orbit-key i {
+  border-radius: 50%;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+.sun-key {
+  background: #e9c287;
+}
+.earth-key {
+  background: #93b3ab;
+}
+.view-cosmos .poem {
+  display: none;
+}
+.view-life .poem {
+  width: 23%;
+}
+.english .hotspots > button {
+  font-size: 12px;
+}
+.english .stepper span {
+  font-size: 11px;
+  max-width: 140px;
+  text-align: center;
+}
+@media (min-width: 701px) and (max-height: 800px) {
+  .wheel-layer {
+    width: min(49vw, 440px);
+    top: 43%;
+  }
+  .ring-reading {
+    font-size: 9px;
+    top: 96%;
+    left: 0;
+    right: 0;
+  }
+  .ring-reading b {
+    font-size: 10px;
+  }
+  .astronomy-note {
+    top: 10%;
+    max-height: 84%;
+  }
+  .astronomy-note h3 {
+    font-size: 18px;
+    margin: 12px 0;
+  }
+  .astronomy-note h3 span {
+    font-size: 26px;
+  }
+  .astronomy-note p {
+    font-size: 11px;
+  }
+}
+@media (max-width: 1050px) and (min-width: 701px) {
+  header {
+    gap: 12px;
+    margin: 0 3%;
+  }
+  nav {
+    gap: 12px;
+  }
+  .english nav button {
+    font-size: 12px;
+  }
+  .brand small {
+    letter-spacing: 2px;
+  }
+  .poem {
+    left: 3%;
+    width: 20%;
+  }
+  .english .poem h1 {
+    font-size: 25px;
+  }
+  .wheel-layer {
+    width: 52vw;
+  }
+  .astronomy-note {
+    left: 3%;
+    width: 24%;
+  }
+}
+@media (max-width: 700px) {
+  .font-panel {
+    right: -95px;
+    width: 290px;
+  }
+  .settings {
+    gap: 0;
+  }
+  .settings button {
+    min-width: 28px;
+    padding: 4px;
+  }
+  .english nav button {
+    font-size: 13px;
+    letter-spacing: 0.4px;
+  }
+  nav {
+    gap: 24px;
+  }
+  .poem,
+  .view-life .poem {
+    left: 7%;
+    width: 86%;
+  }
+  .english .poem h1 {
+    font-size: 29px;
+    max-width: 270px;
+  }
+  .wheel-layer {
+    top: 55%;
+    width: 94vw;
+    left: 50%;
+    max-width: 460px;
+  }
+  .ring-reading {
+    top: 98%;
+    left: 3%;
+    right: 3%;
+    font-size: 10px;
+  }
+  .ring-reading b {
+    font-size: 11px;
+  }
+  .term-title {
+    bottom: 60px;
+  }
+  .dial-tools {
+    left: 7%;
+    right: 7%;
+  }
+  .english .term-ribbon button {
+    flex-basis: 90px;
+    font-size: 10px;
+    text-align: center;
+    min-height: 70px;
+  }
+  .view-cosmos .hero {
+    height: 990px;
+  }
+  .astronomy-note {
+    top: 65px;
+    left: 7%;
+    width: 86%;
+    max-height: 260px;
+    padding: 0;
+  }
+  .astronomy-note h3 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  .astronomy-note h3 span {
+    display: inline;
+    font-size: 23px;
+    margin-left: 10px;
+  }
+  .astronomy-note p {
+    font-size: 12px;
+    margin: 10px 0;
+  }
+  .astronomy-note details {
+    margin-top: 12px;
+  }
+  .cosmos-interaction {
+    top: 38%;
+    bottom: 24%;
+  }
+  .cosmos-tools {
+    bottom: 85px;
+  }
+  .view-cosmos .term-title {
+    bottom: 30px;
+  }
+  .english .culture-strip b {
+    font-size: 9px;
+  }
+  .english .hotspots > button {
+    font-size: 10px;
+  }
+}
+
+.english .stepper span {
+  letter-spacing: 0.2px;
+  white-space: normal;
+  min-width: 82px;
+}
+
+.compass-layer:focus-visible {
+  outline: none;
+}
+.compass-layer:focus-visible .ring-ink {
+  opacity: 1;
+  stroke-width: 3;
+}
+@media (max-width: 700px) {
+  .world .seal {
+    font-size: 15px;
+    line-height: 1;
+    padding-top: 0;
+  }
+  .ring-reading {
+    left: 6%;
+    right: 6%;
+    font-size: 9px;
+    line-height: 1.65;
+  }
+  .term-title {
+    bottom: 48px;
+  }
+  .world .longitude span {
+    font-size: 8px;
+  }
+}
+
+.world.english .poem h1 {
+  font-family: var(--page-font);
+}
+
+@media (max-width: 700px) {
+  .view-seasons .hero {
+    height: 830px;
+    min-height: 830px;
+  }
+  .view-seasons .wheel-layer {
+    top: 55%;
+  }
+}
+
+.world.still {
+  transition: none !important;
+}
+@media (min-width: 701px) and (max-height: 800px) {
+  .wheel-layer {
+    width: min(46vw, 400px);
+  }
+  .ring-reading {
+    top: 100%;
+  }
+  .dial-tools {
+    left: 5%;
+    right: 5%;
+  }
+}
+@media (max-width: 700px) {
+  .butterfly {
+    width: 46%;
+    left: 27%;
+    top: 22%;
+  }
+  .longitude {
+    top: 67%;
+  }
+}
+/* Human life is participation in the scene, with no book or category card. */
+.life-participation {
+  position: absolute;
+  z-index: 6;
+  right: 7%;
+  top: 21%;
+  width: min(420px, 35%);
+  padding: 12px 0 26px;
+  font-family: var(--page-font);
+  text-shadow:
+    0 1px 12px var(--sky),
+    0 0 24px var(--sky);
+  animation: appear 600ms ease-out;
+}
+.life-participation::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -35px;
+  background: radial-gradient(
+    ellipse,
+    color-mix(in srgb, var(--sky) 84%, transparent),
+    transparent 72%
+  );
+  pointer-events: none;
+}
+.life-moment-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+}
+.life-moment-heading button {
+  font-size: 11px;
+}
+.life-participation h3 {
+  font: 400 26px/1.65 var(--page-font);
+  margin: 26px 0 14px;
+}
+.life-participation p {
+  font-size: 14px;
+  line-height: 1.9;
+}
+.life-participation small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+.life-action {
+  border-bottom: 1px solid currentColor;
+  padding: 8px 0;
+  margin-top: 12px;
+  font-size: 13px;
+}
+.life-engaged .term-title {
+  visibility: hidden;
+}
+.life-engaged .hotspots {
+  max-width: 58%;
+}
+.life-engaged .poem {
+  opacity: 0.45;
+}
+.listening-rings {
+  position: relative;
+  height: 72px;
+  margin-top: 30px;
+}
+.listening-rings i {
+  position: absolute;
+  width: 85px;
+  height: 25px;
+  top: 25px;
+  left: 42%;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  opacity: 0.18;
+}
+.listening-rings i:nth-child(2) {
+  transform: scale(1.5);
+}
+.listening-rings i:nth-child(3) {
+  transform: scale(2);
+}
+.listening-rings.is-listening i {
+  animation: listening-ripple 5s ease-out infinite;
+}
+.listening-rings.is-listening i:nth-child(2) {
+  animation-delay: -1.7s;
+}
+.listening-rings.is-listening i:nth-child(3) {
+  animation-delay: -3.4s;
+}
+@keyframes listening-ripple {
+  from {
+    transform: scale(0.7);
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+.field-drawing {
+  height: 100px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  margin: 30px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  transform: skewY(-3deg);
+}
+.field-drawing > span {
+  position: relative;
+  height: calc(4px + var(--growth) * var(--stalk));
+  width: 1px;
+  background: currentColor;
+  margin-bottom: 8px;
+  transition: height 650ms;
+}
+.field-drawing i,
+.field-drawing b {
+  position: absolute;
+  bottom: 35%;
+  width: calc(3px + var(--growth) * 12px);
+  height: 6px;
+  border: 1px solid currentColor;
+  border-radius: 100% 0;
+  transform: rotate(-22deg);
+  transform-origin: left bottom;
+  opacity: 0.55;
+}
+.field-drawing b {
+  right: 0;
+  transform: rotate(30deg) scaleX(-1);
+}
+.field-drawing em {
+  position: absolute;
+  top: -5px;
+  left: -3px;
+  width: 7px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--light);
+  opacity: 0;
+}
+.field-drawing[data-stage='3'] em {
+  opacity: 1;
+}
+.field-moment label,
+.memory-moment label {
+  display: block;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.field-moment input {
+  width: 100%;
+  accent-color: var(--accent);
+  margin: 20px 0 12px;
+  min-height: 26px;
+  cursor: ew-resize;
+}
+.field-stages {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  opacity: 0.8;
+}
+.field-stages .active {
+  border-bottom: 1px solid currentColor;
+  opacity: 1;
+}
+.memory-moment textarea {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px 0;
+  resize: vertical;
+  min-height: 90px;
+  max-height: 200px;
+  background: transparent;
+  color: inherit;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  font: 16px/2 var(--page-font);
+}
+.memory-moment textarea::placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+.memory-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.memory-actions > span {
+  font-size: 10px;
+}
+@media (min-width: 701px) and (max-height: 800px) {
+  .life-participation {
+    top: 9%;
+    width: 38%;
+    right: 5%;
+  }
+  .life-participation h3 {
+    font-size: 22px;
+    margin-top: 15px;
+  }
+  .field-drawing {
+    height: 65px;
+    margin: 15px 0;
+  }
+  .life-participation small {
+    margin-top: 12px;
+  }
+}
+@media (max-width: 1100px) and (min-width: 701px) {
+  .life-participation {
+    width: 43%;
+    right: 5%;
+  }
+}
+@media (max-width: 700px) {
+  .life-participation {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: auto;
+    margin: 610px 7% 25px;
+    padding: 10px 0 25px;
+  }
+  .view-life.life-engaged .hero {
+    height: auto;
+    min-height: 1040px;
+  }
+  .life-engaged .hotspots {
+    max-width: none;
+  }
+  .life-engaged .poem {
+    opacity: 1;
+  }
+  .life-participation h3 {
+    font-size: 24px;
+  }
+  .life-participation small {
+    font-size: 11px;
+  }
+  .life-participation::before {
+    inset: -12px;
+  }
+  .has-reading .term-title {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reading-scroll *,
+  .life-participation,
+  .life-participation * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+.life-engaged .hotspots {
+  opacity: 0;
+  pointer-events: none;
+}
+.life-engaged .hotspots > button {
+  pointer-events: none;
+}
+.life-participation:focus {
+  outline: none;
+}

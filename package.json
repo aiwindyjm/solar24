@@ -17,7 +17,12 @@
     "schemas": "tsx scripts/export-schemas.ts",
     "community:check": "tsx scripts/community-music.ts",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "demo:dev": "vite --config docs/design/solar24-v5/vite.config.ts --port 5176 --strictPort",
+    "demo:check": "tsc -p docs/design/solar24-v5/tsconfig.json",
+    "demo:build": "pnpm demo:check && vite build --config docs/design/solar24-v5/vite.config.ts",
+    "demo:preview": "vite preview --config docs/design/solar24-v5/vite.config.ts --port 5177 --strictPort",
+    "demo:deploy": "pnpm demo:build && wrangler deploy --config docs/design/solar24-v5/wrangler.jsonc"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -25,14 +30,18 @@
     "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "@types/three": "0.186.0",
     "eslint": "^10.10.0",
     "jsdom": "^26.1.0",
     "prettier": "^3.6.0",
     "react": "^19.3.0",
+    "three": "0.186.0",
     "tsx": "^4.20.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.0.0",
+    "vite": "7.3.6",
     "vitest": "^3.2.4",
+    "wrangler": "4.135.0",
     "yaml": "^2.8.0",
     "zod": "^4.1.0"
   }

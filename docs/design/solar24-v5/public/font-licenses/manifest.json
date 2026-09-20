@@ -1,0 +1,62 @@
+[
+  {
+    "source": "CormorantGaramond[wght].ttf",
+    "sha256": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
+    "web": "CormorantGaramond[wght].woff2",
+    "bytes": 209204,
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/cormorantgaramond/CormorantGaramond[wght].ttf",
+    "license": "SIL Open Font License 1.1",
+    "webSha256": "69e7bd0cea74a58ec9286cf9fd97a72190fbfbbea117963fd0d253e115f1d8b9",
+    "conversion": "FontTools WOFF2 conversion"
+  },
+  {
+    "source": "LibreBaskerville[wght].ttf",
+    "sha256": "05a95421961341c5b2556285e8415df9db27dab4f4abe22b446b3c6a8b916c5d",
+    "web": "LibreBaskerville[wght].woff2",
+    "bytes": 64176,
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/librebaskerville/LibreBaskerville[wght].ttf",
+    "license": "SIL Open Font License 1.1",
+    "webSha256": "61d8d9a1546ee2e78068bd74c679c9c937ba3ea69e430d4a14f40b2f8552c12e",
+    "conversion": "FontTools WOFF2 conversion"
+  },
+  {
+    "source": "LXGWSeal-Regular.ttf",
+    "sha256": "ad3e5bc4e0406e3e0708e9a66957e5d9cf7e648a79195b8a50e864a432d8e7a5",
+    "web": "LXGWSeal-Regular.woff2",
+    "bytes": 35264,
+    "url": "https://raw.githubusercontent.com/lxgw/LxgwSeal/main/TTF/LXGWSeal-Regular.ttf",
+    "license": "SIL Open Font License 1.1",
+    "webSha256": "e52a4abf3e177974f21bd8ff71a68f6a357b3445e393679b9823563c78d03137",
+    "conversion": "FontTools WOFF2; CJK subset and renamed family"
+  },
+  {
+    "source": "LXGWWenKai-Regular.ttf",
+    "sha256": "39ad71264b588165b469e35e6afb162a378dacd1f95348160240ba9038ac3009",
+    "web": "LXGWWenKai-Regular.woff2",
+    "bytes": 348660,
+    "url": "https://raw.githubusercontent.com/lxgw/LxgwWenKai/main/fonts/TTF/LXGWWenKai-Regular.ttf",
+    "license": "SIL Open Font License 1.1",
+    "webSha256": "23225623a21deb4129913300f249f78c17cdfe14ca428e37ddfe3a8d3565b908",
+    "conversion": "FontTools WOFF2; CJK subset and renamed family"
+  },
+  {
+    "source": "MaShanZheng-Regular.ttf",
+    "sha256": "6d2546bb189c732a8ca29af9e22457b152387d158aa459e4ac2ce1e51788b7fb",
+    "web": "MaShanZheng-Regular.woff2",
+    "bytes": 615528,
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/mashanzheng/MaShanZheng-Regular.ttf",
+    "license": "SIL Open Font License 1.1",
+    "webSha256": "36c84358a235a481f5ca3c5bbdec5b7ce4d2479d86ed94587f1764f4e2c88939",
+    "conversion": "FontTools WOFF2; CJK subset and renamed family"
+  },
+  {
+    "source": "SourceSans3[wght].ttf",
+    "sha256": "042fe2cc0b933e328410d7acbd0aa6a1873dca5aef81875f4bc214b08825c7b9",
+    "web": "SourceSans3[wght].woff2",
+    "bytes": 169688,
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/sourcesans3/SourceSans3[wght].ttf",
+    "license": "SIL Open Font License 1.1",
+    "webSha256": "eddb24aaa96c2feff161b8fcc463ec6fc39c4a5aa175ecd0ff15d8f781e4f4ad",
+    "conversion": "FontTools WOFF2 conversion"
+  }
+]

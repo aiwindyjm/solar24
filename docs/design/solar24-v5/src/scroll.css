@@ -1,0 +1,370 @@
+/* A seasonal reading veil; the gesture unfolds, while the landscape controls remain outside. */
+.reading-scroll {
+  --scroll-time: 950ms;
+  --scroll-ease: cubic-bezier(0.22, 0.7, 0.2, 1);
+  position: absolute;
+  z-index: 12;
+  inset: 24px 4.5% 68px;
+  pointer-events: none;
+  color: var(--accent);
+  font-family: var(--page-font);
+  scroll-margin-top: 16px;
+}
+.scroll-mount {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(150px, 19vw, 250px);
+  grid-template-rows: 58px minmax(0, 1fr) 28px;
+  background: linear-gradient(
+    100deg,
+    color-mix(in srgb, var(--sky) 78%, transparent),
+    color-mix(in srgb, var(--sky) 61%, transparent)
+  );
+  backdrop-filter: blur(18px) saturate(80%);
+  -webkit-backdrop-filter: blur(18px) saturate(80%);
+  box-shadow:
+    inset 0 1px color-mix(in srgb, var(--accent) 12%, transparent),
+    inset 0 -1px color-mix(in srgb, var(--accent) 10%, transparent);
+  clip-path: inset(0 0 0 100%);
+  visibility: hidden;
+  transition:
+    clip-path var(--scroll-time) var(--scroll-ease),
+    visibility 0s var(--scroll-time);
+}
+.is-open .scroll-mount {
+  clip-path: inset(0);
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+  animation: topic-unfold 650ms var(--scroll-ease) both;
+}
+@keyframes topic-unfold {
+  from {
+    clip-path: inset(0 0 0 100%);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+.scroll-topic-name {
+  margin-top: 14px;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+.topic-reading {
+  padding-top: 24px;
+  border-top: 1px solid color-mix(in srgb, var(--accent) 12%, transparent);
+}
+.topic-reading .chapter-body > p {
+  max-width: 62ch;
+}
+.scroll-heading {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 32px;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 10%, transparent);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+.scroll-heading:focus {
+  outline: none;
+}
+.scroll-heading .reading-close {
+  position: static;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 4px 0 16px;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+.scroll-heading .reading-close > span:last-child {
+  font-size: 24px;
+}
+.reading-scroll .scroll-paper {
+  position: relative;
+  grid-column: 1;
+  grid-row: 2;
+  inset: auto;
+  width: auto;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  margin: 0;
+  padding: 28px clamp(26px, 5vw, 76px) 36px;
+  color: var(--accent);
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  animation: none;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--accent) 22%, transparent) transparent;
+  scrollbar-gutter: stable;
+  overflow-wrap: anywhere;
+}
+.scroll-paper h3 {
+  font-size: clamp(28px, 3.3vw, 42px);
+  margin: 16px 0;
+}
+.scroll-paper .book-intro {
+  max-width: 60ch;
+  font-size: 14px;
+}
+.scroll-paper .book-chapter {
+  border-color: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+.scroll-paper .book-chapter > summary {
+  padding: 20px 0;
+  font-size: 18px;
+}
+.scroll-paper .chapter-body > p {
+  font-size: 16px;
+  line-height: 2;
+}
+.scroll-paper .chapter-body > .chapter-context {
+  font-size: 13px;
+}
+.scroll-paper .chapter-provenance p,
+.scroll-paper .chapter-provenance a {
+  font-size: 12px;
+}
+.scroll-frontispiece {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 25px 15px;
+  overflow: auto;
+  scrollbar-width: none;
+  border-left: 1px solid color-mix(in srgb, var(--accent) 9%, transparent);
+}
+.scroll-volume {
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+.scroll-inscription {
+  margin: 32px 0 22px;
+}
+.scroll-title {
+  display: block;
+  writing-mode: vertical-rl;
+  font-family: 'Solar24 Brush', 'Solar24 Reading', serif;
+  font-size: clamp(48px, 5vw, 66px);
+  line-height: 1.4;
+  letter-spacing: 12px;
+}
+.scroll-translation {
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.scroll-longitude {
+  font-size: 13px;
+  letter-spacing: 3px;
+  margin: 24px 0 15px;
+}
+.scroll-tones {
+  display: flex;
+  gap: 4px;
+}
+.scroll-tones i {
+  width: 12px;
+  height: 3px;
+}
+.scroll-colophon {
+  margin-top: auto;
+  padding-top: 25px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.8;
+  letter-spacing: 1px;
+}
+.scroll-foot {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 32px;
+  font-size: 8px;
+  letter-spacing: 3px;
+  opacity: 0.65;
+}
+.scroll-leading-edge {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  width: 1px;
+  background: linear-gradient(
+    transparent,
+    color-mix(in srgb, var(--accent) 27%, transparent),
+    transparent
+  );
+  opacity: 0;
+  transition:
+    left var(--scroll-time) var(--scroll-ease),
+    opacity 150ms;
+}
+.is-open .scroll-leading-edge {
+  left: 0;
+  opacity: 1;
+}
+.scroll-spine {
+  position: absolute;
+  right: -3.5%;
+  top: 20px;
+  width: 44px;
+  min-height: 150px;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  padding: 16px 6px;
+  color: var(--accent);
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--mist) 16%, transparent));
+  border-left: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+}
+.scroll-spine:hover {
+  background: color-mix(in srgb, var(--mist) 25%, transparent);
+}
+.scroll-spine > span {
+  writing-mode: vertical-rl;
+  font:
+    20px/1.4 'Solar24 Reading',
+    serif;
+  letter-spacing: 6px;
+}
+.scroll-spine > small {
+  writing-mode: vertical-rl;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+.scroll-spine > i {
+  font-style: normal;
+}
+.is-open .scroll-spine {
+  visibility: hidden;
+  pointer-events: none;
+}
+.has-reading .term-title,
+.has-reading .poem {
+  opacity: 1;
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .scroll-mount {
+    background: color-mix(in srgb, var(--sky) 96%, transparent);
+  }
+}
+@media (min-width: 701px) and (max-height: 800px) {
+  .reading-scroll {
+    top: 12px;
+    bottom: 58px;
+  }
+  .scroll-mount {
+    grid-template-rows: 48px minmax(0, 1fr) 22px;
+  }
+  .scroll-frontispiece {
+    padding-top: 20px;
+  }
+  .scroll-inscription {
+    margin: 18px 0 14px;
+  }
+  .scroll-title {
+    font-size: 45px;
+    letter-spacing: 8px;
+  }
+  .scroll-colophon {
+    display: none;
+  }
+  .reading-scroll .scroll-paper {
+    padding-top: 16px;
+  }
+  .scroll-paper h3 {
+    font-size: 30px;
+    margin: 8px 0;
+  }
+  .scroll-paper .book-intro {
+    font-size: 13px;
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+  .scroll-paper .book-chapter > summary {
+    padding: 14px 0;
+  }
+}
+@media (max-width: 700px) {
+  .has-reading .term-title {
+    visibility: hidden;
+  }
+  .reading-scroll {
+    inset: auto 5% 60px;
+    height: min(500px, calc(100svh - 290px));
+    min-height: 240px;
+  }
+  .scroll-mount {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 48px minmax(0, 1fr) 22px;
+  }
+  .scroll-heading {
+    margin: 0 16px;
+    font-size: 8px;
+    letter-spacing: 0.5px;
+    gap: 8px;
+  }
+  .scroll-heading .reading-close {
+    padding: 0;
+    font-size: 12px;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  .scroll-frontispiece {
+    display: none;
+  }
+  .reading-scroll .scroll-paper {
+    padding: 20px 18px 28px;
+  }
+  .scroll-paper h3 {
+    font-size: 27px;
+    margin: 10px 0;
+  }
+  .scroll-paper .chapter-body > p {
+    font-size: 15px;
+  }
+  .scroll-paper .book-intro {
+    font-size: 13px;
+  }
+  .scroll-paper .book-chapter > summary {
+    padding: 16px 0;
+    font-size: 17px;
+  }
+  .scroll-foot {
+    margin: 0 18px;
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+  .scroll-spine {
+    right: -3%;
+    top: 0;
+    width: 44px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reading-scroll * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

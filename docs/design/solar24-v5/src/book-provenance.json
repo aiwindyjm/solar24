@@ -1,0 +1,2657 @@
+{
+  "editorialStatus": "draft",
+  "humanReview": null,
+  "chapters": {
+    "lichun": [
+      [
+        "sci-lichun-longitude-315",
+        "sci-lichun-vs-meteorological-spring",
+        "sci-lichun-calendar-position"
+      ],
+      ["hist-yueling-lichun-pentads"],
+      ["trad-lichun-nongshi", "hist-yanjing-dachun-yaochun"],
+      ["hist-yanjing-dachun-yaochun", "region-shiqian-shuochun"],
+      []
+    ],
+    "yushui": [
+      ["sci-yushui-longitude-330", "sci-yushui-rain-transition"],
+      ["hist-yueling-yushui-pentads"],
+      ["trad-yushui-nongshi"],
+      ["region-guanghan-yushui-baobaojie"],
+      []
+    ],
+    "jingzhe": [
+      ["sci-jingzhe-longitude-345", "sci-jingzhe-thunder-climate"],
+      ["hist-yueling-jingzhe-pentads"],
+      ["trad-jingzhe-nongyan-chungeng", "lit-weiyingwu-guantianjia"],
+      ["region-hkg-ngokengkiu-daxiaoren"],
+      []
+    ],
+    "chunfen": [
+      ["sci-chunfen-longitude-0", "sci-chunfen-day-night-equal"],
+      ["hist-yueling-chunfen-pentads"],
+      ["trad-chunfen-nongshi"],
+      ["region-chunfen-anren-ganfenshe"],
+      []
+    ],
+    "qingming": [
+      ["sci-qingming-longitude-15", "hist-qingming-hanshi-merger"],
+      ["hist-yueling-qingming-pentads"],
+      ["trad-qingming-nongshi"],
+      ["trad-qingming-customs", "trad-qingming-food", "hist-qingming-hanshi-merger"],
+      []
+    ],
+    "guyu": [
+      ["sci-guyu-longitude-30", "hist-guyu-naming-yushengbaigu", "sci-guyu-rain-sowing-window"],
+      ["hist-yueling-guyu-pentads"],
+      ["trad-guyu-nongshi"],
+      ["trad-guyu-tea-toon", "region-guyu-luoyang-mudan"],
+      []
+    ],
+    "lixia": [
+      ["sci-lixia-longitude-45", "sci-lixia-vs-meteorological-summer"],
+      ["hist-yueling-lixia-pentads"],
+      ["trad-lixia-nongshi"],
+      ["trad-lixia-chengren", "region-lixia-banshan"],
+      []
+    ],
+    "xiaoman": [
+      [
+        "sci-xiaoman-longitude-60",
+        "hist-xiaoman-naming-xiaodeyingman",
+        "interp-xiaoman-modern-philosophy"
+      ],
+      ["hist-yueling-xiaoman-pentads"],
+      ["trad-xiaoman-nongshi", "hist-gjts-xiaoman-sanche"],
+      ["region-shengze-xiaoman-xi"],
+      []
+    ],
+    "mangzhong": [
+      ["sci-mangzhong-longitude-75", "hist-mangzhong-naming", "sci-mangzhong-sanxia-meiyu"],
+      ["hist-yueling-mangzhong-pentads"],
+      ["trad-mangzhong-nongshi"],
+      ["hist-mangzhong-jianhuashen"],
+      []
+    ],
+    "xiazhi": [
+      ["sci-xiazhi-longitude-90", "sci-xiazhi-longest-day"],
+      ["hist-yueling-xiazhi-pentads"],
+      ["trad-xiazhi-nongshi"],
+      ["trad-xiazhi-mian"],
+      []
+    ],
+    "xiaoshu": [
+      [
+        "sci-xiaoshu-longitude-105",
+        "sci-xiaoshu-climate-heat-humid",
+        "sci-xiaoshu-sanfu-gengday-mechanism"
+      ],
+      ["hist-yueling-xiaoshu-pentads"],
+      ["trad-xiaoshu-nongshi"],
+      ["trad-xiaoshu-shixin", "region-xiaoshu-xuzhou-fuyang"],
+      []
+    ],
+    "dashu": [
+      ["sci-dashu-longitude-120", "sci-dashu-sanfu-zhongfu-heat"],
+      ["hist-yueling-dashu-pentads", "sci-dashu-firefly-entomology"],
+      ["trad-dashu-nongshi"],
+      ["region-dashu-taizhou-dashuchuan"],
+      []
+    ],
+    "liqiu": [
+      ["sci-liqiu-longitude-135", "sci-liqiu-vs-meteorological-autumn"],
+      ["hist-yueling-liqiu-pentads"],
+      ["trad-liqiu-nongshi"],
+      ["region-liqiu-miao-ganqiu", "trad-liqiu-tieqiubiao"],
+      []
+    ],
+    "chushu": [
+      ["sci-chushu-longitude-150", "hist-chushu-naming", "sci-chushu-climate-autumn-transition"],
+      ["hist-yueling-chushu-pentads"],
+      ["trad-chushu-nongshi"],
+      ["region-chushu-xiangshan-kaiyu", "hist-chushu-zhongyuan-hedeng"],
+      []
+    ],
+    "bailu": [
+      ["sci-bailu-longitude-165", "sci-bailu-dew-formation"],
+      ["hist-yueling-bailu-pentads"],
+      ["trad-bailu-nongshi"],
+      ["trad-bailu-tea-rice-wine"],
+      []
+    ],
+    "qiufen": [
+      ["sci-qiufen-longitude-180", "sci-qiufen-day-night-equal"],
+      ["hist-yueling-qiufen-pentads"],
+      ["trad-qiufen-nongshi"],
+      ["fact-qiufen-harvest-festival-2018"],
+      []
+    ],
+    "hanlu": [
+      ["sci-hanlu-longitude-195", "hist-hanlu-naming", "sci-hanlu-cooling-transition"],
+      ["hist-yueling-hanlu-pentads"],
+      ["trad-hanlu-nongshi"],
+      ["hist-hanlu-chongyang-adjacent"],
+      []
+    ],
+    "shuangjiang": [
+      ["sci-shuangjiang-longitude-210", "sci-shuangjiang-frost-formation"],
+      ["hist-yueling-shuangjiang-pentads"],
+      ["trad-shuangjiang-nongshi"],
+      ["region-shuangjiangjie-tiandeng", "trad-shuangjiang-customs"],
+      []
+    ],
+    "lidong": [
+      ["sci-lidong-longitude-225", "sci-lidong-vs-meteorological-winter"],
+      ["hist-yueling-lidong-pentads"],
+      ["trad-lidong-nongshi"],
+      ["trad-lidong-budong-jiaozi"],
+      []
+    ],
+    "xiaoxue": [
+      ["sci-xiaoxue-longitude-240", "sci-xiaoxue-not-necessarily-snow"],
+      ["hist-yueling-xiaoxue-pentads"],
+      ["trad-xiaoxue-nongshi"],
+      ["trad-xiaoxue-pickling-curing"],
+      []
+    ],
+    "daxue": [
+      ["sci-daxue-longitude-255", "sci-daxue-jieqi-vs-tianqi", "sci-daxue-snow-agronomy"],
+      ["hist-yueling-daxue-pentads"],
+      ["sci-daxue-snow-agronomy", "trad-daxue-ruixue"],
+      ["trad-daxue-yanrou", "region-daxue-taiwan-wuyu"],
+      []
+    ],
+    "dongzhi": [
+      ["sci-dongzhi-longitude-270", "sci-dongzhi-shortest-day-year-anchor"],
+      ["hist-yueling-dongzhi-pentads"],
+      ["trad-dongzhi-nongshi"],
+      ["trad-dongzhi-shijiu-xiaohantu", "region-dongzhi-sanmen-jidong"],
+      []
+    ],
+    "xiaohan": [
+      ["sci-xiaohan-longitude-285", "sci-xiaohan-vs-dahan-temperature"],
+      ["hist-yueling-xiaohan-pentads"],
+      ["trad-xiaohan-nongshi"],
+      ["trad-xiaohan-caifan-nuomifan", "trad-xiaohan-sanjiu"],
+      []
+    ],
+    "dahan": [
+      ["sci-dahan-longitude-300", "sci-dahan-vs-xiaohan-cold"],
+      ["hist-yueling-dahan-pentads"],
+      ["trad-dahan-nongshi"],
+      ["trad-dahan-weiya"],
+      []
+    ]
+  },
+  "notes": {
+    "fact-qiufen-harvest-festival-2018": {
+      "title": "中国农民丰收节：2018年设立的现代国家节日（每年农历秋分）",
+      "region": ["中国（国家层面设立）"],
+      "period": "2018年6月21日公布设立，自2018年起施行（现代）",
+      "status": "in-review",
+      "sources": [
+        "source-xinhuanet-fengshoujie-2018",
+        "source-people-fengshoujie-2025",
+        "source-xinhua-qiufen-2024"
+      ]
+    },
+    "hist-chushu-naming": {
+      "title": "处暑的命名：\"处，止也，暑气至此而止矣\"的古典定义与现代\"出暑\"白话",
+      "region": ["中国（命名取义于暑热休止，文本传统锚定黄河-江淮经验）"],
+      "period": "《月令七十二候集解》传统题名为元代；\"出暑\"为当代机构白话释义",
+      "status": "in-review",
+      "sources": [
+        "source-yueling-qishierhou-wikisource",
+        "source-xinhua-chushu-2022",
+        "source-ihchina-chushu-feature"
+      ]
+    },
+    "hist-chushu-zhongyuan-hedeng": {
+      "title": "处暑前后的中元节民俗：祭祖、放河灯的日期锚辨析（锚在七月十五，不在处暑）",
+      "region": [
+        "文献确证限六世纪荆楚（盂兰盆供）与清末北京（荷叶灯/盂兰会/放河灯）；非遗网专题为当代汇编"
+      ],
+      "period": "《荆楚岁时记》为6世纪文本；《燕京岁时记》为清末（19世纪末）北京；机构汇编为2017年",
+      "status": "in-review",
+      "sources": [
+        "source-wikisource-jingchu-suishiji",
+        "source-wikisource-yanjingsuishiji",
+        "source-ihchina-chushu-feature"
+      ]
+    },
+    "hist-gjts-xiaoman-sanche": {
+      "title": "\"小满动三车\"的古籍锚点：《古今图书集成》嘉兴县条与海宁蚕月条",
+      "region": ["中国江南（浙江嘉兴、海宁；条目自注\"浙西皆然\"）"],
+      "period": "清代类书《钦定古今图书集成》（康熙年间编成）汇录的浙江方志条；所引方志修年待考",
+      "status": "draft",
+      "sources": ["source-gjts-suigongdian-045", "source-ihchina-xiaoman-nongsu"]
+    },
+    "hist-guyu-naming-yushengbaigu": {
+      "title": "谷雨的命名：\"雨其穀于水\"的古典定义与\"雨生百谷\"的现代概括",
+      "region": ["中国（命名取义于农事与降水，文本传统锚定黄河流域农区）"],
+      "period": "《月令七十二候集解》传统题名为元代；\"雨生百谷\"四字为现代机构/媒体用语",
+      "status": "draft",
+      "sources": [
+        "source-yueling-qishierhou-wikisource",
+        "source-ihchina-guyu-feature",
+        "source-xinhua-guyu-2022"
+      ]
+    },
+    "hist-hanlu-chongyang-adjacent": {
+      "title": "重阳节与寒露：时段邻近但日期锚不同（登高/茱萸/菊花酒的古籍锚点是农历九月九日）",
+      "region": [
+        "文本经验锚定中国：六世纪荆楚（长江中游）、清末北京；现代表述为全国性节日的机构口径"
+      ],
+      "period": "《荆楚岁时记》（六世纪，注文引杜公瞻及《续齐谐记》）；《燕京岁时记》（清末，1906年前后成书）；非遗网专题（2017）",
+      "status": "draft",
+      "sources": [
+        "source-wikisource-jingchu-suishiji",
+        "source-wikisource-yanjingsuishiji",
+        "source-ihchina-hanlu-feature"
+      ]
+    },
+    "hist-hanlu-naming": {
+      "title": "寒露的命名：《月令七十二候集解》\"露氣寒冷，將凝結也\"与白露命名的对偶递进",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典文本传统）"],
+      "period": "《月令七十二候集解》传统题名元代；所承物候体系更早",
+      "status": "draft",
+      "sources": ["source-yueling-qishierhou-wikisource", "source-ihchina-hanlu-feature"]
+    },
+    "hist-mangzhong-jianhuashen": {
+      "title": "《红楼梦》第二十七回\"饯花神\"：芒种习俗的文学文本记载",
+      "region": ["中国（小说叙事场景，不构成地域风俗证据）"],
+      "period": "小说成书于18世纪；程甲本1791年刊行",
+      "status": "in-review",
+      "sources": ["source-wikisource-hongloumeng-chengjia-ch27", "source-ihchina-mangzhong-feature"]
+    },
+    "hist-mangzhong-naming": {
+      "title": "芒种的命名：\"谓有芒之种谷可稼种矣\"的古典定义与宋人异说",
+      "region": ["中国（命名取义于麦稻农时，文本传统锚定黄河-江淮农区）"],
+      "period": "《月令七十二候集解》传统题名为元代；《嬾真子錄》为南宋；现代机构释义为当代用语",
+      "status": "in-review",
+      "sources": [
+        "source-yueling-qishierhou-wikisource",
+        "source-wikisource-guangqunfangpu-c4",
+        "source-ihchina-mangzhong-feature"
+      ]
+    },
+    "hist-qingming-hanshi-merger": {
+      "title": "从寒食到清明：双节融合的断代证据链（6世纪—清末）",
+      "region": [
+        "证据分别锚定：六世纪荆楚（荆楚岁时记）、唐代全国官制（唐六典/唐会要）、清末北京（燕京岁时记）、当代全国性叙事（非遗网）"
+      ],
+      "period": "证据跨度：6世纪至当代；关键断代点为唐开元二十年（732）",
+      "status": "draft",
+      "sources": [
+        "source-wikisource-jingchu-suishiji",
+        "source-qingming-tangliudian-juan2",
+        "source-qingming-tanghuiyao-juan23",
+        "source-wikisource-yanjingsuishiji",
+        "source-ihchina-qingming-feature",
+        "source-ihchina-qingming-project"
+      ]
+    },
+    "hist-xiaoman-naming-xiaodeyingman": {
+      "title": "小满命名：\"物至于此小得盈滿\"的古籍定义句与\"无大满\"序列事实",
+      "region": [
+        "文本经验锚定中国北方麦作区（定义句）；\"满\"的雨水义见于江南农谚（现代机构汇编）"
+      ],
+      "period": "定义句出自题名元代的《月令七十二候集解》；现代机构双义对照为2015-2024年表述",
+      "status": "draft",
+      "sources": [
+        "source-yueling-qishierhou-wikisource",
+        "source-ihchina-xiaoman-feature",
+        "source-xinhua-xiaoman-2024"
+      ]
+    },
+    "hist-yanjing-dachun-yaochun": {
+      "title": "《燕京岁时记》打春条：清代北京的官方迎春礼与咬春",
+      "region": ["中国北京"],
+      "period": "清光绪年间成书（记19世纪末北京岁时）",
+      "status": "draft",
+      "sources": ["source-wikisource-yanjingsuishiji", "source-ihchina-lichun-feature"]
+    },
+    "hist-yueling-bailu-pentads": {
+      "title": "《月令七十二候集解》白露三候：鸿雁来、玄鸟归、群鸟养羞（含雁行方向注文）",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《逸周书》等）",
+      "status": "draft",
+      "sources": ["source-yueling-qishierhou-wikisource", "source-ihchina-bailu-feature"]
+    },
+    "hist-yueling-chunfen-pentads": {
+      "title": "《月令七十二候集解》春分三候：玄鸟至、雷乃发声、始电",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代（吴澄）；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "status": "in-review",
+      "sources": ["source-yueling-qishierhou-wikisource"]
+    },
+    "hist-yueling-chushu-pentads": {
+      "title": "《月令七十二候集解》处暑三候：鹰乃祭鸟、天地始肃、禾乃登",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "status": "in-review",
+      "sources": ["source-yueling-qishierhou-wikisource"]
+    },
+    "hist-yueling-dahan-pentads": {
+      "title": "《月令七十二候集解》大寒三候：鸡乳、征鸟厉疾、水泽腹坚",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代（吴澄）；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "status": "draft",
+      "sources": [
+        "source-yueling-qishierhou-wikisource",
+        "source-ihchina-dahan-feature",
+        "source-rmrbhwb-dahan-2016"
+      ]
+    },
+    "hist-yueling-dashu-pentads": {
+      "title": "《月令七十二候集解》大暑三候：腐草为萤、土润溽暑、大雨时行",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代（吴澄）；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "status": "draft",
+      "sources": ["source-yueling-qishierhou-wikisource", "source-xinhua-dashu-2022"]
+    },
+    "hist-yueling-daxue-pentads": {
+      "title": "《月令七十二候集解》大雪三候：鹖鴠不鸣、虎始交、荔挺出",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代（吴澄）；所承物候体系更早（《礼记·月令》《吕氏春秋》《逸周书·时训》等）",
+      "status": "in-review",
+      "sources": ["source-yueling-qishierhou-wikisource"]
+    },
+    "hist-yueling-dongzhi-pentads": {
+      "title": "《月令七十二候集解》冬至三候：蚯蚓结、麋角解、水泉动",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《吕氏春秋》《逸周书·时训》等）",
+      "status": "in-review",
+      "sources": ["source-yueling-qishierhou-wikisource"]
+    },
+    "hist-yueling-guyu-pentads": {
+      "title": "《月令七十二候集解》谷雨三候：萍始生、鸣鸠拂其羽、戴胜降于桑",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《逸周书》等）",
+      "status": "draft",
+      "sources": ["source-yueling-qishierhou-wikisource", "source-ihchina-guyu-feature"]
+    },
+    "hist-yueling-hanlu-pentads": {
+      "title": "《月令七十二候集解》寒露三候：鸿雁来宾、雀入大水为蛤、菊有黄华（含主宾注文与转化叙事）",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《逸周书》等）",
+      "status": "draft",
+      "sources": ["source-yueling-qishierhou-wikisource", "source-ihchina-hanlu-feature"]
+    },
+    "hist-yueling-jingzhe-pentads": {
+      "title": "《月令七十二候集解》惊蛰三候：桃始华、仓庚鸣、鹰化为鸠",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代；所承物候体系更早（《夏小正》《礼记·月令》等）",
+      "status": "draft",
+      "sources": ["source-yueling-qishierhou-wikisource", "source-ihchina-jingzhe-feature"]
+    },
+    "hist-yueling-lichun-pentads": {
+      "title": "《月令七十二候集解》立春三候：东风解冻、蛰虫始振、鱼陟负冰",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "status": "in-review",
+      "sources": ["source-yueling-qishierhou-wikisource"]
+    },
+    "hist-yueling-lidong-pentads": {
+      "title": "《月令七十二候集解》立冬三候：水始冰、地始冻、雉入大水为蜃",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "status": "draft",
+      "sources": ["source-yueling-qishierhou-wikisource", "source-ihchina-lidong-feature"]
+    },
+    "hist-yueling-liqiu-pentads": {
+      "title": "《月令七十二候集解》立秋三候：凉风至、白露降、寒蝉鸣",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代（吴澄）；所承物候体系更早（《礼记·月令》等）",
+      "status": "draft",
+      "sources": [
+        "source-yueling-qishierhou-wikisource",
+        "source-wikisource-liji-yueling",
+        "source-ihchina-liqiu-feature"
+      ]
+    },
+    "hist-yueling-lixia-pentads": {
+      "title": "《月令七十二候集解》立夏三候：蝼蝈鸣、蚯蚓出、王瓜生",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《逸周书》等）",
+      "status": "draft",
+      "sources": [
+        "source-yueling-qishierhou-wikisource",
+        "source-wikisource-lixia-liji-yueling",
+        "source-ihchina-lixia-feature"
+      ]
+    },
+    "hist-yueling-mangzhong-pentads": {
+      "title": "《月令七十二候集解》芒种三候：螳螂生、鵙始鸣、反舌无声",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代（吴澄）；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "status": "draft",
+      "sources": [
+        "source-yueling-qishierhou-wikisource",
+        "source-ihchina-mangzhong-feature",
+        "source-xinhua-mangzhong-2024"
+      ]
+    },
+    "hist-yueling-qingming-pentads": {
+      "title": "《月令七十二候集解》清明三候：桐始华、田鼠化为鴽、虹始见",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《逸周书·时训》等）",
+      "status": "in-review",
+      "sources": ["source-yueling-qishierhou-wikisource"]
+    },
+    "hist-yueling-qiufen-pentads": {
+      "title": "《月令七十二候集解》秋分三候：雷始收声、蛰虫坯户、水始涸",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《逸周书》等）",
+      "status": "draft",
+      "sources": ["source-yueling-qishierhou-wikisource", "source-ihchina-qiufen-feature"]
+    },
+    "hist-yueling-shuangjiang-pentads": {
+      "title": "《月令七十二候集解》霜降三候：豺祭兽、草木黄落、蛰虫咸俯（\"霜降，九月中\"中气位）",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "status": "draft",
+      "sources": ["source-yueling-qishierhou-wikisource", "source-naoj-24sekki-shuangjiang"]
+    },
+    "hist-yueling-xiaohan-pentads": {
+      "title": "《月令七十二候集解》小寒三候：雁北乡、鹊始巢、雉始雊",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《逸周书·时训》等）",
+      "status": "draft",
+      "sources": [
+        "source-yueling-qishierhou-wikisource",
+        "source-ihchina-xiaohan-feature",
+        "source-xinhua-xiaohan-2023"
+      ]
+    },
+    "hist-yueling-xiaoman-pentads": {
+      "title": "《月令七十二候集解》小满三候：苦菜秀、靡草死、麦秋至",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《逸周书》等）",
+      "status": "draft",
+      "sources": ["source-yueling-qishierhou-wikisource", "source-ihchina-xiaoman-feature"]
+    },
+    "hist-yueling-xiaoshu-pentads": {
+      "title": "《月令七十二候集解》小暑三候：温风至、蟋蟀居壁、鹰始击（含三方异文）",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代（吴澄编，据新华社2024稿编著者表述）；所承物候体系更早（《逸周书·时训解》《礼记·月令》等）",
+      "status": "draft",
+      "sources": [
+        "source-yueling-qishierhou-wikisource",
+        "source-gujintushu-suigong-jixia",
+        "source-ihchina-xiaoshu-feature",
+        "source-ihchina-xiaoshu-huashuo-2021",
+        "source-forestry-xiaoshu-2026"
+      ]
+    },
+    "hist-yueling-xiaoxue-pentads": {
+      "title": "《月令七十二候集解》小雪三候：虹藏不见、天气上升地气下降、闭塞而成冬",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《逸周书·时训》等）",
+      "status": "draft",
+      "sources": ["source-yueling-qishierhou-wikisource", "source-ihchina-xiaoxue-feature"]
+    },
+    "hist-yueling-xiazhi-pentads": {
+      "title": "《月令七十二候集解》夏至三候：鹿角解、蜩始鸣、半夏生",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《逸周书·时训》等）",
+      "status": "draft",
+      "sources": ["source-yueling-qishierhou-wikisource", "source-ihchina-xiazhi-feature"]
+    },
+    "hist-yueling-yushui-pentads": {
+      "title": "《月令七十二候集解》雨水：正月中与三候獭祭鱼、候雁北、草木萌动",
+      "region": ["文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "status": "draft",
+      "sources": [
+        "source-yueling-qishierhou-wikisource",
+        "source-xinhua-yushui-feature",
+        "source-ihchina-yushui-feature"
+      ]
+    },
+    "interp-xiaoman-modern-philosophy": {
+      "title": "\"人生最好是小满\"：\"满而不损、独缺大满\"的现代文化阐释（interpretation 层）",
+      "region": ["中国（当代媒体与学界表述，非地域民俗）"],
+      "period": "2015年（中国文化报）与2024年（新华社稿学者访谈）两个一手文本样本；属当代流行文化阐释",
+      "status": "in-review",
+      "sources": ["source-ihchina-xiaoman-zheli-2015", "source-xinhua-xiaoman-2024"]
+    },
+    "lit-weiyingwu-guantianjia": {
+      "title": "韦应物《观田家》：\"一雷惊蛰始\"的春耕书写与自愧结尾",
+      "region": ["中国"],
+      "period": "唐（韦应物，约737-791）；文本录自《全唐诗·卷192》",
+      "status": "draft",
+      "sources": ["source-wikisource-guantianjia", "source-xinhua-jingzhe-2022"]
+    },
+    "region-chunfen-anren-ganfenshe": {
+      "title": "安仁赶分社：湖南安仁春分社日的祭神农祈谷与中草药墟市",
+      "region": ["中国湖南省安仁县（郴州市北部，与炎陵县接壤）"],
+      "period": "每年农历春分社日例行举办（活动集中于春分前后3天、延续半个月）；2014年列入第四批国家级非遗扩展项目",
+      "status": "draft",
+      "sources": ["source-ihchina-anren-ganfenshe", "source-gmw-anren-ganfenshe"]
+    },
+    "region-chushu-xiangshan-kaiyu": {
+      "title": "中国（象山）开渔节：1998年创办的现代节庆与传统开洋祭海民俗的分层（不能写成\"处暑自古有开渔传统\"）",
+      "region": [
+        "浙江宁波象山（石浦港）；对照组：浙江岱山、山东荣成/日照/即墨（同一非遗项目不同日期锚）"
+      ],
+      "period": "传统层：出海祭海民俗（机构称\"据记载\"象山已千年，文献未直读）；制度层：1995年海洋伏季休渔制度；节庆层：1998年创办中国（象山）开渔节至今",
+      "status": "in-review",
+      "sources": [
+        "source-ccd-xiangshan-kaiyu",
+        "source-zjxc-kaiyu-2023",
+        "source-ihchina-kaiyang-xieyang",
+        "source-ihchina-chushu-feature"
+      ]
+    },
+    "region-dashu-taizhou-dashuchuan": {
+      "title": "浙江台州椒江\"送大暑船\"：二十四节气国家级非遗扩展项目",
+      "region": ["浙江省台州市椒江区葭沚街道一带渔村（台州湾南岸、椒江入海口）"],
+      "period": "文献可溯至清同治年间（俞樾《右台仙馆笔记》）；每年农历四月至大暑日举行；2021年列入第五批国家级非遗扩展项目",
+      "status": "draft",
+      "sources": [
+        "source-ihchina-dashuchuan-project",
+        "source-ihchina-dashuchuan-intro",
+        "source-wikisource-dashu-yutai",
+        "source-xinhua-dashuchuan-2025"
+      ]
+    },
+    "region-daxue-taiwan-wuyu": {
+      "title": "台湾西部沿海乌鱼汛：\"小雪小到，大雪大到\"的节气渔谚（地域卡）",
+      "region": ["台湾西部沿海（乌鱼汛海域）；渔谚流传地域未逐一标注"],
+      "period": "机构汇编层记载：非遗网2017、光明网2023；乌鱼汛本身为黑潮水温和季节驱动的年度渔汛（当代仍在）",
+      "status": "draft",
+      "sources": ["source-ihchina-daxue-feature", "source-gmw-ruixue-daxue"]
+    },
+    "region-dongzhi-sanmen-jidong": {
+      "title": "浙江三门祭冬：\"农历二十四节气\"国家级非遗扩展项目（地域卡）",
+      "region": ["浙江省台州市三门县（亭旁镇杨家村、海游镇上坑村、健跳镇小莆村）"],
+      "period": "国家级非遗公布2014（第四批，扩展项目Ⅹ-68）；综述引康熙《临海县志》等方志（转引级）；\"700余年\"为报道断代（直读）",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-sanmen-jidong",
+        "source-rmrbhwb-sanmen-jidong",
+        "source-ihchina-dongzhi-feature"
+      ]
+    },
+    "region-guanghan-yushui-baobaojie": {
+      "title": "广汉保保节：正月十六\"拉保保\"（四川广汉）——与\"雨水\"节气的关系需辨析",
+      "region": ["中国四川省德阳市广汉市（主会场房湖公园、金雁公园；辐射成都、绵阳等地参与者）"],
+      "period": "当代活态实践；2003年广汉市政府命名\"保保文化节\"，2007年入选首批四川省非物质文化遗产名录（省级）",
+      "status": "in-review",
+      "sources": [
+        "source-cnr-guanghan-baobao",
+        "source-xinhua-guanghan-baobao",
+        "source-ihchina-yushui-feature"
+      ]
+    },
+    "region-guyu-luoyang-mudan": {
+      "title": "洛阳牡丹花会：结合谷雨花期举办的国家级非遗项目（Ⅹ-103）",
+      "region": ["中国河南省洛阳市"],
+      "period": "唐宋赏花习俗（页面引诗文）；1982年牡丹定为市花；1983年首届花会（4月15日-25日）；2008年列入国家级非遗（第二批）；2011年升格为“中国洛阳牡丹文化节”，延续至今",
+      "status": "draft",
+      "sources": ["source-ihchina-guyu-luoyang-mudan", "source-mct-guyu-luoyang-peony"]
+    },
+    "region-hkg-ngokengkiu-daxiaoren": {
+      "title": "香港鹅颈桥\"打小人\"：惊蛰时节的都市民俗与官方定位",
+      "region": ["中国香港特别行政区湾仔区铜锣湾（坚拿道天桥桥底）"],
+      "period": "当代活态实践（政府页面2022年修订、2025年答问均描述其在运作）",
+      "status": "in-review",
+      "sources": ["source-gohk-ngokengkiu-daxiaoren", "source-infogov-hk-daxiaoren-2025"]
+    },
+    "region-liqiu-miao-ganqiu": {
+      "title": "苗族赶秋：湖南湘西花垣的国家级非遗扩展项目（Ⅹ-68，2014第四批）",
+      "region": [
+        "中国湖南省湘西土家族苗族自治州（申报地区：花垣县；流传含凤凰县、吉首市、保靖县、古丈县、泸溪县及贵州松桃、重庆秀山、湖北来凤等苗族地区）"
+      ],
+      "period": "2014年列入第四批国家级非遗扩展项目（农历二十四节气，民俗类）；当代活态（原村寨轮流举办，现多由乡镇或县区举办）",
+      "status": "draft",
+      "sources": [
+        "source-ihchina-liqiu-ganqiu",
+        "source-ihchina-liqiu-ganqiu-topic",
+        "source-mct-liqiu-ganqiu"
+      ]
+    },
+    "region-lixia-banshan": {
+      "title": "半山立夏习俗：杭州拱墅的国家级非遗扩展项目（Ⅹ-68，2021第五批）",
+      "region": ["中国浙江省杭州市拱墅区（半山街道，皋亭山脉，大运河南端）"],
+      "period": "娘娘庙\"相传始建于南宋建炎年间\"（页面\"相传\"措辞，非史实断代）；明清以来庙会兴盛（页面表述）；2021年列入第五批国家级非遗扩展项目；2023年已办至第十二届半山立夏节",
+      "status": "draft",
+      "sources": ["source-ihchina-lixia-banshan", "source-chinadaily-lixia-banshan"]
+    },
+    "region-shengze-xiaoman-xi": {
+      "title": "盛泽小满戏：江苏吴江先蚕祠的小满演剧传统（Candidate 级地域锚点）",
+      "region": ["中国江苏省苏州市吴江区盛泽镇"],
+      "period": "先蚕祠建于清道光年间（建年两说：1827文化报/1840文旅部）；小满演戏传统延续，2024年为\"四季村晚\"示范展示点",
+      "status": "in-review",
+      "sources": ["source-mct-shengze-canfa", "source-ihchina-xiaoman-zheli-2015"]
+    },
+    "region-shiqian-shuochun": {
+      "title": "石阡说春：贵州石阡侗族的立春劝农说唱",
+      "region": ["中国贵州省石阡县（侗族为主）"],
+      "period": "延续至今的当代实践；据项目页，清乾隆《石阡府志》已有记载",
+      "status": "in-review",
+      "sources": ["source-ihchina-shiqian-shuochun", "source-xinhua-unesco-solarterms"]
+    },
+    "region-shuangjiangjie-tiandeng": {
+      "title": "广西壮族霜降节：霜降后9天的壮族稻作节庆（国家级非遗扩展项目，随\"二十四节气\"列入UNESCO名录的组成部分）",
+      "region": [
+        "广西壮族自治区天等、大新、德保、靖西、那坡等县（以天等县为典型；影响范围远及云南和越南）"
+      ],
+      "period": "节期=每年霜降后9天内（头降/中降/尾降三阶段）；历史层：明嘉靖融入纪念瓦氏夫人，清代鼎盛，改革开放后恢复；非遗认定：2014年第四批国家级扩展项目，2016年随\"二十四节气\"列入UNESCO名录",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-shuangjiangjie-project",
+        "source-ihchina-shuangjiangjie-intro",
+        "source-people-shuangjiangjie-gx-2022"
+      ]
+    },
+    "region-xiaoshu-xuzhou-fuyang": {
+      "title": "徐州伏羊食俗：入伏吃羊肉的国家级非遗（2021年第五批，Ⅹ-179）",
+      "region": ["中国江苏省徐州市及周边相邻地区"],
+      "period": "项目2021年列入第五批国家级非遗名录；习俗据页内转述\"据历代地方志载\"（方志原文未直读）",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-xuzhou-fuyang",
+        "source-ihchina-xiaoshu-feature",
+        "source-xinhua-xiaoshu-poetic-2024"
+      ]
+    },
+    "sci-bailu-dew-formation": {
+      "title": "露的形成机制：夜间辐射冷却至露点以下凝结；白露时节昼夜温差拉大",
+      "region": [
+        "露的形成机制为通用气象学（与地域无关）；\"白露时节温差拉大\"的表述锚定中国中纬度经验"
+      ],
+      "period": "现代气象学口径；世界气象组织20世纪60年代给出露的正式定义（据科普中国稿转述）",
+      "status": "draft",
+      "sources": [
+        "source-kpzg-dew-formation",
+        "source-weathercn-tianjin-lushuang",
+        "source-xinhua-bailu-2022",
+        "source-ihchina-bailu-feature"
+      ]
+    },
+    "sci-bailu-longitude-165": {
+      "title": "白露的天文定义：太阳黄经 165°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-bailu-feature",
+        "source-xinhua-bailu-2022",
+        "source-rmrbhwb-bailu-2016",
+        "source-gbt-33661-openstd"
+      ]
+    },
+    "sci-chunfen-day-night-equal": {
+      "title": "春分昼夜均分的天文解释：太阳直射赤道，\"昼夜平分\"是近似而非严格相等",
+      "region": ["全球（昼夜相对长度规律与纬度相关，直射赤道事件全球同时）"],
+      "period": "现代天文学口径",
+      "status": "draft",
+      "sources": ["source-xinhuanet-chunfen-2021", "source-ihchina-chunfen-feature"]
+    },
+    "sci-chunfen-longitude-0": {
+      "title": "春分的天文定义：太阳黄经 0°——二十四节气黄经刻度的起算点",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径",
+      "status": "draft",
+      "sources": [
+        "source-xinhuanet-chunfen-2021",
+        "source-xinhuanet-chunfen-2022",
+        "source-ihchina-chunfen-feature",
+        "source-hko-solar-terms"
+      ]
+    },
+    "sci-chushu-climate-autumn-transition": {
+      "title": "处暑气候：由热转凉的转折点与\"秋老虎\"（分区图景）",
+      "region": [
+        "中国分区（长城以北/华北中南部黄淮/南方/华西/东南沿海）；概述级，未附逐年气象数据"
+      ],
+      "period": "\"常年\"口径（中国天气网2026）；谚语层为民闲传统",
+      "status": "draft",
+      "sources": [
+        "source-weathercn-chushu-2026",
+        "source-xinhua-chushu-2022",
+        "source-ihchina-chushu-feature"
+      ]
+    },
+    "sci-chushu-longitude-150": {
+      "title": "处暑的天文定义：太阳黄经 150°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-chushu-feature",
+        "source-xinhua-chushu-2022",
+        "source-gbt-33661-openstd"
+      ]
+    },
+    "sci-dahan-longitude-300": {
+      "title": "大寒的天文定义：太阳黄经 300°，二十四节气的终点",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-dahan-feature",
+        "source-xinhua-dahan-topic",
+        "source-rmrbhwb-dahan-2016",
+        "source-naoj-24sekki-dahan",
+        "source-gbt-33661-openstd"
+      ]
+    },
+    "sci-dahan-vs-xiaohan-cold": {
+      "title": "小寒与大寒谁更冷：命名序位与气温统计的错位",
+      "region": ["中国（1991-2020年全国统计与南北分区）"],
+      "period": "现代气象统计口径（1991-2020年；媒体稿2016/2023）",
+      "status": "draft",
+      "sources": [
+        "source-weathercn-dahan-2023",
+        "source-rmrbhwb-dahan-2016",
+        "source-ihchina-dahan-feature"
+      ]
+    },
+    "sci-dashu-firefly-entomology": {
+      "title": "萤火虫的现代昆虫学事实：生活史、发光机理与栖息地（与\"腐草为萤\"的分层）",
+      "region": [
+        "中国及全球热带亚热带地区（云南、广东、西双版纳等地为直读实例）；具体物候期因地区种类而异"
+      ],
+      "period": "现代昆虫学口径（直读来源为2024-2026年科普稿）",
+      "status": "in-review",
+      "sources": [
+        "source-cas-dashu-firefly",
+        "source-forestry-dashu-firefly",
+        "source-xinhua-dashu-2022"
+      ]
+    },
+    "sci-dashu-longitude-120": {
+      "title": "大暑的天文定义：太阳黄经 120°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-dashu-feature",
+        "source-xinhua-dashu-2022",
+        "source-gbt-33661-openstd"
+      ]
+    },
+    "sci-dashu-sanfu-zhongfu-heat": {
+      "title": "大暑与中伏：\"冷在三九，热在中伏\"及温湿指数的气候学核对",
+      "region": ["中国（气象统计以30余个省会级城市为准；区域差异显著）"],
+      "period": "气象数据为1991-2020年常年统计；稿件为2022年",
+      "status": "in-review",
+      "sources": ["source-xinhua-dashu-2022", "source-ihchina-dashu-feature"]
+    },
+    "sci-daxue-jieqi-vs-tianqi": {
+      "title": "节气\"大雪\"与天气\"大雪\"是两个概念：气候时段名与降雪强度等级",
+      "region": ["中国（分区叙述：东北/西北/黄河流域/华北/江淮及以南/华南/西南/内蒙古）"],
+      "period": "气象标准与分区气候叙述为中国天气网2008年专题口径；逐年数值未核",
+      "status": "draft",
+      "sources": ["source-weathercn-daxue-2008", "source-ihchina-daxue-feature"]
+    },
+    "sci-daxue-longitude-255": {
+      "title": "大雪的天文定义：太阳黄经 255°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-daxue-feature",
+        "source-weathercn-daxue-2008",
+        "source-xinhua-daxue-topic",
+        "source-gbt-33661-openstd"
+      ]
+    },
+    "sci-daxue-snow-agronomy": {
+      "title": "\"瑞雪兆丰年\"的农艺机制：积雪保温、融水增墒与冻杀害虫（科学解释层）",
+      "region": ["中国（适用于有越冬作物与季节性积雪的区域；无冬区不适用）"],
+      "period": "机构解释层：非遗网2017、中国天气网2008、光明网2023（学者文）；现代农艺学口径",
+      "status": "draft",
+      "sources": [
+        "source-weathercn-daxue-2008",
+        "source-ihchina-daxue-feature",
+        "source-gmw-ruixue-daxue"
+      ]
+    },
+    "sci-dongzhi-longitude-270": {
+      "title": "冬至的天文定义：太阳黄经 270°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-dongzhi-feature",
+        "source-xinhua-dongzhi-2021",
+        "source-xinhuanet-dongzhi-2015",
+        "source-gbt-33661-openstd"
+      ]
+    },
+    "sci-dongzhi-shortest-day-year-anchor": {
+      "title": "冬至的一个真\"最\"与历法锚：北半球白昼最短、日影最长，两个冬至之间为一个回归年",
+      "region": [
+        "北半球（极值命题为半球级表述）；\"1月最冷\"经验来自中国（除少数海岛和海滨局部地区外）"
+      ],
+      "period": "现代天文口径；2021年新华社稿含当年交节实例与专家口径",
+      "status": "draft",
+      "sources": [
+        "source-xinhua-dongzhi-2021",
+        "source-pmo-almanac-qa",
+        "source-ihchina-dongzhi-feature",
+        "source-xinhuanet-dongzhi-2015"
+      ]
+    },
+    "sci-guyu-longitude-30": {
+      "title": "谷雨的天文定义：太阳黄经 30°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；2022年机构稿仍在沿用同一表述",
+      "status": "draft",
+      "sources": ["source-ihchina-guyu-feature", "source-xinhua-guyu-2022"]
+    },
+    "sci-guyu-rain-sowing-window": {
+      "title": "谷雨的农业气象意义：暮春降雨增多与春播关键期",
+      "region": ["中国（机构表述口径；\"降雨增多\"为节气气候经验概括，非分区气候统计）"],
+      "period": "当代机构/媒体科普口径（2017非遗网稿、2022新华社稿）",
+      "status": "draft",
+      "sources": ["source-ihchina-guyu-feature", "source-xinhua-guyu-2022"]
+    },
+    "sci-hanlu-cooling-transition": {
+      "title": "寒露的气候意义：由凉转寒的过渡、露温低于白露与霜冻边界",
+      "region": ["中国（机构稿口径的中纬度经验；具体气候特征因纬度海拔而异）"],
+      "period": "现代气候科普口径（新华社2021/2022稿、非遗网专题页）",
+      "status": "draft",
+      "sources": [
+        "source-xinhua-hanlu-2022",
+        "source-xinhua-hanlu-2021",
+        "source-ihchina-hanlu-feature"
+      ]
+    },
+    "sci-hanlu-longitude-195": {
+      "title": "寒露的天文定义：太阳黄经 195°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-hanlu-feature",
+        "source-xinhua-hanlu-2022",
+        "source-xinhua-hanlu-2021",
+        "source-gbt-33661-openstd"
+      ]
+    },
+    "sci-jingzhe-longitude-345": {
+      "title": "惊蛰的天文定义：太阳黄经 345°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-jingzhe-feature",
+        "source-xinhua-jingzhe-2022",
+        "source-weathercn-jingzhe-origin",
+        "source-gbt-33661-openstd"
+      ]
+    },
+    "sci-jingzhe-thunder-climate": {
+      "title": "惊蛰与初雷：春雷的南北时差和\"雷惊百虫\"的现代解释",
+      "region": ["中国（初雷日期随纬度显著不同）"],
+      "period": "当代气候口径（机构科普稿转述）",
+      "status": "in-review",
+      "sources": [
+        "source-xinhua-jingzhe-2022",
+        "source-weathercn-jingzhe-origin",
+        "source-ihchina-jingzhe-feature"
+      ]
+    },
+    "sci-lichun-calendar-position": {
+      "title": "立春在历法中的位置：正月之\"节\"，与正月初一相互独立",
+      "region": ["中国"],
+      "period": "现行历法口径；\"正月节\"对应属传统月令框架",
+      "status": "draft",
+      "sources": [
+        "source-pmo-almanac-qa",
+        "source-ihchina-lichun-feature",
+        "source-yueling-qishierhou-wikisource"
+      ]
+    },
+    "sci-lichun-longitude-315": {
+      "title": "立春的天文定义：太阳黄经 315°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "status": "in-review",
+      "sources": [
+        "source-gbt-33661-openstd",
+        "source-hko-solar-terms",
+        "source-ihchina-lichun-feature",
+        "source-pmo-almanac-qa"
+      ]
+    },
+    "sci-lichun-vs-meteorological-spring": {
+      "title": "立春不等于气象学入春：两套\"春\"的定义",
+      "region": ["中国（气候学口径全国通用；各地入春日期差异大）"],
+      "period": "现代气候学口径；深圳常年值基于1991-2020年数据",
+      "status": "draft",
+      "sources": ["source-szmb-season-division"]
+    },
+    "sci-lidong-longitude-225": {
+      "title": "立冬的天文定义：太阳黄经 225°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-lidong-feature",
+        "source-weathercn-lidong-225",
+        "source-xinhua-lidong-2023",
+        "source-gbt-33661-openstd"
+      ]
+    },
+    "sci-lidong-vs-meteorological-winter": {
+      "title": "立冬 ≠ 气象入冬：天文冬季之始与候温入冬标准的错位",
+      "region": ["中国（入冬日期自北向南大幅延后；华南沿海无冬、青藏高原长冬无夏）"],
+      "period": "现代气候学口径（候温法）；引用统计为1981-2010常年值与2023年稿数据",
+      "status": "in-review",
+      "sources": [
+        "source-szmb-season-division",
+        "source-weathercn-lidong-225",
+        "source-xinhua-lidong-2023",
+        "source-ihchina-lidong-feature"
+      ]
+    },
+    "sci-liqiu-longitude-135": {
+      "title": "立秋的天文定义：太阳黄经 135°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-liqiu-feature",
+        "source-xinhua-liqiu-2022",
+        "source-xinhua-liqiu-shengdong-2026",
+        "source-xinhua-liqiu-2021",
+        "source-gbt-33661-openstd"
+      ]
+    },
+    "sci-liqiu-vs-meteorological-autumn": {
+      "title": "立秋≠入秋：天文秋季起点与气象入秋标准的差距（含\"秋老虎\"）",
+      "region": ["中国（气象学入秋标准为全国通用口径；常年入秋分布因地域而异）"],
+      "period": "现代气象学口径（2026年新华社稿受访专家：中国气象局二十四节气重点开放实验室、国家气候中心）",
+      "status": "in-review",
+      "sources": [
+        "source-xinhua-liqiu-sanwen-2026",
+        "source-szmb-season-division",
+        "source-xinhua-liqiu-shengdong-2026",
+        "source-xinhua-liqiu-2022",
+        "source-ihchina-liqiu-feature"
+      ]
+    },
+    "sci-lixia-longitude-45": {
+      "title": "立夏的天文定义：太阳黄经 45°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；交节时刻由紫金山天文台《中国天文年历》逐年编算发布",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-lixia-feature",
+        "source-weather-com-cn-lixia",
+        "source-xinhua-lixia-2026",
+        "source-hko-solar-terms",
+        "source-pmo-almanac-qa"
+      ]
+    },
+    "sci-lixia-vs-meteorological-summer": {
+      "title": "立夏≠气象入夏：天文夏季开始与22℃入夏标准的两套口径",
+      "region": ["中国（入夏判定逐地不同；\"全国大部分地区\"表述为机构概括口径）"],
+      "period": "现行气象业务口径（QX/T 152-2012 标准原文未直读）",
+      "status": "in-review",
+      "sources": [
+        "source-weather-com-cn-lixia",
+        "source-xinhua-lixia-2026",
+        "source-szmb-season-division"
+      ]
+    },
+    "sci-mangzhong-longitude-75": {
+      "title": "芒种的天文定义：太阳黄经 75°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；2017/2024年机构稿沿用同一表述",
+      "status": "draft",
+      "sources": ["source-ihchina-mangzhong-feature", "source-xinhua-mangzhong-2024"]
+    },
+    "sci-mangzhong-sanxia-meiyu": {
+      "title": "芒种农时的科学底色：夏收夏种夏管\"三夏\"大忙与长江中下游梅雨",
+      "region": ["中国东部季风区（机构稿为全国综述，梅雨段限长江中下游）"],
+      "period": "现代气象口径；2024年国家气候中心监测为数据样本",
+      "status": "draft",
+      "sources": [
+        "source-ihchina-mangzhong-feature",
+        "source-xinhua-mangzhong-2024",
+        "source-weathercn-meiyu-2024"
+      ]
+    },
+    "sci-qingming-longitude-15": {
+      "title": "清明的天文定义：太阳黄经 15°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；交节日期由紫金山天文台逐年计算发布",
+      "status": "draft",
+      "sources": [
+        "source-ihchina-qingming-feature",
+        "source-xinhua-qingming-2024",
+        "source-hko-solar-terms",
+        "source-pmo-almanac-qa"
+      ]
+    },
+    "sci-qiufen-day-night-equal": {
+      "title": "秋分昼夜均分的科学解释：第二次均分与\"阴阳相半\"的古典对应",
+      "region": ["全球（直射赤道事件全球同时；昼夜相对长度随纬度而异）"],
+      "period": "现代天文学口径；汉代文本为对照层",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-qiufen-feature",
+        "source-xinhua-qiufen-2022",
+        "source-weather-com-cn-qiufen",
+        "source-wikisource-chunqiufanlu-yinyang"
+      ]
+    },
+    "sci-qiufen-longitude-180": {
+      "title": "秋分的天文定义：太阳黄经 180°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；日期实例取2017/2022/2024年机构发布",
+      "status": "draft",
+      "sources": [
+        "source-ihchina-qiufen-feature",
+        "source-xinhua-qiufen-2022",
+        "source-xinhua-qiufen-2024",
+        "source-weather-com-cn-qiufen"
+      ]
+    },
+    "sci-shuangjiang-frost-formation": {
+      "title": "霜的形成机制：\"皆由地发，非从天降\"——夜间辐射冷却至0℃以下水汽凝华；霜与霜冻之别",
+      "region": [
+        "霜的形成机制为通用气象学（与地域无关）；初霜日期的地域差异显著（大兴安岭北部8月底至华南来年1月上旬）；\"霜打洼地\"为地形局地效应"
+      ],
+      "period": "现代气象学口径（本轮直读来源为2008-2024年机构稿）",
+      "status": "in-review",
+      "sources": [
+        "source-xinhua-shuangjiang-frost-2024",
+        "source-weathercn-shuangjiang-proverbs",
+        "source-weathercn-tianjin-lushuang",
+        "source-ihchina-shuangjiang-feature"
+      ]
+    },
+    "sci-shuangjiang-longitude-210": {
+      "title": "霜降的天文定义：太阳黄经 210°，秋季最后一个节气",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；2017年起有国家标准表述（GB/T 33661-2017 正文待人工核读）",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-shuangjiang-feature",
+        "source-xinhua-shuangjiang-2021",
+        "source-naoj-24sekki-shuangjiang"
+      ]
+    },
+    "sci-xiaohan-longitude-285": {
+      "title": "小寒的天文定义：太阳黄经 285°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-xiaohan-feature",
+        "source-xinhua-xiaohan-2023",
+        "source-hko-solar-terms",
+        "source-gbt-33661-openstd"
+      ]
+    },
+    "sci-xiaohan-vs-dahan-temperature": {
+      "title": "小寒常比大寒冷：1991-2020年数据显示23省份小寒期间平均气温低于大寒",
+      "region": [
+        "中国（30年逐省统计：23省份小寒更冷；例外为江苏、上海、浙江、福建、江西、广东、广西、海南8个省市区——来源页面称之为\"沿海地区\"，其中江西为内陆省，该标签疑为来源用词不严谨，本卡按名单引用）"
+      ],
+      "period": "1991-2020年30年气候平均口径（中国天气网2025年盘点）；北京对照数据为人民日报2026年稿转述",
+      "status": "in-review",
+      "sources": [
+        "source-weathercn-xiaohan-2025",
+        "source-people-xiaohan-dahan-2026",
+        "source-xinhua-xiaohan-2023",
+        "source-ihchina-xiaohan-feature"
+      ]
+    },
+    "sci-xiaoman-longitude-60": {
+      "title": "小满的天文定义：太阳黄经 60°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；2017年机构专题与2024年机构稿沿用同一表述",
+      "status": "draft",
+      "sources": ["source-ihchina-xiaoman-feature", "source-xinhua-xiaoman-2024"]
+    },
+    "sci-xiaoshu-climate-heat-humid": {
+      "title": "小暑气候：盛夏开始的高温高湿时段（出梅、入伏、南方28-30℃）",
+      "region": ["中国（气温概述以南方为限；雷暴表述限南方大部分地区）"],
+      "period": "当代气候概述（2021-2026机构稿口径）",
+      "status": "draft",
+      "sources": [
+        "source-forestry-xiaoshu-2026",
+        "source-ihchina-xiaoshu-feature",
+        "source-ihchina-xiaoshu-huashuo-2021",
+        "source-xinhua-xiaoshu-2022",
+        "source-xinhua-xiaoshu-poetic-2024"
+      ]
+    },
+    "sci-xiaoshu-longitude-105": {
+      "title": "小暑的天文定义：太阳黄经 105°",
+      "region": ["全球（黄经定义与地域无关）；气候经验因纬度而异"],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "status": "in-review",
+      "sources": [
+        "source-xinhua-xiaoshu-2022",
+        "source-forestry-xiaoshu-2026",
+        "source-ihchina-xiaoshu-feature",
+        "source-xinhua-xiaoshu-poetic-2024"
+      ]
+    },
+    "sci-xiaoshu-sanfu-gengday-mechanism": {
+      "title": "三伏的历法机制：\"夏至三庚数头伏\"——干支计日而非节气",
+      "region": ["中国（干支纪日传统；入伏日期全国同一历法日）"],
+      "period": "机制为古代历法传统；表述为现代天文科普口径（2024）",
+      "status": "draft",
+      "sources": [
+        "source-xinhua-sanfu-2024",
+        "source-gujintushu-suigong-furi",
+        "source-xinhua-xiaoshu-2022",
+        "source-ihchina-xiaoshu-feature"
+      ]
+    },
+    "sci-xiaoxue-longitude-240": {
+      "title": "小雪的天文定义：太阳黄经 240°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "status": "in-review",
+      "sources": [
+        "source-gbt-33661-openstd",
+        "source-ihchina-xiaoxue-feature",
+        "source-xinhua-xiaoxue-2022",
+        "source-xinhua-xiaoxue-2019"
+      ]
+    },
+    "sci-xiaoxue-not-necessarily-snow": {
+      "title": "小雪节气≠必然降雪：气候趋势名与天气事件的区分",
+      "region": [
+        "中国（机构稿为全国性口径，气候描述因地域而异：东北封冻/西北大雪/黄河以北初雪/江南初冬/华南少雪）"
+      ],
+      "period": "现代气象学口径；机构稿2019/2022/2017（非遗网）",
+      "status": "in-review",
+      "sources": [
+        "source-xinhua-xiaoxue-2022",
+        "source-xinhua-xiaoxue-2019",
+        "source-ihchina-xiaoxue-feature"
+      ]
+    },
+    "sci-xiazhi-longest-day": {
+      "title": "夏至的一个真\"最\"与三个假\"最\"：白昼最长，但非日出最早、日落最晚、全年最热",
+      "region": ["北半球（命题为半球级表述）；例证数据来自中国北京、黑龙江漠河"],
+      "period": "现代天文口径；2026年新华社稿含当年实测预报数据",
+      "status": "draft",
+      "sources": [
+        "source-xinhua-xiazhi-2026",
+        "source-weathercn-xiazhi-feature",
+        "source-ihchina-xiazhi-feature"
+      ]
+    },
+    "sci-xiazhi-longitude-90": {
+      "title": "夏至的天文定义：太阳黄经 90°",
+      "region": ["全球（黄经定义与地域无关）；\"白昼最长\"的极值经验限北半球，且因纬度而异"],
+      "period": "现代天文学口径；2026年机构稿仍在沿用同一表述",
+      "status": "draft",
+      "sources": [
+        "source-ihchina-xiazhi-feature",
+        "source-weathercn-xiazhi-feature",
+        "source-xinhua-xiazhi-2026"
+      ]
+    },
+    "sci-yushui-longitude-330": {
+      "title": "雨水的天文定义：太阳黄经 330°",
+      "region": ["全球（黄经定义与地域无关）；日期经验因纬度而异"],
+      "period": "现代天文学口径；2017年起有国家标准表述（正文未直读）",
+      "status": "in-review",
+      "sources": [
+        "source-xinhua-yushui-feature",
+        "source-ihchina-yushui-feature",
+        "source-naoj-24sekki-yushui"
+      ]
+    },
+    "sci-yushui-rain-transition": {
+      "title": "\"由雪转雨、气温回升\"：雨水时节的气象学解释",
+      "region": ["表述锚定东亚季风区（北半球中纬度）；页面级全国分布断言本轮未逐区核验"],
+      "period": "现代气象学口径（2022年机构科普稿表述）",
+      "status": "draft",
+      "sources": ["source-xinhua-yushui-feature", "source-ihchina-yushui-feature"]
+    },
+    "trad-bailu-nongshi": {
+      "title": "白露农事农谚：秋收秋播的节点、\"白露白迷迷\"与秋旱风险",
+      "region": [
+        "农谚流传地域未逐一标注（非遗网整组收录未标省份）；分区域农业风险表述限北方地区/长江中下游/华西（非遗网、新华社口径）"
+      ],
+      "period": "当代机构汇编所录传统农谚（各谚文献源头未考）",
+      "status": "draft",
+      "sources": [
+        "source-ihchina-bailu-feature",
+        "source-xinhua-bailu-2022",
+        "source-rmrbhwb-bailu-2016"
+      ]
+    },
+    "trad-bailu-tea-rice-wine": {
+      "title": "白露茶（南京）与白露米酒（湖南资兴）：两例地域食俗的文献与证据边界",
+      "region": [
+        "白露茶：直读源明标\"旧时南京\"；白露米酒：直读源明标湖南资兴兴宁、三都、蓼江一带（\"苏南籍和浙江籍老南京自酿\"为农大汇编稿线索级，未独立核验）"
+      ],
+      "period": "记载为当代机构综述所录传统（\"旧时\"\"历来\"均机构表述；更早文献源头未考）",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-bailu-feature",
+        "source-rmrbhwb-bailu-2016",
+        "source-cau-bailu-2018"
+      ]
+    },
+    "trad-chunfen-nongshi": {
+      "title": "春分农事与农谚：\"春分麦起身，一刻值千金\"与春播大忙",
+      "region": [
+        "农谚为黄河-江淮麦作区经验（\"春分麦起身\"）；非遗网另按东北华北西北/江南分述，地域归属未逐条标注"
+      ],
+      "period": "农谚为传统农事经验（传承年代未确证）；机构表述为当代农事口径",
+      "status": "in-review",
+      "sources": [
+        "source-weather-com-cn-chunfen",
+        "source-ihchina-chunfen-feature",
+        "source-ihchina-anren-ganfenshe"
+      ]
+    },
+    "trad-chushu-nongshi": {
+      "title": "处暑农事与农谚：秋收序幕（中稻收获、蓄水防旱）",
+      "region": [
+        "中国（机构汇编级：南方中稻区、华南、华西、伏旱区等分述；农谚流传地域未逐一标明）"
+      ],
+      "period": "当代机构汇编（2017/2022）；农谚为民间流传层",
+      "status": "in-review",
+      "sources": ["source-ihchina-chushu-feature", "source-xinhua-chushu-2022"]
+    },
+    "trad-dahan-nongshi": {
+      "title": "大寒农事：积肥堆肥备春耕与\"以寒占年\"的农谚群",
+      "region": ["中国（南北分述：北方积肥堆肥/牲畜防寒；南方冬小麦田间管理；岭南捉田鼠）"],
+      "period": "当代机构汇编层可确证（2016/2018）；农谚的文献首出未核",
+      "status": "draft",
+      "sources": ["source-ihchina-dahan-feature", "source-rmrbhwb-dahan-2016"]
+    },
+    "trad-dahan-weiya": {
+      "title": "尾牙：农历十二月十六的岁末祭——\"大寒习俗\"的时间锚辨析",
+      "region": ["中国福建沿海、台湾等地（两直读源的地域限定表述）；闽南\"做牙\"体系"],
+      "period": "当代媒体与机构汇编层可确证（2016/2018）；\"做牙\"体系的古籍谱系本轮未直读",
+      "status": "in-review",
+      "sources": ["source-rmrbhwb-dahan-2016", "source-ihchina-dahan-feature"]
+    },
+    "trad-dashu-nongshi": {
+      "title": "大暑农事与农谚：双季稻\"双抢\"、大豆需水临界与伏雨谚语群",
+      "region": [
+        "农谚地域标注从源：双季稻区（南方）；苏浙；长江中下游；北方（七下八上汛期）；大豆产区"
+      ],
+      "period": "当代机构稿记录的农谚与农事；谚语为流传传统（tradition层）",
+      "status": "draft",
+      "sources": ["source-ihchina-dashu-feature", "source-xinhua-dashu-2022"]
+    },
+    "trad-daxue-ruixue": {
+      "title": "\"瑞雪兆丰年\"：大雪农谚群（传统经验层）",
+      "region": ["农谚流传地域：机构页均未逐条标注（黄河流域冬麦区经验为底色，待逐地核验）"],
+      "period": "机构汇编层：非遗网2017、光明网2023（学者文）；农谚的口传谱系与文献首出待考",
+      "status": "draft",
+      "sources": [
+        "source-ihchina-daxue-feature",
+        "source-gmw-ruixue-daxue",
+        "source-weathercn-daxue-2008"
+      ]
+    },
+    "trad-daxue-yanrou": {
+      "title": "\"小雪腌菜，大雪腌肉\"：大雪腌腊食俗的机构汇编证据（古籍谱系待考）",
+      "region": [
+        "可确证叙述限机构汇编层（非遗网页称\"南方很多人家\"、光明网引\"老南京\"俗语）；逐地分布未核验"
+      ],
+      "period": "机构汇编层：非遗网2017、光明网2023；腌腊技艺的古籍谱系（腊之名或系于腊日/腊月，非大雪）待直读分立",
+      "status": "in-review",
+      "sources": ["source-ihchina-daxue-feature", "source-gmw-ruixue-daxue"]
+    },
+    "trad-dongzhi-nongshi": {
+      "title": "冬至农事与农谚：兴修水利、积肥防冻，以冬至日占验一冬",
+      "region": [
+        "中国（非遗网分气候带叙述：东北冰封/黄淮银装/大江南北5℃以上冬作物继续生长；农谚流传地域未逐一标注）"
+      ],
+      "period": "机构汇编层（非遗网2017）；农谚为口传传统，首出与流传史未考",
+      "status": "draft",
+      "sources": ["source-ihchina-dongzhi-feature"]
+    },
+    "trad-dongzhi-shijiu-xiaohantu": {
+      "title": "数九与九九消寒图：从冬至日起算的九九八十一天",
+      "region": [
+        "中国（数九与消寒图可确证实践为明末北京；数九歌版本\"南北各异\"——非遗网；当代为跨地域通行习俗——新华社口径）"
+      ],
+      "period": "可确证文献：明末《帝京景物略》（1635）；数九习俗的更早起源（南北朝说）本轮未获直读",
+      "status": "draft",
+      "sources": [
+        "source-wikisource-dijing-jingwulue",
+        "source-xinhua-dongzhi-2021",
+        "source-ihchina-dongzhi-feature"
+      ]
+    },
+    "trad-guyu-nongshi": {
+      "title": "谷雨农事：\"播种移苗、埯瓜点豆\"的春播窗口与农谚群",
+      "region": ["中国农区（机构汇编口径；农谚流传地域未逐一标明）"],
+      "period": "农谚为传统积累（断代不明）；表述载体为当代机构/媒体汇编",
+      "status": "draft",
+      "sources": ["source-ihchina-guyu-feature", "source-xinhua-guyu-2022"]
+    },
+    "trad-guyu-tea-toon": {
+      "title": "谷雨茶与食香椿：\"南方摘茶、北方食香椿\"的习俗表述及其证据边界",
+      "region": [
+        "机构表述为\"南方\"（摘茶）与\"北方\"（食香椿）；未逐省核验，具体茶区（如江南/西南）待地域化研究"
+      ],
+      "period": "当代机构汇编表述；历史谱系（\"雨前茶\"术语何时定型）未建文献链",
+      "status": "in-review",
+      "sources": ["source-ihchina-guyu-feature", "source-xinhua-guyu-2022"]
+    },
+    "trad-hanlu-nongshi": {
+      "title": "\"寒露种麦\"的地域版图：华北与河南/陕西关中两套播期谚及秋收农事",
+      "region": [
+        "中国（分区域：华北、山东/河北、河南/陕西关中、湖北/湖南/江西/福建、淮北、高原地区）"
+      ],
+      "period": "农谚为传统流传（无断代）；\"气候变暖推迟播期\"为2023年机构口径的当代观察",
+      "status": "in-review",
+      "sources": ["source-ihchina-hanlu-feature", "source-ruc-agri-qiufen-wheat"]
+    },
+    "trad-jingzhe-nongyan-chungeng": {
+      "title": "\"过了惊蛰节，春耕不能歇\"：惊蛰农谚与春耕动员",
+      "region": ["中国（非遗网汇编未逐条标注农谚流传地域；新华网表述为\"大江南北\"）"],
+      "period": "农谚为传统口传（断代不明）；机构表述为当代",
+      "status": "draft",
+      "sources": [
+        "source-ihchina-jingzhe-feature",
+        "source-xinhua-jingzhe-2022",
+        "source-wikisource-guantianjia"
+      ]
+    },
+    "trad-lichun-nongshi": {
+      "title": "立春农事：备耕的开始与\"一年之计在于春\"",
+      "region": ["中国（全国大部；具体农时因地域而异）"],
+      "period": "传统农事框架延续至当代；现代机械农业下的实践形态待研究",
+      "status": "draft",
+      "sources": ["source-ihchina-lichun-feature"]
+    },
+    "trad-lidong-budong-jiaozi": {
+      "title": "立冬吃饺子与\"补冬\"：地域分布、\"交子\"词源辨析与谱系警示",
+      "region": ["北方（饺子）；台湾、闽南（鸡鸭羊肉进补）；南京（吃生葱，单一机构源）"],
+      "period": "当代流行实践；\"交子之时\"解释为现代民间词源层，未获古籍文献支持",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-lidong-feature",
+        "source-xinhua-lidong-2023",
+        "source-weathercn-lidong-shengcong"
+      ]
+    },
+    "trad-lidong-nongshi": {
+      "title": "秋收冬藏的关口：立冬农事与农谚",
+      "region": ["中国（农事条目具大区标注：东北/江淮/江南/华南；农谚流传地域未逐一标明）"],
+      "period": "当代农事口径（非遗网2017汇编）；农谚承传统占候（明《农政全书》辑录层）",
+      "status": "draft",
+      "sources": [
+        "source-ihchina-lidong-feature",
+        "source-gjts-suigong-lidong",
+        "source-xinhua-lidong-2023"
+      ]
+    },
+    "trad-liqiu-nongshi": {
+      "title": "立秋农事与农谚：占候谚群与\"立秋十天遍地黄\"类叙事的核验",
+      "region": ["农谚出处未逐一标注（非遗网汇编）；古籍农谚（《纪历撮要》等）为中原农书传统"],
+      "period": "机构汇编为当代；古籍农谚系类书辑文（原书未回溯）",
+      "status": "draft",
+      "sources": [
+        "source-ihchina-liqiu-feature",
+        "source-gjts-suigong-liqiu",
+        "source-xinhua-liqiu-sanwen-2026"
+      ]
+    },
+    "trad-liqiu-tieqiubiao": {
+      "title": "\"贴秋膘\"与啃秋：立秋食俗的断代核验与文献缺环",
+      "region": [
+        "当代机构表述：贴秋膘\"在北方尤其盛行\"（新华社2022）；啃秋分城市（买西瓜全家围吃）与农人（院落分享时令蔬果，非遗网）；食秋桃标注浙江杭州一带（非遗网）"
+      ],
+      "period": "现代机构汇编与媒体稿确证当代流行；清代一手文献本轮**未读到**——贴秋膘之名的断代为待考",
+      "status": "in-review",
+      "sources": [
+        "source-ihchina-liqiu-feature",
+        "source-xinhua-liqiu-2022",
+        "source-xinhua-liqiu-2021",
+        "source-wikisource-yanjingsuishiji"
+      ]
+    },
+    "trad-lixia-chengren": {
+      "title": "立夏秤人：清代文献可考的江南习俗与当代活态",
+      "region": [
+        "可考记载与当代机构表述均限南方（人民日报\"江苏、浙江、上海等南方地区\"；非遗网\"南方民间\"；杭州半山为国家级非遗项目传承地）"
+      ],
+      "period": "可考文献记载：清代（同治元年《苏州府志》、道光十年初刻《清嘉录》，均经人民日报转引，原书未直读）；当代延续（杭州半山）",
+      "status": "draft",
+      "sources": [
+        "source-people-lixia-chengren",
+        "source-ihchina-lixia-feature",
+        "source-ihchina-lixia-banshan",
+        "source-wikisource-jingchu-suishiji"
+      ]
+    },
+    "trad-lixia-nongshi": {
+      "title": "立夏农事：\"立夏看夏\"的夏收关口与农谚群",
+      "region": ["中国农区（机构汇编口径；农谚流传地域未逐一标明）"],
+      "period": "农谚为传统积累（断代不明）；表述载体为当代机构汇编",
+      "status": "draft",
+      "sources": ["source-ihchina-lixia-feature", "source-weather-com-cn-lixia"]
+    },
+    "trad-mangzhong-nongshi": {
+      "title": "芒种农事与农谚：\"芒种芒种，连收带种\"与\"三夏\"口诀",
+      "region": ["中国麦稻产区（农谚流传地域未逐一标注；诸暨县谚限浙江）"],
+      "period": "当代流传口诀（机构稿汇编）；诸暨县谚为清代类书所收地方谚",
+      "status": "draft",
+      "sources": [
+        "source-xinhua-mangzhong-2024",
+        "source-ihchina-mangzhong-feature",
+        "source-wikisource-suigongdian-049"
+      ]
+    },
+    "trad-qingming-customs": {
+      "title": "扫墓、戴柳与春嬉：清明习俗的古籍证据与谱系",
+      "region": [
+        "文献确证：清末北京（燕京岁时记）、六世纪荆楚（荆楚岁时记，寒食名下）；当代综述为全国性机构汇编"
+      ],
+      "period": "可确证记载：6世纪（荆楚·寒食条）与清末（北京）；唐代环节见融合史卡",
+      "status": "draft",
+      "sources": [
+        "source-wikisource-yanjingsuishiji",
+        "source-wikisource-jingchu-suishiji",
+        "source-ihchina-qingming-feature"
+      ]
+    },
+    "trad-qingming-food": {
+      "title": "青团与冷食：清明食俗的地域证据（江南及多地）",
+      "region": [
+        "文献确证：上海（青团）、山东即墨（冷食）、山西晋南（子福）、浙江湖州（粽子）——均为非遗网专题页逐地条目，非全国概括"
+      ],
+      "period": "可确证记载为当代机构汇编中的地域条目；历史谱系（寒食冷食→青团）仅有机构解释与检索级线索",
+      "status": "in-review",
+      "sources": ["source-ihchina-qingming-feature"]
+    },
+    "trad-qingming-nongshi": {
+      "title": "\"清明前后，种瓜点豆\"：清明农谚与春耕时机",
+      "region": ["中国（非遗网两页均未标注农谚流传地域；农谚按 tradition 层记录）"],
+      "period": "当代机构汇编中的农谚表述；各谚首见文献未查",
+      "status": "draft",
+      "sources": ["source-ihchina-qingming-feature", "source-ihchina-qingming-project"]
+    },
+    "trad-qiufen-nongshi": {
+      "title": "三秋大忙：秋分农事节奏与农谚群（\"白露早，寒露迟，秋分种麦正当时\"）",
+      "region": [
+        "农谚含地域指向：华北（冬麦）、江南（稻作）、南方双季稻区；页方未逐条标注流传地域"
+      ],
+      "period": "机构汇编页2017年；农谚为口头传统（tradition 层），个别获2025年党报转引",
+      "status": "draft",
+      "sources": [
+        "source-ihchina-qiufen-feature",
+        "source-xinhua-qiufen-2024",
+        "source-xinhua-qiufen-2022",
+        "source-people-fengshoujie-2025"
+      ]
+    },
+    "trad-shuangjiang-customs": {
+      "title": "霜降习俗综览：吃柿子（泉州\"丁柿\"谚）、贴秋膘进补、赏菊、送芋鬼、迎霜与登高赏红叶（北京香山实例）",
+      "region": [
+        "逐条地域限定：柿子=泉州（谚语）+\"有些地方\"；进补=闽南和台湾+\"有些地方\"吃牛肉；送芋鬼=广东高明；迎霜=山东烟台等；赏红叶=北京香山（实例）+\"很多地方\"赏菊（页方泛述）"
+      ],
+      "period": "机构汇编层（非遗网2017专题）+当代媒体实例（2025北京日报稿）；古籍源头均未获，断代不早于当代著录",
+      "status": "in-review",
+      "sources": ["source-ihchina-shuangjiang-feature", "source-people-shuangjiang-xiangshan"]
+    },
+    "trad-shuangjiang-nongshi": {
+      "title": "霜降农事与农谚：\"霜降见霜，米谷满仓\"与北收南忙的三秋收尾",
+      "region": ["北方大部分地区（秋收尾声）与南方（三秋大忙）分述；农谚流传地域非遗网未逐一标明"],
+      "period": "农谚为传统层（流传断代不可考）；农事概况为非遗网2017专题著录；谚语气象解读为中国天气网2008科普",
+      "status": "draft",
+      "sources": ["source-ihchina-shuangjiang-feature", "source-weathercn-shuangjiang-proverbs"]
+    },
+    "trad-xiaohan-caifan-nuomifan": {
+      "title": "小寒食俗的地域样本：南京菜饭与广州糯米饭（机构汇编层，古籍锚缺失）",
+      "region": [
+        "中国：南京（菜饭）、广州/广东（糯米饭）、天津（黄芽菜，引《津门杂记》）；均为机构页地域条目，逐地核验未完成"
+      ],
+      "period": "机构汇编层（非遗网2018小寒专题）；《津门杂记》为清末天津笔记（经非遗网转引，原书未直读）",
+      "status": "in-review",
+      "sources": ["source-ihchina-xiaohan-feature"]
+    },
+    "trad-xiaohan-nongshi": {
+      "title": "小寒农事与农谚：防寒防冻、积肥造肥、兴修水利与\"三九补一冬\"",
+      "region": [
+        "中国：南方冬作区（小麦油菜追施冬肥）、海南与华南（防寒防冻/积肥造肥/兴修水利）、北方畜牧与果菜（谚语地域未逐一标明）"
+      ],
+      "period": "机构汇编层（非遗网2018小寒专题\"农事农谚\"节）；谚语口传层断代不明",
+      "status": "draft",
+      "sources": ["source-ihchina-xiaohan-feature"]
+    },
+    "trad-xiaohan-sanjiu": {
+      "title": "\"小寒时处二三九\"：数九体系与小寒的时段关系（数九锚定冬至，非小寒）",
+      "region": [
+        "中国（谚语流传地域逐条未标明；数九为通行华北及多数北方地区的冬季计日传统，机构汇编口径）"
+      ],
+      "period": "《燕京岁时记》成书于清末（1906年前后）；当代谚语为机构汇编层",
+      "status": "in-review",
+      "sources": [
+        "source-wikisource-yanjingsuishiji",
+        "source-ihchina-xiaohan-feature",
+        "source-xinhua-xiaohan-2023",
+        "source-weathercn-xiaohan-2025",
+        "source-people-xiaohan-dahan-2026"
+      ]
+    },
+    "trad-xiaoman-nongshi": {
+      "title": "小满农事：\"三夏\"大忙、分域农谚与食苦菜",
+      "region": ["中国（农谚分域标注：长江中下游/华南/黄河中下游/江南；食苦菜条目含宁夏/陕西）"],
+      "period": "机构汇编为2015-2018年表述；农谚与食俗的流传年代未考",
+      "status": "draft",
+      "sources": [
+        "source-ihchina-xiaoman-feature",
+        "source-ihchina-xiaoman-nongsu",
+        "source-ihchina-xiaoman-zheli-2015"
+      ]
+    },
+    "trad-xiaoshu-nongshi": {
+      "title": "小暑农事与农谚：田间管理、防伏旱与\"上蒸下煮\"",
+      "region": ["农谚流传地域未逐一标明（机构汇编级）；农事项以中国农区为语境"],
+      "period": "当代机构汇编（2021-2026）；农谚的历史层未溯源",
+      "status": "draft",
+      "sources": [
+        "source-ihchina-xiaoshu-feature",
+        "source-ihchina-xiaoshu-huashuo-2021",
+        "source-forestry-xiaoshu-2026",
+        "source-gujintushu-suigong-furi"
+      ]
+    },
+    "trad-xiaoshu-shixin": {
+      "title": "\"食新\"：小暑尝新米习俗的地域范围与两稿分歧",
+      "region": [
+        "地域限定待核：新华社2024稿与非遗网均指向稻作区/南方；新华社2022稿称\"我国各地\"（分歧未决）"
+      ],
+      "period": "当代民俗表述（2021-2024机构稿）；历史渊源未溯源",
+      "status": "draft",
+      "sources": [
+        "source-xinhua-xiaoshu-poetic-2024",
+        "source-xinhua-xiaoshu-2022",
+        "source-ihchina-xiaoshu-huashuo-2021"
+      ]
+    },
+    "trad-xiaoxue-nongshi": {
+      "title": "小雪农事：冬小麦越冬管理与冬季农田管理",
+      "region": ["中国（机构稿为全国综述+北方条目；东北土壤冻结、北方果树/储菜、南方鱼塘分述）"],
+      "period": "当代机构口径（2015-2022）；所引农谚流传地域多未逐一标明",
+      "status": "draft",
+      "sources": [
+        "source-ihchina-xiaoxue-feature",
+        "source-xinhua-xiaoxue-2022",
+        "source-xinhua-xiaoxue-2019",
+        "source-people-xiaoxue-pickling-2015"
+      ]
+    },
+    "trad-xiaoxue-pickling-curing": {
+      "title": "\"小雪腌菜，大雪腌肉\"：南北腌藏习俗的证据与地域边界",
+      "region": [
+        "南方：南京（谚语锚点）、江苏仪征（清人记载线索）、杭州；北方：北京/北方通言（储大白菜、腌菜）；内蒙古包头农村（杀猪）——分记，不合并概括"
+      ],
+      "period": "可确证：当代机构与媒体口径（2015-2022）；古籍级线索仅清人《真州竹枝词引》（媒体转引，未直读）；清末北京酸菜记载锚定十二月",
+      "status": "in-review",
+      "sources": [
+        "source-people-xiaoxue-pickling-2015",
+        "source-xinhua-xiaoxue-2022",
+        "source-xinhua-xiaoxue-2019",
+        "source-ihchina-xiaoxue-feature",
+        "source-wikisource-yanjingsuishiji"
+      ]
+    },
+    "trad-xiazhi-mian": {
+      "title": "\"冬至馄饨夏至面\"：夏至食面的文献证据与地域分布",
+      "region": [
+        "可确证文献记载限清末北京（京师谚）；山东、浙江绍兴、江苏无锡条目为非遗网汇编级（未逐一方志核验）"
+      ],
+      "period": "可确证记载：清末（19世纪，《燕京岁时记》）；当代延续见机构页（2017）",
+      "status": "draft",
+      "sources": [
+        "source-wikisource-yanjingsuishiji",
+        "source-ihchina-xiazhi-feature",
+        "source-weathercn-xiazhi-feature"
+      ]
+    },
+    "trad-xiazhi-nongshi": {
+      "title": "夏至农事与农谚：\"不过夏至不热\"与\"夏至三庚数头伏\"",
+      "region": ["农谚流传地域未逐一标注（非遗网汇编）；气温机制表述为中国机构口径"],
+      "period": "农谚为传统流传（断代未核）；机制表述为当代机构稿",
+      "status": "draft",
+      "sources": [
+        "source-ihchina-xiazhi-feature",
+        "source-weathercn-xiazhi-feature",
+        "source-xinhua-xiazhi-2026"
+      ]
+    },
+    "trad-yushui-nongshi": {
+      "title": "雨水农事与农谚：备耕由南向北展开、\"春雨贵如油\"（tradition 层）",
+      "region": ["农谚流传地域未逐一标注（非遗网汇编）；农事叙述含南北分述（新华社稿）"],
+      "period": "当代机构汇编与报道表述；农谚为传统经验层，不标科学断言",
+      "status": "draft",
+      "sources": ["source-ihchina-yushui-feature", "source-xinhua-yushui-feature"]
+    }
+  },
+  "sources": {
+    "source-xinhuanet-fengshoujie-2018": {
+      "title": "我国设立\"中国农民丰收节\"",
+      "publisher": "新华网",
+      "url": "https://www.xinhuanet.com/politics/2018-06/21/c_129898241.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-people-fengshoujie-2025": {
+      "title": "丰收节为何选在秋分日（文化中国行·二十四节气二十四问）",
+      "publisher": "人民日报",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202509/06/content_30103324.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-qiufen-2024": {
+      "title": "文化中国行·诗意节令｜秋分：昼夜平分日 寒暑交替时",
+      "publisher": "新华网",
+      "url": "http://www.news.cn/20240922/a7246699b4304e77bfd648395eadf7d7/c.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-yueling-qishierhou-wikisource": {
+      "title": "月令七十二候集解（维基文库全文）",
+      "publisher": "Wikisource（维基文库）",
+      "url": "https://zh.wikisource.org/wiki/月令七十二候集解",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-chushu-2022": {
+      "title": "节令之美·处暑丨23日处暑，即将出伏",
+      "publisher": "新华网",
+      "url": "http://www.news.cn/2022-08/21/c_1128933126.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-chushu-feature": {
+      "title": "最好新秋时——二十四节气之处暑（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/6974.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-wikisource-jingchu-suishiji": {
+      "title": "荊楚歲時記（维基文库全文）",
+      "publisher": "Wikisource（维基文库）",
+      "url": "https://zh.wikisource.org/wiki/荊楚歲時記",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-wikisource-yanjingsuishiji": {
+      "title": "燕京歲時記（维基文库全文）",
+      "publisher": "Wikisource（维基文库）",
+      "url": "https://zh.wikisource.org/wiki/燕京歲時記",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-gjts-suigongdian-045": {
+      "title": "欽定古今圖書集成·曆象彙編·歲功典·卷045（四月部·浙江志书条）",
+      "publisher": "维基文库（Wikisource）数字化文本",
+      "url": "https://zh.wikisource.org/wiki/欽定古今圖書集成/曆象彙編/歲功典/第045卷",
+      "access": "direct-read",
+      "verification": "unverified"
+    },
+    "source-ihchina-xiaoman-nongsu": {
+      "title": "小满农俗（节气专题·专题报道）",
+      "publisher": "中国非物质文化遗产网·中国非物质文化遗产数字博物馆",
+      "url": "https://www.ihchina.cn/art/detail/id/9602.html",
+      "access": "direct-read",
+      "verification": "unverified"
+    },
+    "source-ihchina-guyu-feature": {
+      "title": "雨生百谷——二十四节气之谷雨（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/45.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-guyu-2022": {
+      "title": "节令之美·谷雨丨4月20日10时24分\"谷雨\"：看百谷丛生，听春雨连连",
+      "publisher": "新华社（新华网 news.cn）",
+      "url": "http://www.news.cn/2022-04/19/c_1128573401.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-hanlu-feature": {
+      "title": "气收天地广——二十四节气之寒露（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/6977.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-wikisource-hongloumeng-chengjia-ch27": {
+      "title": "紅樓夢（程甲本）/二十七：滴翠亭楊妃戲彩蝶 埋香冢飛燕泣殘紅",
+      "publisher": "维基文库",
+      "url": "https://zh.wikisource.org/wiki/%E7%B4%85%E6%A8%93%E5%A4%A2%EF%BC%88%E7%A8%8B%E7%94%B2%E6%9C%AC%EF%BC%89/%E4%BA%8C%E5%8D%81%E4%B8%83",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-mangzhong-feature": {
+      "title": "东风染尽三千顷——二十四节气之芒种（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/6969.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-wikisource-guangqunfangpu-c4": {
+      "title": "廣羣芳譜/卷004（五月·芒种条）",
+      "publisher": "维基文库",
+      "url": "https://zh.wikisource.org/wiki/%E5%BB%A3%E7%BE%A3%E8%8A%B3%E8%AD%9C/%E5%8D%B7004",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-qingming-tangliudian-juan2": {
+      "title": "唐六典（四庫全書本）/卷02（维基文库全文本）",
+      "publisher": "Wikisource（维基文库）",
+      "url": "https://zh.wikisource.org/wiki/唐六典_(四庫全書本)/卷02",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-qingming-tanghuiyao-juan23": {
+      "title": "唐會要（四庫全書本）/卷023（维基文库全文本）",
+      "publisher": "Wikisource（维基文库）",
+      "url": "https://zh.wikisource.org/wiki/唐會要_(四庫全書本)/卷023",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-qingming-feature": {
+      "title": "梨花落后清明——二十四节气之清明（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/44.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-qingming-project": {
+      "title": "清明节——国家级非物质文化遗产代表性项目名录条目",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/project_details/14907.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-xiaoman-feature": {
+      "title": "南风原头吹百草——二十四节气之小满（节气专题）",
+      "publisher": "中国非物质文化遗产网·中国非物质文化遗产数字博物馆",
+      "url": "https://www.ihchina.cn/solar_details/6968.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-xiaoman-2024": {
+      "title": "诗意节令丨小满：小得盈满胜万全",
+      "publisher": "新华社（news.cn）",
+      "url": "http://www.news.cn/local/20240520/6a25490c09e5477e917fb302be89fc41/c.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-lichun-feature": {
+      "title": "春到人间草木知——二十四节气之立春（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/40.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-bailu-feature": {
+      "title": "蒹葭苍苍 白露为霜——二十四节气之白露（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/6975.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-dahan-feature": {
+      "title": "岁有大寒知——二十四节气之大寒（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/6984.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-rmrbhwb-dahan-2016": {
+      "title": "二十四节气·大寒（第07版专版：节气·民俗／节气·物候／诗意·大寒／大寒过了就是年）",
+      "publisher": "人民日报海外版（人民网电子版）",
+      "url": "https://paper.people.com.cn/rmrbhwb/html/2016-01/19/content_1648828.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-dashu-2022": {
+      "title": "节气里的中国丨大暑：荷花入暮犹愁热",
+      "publisher": "新华网（news.cn）",
+      "url": "https://www.news.cn/politics/2022-07/23/c_1128856826.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-jingzhe-feature": {
+      "title": "最是一年春好处——二十四节气之惊蛰（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/42.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-lidong-feature": {
+      "title": "秋冬气始交——二十四节气之立冬（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/6979.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-wikisource-liji-yueling": {
+      "title": "礼记·月令（孟秋之月条）",
+      "publisher": "维基文库",
+      "url": "https://zh.wikisource.org/wiki/禮記/月令",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-liqiu-feature": {
+      "title": "木叶动秋声——二十四节气之立秋（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/6973.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-wikisource-lixia-liji-yueling": {
+      "title": "禮記/月令（维基文库）",
+      "publisher": "维基文库（Wikisource）",
+      "url": "https://zh.wikisource.org/wiki/禮記/月令",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-lixia-feature": {
+      "title": "绿荫冉冉遍天涯——二十四节气之立夏（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/46.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-mangzhong-2024": {
+      "title": "文化中国行·诗意节令｜芒种：风吹麦成浪 静待稻花香",
+      "publisher": "新华网",
+      "url": "http://www.news.cn/20240605/dc4c4867dac0442ca1b875eb21199856/c.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-qiufen-feature": {
+      "title": "桂子飘香远——二十四节气之秋分（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/6976.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-naoj-24sekki-shuangjiang": {
+      "title": "こよみ用語解説 二十四節気（国立天文台暦計算室）",
+      "publisher": "国立天文台（National Astronomical Observatory of Japan）",
+      "url": "https://eco.mtk.nao.ac.jp/koyomi/faq/24sekki.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-xiaohan-feature": {
+      "title": "雪里已知春信至——二十四节气之小寒（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/6983.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-xiaohan-2023": {
+      "title": "节气里的中国｜小寒：晓日初长，盼雪迎春",
+      "publisher": "新华网",
+      "url": "http://www.news.cn/politics/2023-01/04/c_1129256158.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-gujintushu-suigong-jixia": {
+      "title": "钦定古今图书集成·历象汇编·岁功典·第五十四卷（季夏部汇考）",
+      "publisher": "Wikisource（维基文库）",
+      "url": "https://zh.wikisource.org/wiki/欽定古今圖書集成/曆象彙編/歲功典/第054卷",
+      "access": "direct-read",
+      "verification": "unverified"
+    },
+    "source-ihchina-xiaoshu-feature": {
+      "title": "雨声荷叶香——二十四节气之小暑（节气专题页，编号6971）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/6971.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-xiaoshu-huashuo-2021": {
+      "title": "\"画\"说二十四节气·小暑丨蝉鸣声声小暑至 绿茵十里芳华始（节气资讯）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solarzx_details/25570.html",
+      "access": "direct-read",
+      "verification": "unverified"
+    },
+    "source-forestry-xiaoshu-2026": {
+      "title": "小暑小在哪儿（来源：中国绿色时报）",
+      "publisher": "国家林业和草原局政府网（www.forestry.gov.cn）",
+      "url": "http://www.forestry.gov.cn/c/www/lcdt/679392.jhtml",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-xiaoxue-feature": {
+      "title": "清寒小雪前——二十四节气之小雪（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/6980.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-xiazhi-feature": {
+      "title": "冰雪在心——二十四节气之夏至（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/6970.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-yushui-feature": {
+      "title": "节气里的中国丨雨水日：拂水惊梅中迎来春天（新华社稿）",
+      "publisher": "新华网",
+      "url": "http://www.news.cn/politics/2022-02/18/c_1128392036.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-yushui-feature": {
+      "title": "东风解冻散为雨——二十四节气之雨水（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/41.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-xiaoman-zheli-2015": {
+      "title": "小满——一个充满哲理和希望的节气",
+      "publisher": "中国文化报 / 中国非物质文化遗产网",
+      "url": "https://www.ihchina.cn/news_1_details/10320.html",
+      "access": "direct-read",
+      "verification": "unverified"
+    },
+    "source-wikisource-guantianjia": {
+      "title": "觀田家（韋應物）",
+      "publisher": "Wikisource（维基文库），录自《全唐诗·卷192》",
+      "url": "https://zh.wikisource.org/wiki/觀田家",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-jingzhe-2022": {
+      "title": "3月5日22时44分\"惊蛰\"：春雷一声响，九尽桃花开（新华社天津3月4日电）",
+      "publisher": "新华网",
+      "url": "http://www.news.cn/2022-03/04/c_1128436336.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-anren-ganfenshe": {
+      "title": "农历二十四节气（安仁赶分社）——国家级非物质文化遗产代表性项目名录",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/project_details/15064.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-gmw-anren-ganfenshe": {
+      "title": "湖南安仁：十万人春分时节\"赶分社\"",
+      "publisher": "光明网（转央视网）",
+      "url": "https://difang.gmw.cn/2024-03/25/content_37224361.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ccd-xiangshan-kaiyu": {
+      "title": "象山开渔节举办（原标题：东海潮声起，开渔啦！）",
+      "publisher": "中国文化报（中国非物质文化遗产网转载）",
+      "url": "https://www.ihchina.cn/news_1_details/19156.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-zjxc-kaiyu-2023": {
+      "title": "浙江宣传 | 开渔节的渔港与渔事",
+      "publisher": "浙江在线",
+      "url": "https://zjnews.zjol.com.cn/zjxc/202309/t20230916_26224465.shtml",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-kaiyang-xieyang": {
+      "title": "渔民开洋、谢洋节（国家级非物质文化遗产代表性项目）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/project_details/15091.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-dashuchuan-project": {
+      "title": "农历二十四节气（送大暑船）· 国家级非物质文化遗产代表性项目名录",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）·中国非物质文化遗产网",
+      "url": "https://www.ihchina.cn/project_details/23868.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-dashuchuan-intro": {
+      "title": "送大暑船（二十四节气专题·节气名录）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）·中国非物质文化遗产网",
+      "url": "https://www.ihchina.cn/solarname_details/24760.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-wikisource-dashu-yutai": {
+      "title": "右臺仙館筆記/卷十二（清·俞樾）",
+      "publisher": "维基文库（Wikisource）",
+      "url": "https://zh.wikisource.org/wiki/右臺仙館筆記/卷12",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-dashuchuan-2025": {
+      "title": "节令之美丨椒江口外\"大暑船\"，国遗传承上百年",
+      "publisher": "新华网（新华社国内部、新华社浙江分社联合制作）",
+      "url": "https://www.news.cn/politics/20250722/8f07c9da8af54eabbe73157f481d318d/c.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-daxue-feature": {
+      "title": "千里冰封 万里雪飘——二十四节气之大雪（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/6981.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-gmw-ruixue-daxue": {
+      "title": "【岁时节日｜大雪】瑞雪兆丰年",
+      "publisher": "光明网（kepu.gmw.cn）",
+      "url": "https://kepu.gmw.cn/2023-12/07/content_37013768.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-sanmen-jidong": {
+      "title": "农历二十四节气（三门祭冬）——国家级非物质文化遗产代表性项目名录条目",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/project_details/15063.html",
+      "access": "direct-read",
+      "verification": "unverified"
+    },
+    "source-rmrbhwb-sanmen-jidong": {
+      "title": "三门祭冬（刘从进）",
+      "publisher": "人民日报海外版（第12版 旅游天地）",
+      "url": "http://paper.people.com.cn/rmrbhwb/html/2022-12/14/content_25954354.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-dongzhi-feature": {
+      "title": "冬至阳生春又来——二十四节气之冬至（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/6982.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-cnr-guanghan-baobao": {
+      "title": "正月十六\"拉保保\" 从传统习俗到特色文化名片（央广网）",
+      "publisher": "央广网（中央广播电视总台）",
+      "url": "https://sc.cnr.cn/scpd/jdt/20250214/t20250214_527071135.shtml",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-guanghan-baobao": {
+      "title": "四川广汉举行\"拉保保\"民俗活动（图集）",
+      "publisher": "新华网",
+      "url": "http://sc.news.cn/20250213/26d47f8553854f6c8704b30680c6201e/c.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-guyu-luoyang-mudan": {
+      "title": "洛阳牡丹花会（国家级非物质文化遗产代表性项目名录项目页）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/project_details/15243/",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-mct-guyu-luoyang-peony": {
+      "title": "第三十届中国洛阳牡丹文化节（文化和旅游部官网专题）",
+      "publisher": "中华人民共和国文化和旅游部（mct.gov.cn）",
+      "url": "https://www.mct.gov.cn/preview/special/3578/",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-gohk-ngokengkiu-daxiaoren": {
+      "title": "鹅颈桥——香港自游乐在18区（民政事务总署景点页）",
+      "publisher": "香港特区政府民政事务总署（gohk.gov.hk）",
+      "url": "https://www.gohk.gov.hk/chs/spots/spot_detail.php?spot=Ngo+Keng+Kiu",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-infogov-hk-daxiaoren-2025": {
+      "title": "立法会六题：推广传统习俗及文化活动（答覆：文化体育及旅游局副局长刘震）",
+      "publisher": "香港政府新闻网（info.gov.hk）",
+      "url": "https://www.info.gov.hk/gia/general/202505/28/P2025052800426p.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-liqiu-ganqiu": {
+      "title": "农历二十四节气（苗族赶秋）——国家级非物质文化遗产代表性项目名录页",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/project_details/15065.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-liqiu-ganqiu-topic": {
+      "title": "苗族赶秋（非遗网专题报道）",
+      "publisher": "中国非物质文化遗产网·中国非物质文化遗产数字博物馆",
+      "url": "https://www.ihchina.cn/project_details/9514.html",
+      "access": "direct-read",
+      "verification": "unverified"
+    },
+    "source-mct-liqiu-ganqiu": {
+      "title": "\"二十四节气\"正式列入联合国教科文组织人类非物质文化遗产代表作名录",
+      "publisher": "中华人民共和国文化和旅游部官网",
+      "url": "https://www.mct.gov.cn/whzx/bnsj/dwwhllj/201612/t20161214_773196.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-lixia-banshan": {
+      "title": "农历二十四节气（半山立夏习俗）——国家级非物质文化遗产代表性项目名录项目页",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/project_details/23867.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-chinadaily-lixia-banshan": {
+      "title": "2023第十二届半山立夏节，传统民俗走出新时尚（中国日报网浙江频道）",
+      "publisher": "中国日报网",
+      "url": "https://zj.chinadaily.com.cn/a/202305/07/WS64574227a3105379893731c2.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-mct-shengze-canfa": {
+      "title": "乡村四时好风光·江苏·蚕花里太湖东（盛泽先蚕祠）",
+      "publisher": "文化和旅游部官网（zhuanti.mct.gov.cn）",
+      "url": "https://zhuanti.mct.gov.cn/xcss2024_xcygj/jiangsu/detail/7257.html",
+      "access": "direct-read",
+      "verification": "unverified"
+    },
+    "source-ihchina-shiqian-shuochun": {
+      "title": "农历二十四节气（石阡说春）项目页",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/project_details/15062.html",
+      "access": "direct-read",
+      "verification": "unverified"
+    },
+    "source-xinhua-unesco-solarterms": {
+      "title": "二十四节气入选《人类非物质文化遗产代表名录》",
+      "publisher": "新华网",
+      "url": "http://www.xinhuanet.com/politics/2016-11/30/c_129385180.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-shuangjiangjie-project": {
+      "title": "农历二十四节气（壮族霜降节）——国家级非物质文化遗产代表性项目名录",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/project_details/15066.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-shuangjiangjie-intro": {
+      "title": "壮族霜降节（二十四节气专题·节气名录）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solarname_details/6995.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-people-shuangjiangjie-gx-2022": {
+      "title": "广西天等：博物馆里探非遗（人民网记者现场报道）",
+      "publisher": "人民网广西频道",
+      "url": "http://gx.people.com.cn/n2/2022/1025/c179464-40168726.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-xuzhou-fuyang": {
+      "title": "徐州伏羊食俗（国家级非物质文化遗产代表性项目）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/project_details/23627/",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-xiaoshu-poetic-2024": {
+      "title": "文化中国行·诗意节令｜小暑：时有微凉不是风",
+      "publisher": "新华网",
+      "url": "https://www.news.cn/20240706/4a645b543cf64fcab903a2bc19b9a914/c.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-kpzg-dew-formation": {
+      "title": "清晨才有的\"珍珠\"？专家告诉你露是这样形成的",
+      "publisher": "人民网科普中国频道",
+      "url": "http://kpzg.people.com.cn/n1/2022/0905/c404214-32519357.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-weathercn-tianjin-lushuang": {
+      "title": "露和霜的区别",
+      "publisher": "中国天气网（天津市气象局）",
+      "url": "https://www.weather.com.cn/tianjin/tqyw/09/3491865.shtml",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-bailu-2022": {
+      "title": "节令之美·白露丨9月7日23时32分白露：露从今夜白，秋风至此凉",
+      "publisher": "新华网",
+      "url": "http://www.news.cn/2022-09/06/c_1128980104.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-rmrbhwb-bailu-2016": {
+      "title": "仲秋八月，秋思深沉隽永（民俗）——话说农历月·八月",
+      "publisher": "人民日报海外版（人民网电子版）",
+      "url": "http://paper.people.com.cn/rmrbhwb/html/2016-09/10/content_1711459.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-gbt-33661-openstd": {
+      "title": "国家标准 GB/T 33661-2017《农历的编算和颁行》信息页",
+      "publisher": "国家标准全文公开系统（openstd.samr.gov.cn）",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=E107EA4DE9725EDF819F33C60A44B296",
+      "access": "direct-read",
+      "verification": "unverified"
+    },
+    "source-xinhuanet-chunfen-2021": {
+      "title": "春分这个\"C位\"的节气，你了解多少？",
+      "publisher": "新华网",
+      "url": "https://xinhuanet.com/politics/2021-03/19/c_1127230562.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-chunfen-feature": {
+      "title": "春色正中分——二十四节气之春分（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/43.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhuanet-chunfen-2022": {
+      "title": "3月20日23时33分\"春分\"：仲春初四日，春色正中分",
+      "publisher": "新华网",
+      "url": "https://news.cn/politics/2022-03/19/c_1128484992.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-hko-solar-terms": {
+      "title": "The 24 Solar Terms",
+      "publisher": "Hong Kong Observatory",
+      "url": "https://www.hko.gov.hk/en/gts/time/24solarterms.htm",
+      "access": "direct-read",
+      "verification": "unverified"
+    },
+    "source-weathercn-chushu-2026": {
+      "title": "处暑节气：长城以北秋高气爽 南方需警惕\"秋老虎\"",
+      "publisher": "中国气象局公共气象服务中心（中国天气网）",
+      "url": "https://www.weather.com.cn/life/2026/08/4770851.shtml",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-dahan-topic": {
+      "title": "【传统文化•二十四节气】大寒",
+      "publisher": "新华网",
+      "url": "http://www.xinhuanet.com/culture/topic/zhuanti/20181/675.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-naoj-24sekki-dahan": {
+      "title": "こよみ用語解説 二十四節気（国立天文台暦計算室）",
+      "publisher": "国立天文台（日本）",
+      "url": "https://eco.mtk.nao.ac.jp/koyomi/faq/24sekki.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-weathercn-dahan-2023": {
+      "title": "大寒迎岁终！全国平均气温触底反弹 数据揭秘谁是大寒\"湿冷王\"（中国天气网）",
+      "publisher": "中国天气网",
+      "url": "http://news.weather.com.cn/2023/01/3593917.shtml",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-cas-dashu-firefly": {
+      "title": "【人民日报】保护萤火虫，不只为了被点亮的夜空（中国科学院网站转载）",
+      "publisher": "人民日报（中国科学院官网 cas.cn 转载）",
+      "url": "https://www.cas.cn/cm/202405/t20240530_5016302.shtml",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-forestry-dashu-firefly": {
+      "title": "夏夜探流萤｜萤火虫的消失，真的和你没关系吗？",
+      "publisher": "国家林业和草原局政府网（forestry.gov.cn）林草科普栏目",
+      "url": "https://www.forestry.gov.cn/lyj/1/zhzs/20260722/678505.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-dashu-feature": {
+      "title": "忽若秋气生——二十四节气之大暑（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）·中国非物质文化遗产网",
+      "url": "https://www.ihchina.cn/solar_details/6972.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-weathercn-daxue-2008": {
+      "title": "节气大雪与大雪天气（节气专题）",
+      "publisher": "中国天气网 weather.com.cn",
+      "url": "https://www.weather.com.cn/zt/tqzt/08dxzt/12/62670.shtml",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-daxue-topic": {
+      "title": "【传统文化•二十四节气】大雪（专题导语页）",
+      "publisher": "新华网",
+      "url": "http://www.news.cn/culture/topic/zhuanti/201712/617.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-dongzhi-2021": {
+      "title": "21日23时59分冬至：寒冬来临的标志",
+      "publisher": "新华网（news.cn）",
+      "url": "http://www.news.cn/2021-12/20/c_1128182386.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhuanet-dongzhi-2015": {
+      "title": "冬至——夜长昼短 一阳始生（节气·物候）",
+      "publisher": "人民日报海外版 / xinhuanet.com",
+      "url": "http://www.xinhuanet.com/politics/2015-12/22/c_128553861.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-pmo-almanac-qa": {
+      "title": "历书科普问题解答",
+      "publisher": "紫金山天文台官网科普动态",
+      "url": "http://www.pmo.cas.cn/xwdt2019/kpdt2019/202203/t20220317_6399980.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-hanlu-2022": {
+      "title": "8日15时22分寒露：寒花开已尽，菊蕊独盈枝（新华社）",
+      "publisher": "新华网",
+      "url": "http://www.news.cn/politics/2022-10/07/c_1129053970.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-hanlu-2021": {
+      "title": "8日9时39分\"寒露\"：风入蒹葭秋色晚，气冷露凝雁南归（新华社）",
+      "publisher": "新华网",
+      "url": "http://www.news.cn/science/2021-10/06/c_1127932546.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-weathercn-jingzhe-origin": {
+      "title": "惊蛰的由来——中国天气网节气专题",
+      "publisher": "中国天气网",
+      "url": "https://www.weather.com.cn/zt/tqzt/09jzzt/03/62283.shtml",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-szmb-season-division": {
+      "title": "四季是如何划分的？（深圳市气象局业务知识库）",
+      "publisher": "深圳市气象局",
+      "url": "https://weather.sz.gov.cn/mobile/hudongjiaoliu/yewuzhishiku/qixiangfuwulei/content/post_12009684.html",
+      "access": "direct-read",
+      "verification": "unverified"
+    },
+    "source-weathercn-lidong-225": {
+      "title": "今日\"立冬\"冬天即将开始（中国天气网北京站）",
+      "publisher": "中国天气网（中国气象局主办）",
+      "url": "https://www.weather.com.cn/beijing/sygdt/11/2000040.shtml",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-lidong-2023": {
+      "title": "寒意渐重！立冬时节降温最猛 全国冬日地图看哪里跨入冬季",
+      "publisher": "新华网（数据来源：中国天气网）",
+      "url": "http://www.news.cn/politics/2023-11/08/c_1129964201.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-liqiu-2022": {
+      "title": "节令之美·立秋丨7日立秋：别忘\"咬秋\"与\"贴秋膘\"",
+      "publisher": "新华社（国内部、天津分社联合制作，节令工作室出品），新华网发布",
+      "url": "http://www.news.cn/local/2022-08/05/c_1128893416.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-liqiu-shengdong-2026": {
+      "title": "文化中国行丨\"声动\"二十四节气·立秋",
+      "publisher": "新华社，新华网发布",
+      "url": "http://www.news.cn/20260807/94b76d755e104be8a62086da80ab0cc9/c.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-liqiu-2021": {
+      "title": "8月7日14时54分\"立秋\"：迟迟白日晚，袅袅秋风生",
+      "publisher": "新华社，新华网发布",
+      "url": "http://www.xinhuanet.com/2021-08/05/c_1127733185.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-liqiu-sanwen-2026": {
+      "title": "立秋三问",
+      "publisher": "新华社，新华网发布",
+      "url": "https://www.news.cn/local/20260807/8fd0d085ff9644df84160e776b8faffb/c.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-weather-com-cn-lixia": {
+      "title": "二十四节气之立夏（中国天气网天津站）",
+      "publisher": "中国天气网（中国气象局主办）",
+      "url": "http://tj.weather.com.cn/tqyw/05/3462166.shtml",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-lixia-2026": {
+      "title": "5日19时49分立夏，这个时间是如何确定的？（新华网科技频道）",
+      "publisher": "新华网",
+      "url": "https://www.news.cn/tech/20260505/a6c0e837d2e74ceb874616e4692d0a02/c.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-weathercn-meiyu-2024": {
+      "title": "梅雨季开启！我国长江中下游和江淮相继入梅 收好这份防潮指南",
+      "publisher": "中国天气网（中国气象局）",
+      "url": "http://news.weather.com.cn/2024/06/3786068.shtml",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-qingming-2024": {
+      "title": "星空有约丨都说\"四五清明\"，今年为啥不一样？（新华网/新华社）",
+      "publisher": "新华网",
+      "url": "http://www.news.cn/tech/20240403/b6dafd9d4bca451c8709583365264e99/c.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-qiufen-2022": {
+      "title": "秋分说\"分\"",
+      "publisher": "新华网",
+      "url": "http://www.news.cn/politics/2022-09/23/c_1129025790.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-weather-com-cn-qiufen": {
+      "title": "秋分节气的由来（中国天气网山西站）",
+      "publisher": "中国天气网（中国气象局公共服务平台）",
+      "url": "https://www.weather.com.cn/shanxi/sxsy/qsqzqxfwzt/09/1977796.shtml",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-wikisource-chunqiufanlu-yinyang": {
+      "title": "春秋繁露/卷12（阴阳出入上下第五十）",
+      "publisher": "维基文库",
+      "url": "https://zh.wikisource.org/wiki/春秋繁露/卷12",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-shuangjiang-frost-2024": {
+      "title": "\"霜降\"的霜从哪\"降\"？（科普中国稿，新华网转载）",
+      "publisher": "新华网（转载）；原发：人民网·科普中国",
+      "url": "http://www.news.cn/science/20241023/93c9ae211b3143699da92e3ea8542dfa/c.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-weathercn-shuangjiang-proverbs": {
+      "title": "古代霜降谚语中的有趣气象知识（节气专题·霜降）",
+      "publisher": "中国天气网（中国气象局公共气象服务中心）",
+      "url": "https://www.weather.com.cn/zt/tqzt/08sjzt/10/62517.shtml",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ihchina-shuangjiang-feature": {
+      "title": "万类霜天竞自由——二十四节气之霜降（节气专题）",
+      "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+      "url": "https://www.ihchina.cn/solar_details/6978.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-shuangjiang-2021": {
+      "title": "今日霜降，一个充盈着\"诗经之美\"的节气｜草地·二十四节气",
+      "publisher": "新华网",
+      "url": "http://www.news.cn/politics/2021-10/23/c_1127987691.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-weathercn-xiaohan-2025": {
+      "title": "数说节气谚语：冷到极致 小寒时节哪些地方进入全年最冷时段",
+      "publisher": "中国天气网（中国气象局公共气象服务中心）",
+      "url": "https://news.weather.com.cn/2025/11/4414229.shtml",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-people-xiaohan-dahan-2026": {
+      "title": "小寒大寒哪个更冷？（文化中国行·二十四节气二十四问）",
+      "publisher": "人民日报",
+      "url": "http://paper.people.com.cn/rmrb/pc/content/202601/03/content_30129025.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-xiaoshu-2022": {
+      "title": "7日10时38分小暑：倏忽温风至 因循小暑来",
+      "publisher": "新华网",
+      "url": "http://www.news.cn/2022-07/05/c_1128804642.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-sanfu-2024": {
+      "title": "夏至三庚数头伏：今年7月15日入伏，比去年晚4天",
+      "publisher": "新华网科普频道",
+      "url": "http://www.xinhuanet.com/science/20240627/9eee24c15ca74930b29f9e336b9f370f/c.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-gujintushu-suigong-furi": {
+      "title": "钦定古今图书集成·历象汇编·岁功典·第五十六卷（季夏部杂录/外编、伏日部汇考）",
+      "publisher": "Wikisource（维基文库）",
+      "url": "https://zh.wikisource.org/wiki/欽定古今圖書集成/曆象彙編/歲功典/第056卷",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-xiaoxue-2022": {
+      "title": "小雪：冬令成 万物藏（节气里的中国）",
+      "publisher": "新华网",
+      "url": "http://www.news.cn/2022-11/21/c_1129146881.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-xiaoxue-2019": {
+      "title": "腌咸菜、储藏大白菜……你家乡的小雪节气怎么过？",
+      "publisher": "新华网（转中国新闻网）",
+      "url": "https://www.xinhuanet.com/politics/2019-11/22/c_1125260354.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-xinhua-xiazhi-2026": {
+      "title": "星空有约丨有关夏至日的一个真\"最\"和三个假\"最\"（新华社）",
+      "publisher": "新华网 news.cn",
+      "url": "https://www.news.cn/20260620/63aacb45e4b74a6eaca64a33f7e3f271/c.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-weathercn-xiazhi-feature": {
+      "title": "二十四节气之夏至（中国天气网）",
+      "publisher": "中国天气网 weather.com.cn（天津频道转载页）",
+      "url": "https://www.weather.com.cn/tianjin/tqyw/06/3473896.shtml",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-naoj-24sekki-yushui": {
+      "title": "こよみ用語解説 二十四節気（国立天文台暦計算室）",
+      "publisher": "国立天文台（日本）",
+      "url": "https://eco.mtk.nao.ac.jp/koyomi/faq/24sekki.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-cau-bailu-2018": {
+      "title": "［传统文化·二十四节气］白露",
+      "publisher": "中国农业大学新闻网",
+      "url": "https://news.cau.edu.cn/zhxwnew/584965.htm",
+      "access": "direct-read",
+      "verification": "unverified"
+    },
+    "source-weather-com-cn-chunfen": {
+      "title": "二十四节气之春分（中国天气网节气专题）",
+      "publisher": "中国天气网",
+      "url": "https://www.weather.com.cn/zt/jqzt/614795.shtml",
+      "access": "direct-read",
+      "verification": "unverified"
+    },
+    "source-wikisource-dijing-jingwulue": {
+      "title": "帝京景物略/卷之二（春场）",
+      "publisher": "维基文库（zh.wikisource.org）",
+      "url": "https://zh.wikisource.org/wiki/帝京景物略/2",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-ruc-agri-qiufen-wheat": {
+      "title": "今天是秋分（中国人民大学农业与农村发展学院\"二十四节气\"栏目）",
+      "publisher": "中国人民大学农业与农村发展学院",
+      "url": "http://www.sard.ruc.edu.cn/essjq/faad49f476374d81b7cfeb9b21b2b705.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-weathercn-lidong-shengcong": {
+      "title": "立冬习俗之吃生葱（中国天气网江苏站气象科普）",
+      "publisher": "中国天气网江苏站",
+      "url": "https://www.weather.com.cn/jiangsu/qxkp/rdzt/11/1748950.shtml",
+      "access": "direct-read",
+      "verification": "unverified"
+    },
+    "source-gjts-suigong-lidong": {
+      "title": "钦定古今图书集成·历象汇编·岁功典·第八十四卷（立冬部）",
+      "publisher": "维基文库",
+      "url": "https://zh.wikisource.org/wiki/欽定古今圖書集成/曆象彙編/歲功典/第084卷",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-gjts-suigong-liqiu": {
+      "title": "钦定古今图书集成·历象汇编·岁功典·第六十四卷（立秋部）",
+      "publisher": "维基文库",
+      "url": "https://zh.wikisource.org/wiki/欽定古今圖書集成/曆象彙編/歲功典/第064卷",
+      "access": "direct-read",
+      "verification": "unverified"
+    },
+    "source-people-lixia-chengren": {
+      "title": "\"立夏称人\"是古代的体检吗？（二十四节气二十四问）（人民日报）",
+      "publisher": "人民日报",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202505/03/content_30071111.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-wikisource-suigongdian-049": {
+      "title": "欽定古今圖書集成/曆象彙編/歲功典/第049卷",
+      "publisher": "维基文库",
+      "url": "https://zh.wikisource.org/wiki/%E6%AC%BD%E5%AE%9A%E5%8F%A4%E4%BB%8A%E5%9C%96%E6%9B%B8%E9%9B%86%E6%88%90/%E6%9B%86%E8%B1%A1%E5%BD%99%E7%B7%A8/%E6%AD%B2%E5%8A%9F%E5%85%B8/%E7%AC%AC049%E5%8D%B7",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-people-shuangjiang-xiangshan": {
+      "title": "香山红叶进入最佳观赏期（北京日报稿，人民网四川频道转载）",
+      "publisher": "人民网四川频道（转载）；原发：北京日报",
+      "url": "http://sc.people.com.cn/n2/2025/1027/c345494-41391903.html",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    },
+    "source-people-xiaoxue-pickling-2015": {
+      "title": "小雪：腌菜腌肉好越冬（节气·民俗）",
+      "publisher": "人民日报海外版（人民网电子版）",
+      "url": "http://paper.people.com.cn/rmrbhwb/html/2015-11/20/content_1634883.htm",
+      "access": "direct-read",
+      "verification": "cross-checked"
+    }
+  }
+}
