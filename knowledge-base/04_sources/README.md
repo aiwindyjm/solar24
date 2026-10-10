@@ -1,9 +1,253 @@
 # 来源
 
-每份来源一个 Source；记录原作者、机构、发表时间、URL、定位、访问时间、原文与 AI 摘要、许可。未读原文不得标已验证。
+每份来源一个 Source；记录原作者、机构、发表时间、URL、定位、访问时间、原文与 AI 摘要、许可、access（direct-read / search-excerpt）。未读原文不得标已验证。
 
 [[90_templates/README|选择模板]] · [[README|返回首页]]
 
-## 当前记录
+## 当前记录（2026-09-16 批处理完成后：231 条 = 直读 206 + 线索 25；cross-checked 161）
 
-[[04_sources/source-hko-solar-terms|香港天文台 · The 24 Solar Terms]]：实际读取，待人工审核。
+
+### 古籍与文献直读（59）
+
+- [[04_sources/source-gjts-suigong-lidong|维基文库：《钦定古今图书集成·历象汇编·岁功典》第084卷（立冬部）]]（lidong）
+- [[04_sources/source-gjts-suigong-liqiu|维基文库：《钦定古今图书集成·历象汇编·岁功典》第064卷（立秋部）]]（liqiu）
+- [[04_sources/source-gjts-suigongdian-045|《钦定古今图书集成·历象汇编·岁功典》卷045（维基文库本）：小满动三车与蚕月条]]（xiaoman）
+- [[04_sources/source-gujintushu-dashu-hanshu|维基文库：《钦定古今图书集成·历象汇编·岁功典》第九十八卷（寒暑部，含建安《大暑赋》）]]（dashu）
+- [[04_sources/source-gujintushu-suigong-furi|《钦定古今图书集成·历象汇编·岁功典》第056卷（伏日部汇考）· 维基文库本]]（xiaoshu）
+- [[04_sources/source-gujintushu-suigong-jixia|《钦定古今图书集成·历象汇编·岁功典》第054卷（季夏部汇考）· 维基文库本]]（xiaoshu）
+- [[04_sources/source-huainanzi-tianwenxun-wikisource|淮南子·天文训 · 维基文库本]]（lichun）
+- [[04_sources/source-qingming-tanghuiyao-juan23|《唐会要》（四库全书本）卷二十三 · 寒食拜扫条（维基文库）]]（qingming）
+- [[04_sources/source-qingming-tangliudian-juan2|《唐六典》（四库全书本）卷二 · 假宁令节假目录（维基文库）]]（qingming）
+- [[04_sources/source-wikisource-baijuyi-chishang|维基文库作品页：池上（白居易）——凄凄寒露零]]（hanlu）
+- [[04_sources/source-wikisource-chunqiufanlu-yinyang|维基文库：《春秋繁露·卷十二·阴阳出入上下篇》（"秋分者，阴阳相半也"直读）]]（qiufen）
+- [[04_sources/source-wikisource-chunye-xiyu|维基文库：杜甫《春夜喜雨》作品页]]（yushui）
+- [[04_sources/source-wikisource-daishulun-xiaoxue|戴叔伦《小雪》 · 维基文库本（全唐诗卷274）]]（xiaoxue）
+- [[04_sources/source-wikisource-dashu-chashanji|维基文库：《茶山集》（四库全书本）卷四（曾几《大暑》）]]（dashu）
+- [[04_sources/source-wikisource-dashu-yutai|维基文库：俞樾《右台仙馆笔记》卷十二（大暑船条）]]（dashu）
+- [[04_sources/source-wikisource-dijing-jingwulue|维基文库：《帝京景物略》（卷二·春场：冬至贺冬与九九消寒图条）]]（dongzhi）
+- [[04_sources/source-wikisource-djmhl-juan10|维基文库：《东京梦华录·卷十》（冬至、驾诣郊坛行礼诸条）]]（dongzhi）
+- [[04_sources/source-wikisource-dufu-yueye-shedi|维基文库：杜甫《月夜忆舍弟》]]（bailu）
+- [[04_sources/source-wikisource-dumu-qingming|杜牧《清明》· 维基文库作品页]]（qingming）
+- [[04_sources/source-wikisource-guangqunfangpu-c006|维基文库《御定佩文斋广群芳谱》卷006（小寒/大寒/腊日十二月汇编：孝经纬、帝京景物略、风土记、赏心乐事、陆游腊月诗）]]（xiaohan/dahan/dongzhi）
+- [[04_sources/source-wikisource-guangqunfangpu-c4|维基文库《广群芳谱》卷四（芒种命名异说与风土记梅雨引文）]]（mangzhong）
+- [[04_sources/source-wikisource-guantianjia|韦应物《观田家》· 维基文库（全唐诗卷192）]]（jingzhe）
+- [[04_sources/source-wikisource-handan-dongzhi|维基文库：白居易《邯郸冬至夜思家》作品页]]（dongzhi）
+- [[04_sources/source-wikisource-hongloumeng-chengjia-ch27|维基文库《红楼梦（程甲本）》第二十七回（饯花神段直读）]]（mangzhong）
+- [[04_sources/source-wikisource-houhanshu-liyizhong|维基文库：《后汉书·志第五·礼仪中》（冬至条）]]（dongzhi）
+- [[04_sources/source-wikisource-huainanzi-benjingxun-guyu|《淮南子·本经训》"蒼頡作書，而天雨粟，鬼夜哭" · 维基文库直读]]（guyu）
+- [[04_sources/source-wikisource-huainanzi-shanshun|维基文库：《淮南子·说山训》（"见一叶落而知岁之将暮"原文）]]（liqiu）
+- [[04_sources/source-wikisource-jiangxue|维基文库：柳宗元《江雪》作品页]]（daxue）
+- [[04_sources/source-wikisource-jiannan-shigao-dahan|维基文库《劎南詩槀（四庫全書本）卷02》：大寒出江陵西門]]（dahan）
+- [[04_sources/source-wikisource-jingchu-suishiji|荆楚岁时记 · 维基文库本（宗懔撰、杜公瞻注）]]（lichun）
+- [[04_sources/source-wikisource-jingkang-xiyue|维基文库：《靖康缃素杂记·卷一》（"天子春朝日，秋夕月"应劭注出处直读）]]（qiufen）
+- [[04_sources/source-wikisource-lichun-oucheng|张栻《立春偶成》 · 维基文库本]]（lichun）
+- [[04_sources/source-wikisource-lidong-liji-yueling|维基文库：《礼记·月令》孟冬之月（立冬迎冬原文）]]（lidong）
+- [[04_sources/source-wikisource-lidong-liuji|维基文库：刘基《立冬日作》]]（lidong）
+- [[04_sources/source-wikisource-liji-jiyi|维基文库：《礼记·祭义》（"祭日於東，祭月於西"直读）]]（qiufen）
+- [[04_sources/source-wikisource-liji-yueling|维基文库：《礼记·月令》孟秋之月（立秋迎秋原文）]]（liqiu）
+- [[04_sources/source-wikisource-lingranzhai-shiji|维基文库：《泠然斋诗集》（四库全书本）·卷四《长江二首》]]（chushu）
+- [[04_sources/source-wikisource-liuhan-liqiu|维基文库：刘翰《立秋》（《千家诗·卷三》收录本）]]（liqiu）
+- [[04_sources/source-wikisource-liuyuxi-xiyuetan|维基文库：刘禹锡《监祠夕月坛书事》（"西皥司分晝夜平"直读）]]（qiufen）
+- [[04_sources/source-wikisource-lixia-dijing|维基文库：《帝京景物略》卷二立夏启冰条]]（lixia）
+- [[04_sources/source-wikisource-lixia-liji-yueling|维基文库：《礼记·月令》孟夏之月条]]（lixia）
+- [[04_sources/source-wikisource-lixia-xiaochi|维基文库：杨万里《小池》]]（lixia）
+- [[04_sources/source-wikisource-qinghuidian-fangze|钦定大清会典则例·卷七十七（维基文库四库本）：夏至祭地配飨定例]]（xiazhi）
+- [[04_sources/source-wikisource-qinghuidian-xiyue|维基文库：《钦定大清会典·卷四十四》（"凡夕月之禮……歲以秋分"直读）]]（qiufen）
+- [[04_sources/source-wikisource-shiji-fengshan|史记·封禅书（维基文库本）：夏日至祭地祗]]（xiazhi）
+- [[04_sources/source-wikisource-shiji-lishu|维基文库：《史记·历书》（三家注本卷二十六）]]（dongzhi）
+- [[04_sources/source-wikisource-shijing-jianjia|维基文库：《诗经·秦风·蒹葭》]]（bailu）
+- [[04_sources/source-wikisource-shuangjiang-shanxing|维基文库：山行（杜牧）]]（shuangjiang）
+- [[04_sources/source-wikisource-suigongdian-049|维基文库《钦定古今图书集成·历象汇编·岁功典》第四十九卷（五月·芒种部）]]（mangzhong）
+- [[04_sources/source-wikisource-suwen-liujie|《黄帝内经·素问·六节藏象论》维基文库本]]（共享/多节气）
+- [[04_sources/source-wikisource-tushu-xiazhi-bu|钦定古今图书集成·岁功典·夏至部（维基文库目录页）]]（xiazhi）
+- [[04_sources/source-wikisource-wenyuan-xiaoxue|《文苑英华》（四库本）卷155：小雪诗题注与异文（類詩作釋清晝）]]（xiaoxue）
+- [[04_sources/source-wikisource-wxtk-jiriyue|维基文库：《文献通考·卷七十九·郊社考十二·祭日月》（"天子常春分朝日，秋分夕月"直读）]]（qiufen）
+- [[04_sources/source-wikisource-xiangcun-siyue|维基文库：翁卷《鄉村四月》（作品页）]]（xiaoman）
+- [[04_sources/source-wikisource-xiazhi-beichi|韦应物《夏至避暑北池》（维基文库作品页）]]（xiazhi）
+- [[04_sources/source-wikisource-xuxuan-chunfenri|维基文库《御定全唐诗（四库全书本）·卷七百五十一》：徐铉《春分日》]]（chunfen）
+- [[04_sources/source-wikisource-yanjingsuishiji|燕京岁时记 · 维基文库本（打春/咬春条）]]（lichun）
+- [[04_sources/source-wikisource-yuanzhen-jibaishen|维基文库：元稹《秋分日祭百神文》（821年，长庆元年）]]（qiufen）
+- [[04_sources/source-yueling-qishierhou-wikisource|月令七十二候集解 · 维基文库本]]（lichun）
+
+### 机构直读（135）
+
+- [[04_sources/source-cas-dashu-firefly|中国科学院转载：《保护萤火虫，不只为了被点亮的夜空》（人民日报，2024）]]（dashu）
+- [[04_sources/source-cass-history-jingzhe-renaming|中国历史研究院：从名称与时间看二十四节气（惊蛰条）]]（jingzhe）
+- [[04_sources/source-cau-bailu-2018|中国农业大学新闻网：［传统文化·二十四节气］白露]]（bailu）
+- [[04_sources/source-ccd-xiangshan-kaiyu|中国文化报：象山开渔节举办（2019，经非遗网转载）]]（chushu）
+- [[04_sources/source-chinanews-shudan-2013|中国新闻网（转法制晚报）：春分立蛋习俗起源于4000年前（2013）]]（chunfen）
+- [[04_sources/source-cnr-guanghan-baobao|央广网：四川广汉正月十六"拉保保" 从传统习俗到特色文化名片]]（yushui）
+- [[04_sources/source-encykorea-usui|韩国民族文化大百科事典：우수（雨水）条目]]（yushui）
+- [[04_sources/source-forestry-dashu-firefly|国家林业和草原局政府网：夏夜探流萤——萤火虫的消失，真的和你没关系吗？（2026）]]（dashu）
+- [[04_sources/source-forestry-xiaoshu-2026|国家林业和草原局政府网：小暑小在哪儿（中国绿色时报，2026）]]（xiaoshu）
+- [[04_sources/source-gbt-33661-openstd|GB/T 33661-2017《农历的编算和颁行》国家标准元数据]]（lichun）
+- [[04_sources/source-gmw-anren-ganfenshe|光明网（转央视网）：湖南安仁十万人春分时节"赶分社"（2024）]]（chunfen）
+- [[04_sources/source-gmw-ruixue-daxue|光明网科普：【岁时节日｜大雪】瑞雪兆丰年（萧放、郑艳）]]（daxue）
+- [[04_sources/source-gohk-ngokengkiu-daxiaoren|香港"自游乐在18区"：鹅颈桥（打小人地点）]]（jingzhe）
+- [[04_sources/source-hko-solar-terms|Hong Kong Observatory — The 24 Solar Terms]]（共享/多节气）
+- [[04_sources/source-ihchina-anren-ganfenshe|中国非物质文化遗产网：农历二十四节气（安仁赶分社）项目页]]（chunfen）
+- [[04_sources/source-ihchina-bailu-feature|中国非物质文化遗产网：蒹葭苍苍 白露为霜——二十四节气之白露]]（bailu）
+- [[04_sources/source-ihchina-chenguangzhong-ordering|陈广忠：二十四节气的排序问题（中国非物质文化遗产网）]]（jingzhe）
+- [[04_sources/source-ihchina-chunfen-feature|中国非物质文化遗产网：春色正中分——二十四节气之春分]]（chunfen）
+- [[04_sources/source-ihchina-chushu-feature|中国非物质文化遗产网：最好新秋时——二十四节气之处暑]]（chushu）
+- [[04_sources/source-ihchina-dahan-feature|中国非物质文化遗产网：岁有大寒知——二十四节气之大寒]]（dahan）
+- [[04_sources/source-ihchina-dashu-feature|中国非物质文化遗产网：忽若秋气生——二十四节气之大暑]]（dashu）
+- [[04_sources/source-ihchina-dashuchuan-intro|中国非物质文化遗产网：送大暑船（二十四节气专题·节气名录页）]]（dashu）
+- [[04_sources/source-ihchina-dashuchuan-project|中国非物质文化遗产网：农历二十四节气（送大暑船）项目页]]（dashu）
+- [[04_sources/source-ihchina-daxue-feature|中国非物质文化遗产网：千里冰封 万里雪飘——二十四节气之大雪]]（daxue）
+- [[04_sources/source-ihchina-dongzhi-feature|中国非物质文化遗产网：冬至阳生春又来——二十四节气之冬至]]（dongzhi）
+- [[04_sources/source-ihchina-guyu-feature|中国非物质文化遗产网：雨生百谷——二十四节气之谷雨]]（guyu）
+- [[04_sources/source-ihchina-guyu-luoyang-mudan|中国非物质文化遗产网项目页：洛阳牡丹花会（Ⅹ-103）]]（guyu）
+- [[04_sources/source-ihchina-hanlu-feature|中国非物质文化遗产网：气收天地广——二十四节气之寒露]]（hanlu）
+- [[04_sources/source-ihchina-jingzhe-feature|中国非物质文化遗产网：最是一年春好处——二十四节气之惊蛰]]（jingzhe）
+- [[04_sources/source-ihchina-jiuhua-lichunji|中国非物质文化遗产网：农历二十四节气（九华立春祭）]]（lichun）
+- [[04_sources/source-ihchina-kaiyang-xieyang|中国非物质文化遗产网：渔民开洋、谢洋节（国家级非遗项目页 Ⅹ-72）]]（chushu）
+- [[04_sources/source-ihchina-laba-2017|中国非物质文化遗产网：过了腊八就是年——腊八节的由来和习俗]]（xiaohan/dahan）
+- [[04_sources/source-ihchina-lichun-feature|中国非物质文化遗产网：春到人间草木知——二十四节气之立春]]（lichun）
+- [[04_sources/source-ihchina-lidong-feature|中国非物质文化遗产网：秋冬气始交——二十四节气之立冬]]（lidong）
+- [[04_sources/source-ihchina-liqiu-feature|中国非物质文化遗产网：木叶动秋声——二十四节气之立秋]]（liqiu）
+- [[04_sources/source-ihchina-liqiu-ganqiu|中国非物质文化遗产网：农历二十四节气（苗族赶秋）项目名录页]]（liqiu）
+- [[04_sources/source-ihchina-liqiu-ganqiu-topic|中国非物质文化遗产网：苗族赶秋（专题报道，2018）]]（liqiu）
+- [[04_sources/source-ihchina-lixia-banshan|中国非物质文化遗产网：农历二十四节气（半山立夏习俗）项目页]]（lixia）
+- [[04_sources/source-ihchina-lixia-feature|中国非物质文化遗产网：绿荫冉冉遍天涯——二十四节气之立夏]]（lixia）
+- [[04_sources/source-ihchina-mangzhong-feature|中国非物质文化遗产网：东风染尽三千顷——二十四节气之芒种]]（mangzhong）
+- [[04_sources/source-ihchina-qingming-feature|中国非物质文化遗产网：梨花落后清明——二十四节气之清明]]（qingming）
+- [[04_sources/source-ihchina-qingming-project|中国非物质文化遗产网：清明节（国家级非遗代表性项目页）]]（qingming）
+- [[04_sources/source-ihchina-qiufen-feature|中国非物质文化遗产网：桂子飘香远——二十四节气之秋分]]（qiufen）
+- [[04_sources/source-ihchina-sanmen-jidong|中国非物质文化遗产网：农历二十四节气（三门祭冬）项目页]]（dongzhi）
+- [[04_sources/source-ihchina-shiqian-shuochun|中国非物质文化遗产网：农历二十四节气（石阡说春）]]（lichun）
+- [[04_sources/source-ihchina-shuangjiang-feature|中国非物质文化遗产网：万类霜天竞自由——二十四节气之霜降]]（shuangjiang）
+- [[04_sources/source-ihchina-shuangjiangjie-intro|中国非物质文化遗产网：壮族霜降节（二十四节气专题·节气名录）]]（shuangjiang）
+- [[04_sources/source-ihchina-shuangjiangjie-project|中国非物质文化遗产网：农历二十四节气（壮族霜降节）项目页]]（shuangjiang）
+- [[04_sources/source-ihchina-xiaohan-feature|中国非物质文化遗产网：雪里已知春信至——二十四节气之小寒]]（xiaohan）
+- [[04_sources/source-ihchina-xiaoman-feature|中国非物质文化遗产网：南风原头吹百草——二十四节气之小满]]（xiaoman）
+- [[04_sources/source-ihchina-xiaoman-nongsu|中国非物质文化遗产网：小满农俗]]（xiaoman）
+- [[04_sources/source-ihchina-xiaoshu-feature|中国非物质文化遗产网：雨声荷叶香——二十四节气之小暑（节气专题页）]]（xiaoshu）
+- [[04_sources/source-ihchina-xiaoshu-huashuo-2021|中国非物质文化遗产网："画"说二十四节气·小暑（节气资讯，2021）]]（xiaoshu）
+- [[04_sources/source-ihchina-xiaoxue-feature|中国非物质文化遗产网：清寒小雪前——二十四节气之小雪]]（xiaoxue）
+- [[04_sources/source-ihchina-xiazhi-feature|中国非物质文化遗产网：冰雪在心——二十四节气之夏至]]（xiazhi）
+- [[04_sources/source-ihchina-xuzhou-fuyang|中国非物质文化遗产网：徐州伏羊食俗（国家级非遗项目页）]]（xiaoshu）
+- [[04_sources/source-ihchina-yushui-feature|中国非物质文化遗产网：东风解冻散为雨——二十四节气之雨水]]（yushui）
+- [[04_sources/source-infogov-hk-daxiaoren-2025|香港政府新闻网：立法会六题——推广传统习俗及文化活动（打小人答问）]]（jingzhe）
+- [[04_sources/source-kpzg-dew-formation|科普中国（人民网）：清晨才有的"珍珠"？专家告诉你露是这样形成的]]（bailu）
+- [[04_sources/source-mct-guyu-luoyang-peony|文化和旅游部专题：中国洛阳牡丹文化节（洛阳牡丹花会沿革）]]（guyu）
+- [[04_sources/source-mct-liqiu-ganqiu|文化和旅游部官网：二十四节气正式列入UNESCO人类非遗代表作名录（2016通报）]]（liqiu）
+- [[04_sources/source-mct-shengze-canfa|文化和旅游部专题页：江苏·盛泽先蚕祠（蚕花里太湖东）]]（xiaoman）
+- [[04_sources/source-naoj-24sekki-dahan|日本国立天文台暦計算室：こよみ用語解説 二十四節気（大寒=十二月中・黄経300°・冷気が極まって最も寒さがつのる）]]（dahan）
+- [[04_sources/source-naoj-24sekki-hanlu|日本国立天文台暦計算室：こよみ用語解説 二十四節気（寒露=九月節・黄経195°）]]（hanlu）
+- [[04_sources/source-naoj-24sekki-qiufen|日本国立天文台暦計算室：こよみ用語解説 二十四節気（秋分=八月中・黄経180°・彼岸の中日）]]（qiufen）
+- [[04_sources/source-naoj-24sekki-shuangjiang|日本国立天文台暦計算室：こよみ用語解説 二十四節気（霜降=九月中・黄経210°・霜が降りるころ）]]（shuangjiang）
+- [[04_sources/source-naoj-24sekki-xiaoxue|日本国立天文台暦計算室：こよみ用語解説 二十四節気（小雪=十月中・黄経240°・寒くなって雨が雪になる）]]（xiaoxue）
+- [[04_sources/source-naoj-24sekki-yushui|日本国立天文台暦計算室：こよみ用語解説 二十四節気（雨水=正月中・黄経330°）]]（yushui）
+- [[04_sources/source-people-fengshoujie-2025|人民日报2025：丰收节为何选在秋分日（文化中国行·二十四节气二十四问）]]（qiufen）
+- [[04_sources/source-people-shuangjiang-xiangshan|人民网四川频道（转北京日报）：香山红叶进入最佳观赏期]]（shuangjiang）
+- [[04_sources/source-people-shuangjiangjie-gx-2022|人民网广西频道：广西天等：博物馆里探非遗（壮族霜降节现场报道）]]（shuangjiang）
+- [[04_sources/source-people-xiaohan-dahan-2026|人民日报：小寒大寒哪个更冷？（文化中国行·二十四节气二十四问）]]（xiaohan/dahan）
+- [[04_sources/source-people-xiaoxue-pickling-2015|人民日报海外版2015：小雪——腌菜腌肉好越冬（节气·民俗）]]（xiaoxue）
+- [[04_sources/source-pmo-almanac-qa|紫金山天文台：历书科普问题解答]]（共享/多节气）
+- [[04_sources/source-qingming-sccc-singapore|新加坡华族文化中心：与新加坡华族文化中心了解清明节的习俗与传统]]（qingming）
+- [[04_sources/source-rmrbhwb-dahan-2016|人民日报海外版2016-01-19第07版：二十四节气·大寒（专版四篇）]]（dahan）
+- [[04_sources/source-ruc-agri-qiufen-wheat|中国人民大学农业与农村发展学院：今天是秋分（小麦播期与寒露种麦农谚的地域对照）]]（hanlu/qiufen）
+- [[04_sources/source-szmb-season-division|深圳市气象局：四季是如何划分的]]（lichun）
+- [[04_sources/source-un-nowruz-day|联合国官网：International Nowruz Day（国际诺鲁孜节）]]（chunfen）
+- [[04_sources/source-un-zhongwenri-guyu|联合国官网：联合国中文日（每年4月20日）]]（guyu）
+- [[04_sources/source-weather-com-cn-chunfen|中国天气网：二十四节气之春分（专题导航页）]]（chunfen）
+- [[04_sources/source-weather-com-cn-ganrefeng|中国天气网（陕西站）：小满节气后注意防范干热风]]（xiaoman）
+- [[04_sources/source-weather-com-cn-lixia|中国天气网（天津）：二十四节气之立夏]]（lixia）
+- [[04_sources/source-weather-com-cn-qiufen|中国天气网（山西）：秋分节气的由来]]（qiufen）
+- [[04_sources/source-weather-com-qingming-rain|中国天气网·数据帝扒天气第31期：清明时节总是雨纷纷吗？]]（qingming）
+- [[04_sources/source-weathercn-chushu-2026|中国天气网：处暑节气——长城以北秋高气爽 南方需警惕"秋老虎"（2026）]]（chushu）
+- [[04_sources/source-weathercn-dahan-2023|中国天气网2023：大寒迎岁终！全国平均气温触底反弹 数据揭秘谁是大寒"湿冷王"]]（dahan）
+- [[04_sources/source-weathercn-daxue-2008|中国天气网专题：节气大雪与大雪天气]]（daxue）
+- [[04_sources/source-weathercn-jingzhe-origin|中国天气网：惊蛰的由来（节气专题）]]（jingzhe）
+- [[04_sources/source-weathercn-lidong-225|中国天气网（北京站）：今日"立冬"冬天即将开始]]（lidong）
+- [[04_sources/source-weathercn-lidong-shengcong|中国天气网（江苏站）：立冬习俗之吃生葱]]（lidong）
+- [[04_sources/source-weathercn-meiyu-2024|中国天气网2024年入梅报道：梅雨季开启，收好这份防潮指南]]（mangzhong）
+- [[04_sources/source-weathercn-shuangjiang-proverbs|中国天气网：古代霜降谚语中的有趣气象知识]]（shuangjiang）
+- [[04_sources/source-weathercn-tianjin-lushuang|中国天气网天津站：露和霜的区别]]（bailu）
+- [[04_sources/source-weathercn-xiaohan-2025|中国天气网：数说节气谚语——冷到极致，小寒时节哪些地方进入全年最冷时段]]（xiaohan）
+- [[04_sources/source-weathercn-xiazhi-feature|中国天气网：二十四节气之夏至]]（xiazhi）
+- [[04_sources/source-xinhua-bailu-2022|新华社2022白露稿：9月7日23时32分白露——露从今夜白，秋风至此凉]]（bailu）
+- [[04_sources/source-xinhua-chushu-2022|新华社：节令之美·处暑丨23日处暑，即将出伏（2022）]]（chushu）
+- [[04_sources/source-xinhua-dahan-topic|新华网：【传统文化·二十四节气】大寒（专题导语）]]（dahan）
+- [[04_sources/source-xinhua-dashu-2022|新华社：节气里的中国丨大暑：荷花入暮犹愁热（2022）]]（dashu）
+- [[04_sources/source-xinhua-dashuchuan-2025|新华社：节令之美丨椒江口外"大暑船"，国遗传承上百年（2025）]]（dashu）
+- [[04_sources/source-xinhua-daxue-topic|新华网专题：【传统文化·二十四节气】大雪]]（daxue）
+- [[04_sources/source-xinhua-dongzhi-2021|新华社：21日23时59分冬至：寒冬来临的标志]]（dongzhi）
+- [[04_sources/source-xinhua-guanghan-baobao|新华网四川频道：四川广汉举行"拉保保"民俗活动（图集报道）]]（yushui）
+- [[04_sources/source-xinhua-guyu-2022|新华社：节令之美·谷雨丨4月20日10时24分"谷雨"（2022）]]（guyu）
+- [[04_sources/source-xinhua-hanlu-2021|新华社2021寒露稿：8日9时39分"寒露"——风入蒹葭秋色晚，气冷露凝雁南归]]（hanlu）
+- [[04_sources/source-xinhua-hanlu-2022|新华社2022寒露稿：8日15时22分寒露——寒花开已尽，菊蕊独盈枝]]（hanlu）
+- [[04_sources/source-xinhua-jingzhe-2022|新华网：3月5日22时44分"惊蛰"：春雷一声响，九尽桃花开]]（jingzhe）
+- [[04_sources/source-xinhua-lidong-2023|新华网：寒意渐重！立冬时节降温最猛 全国冬日地图看哪里跨入冬季]]（lidong）
+- [[04_sources/source-xinhua-liqiu-2021|新华社2021：8月7日14时54分"立秋"：迟迟白日晚，袅袅秋风生]]（liqiu）
+- [[04_sources/source-xinhua-liqiu-2022|新华网2022：节令之美·立秋丨7日立秋：别忘"咬秋"与"贴秋膘"]]（liqiu）
+- [[04_sources/source-xinhua-liqiu-sanwen-2026|新华社2026：立秋三问（气象学入秋标准与中央气象台高温预报）]]（liqiu）
+- [[04_sources/source-xinhua-liqiu-shengdong-2026|新华社2026：文化中国行丨"声动"二十四节气·立秋]]（liqiu）
+- [[04_sources/source-xinhua-lixia-2026|新华网：5日19时49分立夏，这个时间是如何确定的？]]（lixia）
+- [[04_sources/source-xinhua-mangzhong-2024|新华社2024年芒种稿：文化中国行·诗意节令｜芒种：风吹麦成浪 静待稻花香]]（mangzhong）
+- [[04_sources/source-xinhua-qingming-2024|新华网2024：星空有约丨都说"四五清明"，今年为啥不一样？]]（qingming）
+- [[04_sources/source-xinhua-qiufen-2022|新华社2022：秋分说"分"（引紫金山天文台张旸）]]（qiufen）
+- [[04_sources/source-xinhua-qiufen-2024|新华社2024：秋分——昼夜平分日，寒暑交替时（文化中国行·诗意节令）]]（qiufen）
+- [[04_sources/source-xinhua-sanfu-2024|新华网：夏至三庚数头伏——今年7月15日入伏，比去年晚4天（2024）]]（xiaoshu）
+- [[04_sources/source-xinhua-shuangjiang-2021|新华网：今日霜降，一个充盈着"诗经之美"的节气（草地·二十四节气）]]（shuangjiang）
+- [[04_sources/source-xinhua-shuangjiang-frost-2024|新华网/人民网科普中国："霜降"的霜从哪"降"？]]（shuangjiang）
+- [[04_sources/source-xinhua-unesco-solarterms|新华社：二十四节气入选人类非遗代表作名录（2016-11-30）]]（lichun）
+- [[04_sources/source-xinhua-xiaohan-2023|新华网：节气里的中国｜小寒——晓日初长，盼雪迎春]]（xiaohan）
+- [[04_sources/source-xinhua-xiaoman-2024|新华社：诗意节令丨小满：小得盈满胜万全（2024）]]（xiaoman）
+- [[04_sources/source-xinhua-xiaoshu-2022|新华网：7日10时38分小暑：倏忽温风至 因循小暑来（2022）]]（xiaoshu）
+- [[04_sources/source-xinhua-xiaoshu-poetic-2024|新华社：文化中国行·诗意节令｜小暑：时有微凉不是风（2024）]]（xiaoshu）
+- [[04_sources/source-xinhua-xiaoxue-2019|新华网2019：腌咸菜、储藏大白菜……你家乡的小雪节气怎么过？（引王娟）]]（xiaoxue）
+- [[04_sources/source-xinhua-xiaoxue-2022|新华社2022：小雪——冬令成 万物藏（节气里的中国）]]（xiaoxue）
+- [[04_sources/source-xinhua-xiazhi-2026|新华社：星空有约丨有关夏至日的一个真"最"和三个假"最"]]（xiazhi）
+- [[04_sources/source-xinhua-yushui-feature|新华网：节气里的中国丨雨水日：拂水惊梅中迎来春天]]（yushui）
+- [[04_sources/source-xinhuanet-chunfen-2021|新华网：春分这个"C位"的节气，你了解多少？（2021，紫金山天文台）]]（chunfen）
+- [[04_sources/source-xinhuanet-chunfen-2022|新华网：3月20日23时33分"春分"：仲春初四日，春色正中分（2022）]]（chunfen）
+- [[04_sources/source-xinhuanet-dongzhi-2015|人民日报海外版（新华网转载）：冬至——夜长昼短 一阳始生（节气·物候）]]（dongzhi）
+- [[04_sources/source-xinhuanet-fengshoujie-2018|新华社2018：我国设立"中国农民丰收节"（国新办发布会通稿）]]（qiufen）
+- [[04_sources/source-zjxc-kaiyu-2023|浙江宣传：开渔节的渔港与渔事（2023）]]（chushu）
+
+### 媒体与其他直读（12）
+
+- [[04_sources/source-chinadaily-lixia-banshan|中国日报网浙江频道：2023第十二届半山立夏节，传统民俗走出新时尚]]（lixia）
+- [[04_sources/source-dili360-shiyangbai|中国国家地理网（中华遗产2018年第01期）：白露|"十样白"的秘密]]（bailu）
+- [[04_sources/source-fjdaily-bailu-longyan-2025|福建日报（新福建/福州晚报）2025：央视关注！福州这道美食——白露龙眼肉配稀饭]]（bailu）
+- [[04_sources/source-gushiwen-dufu-lichun|古文岛：杜甫《立春》原文及赏析]]（lichun）
+- [[04_sources/source-gushiwen-guyu-yuanzhen|古诗文网：《咏廿四气诗·谷雨三月中》（元稹）作品页]]（guyu）
+- [[04_sources/source-gushiwen-luyou-shiyu|古诗文网：陆游《时雨》作品页]]（mangzhong）
+- [[04_sources/source-ihchina-xiaoman-zheli-2015|中国文化报（非遗网转载）：小满——一个充满哲理和希望的节气]]（xiaoman）
+- [[04_sources/source-people-lixia-chengren|人民日报："立夏称人"是古代的体检吗？（二十四节气二十四问）]]（lixia）
+- [[04_sources/source-rmrbhwb-bailu-2016|人民日报海外版2016：仲秋八月，秋思深沉隽永（民俗）]]（bailu）
+- [[04_sources/source-rmrbhwb-sanmen-jidong|人民日报海外版：三门祭冬（2022-12-14 第12版）]]（dongzhi）
+- [[04_sources/source-wikipedia-yalda-night|Wikipedia: Yalda Night（英语词条，直读）]]（dongzhi）
+- [[04_sources/source-zjol-hanhaoniao|浙江在线/都市快报：寒号鸟竟然不是鸟 小学课文"误导"了我们这么多年]]（daxue）
+
+### 线索级（search-excerpt）（25）
+
+- [[04_sources/source-almanac-com-shuangjiang-frostdates|The Old Farmer's Almanac: First and Last Frost Dates（线索级）]]（shuangjiang）
+- [[04_sources/source-bjnews-yaochun|新京报：立春饮食"咬春"报道（线索级）]]（lichun）
+- [[04_sources/source-britannica-harvesthome-leads|Britannica: Harvest Home（线索级）]]（mangzhong）
+- [[04_sources/source-chinaqw-lixia-adou|中国侨网：立夏和消夏（司马昭称阿斗传说，线索级）]]（lixia）
+- [[04_sources/source-cozasadit-may-rain-proverb|中欧五月雨农谚线索（CozaSadit 谚语页，检索摘要级）]]（xiaoman）
+- [[04_sources/source-ecnu-qingming-nanyang-leads|华东师大转载"东西问"：清明节何以在南洋华人社会中世代延续（线索级）]]（qingming）
+- [[04_sources/source-eira-sami-snow|萨米驯鹿牧民雪知识研究（Eira 等，线索级）]]（daxue）
+- [[04_sources/source-farmersalmanac-aprilshowers-guyu|Farmers' Almanac: April showers bring May flowers（线索级）]]（guyu）
+- [[04_sources/source-groundhog-candlemas-leads|土拨鼠日 / 圣烛节线索集（groundhog.org 等，线索级）]]（lichun）
+- [[04_sources/source-historicuk-plough-monday|Historic UK: Plough Monday（线索级）]]（xiaohan）
+- [[04_sources/source-imbolc-brigid-leads|Imbolc / 圣布里吉德节线索集（gov.ie 等，线索级）]]（lichun）
+- [[04_sources/source-kanchu-misogi-leads|日本"寒中禊/寒中水泳/寒修行"线索集（神社寺院活动页与报道摘要，线索级）]]（dahan）
+- [[04_sources/source-lionsroar-issa-dew|Lion's Roar：Pico Iyer 论小林一茶"露の世"俳句（线索级）]]（bailu）
+- [[04_sources/source-medgrain-june-leads|欧洲谷物收获时序线索集（Ercoli 2014 / JRC 作物监测，线索级）]]（mangzhong）
+- [[04_sources/source-nippon-72microseasons|Nippon.com：Japan's 72 Microseasons（线索级）]]（jingzhe）
+- [[04_sources/source-wikipedia-april-shower-guyu|Wikipedia: April shower（线索级）]]（guyu）
+- [[04_sources/source-wikipedia-beltane|Wikipedia: Beltane（线索级）]]（lixia）
+- [[04_sources/source-wikipedia-dashu-oxday|Wikipedia: Midsummer Ox Day（线索级）]]（dashu）
+- [[04_sources/source-wikipedia-dog-days|Wikipedia: Dog Days（线索级）]]（xiaoshu）
+- [[04_sources/source-wikipedia-harvestfestival|Wikipedia: Harvest festival（线索级）]]（chushu）
+- [[04_sources/source-wikipedia-intiraymi|Wikipedia: Inti Raymi（线索级）]]（xiazhi）
+- [[04_sources/source-wikipedia-lammas|Wikipedia: Lammas（线索级）]]（liqiu）
+- [[04_sources/source-wikipedia-midsummer|Wikipedia: Midsummer / Saint John's Eve（线索级）]]（xiazhi）
+- [[04_sources/source-wikipedia-samhain|Wikipedia: Samhain（线索级）]]（lidong）
+- [[04_sources/source-wikipedia-setsubun|Wikipedia: Setsubun（线索级）]]（lichun）
+
+> 批量说明：各来源的原文摘录、定位与许可详见其笔记页；古籍直读以维基文库为主要载体，异文一律在各卡登记不裁决。GB/T 33661-2017 仍为元数据级（正文待人工核读，全库继承待办）。

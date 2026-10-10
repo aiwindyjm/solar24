@@ -12,6 +12,7 @@ Obsidian 核心 Templates 已配置此目录；也可直接复制对应文件。
 - [[90_templates/VisualAsset|VisualAsset]]
 - [[90_templates/AudioAsset|AudioAsset]]
 - [[90_templates/InteractionIdea|InteractionIdea]]
+- [[90_templates/HumanExplanation|HumanExplanation]]
 - [[90_templates/ResearchNote|ResearchNote]]
 - [[90_templates/Source|Source]]
 

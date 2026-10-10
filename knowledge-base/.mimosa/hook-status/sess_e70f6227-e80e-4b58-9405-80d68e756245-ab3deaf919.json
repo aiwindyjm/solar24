@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "mimosa-hook-status/v1",
+  "recordedAt": "2026-09-26T05:45:22.288Z",
+  "sessionId": "sess_e70f6227-e80e-4b58-9405-80d68e756245",
+  "event": "PostToolUse",
+  "toolName": "Write",
+  "file": "03_notes/region-jiexiu-hanshi-qingming.md",
+  "outcome": "clear",
+  "coverage": "complete",
+  "findingCount": 0,
+  "durationMs": 3,
+  "hostState": "hook_complete",
+  "reportHint": ".mimosa/reports/"
+}

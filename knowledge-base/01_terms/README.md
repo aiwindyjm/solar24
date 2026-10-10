@@ -2,6 +2,8 @@
 
 以下为立春起的编辑顺序，不代表一年公历起点。
 
+> **批量研究状态（2026-09-16）**：24 节气第一轮研究全部完成（立春试点 + 批处理 23 节气）。所有索引页已填充知识维度与解释层链接；全部内容为 draft/in-review，**Verified 层为零**，等待 [[07_research/solar24-batch-human-review-package|统一人工审核总包]] 的 Decision。汇总状态表见 [[README|知识库总览]]。
+
 - [[01_terms/01_立春|立春 · lichun]]
 - [[01_terms/02_雨水|雨水 · yushui]]
 - [[01_terms/03_惊蛰|惊蛰 · jingzhe]]

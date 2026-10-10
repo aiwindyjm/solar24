@@ -28,6 +28,7 @@ source:
     'url': null,
     'citation': '待填写书目与定位',
     'source_type': 'institutional',
+    'access': 'direct-read',
     'accessed': null,
     'original_excerpt': '',
     'locator': '',
@@ -39,7 +40,7 @@ source:
 
 # Source 模板
 
-复制到对应目录后更新 id/title/author/created/updated/范围；不要保留 template-* ID 作为正式实体。此模板没有真实研究资料，human_review 保持 null。
+复制到对应目录后更新 id/title/author/created/updated/范围/access（直读还是仅搜索摘要）；不要保留 template-* ID 作为正式实体。此模板没有真实研究资料，human_review 保持 null。
 
 ## 研究问题或命题
 

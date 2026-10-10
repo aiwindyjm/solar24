@@ -28,13 +28,16 @@ source:
     'url': 'https://www.hko.gov.hk/en/gts/time/24solarterms.htm',
     'citation': 'Hong Kong Observatory. The 24 Solar Terms. Calendar; revision 18 May 2020.',
     'source_type': 'institutional',
+    'access': 'direct-read',
     'accessed': '2026-09-16',
     'original_excerpt': "The 24 solar terms divide the ecliptic into 24 equal segments, with 15 degrees of the Sun's longitude between the terms.",
     'locator': "Paragraph beginning From the Earth's perspective; next paragraph discusses regional climate and agriculture.",
     'ai_summary': '页面介绍黄经15度分段、节气名称与天气农业经验，并限定为古代中国中部气候的部分反映。',
     'rights': 'Source retains rights; metadata and limited excerpt only; no image reuse.',
-    'verification': 'unverified',
+    'verification': 'human-verified',
   }
+
+# owner-authorized source upgrade 2026-09-28
 ---
 
 # The 24 Solar Terms · Source
