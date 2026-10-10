@@ -1,6 +1,6 @@
 # 小暑 · Minor Heat
 
-> Planned · Cultural content: draft · Reference scaffold, not a completed experience.
+> In Development · Cultural content: draft · Reference scaffold, not a completed experience.
 
 Identity: `xiaoshu` / summer / order 11.
 

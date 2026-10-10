@@ -2,7 +2,221 @@
   "schema_version": "0.1.0",
   "term_id": "xiaoxue",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "小雪是什么",
+        "en": "What is Minor Snow"
+      },
+      "claim_ids": [
+        "xiaoxue-c1",
+        "xiaoxue-c2",
+        "xiaoxue-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "小雪与自然",
+        "en": "Minor Snow and Nature"
+      },
+      "claim_ids": [
+        "xiaoxue-c4",
+        "xiaoxue-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "小雪与人们的生活",
+        "en": "Minor Snow and People"
+      },
+      "claim_ids": [
+        "xiaoxue-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "xiaoxue-c7",
+        "xiaoxue-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "xiaoxue-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳位置划分一年。",
+        "en": "The 24 solar terms divide the year by the Sun's position."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoxue-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "小雪是第二十个节气。太阳到达黄经240°，可能下小雪了。",
+        "en": "Xiaoxue is the twentieth term: the Sun reaches 240°. Light snow may fall."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "source_ids": [
+        "source-gbt-33661-openstd",
+        "source-ihchina-xiaoxue-feature"
+      ],
+      "knowledge_ids": [
+        "sci-xiaoxue-longitude-240"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoxue-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "小雪是农历十月的\"中气\"。",
+        "en": "Xiaoxue is the mid-term of the tenth lunar month."
+      },
+      "region": [
+        "中国（传统历法编算规则）"
+      ],
+      "period": "现行农历编算口径；GB/T 33661-2017 为现行国家标准（正文条款待人工核读）",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-yueling-qishierhou-wikisource"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-jieqi-zhongqi"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoxue-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "初雪给大地披上薄薄的白。气温持续下降。",
+        "en": "First snows dust the landscape white. Temperatures continue falling."
+      },
+      "region": [
+        "中国（机构稿为全国性口径，气候描述因地域而异：东北封冻/西北大雪/黄河以北初雪/江南初冬/华南少雪）"
+      ],
+      "period": "现代气象学口径；机构稿2019/2022/2017（非遗网）",
+      "source_ids": [
+        "source-xinhua-xiaoxue-2022",
+        "source-xinhua-xiaoxue-2019"
+      ],
+      "knowledge_ids": [
+        "sci-xiaoxue-not-necessarily-snow"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoxue-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人观察到：彩虹藏起来了（冰雪代替了雨）、天上的气上升、地下的气下降。",
+        "en": "Ancient texts: rainbows hide (ice replaces rain), heaven's air rises, earth's air descends."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《逸周书·时训》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-ihchina-xiaoxue-feature"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-xiaoxue-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoxue-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "腌菜季节开始了：\"小雪腌菜，大雪腌肉。\"",
+        "en": "Pickle-making season begins: \"Minor Snow for pickled vegetables, Major Snow for cured meat.\""
+      },
+      "region": [
+        "南方：南京（谚语锚点）、江苏仪征（清人记载线索）、杭州；北方：北京/北方通言（储大白菜、腌菜）；内蒙古包头农村（杀猪）——分记，不合并概括"
+      ],
+      "period": "可确证：当代机构与媒体口径（2015-2022）；古籍级线索仅清人《真州竹枝词引》（媒体转引，未直读）；清末北京酸菜记载锚定十二月",
+      "source_ids": [
+        "source-people-xiaoxue-pickling-2015",
+        "source-xinhua-xiaoxue-2022"
+      ],
+      "knowledge_ids": [
+        "trad-xiaoxue-pickling-curing"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoxue-c7",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "小雪带来冬天的第一个白色信号。",
+        "en": "Minor Snow brings winter's first quiet announcement in white."
+      },
+      "region": [
+        "命名经验锚定黄河流域古典气候；地名通用"
+      ],
+      "period": "《月令七十二候集解》文本传统题名为元代；明代《群芳谱》为媒体转引级线索",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-xinhua-xiaoxue-2019"
+      ],
+      "knowledge_ids": [
+        "hist-xiaoxue-naming"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoxue-c8",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

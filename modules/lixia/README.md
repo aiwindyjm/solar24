@@ -1,6 +1,6 @@
 # 立夏 · Beginning of Summer
 
-> Planned · Cultural content: draft · Reference scaffold, not a completed experience.
+> In Development · Cultural content: draft · Reference scaffold, not a completed experience.
 
 Identity: `lixia` / summer / order 07.
 

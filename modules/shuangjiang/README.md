@@ -1,6 +1,6 @@
 # 霜降 · Frost Descent
 
-> Planned · Cultural content: draft · Reference scaffold, not a completed experience.
+> In Development · Cultural content: draft · Reference scaffold, not a completed experience.
 
 Identity: `shuangjiang` / autumn / order 18.
 

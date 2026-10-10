@@ -2,7 +2,221 @@
   "schema_version": "0.1.0",
   "term_id": "hanlu",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "寒露是什么",
+        "en": "What is Cold Dew"
+      },
+      "claim_ids": [
+        "hanlu-c1",
+        "hanlu-c2",
+        "hanlu-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "寒露与自然",
+        "en": "Cold Dew and Nature"
+      },
+      "claim_ids": [
+        "hanlu-c4",
+        "hanlu-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "寒露与人们的生活",
+        "en": "Cold Dew and People"
+      },
+      "claim_ids": [
+        "hanlu-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "hanlu-c7",
+        "hanlu-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "hanlu-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳位置划分一年。",
+        "en": "The 24 solar terms divide the year by the Sun's position."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "hanlu-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "寒露是第十七个节气。太阳到达黄经195°，露水变冷了。",
+        "en": "Hanlu is the seventeenth term: the Sun reaches 195°. Dew turns cold."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "source_ids": [
+        "source-ihchina-hanlu-feature",
+        "source-xinhua-hanlu-2022"
+      ],
+      "knowledge_ids": [
+        "sci-hanlu-longitude-195"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "hanlu-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "寒露是农历九月的\"节\"。气温明显下降，霜冻将近。",
+        "en": "Hanlu is the node term of the ninth lunar month. Temperatures drop noticeably; frost approaches."
+      },
+      "region": [
+        "中国（传统历法编算规则）"
+      ],
+      "period": "现行农历编算口径；GB/T 33661-2017 为现行国家标准（正文条款待人工核读）",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-yueling-qishierhou-wikisource"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-jieqi-zhongqi"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "hanlu-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "气温骤降，早晚凉意明显。该添衣了。",
+        "en": "Sharp temperature drops; morning and evening chill. Time to add layers."
+      },
+      "region": [
+        "中国（机构稿口径的中纬度经验；具体气候特征因纬度海拔而异）"
+      ],
+      "period": "现代气候科普口径（新华社2021/2022稿、非遗网专题页）",
+      "source_ids": [
+        "source-xinhua-hanlu-2022",
+        "source-xinhua-hanlu-2021"
+      ],
+      "knowledge_ids": [
+        "sci-hanlu-cooling-transition"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "hanlu-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人观察到：大雁排成队来、雀鸟躲进海里变成蛤蜊、菊花开了。",
+        "en": "Ancient texts: geese arrive in formation, sparrows enter the sea as clams, chrysanthemums bloom."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典文本传统）"
+      ],
+      "period": "《月令七十二候集解》传统题名元代；所承物候体系更早",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-ihchina-hanlu-feature"
+      ],
+      "knowledge_ids": [
+        "hist-hanlu-naming"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "hanlu-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "赏菊、喝菊花酒、吃芝麻是传统习俗。谚语说\"白露身不露，寒露脚不露\"。",
+        "en": "Chrysanthemum viewing, drinking chrysanthemum wine, and eating sesame are traditional."
+      },
+      "region": [
+        "中国（分条目标注：北京、杭州等地/南方/一些地区/老南京；无地域标注者已明示）"
+      ],
+      "period": "非遗网专题页为2017年汇编；各条目断代未考（斗蟋蟀引《诗经·七月》\"九月授衣\"为古典参照）",
+      "source_ids": [
+        "source-ihchina-hanlu-feature",
+        "source-xinhua-hanlu-2021"
+      ],
+      "knowledge_ids": [
+        "trad-hanlu-customs-food"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "hanlu-c7",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "寒露加深了秋意——一个放下和准备过冬的季节。",
+        "en": "Cold Dew deepens autumn — a season of letting go and preparing for winter."
+      },
+      "region": [
+        "文本经验锚定中国：六世纪荆楚（长江中游）、清末北京；现代表述为全国性节日的机构口径"
+      ],
+      "period": "《荆楚岁时记》（六世纪，注文引杜公瞻及《续齐谐记》）；《燕京岁时记》（清末，1906年前后成书）；非遗网专题（2017）",
+      "source_ids": [
+        "source-wikisource-jingchu-suishiji",
+        "source-wikisource-yanjingsuishiji"
+      ],
+      "knowledge_ids": [
+        "hist-hanlu-chongyang-adjacent"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "hanlu-c8",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

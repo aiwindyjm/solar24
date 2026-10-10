@@ -2,7 +2,217 @@
   "schema_version": "0.1.0",
   "term_id": "dongzhi",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "冬至是什么",
+        "en": "What is Winter Solstice"
+      },
+      "claim_ids": [
+        "dongzhi-c1",
+        "dongzhi-c2",
+        "dongzhi-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "冬至与自然",
+        "en": "Winter Solstice and Nature"
+      },
+      "claim_ids": [
+        "dongzhi-c4",
+        "dongzhi-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "冬至与人们的生活",
+        "en": "Winter Solstice and People"
+      },
+      "claim_ids": [
+        "dongzhi-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "dongzhi-c7",
+        "dongzhi-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "dongzhi-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳黄经等分黄道24段。",
+        "en": "The 24 solar terms divide the ecliptic equally."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dongzhi-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "冬至是二十四节气中的第二十二个：太阳到达黄经270°，北半球白昼最短。",
+        "en": "Dongzhi is the twenty-second term: the Sun reaches 270°, shortest day in the Northern Hemisphere."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "source_ids": [
+        "source-ihchina-dongzhi-feature",
+        "source-xinhua-dongzhi-2021"
+      ],
+      "knowledge_ids": [
+        "sci-dongzhi-longitude-270"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dongzhi-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "冬至是农历十一月的\"中气\"，传统历法以冬至所在月定十一月，是置闰的锚点。",
+        "en": "Dongzhi anchors the eleventh lunar month, serving as the leap-month reference point."
+      },
+      "region": [
+        "北半球（极值命题为半球级表述）；\"1月最冷\"经验来自中国（除少数海岛和海滨局部地区外）"
+      ],
+      "period": "现代天文口径；2021年新华社稿含当年交节实例与专家口径",
+      "source_ids": [
+        "source-xinhua-dongzhi-2021",
+        "source-pmo-almanac-qa"
+      ],
+      "knowledge_ids": [
+        "sci-dongzhi-shortest-day-year-anchor"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dongzhi-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "冬至日后白昼渐长：\"冬至阳生\"，古人视为阳气回转。",
+        "en": "Days lengthen after Dongzhi: ancients saw the return of yang energy."
+      },
+      "region": [
+        "北半球（极值命题为半球级表述）；\"1月最冷\"经验来自中国（除少数海岛和海滨局部地区外）"
+      ],
+      "period": "现代天文口径；2021年新华社稿含当年交节实例与专家口径",
+      "source_ids": [
+        "source-xinhua-dongzhi-2021",
+        "source-pmo-almanac-qa"
+      ],
+      "knowledge_ids": [
+        "sci-dongzhi-shortest-day-year-anchor"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dongzhi-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人记录的冬至三候：「蚯蚓結、麋角解、水泉動」。",
+        "en": "Ancient texts: earthworms knot, elk antlers fall, springs stir."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《吕氏春秋》《逸周书·时训》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-dongzhi-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dongzhi-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "在浙江三门，\"祭冬\"（冬至日宗族祭祀）是国家级非遗扩展项目。",
+        "en": "In Sanmen, Zhejiang, the winter sacrifice ceremony is national intangible heritage."
+      },
+      "region": [
+        "浙江省台州市三门县（亭旁镇杨家村、海游镇上坑村、健跳镇小莆村）"
+      ],
+      "period": "国家级非遗公布2014（第四批，扩展项目Ⅹ-68）；综述引康熙《临海县志》等方志（转引级）；\"700余年\"为报道断代（直读）",
+      "source_ids": [
+        "source-ihchina-sanmen-jidong",
+        "source-rmrbhwb-sanmen-jidong"
+      ],
+      "knowledge_ids": [
+        "region-dongzhi-sanmen-jidong"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dongzhi-c7",
+      "kind": "interpretation",
+      "text": {
+        "zh-CN": "冬至是\"至暗时刻\"也是\"光明回归\"——阴极阳生的哲学。清代北京民间\"不为节，惟食餛飩\"。",
+        "en": "Dongzhi is both darkest moment and return of light — the philosophy of yang reborn from extreme yin."
+      },
+      "region": [],
+      "period": "当代（项目解释层）",
+      "source_ids": [
+        "source-wikisource-ml-juan146"
+      ],
+      "knowledge_ids": [
+        "hist-ml-dongzhi-suijie"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dongzhi-c8",
+      "kind": "opinion",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

@@ -2,7 +2,221 @@
   "schema_version": "0.1.0",
   "term_id": "shuangjiang",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "霜降是什么",
+        "en": "What is Frost's Descent"
+      },
+      "claim_ids": [
+        "shuangjiang-c1",
+        "shuangjiang-c2",
+        "shuangjiang-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "霜降与自然",
+        "en": "Frost's Descent and Nature"
+      },
+      "claim_ids": [
+        "shuangjiang-c4",
+        "shuangjiang-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "霜降与人们的生活",
+        "en": "Frost's Descent and People"
+      },
+      "claim_ids": [
+        "shuangjiang-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "shuangjiang-c7",
+        "shuangjiang-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "shuangjiang-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳位置划分一年。",
+        "en": "The 24 solar terms divide the year by the Sun's position."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "shuangjiang-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "霜降是第十八个节气。太阳到达黄经210°，初霜出现。",
+        "en": "Shuangjiang is the eighteenth term: the Sun reaches 210°. First frost appears."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年起有国家标准表述（GB/T 33661-2017 正文待人工核读）",
+      "source_ids": [
+        "source-ihchina-shuangjiang-feature",
+        "source-xinhua-shuangjiang-2021"
+      ],
+      "knowledge_ids": [
+        "sci-shuangjiang-longitude-210"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "shuangjiang-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "霜降是农历九月的\"中气\"，秋天的最后一个节气。",
+        "en": "Shuangjiang is the final mid-term of autumn in the ninth lunar month."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年起有国家标准表述（GB/T 33661-2017 正文待人工核读）",
+      "source_ids": [
+        "source-ihchina-shuangjiang-feature",
+        "source-xinhua-shuangjiang-2021"
+      ],
+      "knowledge_ids": [
+        "sci-shuangjiang-longitude-210"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "shuangjiang-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "霜冻结束了最后的植被生长，过冬准备开始。",
+        "en": "Frost ends the last vegetation growth; winter preparation begins."
+      },
+      "region": [
+        "霜的形成机制为通用气象学（与地域无关）；初霜日期的地域差异显著（大兴安岭北部8月底至华南来年1月上旬）；\"霜打洼地\"为地形局地效应"
+      ],
+      "period": "现代气象学口径（本轮直读来源为2008-2024年机构稿）",
+      "source_ids": [
+        "source-xinhua-shuangjiang-frost-2024",
+        "source-weathercn-shuangjiang-proverbs"
+      ],
+      "knowledge_ids": [
+        "sci-shuangjiang-frost-formation"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "shuangjiang-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人观察到：豺狼捕猎、草木枯黄落叶、虫子钻入泥土深处。",
+        "en": "Ancient texts: jackals hunt prey, plants yellow and fall, insects burrow deep."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-naoj-24sekki-shuangjiang"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-shuangjiang-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "shuangjiang-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "霜降吃柿子是广泛流传的习俗。",
+        "en": "Eating persimmons during Frost's Descent is a widespread custom."
+      },
+      "region": [
+        "逐条地域限定：柿子=泉州（谚语）+\"有些地方\"；进补=闽南和台湾+\"有些地方\"吃牛肉；送芋鬼=广东高明；迎霜=山东烟台等；赏红叶=北京香山（实例）+\"很多地方\"赏菊（页方泛述）"
+      ],
+      "period": "机构汇编层（非遗网2017专题）+当代媒体实例（2025北京日报稿）；古籍源头均未获，断代不早于当代著录",
+      "source_ids": [
+        "source-ihchina-shuangjiang-feature",
+        "source-people-shuangjiang-xiangshan"
+      ],
+      "knowledge_ids": [
+        "trad-shuangjiang-customs"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "shuangjiang-c7",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "霜降是秋天的告别——最后一片金黄叶落的美。",
+        "en": "Frost's Descent is autumn's farewell — beauty in the final golden leaves."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-naoj-24sekki-shuangjiang"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-shuangjiang-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "shuangjiang-c8",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

@@ -2,7 +2,221 @@
   "schema_version": "0.1.0",
   "term_id": "dahan",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "大寒是什么",
+        "en": "What is Major Cold"
+      },
+      "claim_ids": [
+        "dahan-c1",
+        "dahan-c2",
+        "dahan-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "大寒与自然",
+        "en": "Major Cold and Nature"
+      },
+      "claim_ids": [
+        "dahan-c4",
+        "dahan-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "大寒与人们的生活",
+        "en": "Major Cold and People"
+      },
+      "claim_ids": [
+        "dahan-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "dahan-c7",
+        "dahan-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "dahan-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳位置划分一年。",
+        "en": "The 24 solar terms divide the year by the Sun's position."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dahan-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "大寒是第二十四个也是最后一个节气。太阳到达黄经300°，一年将终。",
+        "en": "Dahan is the twenty-fourth and final term: the Sun reaches 300°. The cycle nears completion."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "source_ids": [
+        "source-ihchina-dahan-feature",
+        "source-xinhua-dahan-topic"
+      ],
+      "knowledge_ids": [
+        "sci-dahan-longitude-300"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dahan-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "大寒是农历十二月的\"中气\"。过了大寒，又是立春。",
+        "en": "Dahan is the final mid-term of the twelfth lunar month. After Dahan comes Lichun again."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "source_ids": [
+        "source-ihchina-dahan-feature",
+        "source-xinhua-dahan-topic"
+      ],
+      "knowledge_ids": [
+        "sci-dahan-longitude-300"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dahan-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "最深的寒冷。但白昼已经在变长，春天不远了。",
+        "en": "The deepest cold. Yet days are already longer — spring is near."
+      },
+      "region": [
+        "中国（1991-2020年全国统计与南北分区）"
+      ],
+      "period": "现代气象统计口径（1991-2020年；媒体稿2016/2023）",
+      "source_ids": [
+        "source-weathercn-dahan-2023",
+        "source-rmrbhwb-dahan-2016"
+      ],
+      "knowledge_ids": [
+        "sci-dahan-vs-xiaohan-cold"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dahan-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人观察到：母鸡开始下蛋、猛禽凌厉捕猎、冰冻到水的最深处。",
+        "en": "Ancient texts: hens begin to lay, raptors hunt fiercely, ice thickens to its core."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代（吴澄）；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-ihchina-dahan-feature"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-dahan-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dahan-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "春节的准备工作进入高潮。大寒迎新年。",
+        "en": "Preparation for Spring Festival intensifies. Dahan welcomes the new year."
+      },
+      "region": [
+        "中国福建沿海、台湾等地（两直读源的地域限定表述）；闽南\"做牙\"体系"
+      ],
+      "period": "当代媒体与机构汇编层可确证（2016/2018）；\"做牙\"体系的古籍谱系本轮未直读",
+      "source_ids": [
+        "source-rmrbhwb-dahan-2016",
+        "source-ihchina-dahan-feature"
+      ],
+      "knowledge_ids": [
+        "trad-dahan-weiya"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dahan-c7",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "大寒既是结束也是开始——最暗的时刻之后，立春将再次到来。",
+        "en": "Major Cold is both ending and beginning — after the darkest moment, Lichun returns."
+      },
+      "region": [
+        "中国（古典释名传统）"
+      ],
+      "period": "释名文本：《三礼义宗》（南朝梁，佚，转引自清代《授时通考》）；《月令七十二候集解》题名元代",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-ihchina-dahan-feature"
+      ],
+      "knowledge_ids": [
+        "hist-dahan-naming"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dahan-c8",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

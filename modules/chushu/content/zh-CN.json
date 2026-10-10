@@ -2,7 +2,219 @@
   "schema_version": "0.1.0",
   "term_id": "chushu",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "处暑是什么",
+        "en": "What is End of Heat"
+      },
+      "claim_ids": [
+        "chushu-c1",
+        "chushu-c2",
+        "chushu-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "处暑与自然",
+        "en": "End of Heat and Nature"
+      },
+      "claim_ids": [
+        "chushu-c4",
+        "chushu-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "处暑与人们的生活",
+        "en": "End of Heat and People"
+      },
+      "claim_ids": [
+        "chushu-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "chushu-c7",
+        "chushu-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "chushu-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳位置划分一年。",
+        "en": "The 24 solar terms divide the year by the Sun's position."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "chushu-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "处暑是第十四个节气。太阳到达黄经150°，炎热开始退去。",
+        "en": "Chushu is the fourteenth term: the Sun reaches 150°. Heat begins to retreat."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "source_ids": [
+        "source-ihchina-chushu-feature",
+        "source-xinhua-chushu-2022"
+      ],
+      "knowledge_ids": [
+        "sci-chushu-longitude-150"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "chushu-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "处暑是农历七月的\"中气\"。\"处\"是\"终止\"——暑天到此为止。",
+        "en": "Chushu is the mid-term of the seventh lunar month. \"Chu\" means \"end\" — summer heat concludes."
+      },
+      "region": [
+        "中国（传统历法编算规则）"
+      ],
+      "period": "现行农历编算口径；GB/T 33661-2017 为现行国家标准（正文条款待人工核读）",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-yueling-qishierhou-wikisource"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-jieqi-zhongqi"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "chushu-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "气温逐渐下降。\"秋老虎\"可能短暂回热，但趋势是转凉。",
+        "en": "Temperatures gradually fall. \"Autumn tiger\" heat may linger, but the trend is cooling."
+      },
+      "region": [
+        "中国分区（长城以北/华北中南部黄淮/南方/华西/东南沿海）；概述级，未附逐年气象数据"
+      ],
+      "period": "\"常年\"口径（中国天气网2026）；谚语层为民闲传统",
+      "source_ids": [
+        "source-weathercn-chushu-2026",
+        "source-xinhua-chushu-2022"
+      ],
+      "knowledge_ids": [
+        "sci-chushu-climate-autumn-transition"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "chushu-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人观察到：鹰开始捕猎、天地间的气变得清肃、庄稼成熟了。",
+        "en": "Ancient texts: hawks hunt, heaven and earth grow solemn, grains ripen."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-chushu-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "chushu-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "沿海地区庆祝开渔节；民间吃鸭子进补。",
+        "en": "Coastal communities celebrate the fishing season opening; people eat duck for nourishment."
+      },
+      "region": [
+        "机构汇编叙述（北京保留至今为重点标注）；无古籍直读，地域谱系未核"
+      ],
+      "period": "当代机构汇编（2017）；古籍层缺",
+      "source_ids": [
+        "source-ihchina-chushu-feature"
+      ],
+      "knowledge_ids": [
+        "trad-chushu-chiya-qiuyun"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "chushu-c7",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "处暑是从夏天的浓烈转向秋天的清爽。",
+        "en": "Chushu marks the transition from summer intensity to autumn clarity."
+      },
+      "region": [
+        "中国（命名取义于暑热休止，文本传统锚定黄河-江淮经验）"
+      ],
+      "period": "《月令七十二候集解》传统题名为元代；\"出暑\"为当代机构白话释义",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-xinhua-chushu-2022"
+      ],
+      "knowledge_ids": [
+        "hist-chushu-naming"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "chushu-c8",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

@@ -1,1 +1,154 @@
-[]
+[
+  {
+    "id": "source-pmo-almanac-qa",
+    "title": "历书科普问题解答",
+    "authors": [
+      "中国科学院紫金山天文台"
+    ],
+    "publisher": "紫金山天文台官网科普动态",
+    "published": "2022-03-17",
+    "url": "http://www.pmo.cas.cn/xwdt2019/kpdt2019/202203/t20220317_6399980.html",
+    "citation": "中国科学院紫金山天文台：《历书科普问题解答》，2022-03-17。",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "一年的二十四节气，反映了地球在绕太阳运行轨道上的不同位置，属于阳历范畴。在阳历中节气日期变化不大，但在农历中节气日期却非常不固定。……农历闰月的安排是人为的规定……取其中最先出现的一个不包含中气（即雨水……）的农历月为闰月。",
+    "locator": "\"为什么农历有的月份没有中气\"等问答条目；页面另含农历月大小、年三十有无、双立春/无立春等解答。",
+    "ai_summary": "中国历法权威计算机构（紫金山天文台编算《中国天文年历》）的科普问答：节气属阳历成分、农历为阴阳合历；朔日定初一；冬至定十一月；两冬至间含13个朔望月则置闰、取首个无中气之月；节气日期公历稳定、农历漂移的原因；立春2月4日左右与春节1月21日-2月20日变动可产生双立春/无立春年。",
+    "rights": "机构官网公开内容；仅引用要点与短摘录。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-hko-solar-terms",
+    "title": "The 24 Solar Terms",
+    "authors": [
+      "Hong Kong Observatory"
+    ],
+    "publisher": "Hong Kong Observatory",
+    "published": "2020-05-18 (page revision)",
+    "url": "https://www.hko.gov.hk/en/gts/time/24solarterms.htm",
+    "citation": "Hong Kong Observatory. The 24 Solar Terms. Calendar; revision 18 May 2020.",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "The 24 solar terms divide the ecliptic into 24 equal segments, with 15 degrees of the Sun's longitude between the terms.",
+    "locator": "Paragraph beginning From the Earth's perspective; next paragraph discusses regional climate and agriculture.",
+    "ai_summary": "页面介绍黄经15度分段、节气名称与天气农业经验，并限定为古代中国中部气候的部分反映。",
+    "rights": "Source retains rights; metadata and limited excerpt only; no image reuse.",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-ihchina-jingzhe-feature",
+    "title": "最是一年春好处——二十四节气之惊蛰（节气专题）",
+    "authors": [
+      "中国非物质文化遗产网·中国非物质文化遗产数字博物馆（编者整理）"
+    ],
+    "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+    "published": null,
+    "url": "https://www.ihchina.cn/solar_details/42.html",
+    "citation": "中国非物质文化遗产网：《最是一年春好处——二十四节气之惊蛰》，节气专题页，2026-09-16 读取。",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "惊蛰，是二十四节气中的第三个节气，古称\"启蛰\"，此时，太阳运行到黄经345°。2018年的惊蛰时间是3月5日（农历戊戌年正月十八）。此时大地回暖，长江流域天公作雷，雷声震动，万物萌动，大部分地区进入春耕季节。……《月令七十二候集解》记载，\"二月节……万物出乎震，震为雷，故曰惊蛰，是蛰虫惊而出走矣。\"……俗话说\"过了惊蛰节，春耕不能歇。\"……民间惊蛰吃梨的习俗由来已久。\"梨\"与\"离\"谐音，据传有不忘先祖、离家创业的意思；或说吃梨寓意虫害远离庄稼。",
+    "locator": "\"节气概说\"\"农事农谚\"\"民俗\"各节；习俗条目含蒙鼓皮（引《周礼》）、祭白虎、吃梨、吃炒虫（浙江宁波、闽西古汀州、江西上犹崇义遂川等客地）。",
+    "ai_summary": "国家级非遗机构惊蛰专题：定义（第三个节气、古称启蛰、黄经345°、2018年3月5日）、月令引文、三候（桃始华/仓庚鸣/鹰化为鸠）与花信（桃花/杏花/蔷薇）、农事（\"九九\"艳阳天、春耕开始、春旱露头）、农谚群（流传地域未逐一标明）、蒙鼓皮/祭白虎/吃梨/吃炒虫等习俗。",
+    "rights": "页面声明内容经编者整理、转载引用请注明出处——引用需谨慎，配图一律不用。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-xinhua-jingzhe-2022",
+    "title": "3月5日22时44分\"惊蛰\"：春雷一声响，九尽桃花开（新华社天津3月4日电）",
+    "authors": [
+      "周润健（记者）；受访：罗澍伟（天津社科院研究员）"
+    ],
+    "publisher": "新华网",
+    "published": "2022-03-04",
+    "url": "http://www.news.cn/2022-03/04/c_1128436336.htm",
+    "citation": "新华网：《3月5日22时44分\"惊蛰\"：春雷一声响，九尽桃花开》，2022-03-04。",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "每年公历3月5日或6日太阳到达黄经345度时，进入\"惊蛰\"节气，是为二十四节气中第三个节气，春季第三个节气，也是仲春开始的标志。……\"春雷响，万物长\"，沉睡一冬的蛰虫也开始惊醒而出。春雷乍响，这种自然现象大多出现在长江流域，北方进入4月，方可偶闻雷鸣。……\"惊蛰\"之后，广大农村进入了一年中的繁忙时节，\"田家几日闲，耕种从此起\"，大江南北，陆续呈现出一派春耕的忙碌景象。",
+    "locator": "导语与正文第2-4段；引诗\"田家几日闲，耕种从此起\"出自韦应物《观田家》。",
+    "ai_summary": "新华社节气稿（记者周润健、受访学者罗澍伟）：惊蛰定义（公历3月5日或6日、黄经345度、第三个节气、仲春开始）、2022年惊蛰时刻（3月5日22时44分）、初雷地域分布（多在长江流域、北方4月方偶闻雷鸣）、春耕动员（引\"田家几日闲，耕种从此起\"）。",
+    "rights": "通讯社稿件，仅引用要点与短摘录。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-weathercn-jingzhe-origin",
+    "title": "惊蛰的由来——中国天气网节气专题",
+    "authors": [
+      "中国天气网（中国气象局）"
+    ],
+    "publisher": "中国天气网",
+    "published": null,
+    "url": "https://www.weather.com.cn/zt/tqzt/09jzzt/03/62283.shtml",
+    "citation": "中国天气网：《惊蛰的由来》，节气专题页，2026-09-16 读取。",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "每年3月5日或6日，太阳到达黄经345度时为\"惊蛰\"。……惊蛰的意思是天气回暖，春雷始鸣，惊醒蛰伏于地下冬眠的昆虫。蛰是藏的意思。《月令七十二候集解》中说：\"二月节，万物出乎震，震为雷，故曰惊蛰。是蛰虫惊而出走矣。\"……云南南部在1月底前后即可闻雷，而北京的初雷日却在4月下旬。……其实，昆虫是听不见雷声的，之所以醒来是温度升高、大地回暖的结果（页面科普表述）。农谚：未过惊蛰先打雷，四十九天云不开；冷惊蛰，暖春分；惊蛰刮北风，从头另过冬；惊蛰吹南风，秧苗迟下种。",
+    "locator": "\"惊蛰释义\"\"气候特征\"\"农谚\"各段；页面并载三候划分（桃始华/仓庚鸣/鹰化为鸠）。",
+    "ai_summary": "中国气象局旗下天气网惊蛰专题：定义、月令引文、三候、初雷南北差异（云南南部1月底即可闻雷、北京初雷4月下旬、\"惊蛰始雷\"只符合长江流域气候特点）、昆虫苏醒的温度解释、农谚四条、春耕提示。",
+    "rights": "机构官网公开内容；仅引用要点与短摘录。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-yueling-qishierhou-wikisource",
+    "title": "月令七十二候集解（维基文库全文）",
+    "authors": [
+      "传统题名：吴澄"
+    ],
+    "publisher": "Wikisource（维基文库）",
+    "published": null,
+    "url": "https://zh.wikisource.org/wiki/月令七十二候集解",
+    "citation": "《月令七十二候集解》，传统题名（元）吴澄撰，维基文库全文本，2026-09-16 读取。",
+    "source_type": "historical",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "立春，正月節。立，建始也。五行之氣往者過來者續于此。而春木之氣始至，故謂之立也。立夏、秋、冬同。……東風解凍。凍結于冬，遇春風而解散……蟄蟲始振。蟄，藏也；振，動也。密藏之蟲，因氣至，而皆蘇動之矣……魚陟負冰。陟，升也。魚當盛寒伏水底而遂暖，至正月陽氣至，則上遊而近冰，故曰負。",
+    "locator": "全书第一节\"立春\"，维基文库全文页；三候条目依次位于立春节之内。",
+    "ai_summary": "该书将立春列为全书首节，给出\"立，建始也\"的定义，并按五日一候列立春三候：东风解冻、蛰虫始振、鱼陟负冰，各附简注。紧随其后为雨水节。",
+    "rights": "原文属公有领域古籍；维基文库文本依其站点许可提供。仅记录元数据与短摘录。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-xinhua-unesco-solarterms",
+    "title": "二十四节气入选《人类非物质文化遗产代表名录》",
+    "authors": [
+      "新华社记者"
+    ],
+    "publisher": "新华网",
+    "published": "2016-11-30",
+    "url": "http://www.xinhuanet.com/politics/2016-11/30/c_129385180.htm",
+    "citation": "新华社：《\"二十四节气\"入选联合国教科文组织人类非物质文化遗产代表作名录》，2016-11-30。",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "项目全称\"二十四节气——中国人通过观察太阳周年运动而形成的时间知识体系及其实践\"；2006年列入第一批国家级非遗名录；2011年九华立春祭、班春劝农、石阡说春列入扩展名录；2014年三门祭冬、壮族霜降节、苗族赶秋、安仁赶分社列入扩展名录；决议于2016年11月30日在亚的斯亚贝巴举行的第十一届政府间委员会常会通过。",
+    "locator": "报道正文；届会地点埃塞俄比亚亚的斯亚贝巴，会议期2016-11-28至12-02。",
+    "ai_summary": "国家通讯社通稿，给出入选日期、届会、项目全称、国家级非遗与扩展项目时间线，以及\"形成于黄河流域、以天象气温降水物候时序变化为观察基准\"的描述。",
+    "rights": "新华社版权所有；仅引用事实要点与短摘录。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-ihchina-jiuhua-lichunji",
+    "title": "农历二十四节气（九华立春祭）项目页",
+    "authors": [
+      "中国非物质文化遗产网·中国非物质文化遗产数字博物馆"
+    ],
+    "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+    "published": null,
+    "url": "https://www.ihchina.cn/project_details/15060.html",
+    "citation": "中国非物质文化遗产网：\"农历二十四节气（九华立春祭）\"，2011年第三批国家级非遗扩展项目，编号Ⅹ-68，浙江省衢州市柯城区。",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "以农历立春日为祭祀日，九华梧桐祖殿是立春祭主要活动场所。主要活动有：祭拜春神句芒、迎春接福赐求五谷丰登、供祭品、扮芒神、焚香迎奉、扎春牛、演戏酬神、踏青、鞭春牛等。鞭春牛是整个立春祭活动的重要环节，由选定的人装扮成芒神鞭打春牛。",
+    "locator": "项目详情页正文\"基本信息\"与\"主要内容\"部分；项目序号516，保护单位衢州市柯城区文化馆。",
+    "ai_summary": "国家级非遗权威机构项目页，确认九华立春祭的申报地、批次、类别（民俗）与仪式构成，鞭春牛为核心环节，与劝农春耕相关联。",
+    "rights": "网站版权所有；仅引用事实要点与短摘录。",
+    "verification": "human-verified"
+  }
+]

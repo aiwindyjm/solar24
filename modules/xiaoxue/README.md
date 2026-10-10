@@ -1,6 +1,6 @@
 # 小雪 · Minor Snow
 
-> Planned · Cultural content: draft · Reference scaffold, not a completed experience.
+> In Development · Cultural content: draft · Reference scaffold, not a completed experience.
 
 Identity: `xiaoxue` / winter / order 20.
 

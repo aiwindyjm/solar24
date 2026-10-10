@@ -2,7 +2,220 @@
   "schema_version": "0.1.0",
   "term_id": "jingzhe",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "惊蛰是什么",
+        "en": "What is Awakening of Insects"
+      },
+      "claim_ids": [
+        "jingzhe-c1",
+        "jingzhe-c2",
+        "jingzhe-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "惊蛰与自然",
+        "en": "Awakening of Insects and Nature"
+      },
+      "claim_ids": [
+        "jingzhe-c4",
+        "jingzhe-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "惊蛰与人们的生活",
+        "en": "Awakening of Insects and People"
+      },
+      "claim_ids": [
+        "jingzhe-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "jingzhe-c7",
+        "jingzhe-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "jingzhe-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳位置划分一年，每段15°。节气是太阳的刻度，不是天气预报。",
+        "en": "The 24 solar terms divide the year by the Sun's position. They are a solar calendar, not weather forecasts."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "jingzhe-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "惊蛰是第三个节气。太阳到达黄经345°，在公历3月5日前后。春雷始鸣，冬眠的虫子被唤醒。",
+        "en": "Jingzhe is the third term: the Sun reaches 345°, around March 5. Spring thunder awakens hibernating creatures."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "source_ids": [
+        "source-ihchina-jingzhe-feature",
+        "source-xinhua-jingzhe-2022"
+      ],
+      "knowledge_ids": [
+        "sci-jingzhe-longitude-345"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "jingzhe-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "惊蛰是农历二月的\"节\"。在传统历法中，它与春分配对，一节一中气。",
+        "en": "Jingzhe is the \"node term\" of the second lunar month, paired with the Spring Equinox."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "source_ids": [
+        "source-ihchina-jingzhe-feature",
+        "source-xinhua-jingzhe-2022"
+      ],
+      "knowledge_ids": [
+        "sci-jingzhe-longitude-345"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "jingzhe-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "气温回升，第一声春雷响起。土壤解冻，虫子开始活动。",
+        "en": "Rising temperatures bring the first thunder. Soil thaws and insects stir."
+      },
+      "region": [
+        "中国（初雷日期随纬度显著不同）"
+      ],
+      "period": "当代气候口径（机构科普稿转述）",
+      "source_ids": [
+        "source-xinhua-jingzhe-2022",
+        "source-weathercn-jingzhe-origin"
+      ],
+      "knowledge_ids": [
+        "sci-jingzhe-thunder-climate"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "jingzhe-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人观察到的三候：桃花开了、黄鹂叫了、鹰变成鸠。这是古典记录，不是科学观测。",
+        "en": "Ancient texts record: peach blossoms open, orioles sing, hawks become doves. Classical observation, not modern science."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代；所承物候体系更早（《夏小正》《礼记·月令》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-ihchina-jingzhe-feature"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-jingzhe-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "jingzhe-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "传统习俗包括\"驱虫\"和准备春耕土地。",
+        "en": "Traditional practices include pest-chasing rituals and preparing fields for spring plowing."
+      },
+      "region": [
+        "来源未标注地域（非遗网专题页为全国性机构汇编）；地域谱系不明"
+      ],
+      "period": "机构汇编记录为当代民间流传；历史深度不明",
+      "source_ids": [
+        "source-ihchina-jingzhe-feature"
+      ],
+      "knowledge_ids": [
+        "trad-jingzhe-chili-pears"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "jingzhe-c7",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "惊蛰是大自然苏醒的时刻——冬眠结束，生长重新开始。",
+        "en": "Jingzhe marks nature's awakening — dormancy ends, growth resumes."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代；所承物候体系更早（《夏小正》《礼记·月令》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-ihchina-jingzhe-feature"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-jingzhe-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "jingzhe-c8",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

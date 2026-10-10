@@ -2,7 +2,221 @@
   "schema_version": "0.1.0",
   "term_id": "qiufen",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "秋分是什么",
+        "en": "What is Autumn Equinox"
+      },
+      "claim_ids": [
+        "qiufen-c1",
+        "qiufen-c2",
+        "qiufen-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "秋分与自然",
+        "en": "Autumn Equinox and Nature"
+      },
+      "claim_ids": [
+        "qiufen-c4",
+        "qiufen-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "秋分与人们的生活",
+        "en": "Autumn Equinox and People"
+      },
+      "claim_ids": [
+        "qiufen-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "qiufen-c7",
+        "qiufen-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "qiufen-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳位置划分一年。",
+        "en": "The 24 solar terms divide the year by the Sun's position."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "qiufen-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "秋分是第十六个节气。太阳到达黄经180°，全球昼夜几乎等长。",
+        "en": "Qiufen is the sixteenth term: the Sun reaches 180°. Day and night are nearly equal worldwide."
+      },
+      "region": [
+        "全球（直射赤道事件全球同时；昼夜相对长度随纬度而异）"
+      ],
+      "period": "现代天文学口径；汉代文本为对照层",
+      "source_ids": [
+        "source-ihchina-qiufen-feature",
+        "source-xinhua-qiufen-2022"
+      ],
+      "knowledge_ids": [
+        "sci-qiufen-day-night-equal"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "qiufen-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "秋分是农历八月的\"中气\"，通常在中秋节前后。",
+        "en": "Qiufen is the mid-term of the eighth lunar month, typically near the Mid-Autumn Festival."
+      },
+      "region": [
+        "中国（传统历法编算规则）"
+      ],
+      "period": "现行农历编算口径；GB/T 33661-2017 为现行国家标准（正文条款待人工核读）",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-yueling-qishierhou-wikisource"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-jieqi-zhongqi"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "qiufen-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "空气清爽干燥，收获季达到高峰。",
+        "en": "Cool, crisp air; harvest season peaks."
+      },
+      "region": [
+        "全球（直射赤道事件全球同时；昼夜相对长度随纬度而异）"
+      ],
+      "period": "现代天文学口径；汉代文本为对照层",
+      "source_ids": [
+        "source-ihchina-qiufen-feature",
+        "source-xinhua-qiufen-2022"
+      ],
+      "knowledge_ids": [
+        "sci-qiufen-day-night-equal"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "qiufen-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人观察到：雷声停了、虫子封住洞口、水面开始干涸。",
+        "en": "Ancient texts: thunder ceases, insects seal their burrows, waters begin to recede."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《逸周书》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-ihchina-qiufen-feature"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-qiufen-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "qiufen-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "中国的\"农民丰收节\"设在秋分日——庆祝农民的节日。",
+        "en": "China's \"Harvest Festival\" is set on the Autumn Equinox — a day honoring farmers."
+      },
+      "region": [
+        "机构汇编口径含具名地点：北京（月坛/祭月）、岭南（秋菜）、南京（桂花鸭）；\"各地\"类表述为页方口径未逐地核验"
+      ],
+      "period": "机构汇编页创建于2017年；所载习俗多为\"传统民俗\"表述，逐项断代未完成",
+      "source_ids": [
+        "source-ihchina-qiufen-feature",
+        "source-xinhua-qiufen-2024"
+      ],
+      "knowledge_ids": [
+        "trad-qiufen-customs"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "qiufen-c7",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "秋分恢复了平衡——昼夜等长，然后冬天开始占据上风。",
+        "en": "The equinox restores balance — equal light and dark before winter's descent."
+      },
+      "region": [
+        "中国（礼经文本传统；清代国家祀典锚定北京西郊夕月坛）"
+      ],
+      "period": "礼经文本定型于先秦至汉；唐代有秋分日遣使祭祀实例（821年）；清代祀典为《钦定大清会典》所载",
+      "source_ids": [
+        "source-wikisource-liji-jiyi",
+        "source-wikisource-wxtk-jiriyue"
+      ],
+      "knowledge_ids": [
+        "hist-qiufen-xiyue-sacrifice"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "qiufen-c8",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

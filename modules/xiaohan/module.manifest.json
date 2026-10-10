@@ -7,11 +7,15 @@
   "season": "winter",
   "order": 23,
   "version": "0.1.0",
-  "status": "Planned",
+  "status": "In Development",
   "entry": "src/index.ts",
-  "capabilities": ["static"],
+  "capabilities": [
+    "static"
+  ],
   "content": "content/zh-CN.json",
   "assets": "assets/manifest.json",
   "references": "references.json",
-  "locales": ["zh-CN"]
+  "locales": [
+    "zh-CN"
+  ]
 }

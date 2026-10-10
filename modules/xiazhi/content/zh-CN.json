@@ -2,7 +2,220 @@
   "schema_version": "0.1.0",
   "term_id": "xiazhi",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "夏至是什么",
+        "en": "What is Summer Solstice"
+      },
+      "claim_ids": [
+        "xiazhi-c1",
+        "xiazhi-c2",
+        "xiazhi-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "夏至与自然",
+        "en": "Summer Solstice and Nature"
+      },
+      "claim_ids": [
+        "xiazhi-c4",
+        "xiazhi-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "夏至与人们的生活",
+        "en": "Summer Solstice and People"
+      },
+      "claim_ids": [
+        "xiazhi-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "xiazhi-c7",
+        "xiazhi-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "xiazhi-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳位置划分一年。",
+        "en": "The 24 solar terms divide the year by the Sun's position."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiazhi-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "夏至是第十个节气。太阳到达黄经90°，北半球白昼最长。",
+        "en": "Xiazhi is the tenth term: the Sun reaches 90°, the longest day in the Northern Hemisphere."
+      },
+      "region": [
+        "北半球（命题为半球级表述）；例证数据来自中国北京、黑龙江漠河"
+      ],
+      "period": "现代天文口径；2026年新华社稿含当年实测预报数据",
+      "source_ids": [
+        "source-xinhua-xiazhi-2026",
+        "source-weathercn-xiazhi-feature"
+      ],
+      "knowledge_ids": [
+        "sci-xiazhi-longest-day"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiazhi-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "夏至是农历五月的\"中气\"。在古代，夏至曾是一个重要节日。",
+        "en": "Xiazhi is the mid-term of the fifth lunar month. It was historically a major festival."
+      },
+      "region": [
+        "中国（传统历法编算规则）"
+      ],
+      "period": "现行农历编算口径；GB/T 33661-2017 为现行国家标准（正文条款待人工核读）",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-yueling-qishierhou-wikisource"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-jieqi-zhongqi"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiazhi-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "阳光最充足。过了这一天，白昼开始变短。",
+        "en": "Peak sunlight. After this day, days begin to shorten."
+      },
+      "region": [
+        "北半球（命题为半球级表述）；例证数据来自中国北京、黑龙江漠河"
+      ],
+      "period": "现代天文口径；2026年新华社稿含当年实测预报数据",
+      "source_ids": [
+        "source-xinhua-xiazhi-2026",
+        "source-weathercn-xiazhi-feature"
+      ],
+      "knowledge_ids": [
+        "sci-xiazhi-longest-day"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiazhi-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人观察到：鹿角脱落、蝉开始鸣叫、半夏草开花。",
+        "en": "Ancient texts: deer antlers fall, cicadas begin to sing, a summer herb blooms."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《逸周书·时训》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-ihchina-xiazhi-feature"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-xiazhi-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiazhi-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "传统习俗：\"冬至饺子夏至面\"——夏至这天吃面条。",
+        "en": "Traditional custom: \"Dumplings on winter solstice, noodles on summer solstice.\""
+      },
+      "region": [
+        "可确证文献记载限清末北京（京师谚）；山东、浙江绍兴、江苏无锡条目为非遗网汇编级（未逐一方志核验）"
+      ],
+      "period": "可确证记载：清末（19世纪，《燕京岁时记》）；当代延续见机构页（2017）",
+      "source_ids": [
+        "source-wikisource-yanjingsuishiji",
+        "source-ihchina-xiazhi-feature"
+      ],
+      "knowledge_ids": [
+        "trad-xiazhi-mian"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiazhi-c7",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "在光明最长的一天，黑暗的回归也开始了——阴阳的转折点。",
+        "en": "At maximum light, the return of darkness begins — the yin-yang turning point."
+      },
+      "region": [
+        "中国北京"
+      ],
+      "period": "清末（《燕京岁时记》成书于19世纪末）",
+      "source_ids": [
+        "source-wikisource-yanjingsuishiji"
+      ],
+      "knowledge_ids": [
+        "hist-bj-dongzhi-huntun"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiazhi-c8",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

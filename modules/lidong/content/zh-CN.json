@@ -2,7 +2,221 @@
   "schema_version": "0.1.0",
   "term_id": "lidong",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "立冬是什么",
+        "en": "What is Beginning of Winter"
+      },
+      "claim_ids": [
+        "lidong-c1",
+        "lidong-c2",
+        "lidong-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "立冬与自然",
+        "en": "Beginning of Winter and Nature"
+      },
+      "claim_ids": [
+        "lidong-c4",
+        "lidong-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "立冬与人们的生活",
+        "en": "Beginning of Winter and People"
+      },
+      "claim_ids": [
+        "lidong-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "lidong-c7",
+        "lidong-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "lidong-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳位置划分一年。",
+        "en": "The 24 solar terms divide the year by the Sun's position."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "lidong-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "立冬是第十九个节气。太阳到达黄经225°，冬季开始。",
+        "en": "Lidong is the nineteenth term: the Sun reaches 225°. Winter begins."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "source_ids": [
+        "source-ihchina-lidong-feature",
+        "source-weathercn-lidong-225"
+      ],
+      "knowledge_ids": [
+        "sci-lidong-longitude-225"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "lidong-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "立冬是农历十月的\"节\"。",
+        "en": "Lidong is the node term of the tenth lunar month."
+      },
+      "region": [
+        "中国（传统历法编算规则）"
+      ],
+      "period": "现行农历编算口径；GB/T 33661-2017 为现行国家标准（正文条款待人工核读）",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-yueling-qishierhou-wikisource"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-jieqi-zhongqi"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "lidong-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "气温下降，北方地区可能出现初雪。",
+        "en": "Temperatures drop; northern regions may see first snow."
+      },
+      "region": [
+        "中国（入冬日期自北向南大幅延后；华南沿海无冬、青藏高原长冬无夏）"
+      ],
+      "period": "现代气候学口径（候温法）；引用统计为1981-2010常年值与2023年稿数据",
+      "source_ids": [
+        "source-szmb-season-division",
+        "source-weathercn-lidong-225"
+      ],
+      "knowledge_ids": [
+        "sci-lidong-vs-meteorological-winter"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "lidong-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人观察到：水开始结冰、地面开始冻结、野鸡飞入大海变成蛤蜊。",
+        "en": "Ancient texts: water begins to freeze, ground starts to harden, pheasants vanish into the sea."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-ihchina-lidong-feature"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-lidong-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "lidong-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "北方习俗：立冬吃饺子。南方习俗：吃滋补食物。",
+        "en": "Northern custom: dumplings on Lidong. Southern custom: nourishing foods."
+      },
+      "region": [
+        "北方（饺子）；台湾、闽南（鸡鸭羊肉进补）；南京（吃生葱，单一机构源）"
+      ],
+      "period": "当代流行实践；\"交子之时\"解释为现代民间词源层，未获古籍文献支持",
+      "source_ids": [
+        "source-ihchina-lidong-feature",
+        "source-xinhua-lidong-2023"
+      ],
+      "knowledge_ids": [
+        "trad-lidong-budong-jiaozi"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "lidong-c7",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "立冬标志着大自然进入沉静和储藏的季节。",
+        "en": "Beginning of Winter marks nature's retreat into stillness and storage."
+      },
+      "region": [
+        "中国（国家祀典层：都城北郊；非民间形态）"
+      ],
+      "period": "礼经文本先秦至西汉定型；汉/唐/宋正史礼志所载为国家祀典；清代类书辑录",
+      "source_ids": [
+        "source-wikisource-lidong-liji-yueling",
+        "source-gjts-suigong-lidong"
+      ],
+      "knowledge_ids": [
+        "hist-lidong-yingdong-beijiao"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "lidong-c8",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

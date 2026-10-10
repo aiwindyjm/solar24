@@ -2,7 +2,217 @@
   "schema_version": "0.1.0",
   "term_id": "liqiu",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "立秋是什么",
+        "en": "What is Beginning of Autumn"
+      },
+      "claim_ids": [
+        "liqiu-c1",
+        "liqiu-c2",
+        "liqiu-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "立秋与自然",
+        "en": "Beginning of Autumn and Nature"
+      },
+      "claim_ids": [
+        "liqiu-c4",
+        "liqiu-c7"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "立秋与人们的生活",
+        "en": "Beginning of Autumn and People"
+      },
+      "claim_ids": [
+        "liqiu-c5"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "liqiu-c6",
+        "liqiu-c7"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "liqiu-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳黄经等分黄道24段。",
+        "en": "The 24 solar terms divide the ecliptic equally."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "liqiu-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "立秋是二十四节气中的第十三个：太阳到达黄经135°，秋季第一个节气。",
+        "en": "Liqiu is the thirteenth term and first of autumn: the Sun reaches 135°."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "source_ids": [
+        "source-ihchina-liqiu-feature",
+        "source-xinhua-liqiu-2022"
+      ],
+      "knowledge_ids": [
+        "sci-liqiu-longitude-135"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "liqiu-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "立秋是农历七月的\"节\"（节气），与处暑（中气）配对。",
+        "en": "Liqiu is the jie (node term) of the seventh lunar month, paired with Chushu."
+      },
+      "region": [
+        "中国（传统历法编算规则）"
+      ],
+      "period": "现行农历编算口径；GB/T 33661-2017 为现行国家标准（正文条款待人工核读）",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-yueling-qishierhou-wikisource"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-jieqi-zhongqi"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "liqiu-c4",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人记录的立秋三候：「凉风至、白露降、寒蝉鸣」。",
+        "en": "Ancient texts: cool winds arrive, white dew descends, cicadas sing their last."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代（吴澄）；所承物候体系更早（《礼记·月令》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-wikisource-liji-yueling"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-liqiu-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "liqiu-c5",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "在湖南湘西，苗族\"赶秋\"（立秋日庆丰收）是国家级非遗扩展项目。",
+        "en": "In Xiangxi, Hunan, the Miao Ganqiu (autumn celebration) is national intangible heritage."
+      },
+      "region": [
+        "中国湖南省湘西土家族苗族自治州（申报地区：花垣县；流传含凤凰县、吉首市、保靖县、古丈县、泸溪县及贵州松桃、重庆秀山、湖北来凤等苗族地区）"
+      ],
+      "period": "2014年列入第四批国家级非遗扩展项目（农历二十四节气，民俗类）；当代活态（原村寨轮流举办，现多由乡镇或县区举办）",
+      "source_ids": [
+        "source-ihchina-liqiu-ganqiu",
+        "source-ihchina-liqiu-ganqiu-topic"
+      ],
+      "knowledge_ids": [
+        "region-liqiu-miao-ganqiu"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "liqiu-c6",
+      "kind": "interpretation",
+      "text": {
+        "zh-CN": "立秋提示收获的开始，也提示衰减的必然——中国美学中的\"悲秋\"由此而起。",
+        "en": "Liqiu signals both harvest and inevitable decline — the root of Chinese autumn melancholy."
+      },
+      "region": [],
+      "period": "当代（项目解释层）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "liqiu-c7",
+      "kind": "opinion",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-wikisource-huainanzi-shanshun",
+        "source-gjts-suigong-liqiu"
+      ],
+      "knowledge_ids": [
+        "hist-liqiu-yiye-zhiqiu"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "liqiu-c8",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "立秋仍在盛夏，但气候转折已开始：北方早晚渐凉，南方仍高温。",
+        "en": "Liqiu falls in peak summer, but the climate shift begins: mornings cool in the north while the south stays hot."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现代气候学口径",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

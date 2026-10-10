@@ -2,7 +2,221 @@
   "schema_version": "0.1.0",
   "term_id": "dashu",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "大暑是什么",
+        "en": "What is Major Heat"
+      },
+      "claim_ids": [
+        "dashu-c1",
+        "dashu-c2",
+        "dashu-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "大暑与自然",
+        "en": "Major Heat and Nature"
+      },
+      "claim_ids": [
+        "dashu-c4",
+        "dashu-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "大暑与人们的生活",
+        "en": "Major Heat and People"
+      },
+      "claim_ids": [
+        "dashu-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "dashu-c7",
+        "dashu-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "dashu-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳位置划分一年。",
+        "en": "The 24 solar terms divide the year by the Sun's position."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dashu-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "大暑是第十二个节气。太阳到达黄经120°，一年中最热的时候。",
+        "en": "Dashu is the twelfth term: the Sun reaches 120°. The hottest period of the year."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "source_ids": [
+        "source-ihchina-dashu-feature",
+        "source-xinhua-dashu-2022"
+      ],
+      "knowledge_ids": [
+        "sci-dashu-longitude-120"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dashu-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "大暑是农历六月的\"中气\"。\"伏天\"达到顶点。",
+        "en": "Dashu is the mid-term of the sixth lunar month. \"Fu\" heat reaches maximum."
+      },
+      "region": [
+        "中国（气象统计以30余个省会级城市为准；区域差异显著）"
+      ],
+      "period": "气象数据为1991-2020年常年统计；稿件为2022年",
+      "source_ids": [
+        "source-xinhua-dashu-2022",
+        "source-ihchina-dashu-feature"
+      ],
+      "knowledge_ids": [
+        "sci-dashu-sanfu-zhongfu-heat"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dashu-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "酷热高湿。雷阵雨带来短暂降温。",
+        "en": "Peak heat and humidity. Thunderstorms bring brief relief."
+      },
+      "region": [
+        "中国（气象统计以30余个省会级城市为准；区域差异显著）"
+      ],
+      "period": "气象数据为1991-2020年常年统计；稿件为2022年",
+      "source_ids": [
+        "source-xinhua-dashu-2022",
+        "source-ihchina-dashu-feature"
+      ],
+      "knowledge_ids": [
+        "sci-dashu-sanfu-zhongfu-heat"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dashu-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人观察到：腐烂的草变成萤火虫、土地又湿又热、大雨倾盆。",
+        "en": "Ancient texts: rotting grass becomes fireflies, soil steams with humidity, heavy rains pour."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代（吴澄）；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-xinhua-dashu-2022"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-dashu-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dashu-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "浙江台州有\"送大暑船\"的民俗，祈求健康和丰收。",
+        "en": "In Taizhou, Zhejiang, the \"Dashu boat\" festival sends wishes for health and harvest."
+      },
+      "region": [
+        "浙江省台州市椒江区葭沚街道一带渔村（台州湾南岸、椒江入海口）"
+      ],
+      "period": "文献可溯至清同治年间（俞樾《右台仙馆笔记》）；每年农历四月至大暑日举行；2021年列入第五批国家级非遗扩展项目",
+      "source_ids": [
+        "source-ihchina-dashuchuan-project",
+        "source-ihchina-dashuchuan-intro"
+      ],
+      "knowledge_ids": [
+        "region-dashu-taizhou-dashuchuan"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dashu-c7",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "大暑是极热，但也是转折——最热的时候，秋天已在不远处。",
+        "en": "Major heat is the extreme — yet from this peak, autumn is already near."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代（吴澄）；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-xinhua-dashu-2022"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-dashu-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "dashu-c8",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

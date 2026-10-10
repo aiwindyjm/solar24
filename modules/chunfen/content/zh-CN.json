@@ -2,7 +2,217 @@
   "schema_version": "0.1.0",
   "term_id": "chunfen",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "春分是什么",
+        "en": "What is Spring Equinox"
+      },
+      "claim_ids": [
+        "chunfen-c1",
+        "chunfen-c2",
+        "chunfen-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "春分与自然",
+        "en": "Spring Equinox and Nature"
+      },
+      "claim_ids": [
+        "chunfen-c4",
+        "chunfen-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "春分与人们的生活",
+        "en": "Spring Equinox and People"
+      },
+      "claim_ids": [
+        "chunfen-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "chunfen-c7",
+        "chunfen-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "chunfen-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳黄经等分黄道24段。节气是太阳位置的刻度。",
+        "en": "The 24 solar terms mark the Sun's position along the ecliptic."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "chunfen-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "春分是二十四节气中的第四个：太阳到达黄经0°（春分点），全球昼夜几乎等长。",
+        "en": "Chunfen (Spring Equinox) is the fourth term: the Sun reaches 0°, with nearly equal day and night worldwide."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径",
+      "source_ids": [
+        "source-xinhuanet-chunfen-2021",
+        "source-xinhuanet-chunfen-2022"
+      ],
+      "knowledge_ids": [
+        "sci-chunfen-longitude-0"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "chunfen-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "春分是农历二月的\"中气\"，与惊蛰配对。",
+        "en": "Chunfen is the zhongqi of the second lunar month, paired with Jingzhe."
+      },
+      "region": [
+        "中国（传统历法编算规则）"
+      ],
+      "period": "现行农历编算口径；GB/T 33661-2017 为现行国家标准（正文条款待人工核读）",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-yueling-qishierhou-wikisource"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-jieqi-zhongqi"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "chunfen-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "春分日全球各地昼夜接近等长（精确等长需考虑大气折射和太阳视半径）。",
+        "en": "Day and night are nearly equal everywhere (exact equality varies with atmospheric refraction)."
+      },
+      "region": [
+        "全球（昼夜相对长度规律与纬度相关，直射赤道事件全球同时）"
+      ],
+      "period": "现代天文学口径",
+      "source_ids": [
+        "source-xinhuanet-chunfen-2021",
+        "source-ihchina-chunfen-feature"
+      ],
+      "knowledge_ids": [
+        "sci-chunfen-day-night-equal"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "chunfen-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人记录的春分三候：「玄鸟至、雷乃发声、始电」。燕子归来、春雷初响。",
+        "en": "Ancient texts: swallows arrive, thunder first sounds, lightning begins."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代（吴澄）；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-chunfen-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "chunfen-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "在湖南安仁，\"赶分社\"（春分前后中草药集市）延续至今，是国家级非遗扩展项目。",
+        "en": "In Anren, Hunan, the Ganfenshe herbal market around the equinox continues as national intangible heritage."
+      },
+      "region": [
+        "中国湖南省安仁县（郴州市北部，与炎陵县接壤）"
+      ],
+      "period": "每年农历春分社日例行举办（活动集中于春分前后3天、延续半个月）；2014年列入第四批国家级非遗扩展项目",
+      "source_ids": [
+        "source-ihchina-anren-ganfenshe",
+        "source-gmw-anren-ganfenshe"
+      ],
+      "knowledge_ids": [
+        "region-chunfen-anren-ganfenshe"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "chunfen-c7",
+      "kind": "interpretation",
+      "text": {
+        "zh-CN": "春分把一年分成两半，也把昼夜分成两半。它是一个关于平衡的节气。",
+        "en": "Chunfen divides the year and the day in half — a term about balance."
+      },
+      "region": [],
+      "period": "当代（项目解释层）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "chunfen-c8",
+      "kind": "opinion",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

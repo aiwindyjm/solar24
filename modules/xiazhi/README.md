@@ -1,6 +1,6 @@
 # 夏至 · Summer Solstice
 
-> Planned · Cultural content: draft · Reference scaffold, not a completed experience.
+> In Development · Cultural content: draft · Reference scaffold, not a completed experience.
 
 Identity: `xiazhi` / summer / order 10.
 

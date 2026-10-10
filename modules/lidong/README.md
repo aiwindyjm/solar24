@@ -1,6 +1,6 @@
 # 立冬 · Beginning of Winter
 
-> Planned · Cultural content: draft · Reference scaffold, not a completed experience.
+> In Development · Cultural content: draft · Reference scaffold, not a completed experience.
 
 Identity: `lidong` / winter / order 19.
 

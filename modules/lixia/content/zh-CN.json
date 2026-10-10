@@ -2,7 +2,221 @@
   "schema_version": "0.1.0",
   "term_id": "lixia",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "立夏是什么",
+        "en": "What is Beginning of Summer"
+      },
+      "claim_ids": [
+        "lixia-c1",
+        "lixia-c2",
+        "lixia-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "立夏与自然",
+        "en": "Beginning of Summer and Nature"
+      },
+      "claim_ids": [
+        "lixia-c4",
+        "lixia-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "立夏与人们的生活",
+        "en": "Beginning of Summer and People"
+      },
+      "claim_ids": [
+        "lixia-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "lixia-c7",
+        "lixia-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "lixia-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳位置划分一年。",
+        "en": "The 24 solar terms divide the year by the Sun's position."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "lixia-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "立夏是第七个节气。太阳到达黄经45°，夏季开始。",
+        "en": "Lixia is the seventh term: the Sun reaches 45°, marking the start of summer."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；交节时刻由紫金山天文台《中国天文年历》逐年编算发布",
+      "source_ids": [
+        "source-ihchina-lixia-feature",
+        "source-weather-com-cn-lixia"
+      ],
+      "knowledge_ids": [
+        "sci-lixia-longitude-45"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "lixia-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "立夏是农历四月的\"节\"，与小满配对。",
+        "en": "Lixia is the node term of the fourth lunar month, paired with Xiaoman."
+      },
+      "region": [
+        "中国（传统历法编算规则）"
+      ],
+      "period": "现行农历编算口径；GB/T 33661-2017 为现行国家标准（正文条款待人工核读）",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-yueling-qishierhou-wikisource"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-jieqi-zhongqi"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "lixia-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "气温明显升高，夏季生长季开始。",
+        "en": "Temperatures rise sharply; the summer growing season begins."
+      },
+      "region": [
+        "中国（入夏判定逐地不同；\"全国大部分地区\"表述为机构概括口径）"
+      ],
+      "period": "现行气象业务口径（QX/T 152-2012 标准原文未直读）",
+      "source_ids": [
+        "source-weather-com-cn-lixia",
+        "source-xinhua-lixia-2026"
+      ],
+      "knowledge_ids": [
+        "sci-lixia-vs-meteorological-summer"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "lixia-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人观察到：蝼蛄叫了、蚯蚓出了、王瓜藤长了。",
+        "en": "Ancient texts: mole crickets sing, earthworms emerge, snake gourd vines grow."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《逸周书》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-wikisource-lixia-liji-yueling"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-lixia-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "lixia-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "传统习俗有\"称人\"（称体重祈健康）和吃\"三新\"（尝夏季首批时令食物）。",
+        "en": "Customs include \"weighing people\" for health and tasting \"three fresh foods\" of early summer."
+      },
+      "region": [
+        "可考记载与当代机构表述均限南方（人民日报\"江苏、浙江、上海等南方地区\"；非遗网\"南方民间\"；杭州半山为国家级非遗项目传承地）"
+      ],
+      "period": "可考文献记载：清代（同治元年《苏州府志》、道光十年初刻《清嘉录》，均经人民日报转引，原书未直读）；当代延续（杭州半山）",
+      "source_ids": [
+        "source-people-lixia-chengren",
+        "source-ihchina-lixia-feature"
+      ],
+      "knowledge_ids": [
+        "trad-lixia-chengren"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "lixia-c7",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "立夏标志着从春天的生长转向夏天的繁茂。",
+        "en": "Lixia marks the shift from spring growth to summer abundance."
+      },
+      "region": [
+        "礼制文本：天子国都（南郊）；赐冰记载：明代北京"
+      ],
+      "period": "《礼记·月令》：先秦至汉文本传统；《帝京景物略》：明代（刊年待核）",
+      "source_ids": [
+        "source-wikisource-lixia-liji-yueling",
+        "source-wikisource-lixia-dijing"
+      ],
+      "knowledge_ids": [
+        "hist-lixia-yingxia-qibing"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "lixia-c8",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

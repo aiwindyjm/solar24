@@ -2,7 +2,221 @@
   "schema_version": "0.1.0",
   "term_id": "xiaoshu",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "小暑是什么",
+        "en": "What is Minor Heat"
+      },
+      "claim_ids": [
+        "xiaoshu-c1",
+        "xiaoshu-c2",
+        "xiaoshu-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "小暑与自然",
+        "en": "Minor Heat and Nature"
+      },
+      "claim_ids": [
+        "xiaoshu-c4",
+        "xiaoshu-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "小暑与人们的生活",
+        "en": "Minor Heat and People"
+      },
+      "claim_ids": [
+        "xiaoshu-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "xiaoshu-c7",
+        "xiaoshu-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "xiaoshu-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳位置划分一年。",
+        "en": "The 24 solar terms divide the year by the Sun's position."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoshu-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "小暑是第十一个节气。太阳到达黄经105°，炎热加剧但未到顶点。",
+        "en": "Xiaoshu is the eleventh term: the Sun reaches 105°. Heat builds but hasn't peaked."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；气候经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "source_ids": [
+        "source-xinhua-xiaoshu-2022",
+        "source-forestry-xiaoshu-2026"
+      ],
+      "knowledge_ids": [
+        "sci-xiaoshu-longitude-105"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoshu-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "小暑是农历六月的\"节\"。\"三伏天\"即将开始。",
+        "en": "Xiaoshu is the node term of the sixth lunar month. The \"three fu\" hottest days approach."
+      },
+      "region": [
+        "中国（干支纪日传统；入伏日期全国同一历法日）"
+      ],
+      "period": "机制为古代历法传统；表述为现代天文科普口径（2024）",
+      "source_ids": [
+        "source-xinhua-sanfu-2024",
+        "source-gujintushu-suigong-furi"
+      ],
+      "knowledge_ids": [
+        "sci-xiaoshu-sanfu-gengday-mechanism"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoshu-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "越来越热。温风来了，蟋蟀躲到墙根，鹰开始学习飞行。",
+        "en": "It gets hotter. Warm winds arrive, crickets move to walls, young hawks learn to fly."
+      },
+      "region": [
+        "中国（气温概述以南方为限；雷暴表述限南方大部分地区）"
+      ],
+      "period": "当代气候概述（2021-2026机构稿口径）",
+      "source_ids": [
+        "source-forestry-xiaoshu-2026",
+        "source-ihchina-xiaoshu-feature"
+      ],
+      "knowledge_ids": [
+        "sci-xiaoshu-climate-heat-humid"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoshu-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人观察到：温风至、蟋蟀居壁、鹰始击。",
+        "en": "Ancient texts: warm winds arrive, crickets shelter on walls, hawks practice hunting."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代（吴澄编，据新华社2024稿编著者表述）；所承物候体系更早（《逸周书·时训解》《礼记·月令》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-gujintushu-suigong-jixia"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-xiaoshu-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoshu-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "习俗有吃饺子、避暑。\"伏\"就是\"隐藏\"——躲开最热的日子。",
+        "en": "Customs include eating dumplings and seeking shade. \"Fu\" means \"hidden\" — lying low during peak heat."
+      },
+      "region": [
+        "地域限定待核：新华社2024稿与非遗网均指向稻作区/南方；新华社2022稿称\"我国各地\"（分歧未决）"
+      ],
+      "period": "当代民俗表述（2021-2024机构稿）；历史渊源未溯源",
+      "source_ids": [
+        "source-xinhua-xiaoshu-poetic-2024",
+        "source-xinhua-xiaoshu-2022"
+      ],
+      "knowledge_ids": [
+        "trad-xiaoshu-shixin"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoshu-c7",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "小暑是炎热积累的阶段，大暑还在后面。",
+        "en": "Xiaoshu is heat building toward its peak — the greatest intensity is yet to come."
+      },
+      "region": [
+        "中国（起源记事锚定秦地雍城；解释传统为汉代以降文献所承）"
+      ],
+      "period": "起源记事为春秋秦德公二年（前676年）；所引注释与考订为汉至宋代",
+      "source_ids": [
+        "source-gujintushu-suigong-furi",
+        "source-xinhua-sanfu-2024"
+      ],
+      "knowledge_ids": [
+        "hist-xiaoshu-furi-origins"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoshu-c8",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

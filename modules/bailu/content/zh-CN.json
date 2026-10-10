@@ -2,7 +2,221 @@
   "schema_version": "0.1.0",
   "term_id": "bailu",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "白露是什么",
+        "en": "What is White Dew"
+      },
+      "claim_ids": [
+        "bailu-c1",
+        "bailu-c2",
+        "bailu-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "白露与自然",
+        "en": "White Dew and Nature"
+      },
+      "claim_ids": [
+        "bailu-c4",
+        "bailu-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "白露与人们的生活",
+        "en": "White Dew and People"
+      },
+      "claim_ids": [
+        "bailu-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "bailu-c7",
+        "bailu-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "bailu-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳位置划分一年。",
+        "en": "The 24 solar terms divide the year by the Sun's position."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "bailu-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "白露是第十五个节气。太阳到达黄经165°，清晨的露水变白了。",
+        "en": "Bailu is the fifteenth term: the Sun reaches 165°. Morning dew turns white."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "source_ids": [
+        "source-ihchina-bailu-feature",
+        "source-xinhua-bailu-2022"
+      ],
+      "knowledge_ids": [
+        "sci-bailu-longitude-165"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "bailu-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "白露是农历八月的\"节\"。温度下降，水汽凝成可见的露珠。",
+        "en": "Bailu is the node term of the eighth lunar month. Falling temperatures turn vapor into visible dew."
+      },
+      "region": [
+        "中国（传统历法编算规则）"
+      ],
+      "period": "现行农历编算口径；GB/T 33661-2017 为现行国家标准（正文条款待人工核读）",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-yueling-qishierhou-wikisource"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-jieqi-zhongqi"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "bailu-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "夜间气温降低。清晨草叶上出现白色露珠——秋天的信号。",
+        "en": "Night temperatures drop. White dew appears on grass each morning — autumn's signal."
+      },
+      "region": [
+        "露的形成机制为通用气象学（与地域无关）；\"白露时节温差拉大\"的表述锚定中国中纬度经验"
+      ],
+      "period": "现代气象学口径；世界气象组织20世纪60年代给出露的正式定义（据科普中国稿转述）",
+      "source_ids": [
+        "source-kpzg-dew-formation",
+        "source-weathercn-tianjin-lushuang"
+      ],
+      "knowledge_ids": [
+        "sci-bailu-dew-formation"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "bailu-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人观察到：大雁飞来、燕子离去、百鸟开始储备过冬食物。",
+        "en": "Ancient texts: wild geese arrive, swallows depart, birds store food for winter."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典文本传统）"
+      ],
+      "period": "《月令七十二候集解》传统题名元代；《礼记·月令》编定于汉代（月令素材更早）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-wikisource-lixia-liji-yueling"
+      ],
+      "knowledge_ids": [
+        "hist-bailu-naming"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "bailu-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "茶客推崇\"白露茶\"；有人收集清晨露水当药用。",
+        "en": "Tea lovers prize \"White Dew tea\"; some collect morning dew for traditional remedies."
+      },
+      "region": [
+        "龙眼：福建福州（直读源明标福州、福州龙祥岛禄家村、民俗专家邱登辉）；十样白：浙江温州地区/苍南、平阳（直读源明标）"
+      ],
+      "period": "记载为当代（2018杂志稿/2025党报当日报道）；习俗自身断代未考",
+      "source_ids": [
+        "source-fjdaily-bailu-longyan-2025",
+        "source-dili360-shiyangbai"
+      ],
+      "knowledge_ids": [
+        "trad-bailu-longyan-shiyangbai"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "bailu-c7",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "白露是秋天悄悄到来的信号——就在清晨的草叶上。",
+        "en": "White Dew is autumn arriving quietly — visible in the morning grass."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典文本传统）"
+      ],
+      "period": "《月令七十二候集解》传统题名元代；《礼记·月令》编定于汉代（月令素材更早）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-wikisource-lixia-liji-yueling"
+      ],
+      "knowledge_ids": [
+        "hist-bailu-naming"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "bailu-c8",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

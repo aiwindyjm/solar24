@@ -1,6 +1,6 @@
 # 处暑 · Limit of Heat
 
-> Planned · Cultural content: draft · Reference scaffold, not a completed experience.
+> In Development · Cultural content: draft · Reference scaffold, not a completed experience.
 
 Identity: `chushu` / autumn / order 14.
 

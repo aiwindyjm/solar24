@@ -2,7 +2,220 @@
   "schema_version": "0.1.0",
   "term_id": "xiaohan",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "小寒是什么",
+        "en": "What is Minor Cold"
+      },
+      "claim_ids": [
+        "xiaohan-c1",
+        "xiaohan-c2",
+        "xiaohan-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "小寒与自然",
+        "en": "Minor Cold and Nature"
+      },
+      "claim_ids": [
+        "xiaohan-c4",
+        "xiaohan-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "小寒与人们的生活",
+        "en": "Minor Cold and People"
+      },
+      "claim_ids": [
+        "xiaohan-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "xiaohan-c7",
+        "xiaohan-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "xiaohan-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳位置划分一年。",
+        "en": "The 24 solar terms divide the year by the Sun's position."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaohan-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "小寒是第二十三个节气。太阳到达黄经285°，寒冷加深。",
+        "en": "Xiaohan is the twenty-third term: the Sun reaches 285°. Cold deepens."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "source_ids": [
+        "source-ihchina-xiaohan-feature",
+        "source-xinhua-xiaohan-2023"
+      ],
+      "knowledge_ids": [
+        "sci-xiaohan-longitude-285"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaohan-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "小寒是农历十二月的\"节\"。常常是一年中最冷的时期。",
+        "en": "Xiaohan is the node term of the twelfth lunar month, often the coldest period."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年起有国家标准表述",
+      "source_ids": [
+        "source-ihchina-xiaohan-feature",
+        "source-xinhua-xiaohan-2023"
+      ],
+      "knowledge_ids": [
+        "sci-xiaohan-longitude-285"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaohan-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "天寒地冻。但白昼已经开始变长了——光明在回来。",
+        "en": "Deep cold. Yet days are already lengthening — light is returning."
+      },
+      "region": [
+        "中国（30年逐省统计：23省份小寒更冷；例外为江苏、上海、浙江、福建、江西、广东、广西、海南8个省市区——来源页面称之为\"沿海地区\"，其中江西为内陆省，该标签疑为来源用词不严谨，本卡按名单引用）"
+      ],
+      "period": "1991-2020年30年气候平均口径（中国天气网2025年盘点）；北京对照数据为人民日报2026年稿转述",
+      "source_ids": [
+        "source-weathercn-xiaohan-2025",
+        "source-people-xiaohan-dahan-2026"
+      ],
+      "knowledge_ids": [
+        "sci-xiaohan-vs-dahan-temperature"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaohan-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人观察到：大雁开始北归、喜鹊开始筑巢、野鸡开始鸣叫。",
+        "en": "Ancient texts: geese begin returning north, magpies start nesting, pheasants call."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《逸周书·时训》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-ihchina-xiaohan-feature"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-xiaohan-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaohan-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "南京人吃菜饭，广州人吃糯米饭。各地有各自的暖身食俗。",
+        "en": "Nanjing custom: rice with vegetables. Guangzhou custom: glutinous rice porridge."
+      },
+      "region": [
+        "中国：南京（菜饭）、广州/广东（糯米饭）、天津（黄芽菜，引《津门杂记》）；均为机构页地域条目，逐地核验未完成"
+      ],
+      "period": "机构汇编层（非遗网2018小寒专题）；《津门杂记》为清末天津笔记（经非遗网转引，原书未直读）",
+      "source_ids": [
+        "source-ihchina-xiaohan-feature"
+      ],
+      "knowledge_ids": [
+        "trad-xiaohan-caifan-nuomifan"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaohan-c7",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "小寒考验忍耐——但回归的光明已经出现。",
+        "en": "Minor Cold tests endurance — yet the first signs of returning light appear."
+      },
+      "region": [
+        "文本经验锚定中国：六世纪荆楚（长江中游）、宋代城市、清末北京；当代叙述为全国性节日的机构口径（各地食俗含北京、江浙、四川、安徽黟县、陕西澄城、青海西宁、杭州）"
+      ],
+      "period": "《荆楚岁时记》（六世纪）；宋代《武林旧事》（经非遗网转引）；《燕京岁时记》（清末，1906年前后成书）；非遗网专文（2017）",
+      "source_ids": [
+        "source-wikisource-jingchu-suishiji",
+        "source-wikisource-yanjingsuishiji"
+      ],
+      "knowledge_ids": [
+        "hist-xiaohan-laba"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaohan-c8",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

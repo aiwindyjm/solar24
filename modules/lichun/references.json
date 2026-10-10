@@ -1,1 +1,173 @@
-[]
+[
+  {
+    "id": "source-pmo-almanac-qa",
+    "title": "历书科普问题解答",
+    "authors": [
+      "中国科学院紫金山天文台"
+    ],
+    "publisher": "紫金山天文台官网科普动态",
+    "published": "2022-03-17",
+    "url": "http://www.pmo.cas.cn/xwdt2019/kpdt2019/202203/t20220317_6399980.html",
+    "citation": "中国科学院紫金山天文台：《历书科普问题解答》，2022-03-17。",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "一年的二十四节气，反映了地球在绕太阳运行轨道上的不同位置，属于阳历范畴。在阳历中节气日期变化不大，但在农历中节气日期却非常不固定。……农历闰月的安排是人为的规定……取其中最先出现的一个不包含中气（即雨水……）的农历月为闰月。",
+    "locator": "\"为什么农历有的月份没有中气\"等问答条目；页面另含农历月大小、年三十有无、双立春/无立春等解答。",
+    "ai_summary": "中国历法权威计算机构（紫金山天文台编算《中国天文年历》）的科普问答：节气属阳历成分、农历为阴阳合历；朔日定初一；冬至定十一月；两冬至间含13个朔望月则置闰、取首个无中气之月；节气日期公历稳定、农历漂移的原因；立春2月4日左右与春节1月21日-2月20日变动可产生双立春/无立春年。",
+    "rights": "机构官网公开内容；仅引用要点与短摘录。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-hko-solar-terms",
+    "title": "The 24 Solar Terms",
+    "authors": [
+      "Hong Kong Observatory"
+    ],
+    "publisher": "Hong Kong Observatory",
+    "published": "2020-05-18 (page revision)",
+    "url": "https://www.hko.gov.hk/en/gts/time/24solarterms.htm",
+    "citation": "Hong Kong Observatory. The 24 Solar Terms. Calendar; revision 18 May 2020.",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "The 24 solar terms divide the ecliptic into 24 equal segments, with 15 degrees of the Sun's longitude between the terms.",
+    "locator": "Paragraph beginning From the Earth's perspective; next paragraph discusses regional climate and agriculture.",
+    "ai_summary": "页面介绍黄经15度分段、节气名称与天气农业经验，并限定为古代中国中部气候的部分反映。",
+    "rights": "Source retains rights; metadata and limited excerpt only; no image reuse.",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-ihchina-lichun-feature",
+    "title": "春到人间草木知——二十四节气之立春（节气专题）",
+    "authors": [
+      "中国非物质文化遗产网·中国非物质文化遗产数字博物馆（编者整理）"
+    ],
+    "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+    "published": null,
+    "url": "https://www.ihchina.cn/solar_details/40.html",
+    "citation": "中国非物质文化遗产网：《春到人间草木知——二十四节气之立春》，节气专题页，2026-09-16 读取。",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "每年2月3日至5日，太阳到达黄经315°时为立春。2018年的立春时间是2月4日（农历丁酉年腊月十九）。……立春以后，白天逐渐增长，大部分地区陆续进入春耕大忙季节，农业生产仍要预防低温和雨雪天气带来的不利影响。\"一年之计在于春\"，立春是最受农民重视的节气之一。……（咬春引《燕京岁时记》：\"是日富家多食春饼，妇女等多买萝卜而食之，曰咬春，谓可以却春困也。\"）",
+    "locator": "\"节气概说\"\"农事农谚\"\"民俗\"各节；地域习俗条目含戴春鸡（陕西铜川）、佩燕子（关中）等。",
+    "ai_summary": "国家级非遗机构立春专题：定义（2月3-5日、黄经315°、天文意义春天开始）、2018年立春落农历腊月十九的实例、农事（春耕大忙、防倒春寒）、农谚群（流传地域未逐一标明）、迎春/鞭春牛/咬春/戴春鸡/佩燕子等习俗及古籍引文。",
+    "rights": "页面声明\"部分图文内容来自网络，经编者整理，转载或引用请注明作者及出处\"——引用需谨慎，配图一律不用。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-szmb-season-division",
+    "title": "四季是如何划分的？（深圳市气象局业务知识库）",
+    "authors": [
+      "深圳市气象局"
+    ],
+    "publisher": "深圳市气象局",
+    "published": null,
+    "url": "https://weather.sz.gov.cn/mobile/hudongjiaoliu/yewuzhishiku/qixiangfuwulei/content/post_12009684.html",
+    "citation": "深圳市气象局：《四季是如何划分的？》，业务知识库科普页（页面更新时间2025-02-20），2026-09-16 首读、2026-09-18 复读。",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-18",
+    "original_excerpt": "气候上采用候温(五天平均温度)来划分，即候温低于或等于10℃为冬季，候温在10~22℃之间为春、秋季，候温大于或等于22℃为夏季。……深圳的划分标准如下：入春，五天滑动平均气温>10度，最后那天起；……需要说明的是：入春和入夏均需稳定达到相应的气温标准，即达到标准后没有再出现低于标准的情况，入秋和入冬则一达到相应气温标准就算入季。按此标准，深圳最新三十年（1991-2020年）平均入冬、入春、入夏、入秋日期分别为：1月21日、2月3日、4月20日、11月8日。",
+    "locator": "页面正文（标题下标示\"更新时间：2025-02-20 10:02:14 来源：深圳市气象局\"）；气候学通说段+深圳判据段+1991-2020平均日期段。",
+    "ai_summary": "地方气象机构科普页，两层内容：①气候学通说——候温（五天平均）划分四季（≤10℃冬、10-22℃春秋、≥22℃夏）；②深圳本地判据——入春为\"五天滑动平均气温>10度，最后那天起\"，且入春/入夏需\"稳定达到\"（达标后不再低于标准），另给深圳1991-2020年平均入春日2月3日。注意：严格大于（>）与起算日规则是深圳口径，不等同于全国统一判据（QX/T 152-2012 标准原文未直读）。",
+    "rights": "政府网站公开内容；仅引用短摘录。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-yueling-qishierhou-wikisource",
+    "title": "月令七十二候集解（维基文库全文）",
+    "authors": [
+      "传统题名：吴澄"
+    ],
+    "publisher": "Wikisource（维基文库）",
+    "published": null,
+    "url": "https://zh.wikisource.org/wiki/月令七十二候集解",
+    "citation": "《月令七十二候集解》，传统题名（元）吴澄撰，维基文库全文本，2026-09-16 读取。",
+    "source_type": "historical",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "立春，正月節。立，建始也。五行之氣往者過來者續于此。而春木之氣始至，故謂之立也。立夏、秋、冬同。……東風解凍。凍結于冬，遇春風而解散……蟄蟲始振。蟄，藏也；振，動也。密藏之蟲，因氣至，而皆蘇動之矣……魚陟負冰。陟，升也。魚當盛寒伏水底而遂暖，至正月陽氣至，則上遊而近冰，故曰負。",
+    "locator": "全书第一节\"立春\"，维基文库全文页；三候条目依次位于立春节之内。",
+    "ai_summary": "该书将立春列为全书首节，给出\"立，建始也\"的定义，并按五日一候列立春三候：东风解冻、蛰虫始振、鱼陟负冰，各附简注。紧随其后为雨水节。",
+    "rights": "原文属公有领域古籍；维基文库文本依其站点许可提供。仅记录元数据与短摘录。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-ihchina-jiuhua-lichunji",
+    "title": "农历二十四节气（九华立春祭）项目页",
+    "authors": [
+      "中国非物质文化遗产网·中国非物质文化遗产数字博物馆"
+    ],
+    "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+    "published": null,
+    "url": "https://www.ihchina.cn/project_details/15060.html",
+    "citation": "中国非物质文化遗产网：\"农历二十四节气（九华立春祭）\"，2011年第三批国家级非遗扩展项目，编号Ⅹ-68，浙江省衢州市柯城区。",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "以农历立春日为祭祀日，九华梧桐祖殿是立春祭主要活动场所。主要活动有：祭拜春神句芒、迎春接福赐求五谷丰登、供祭品、扮芒神、焚香迎奉、扎春牛、演戏酬神、踏青、鞭春牛等。鞭春牛是整个立春祭活动的重要环节，由选定的人装扮成芒神鞭打春牛。",
+    "locator": "项目详情页正文\"基本信息\"与\"主要内容\"部分；项目序号516，保护单位衢州市柯城区文化馆。",
+    "ai_summary": "国家级非遗权威机构项目页，确认九华立春祭的申报地、批次、类别（民俗）与仪式构成，鞭春牛为核心环节，与劝农春耕相关联。",
+    "rights": "网站版权所有；仅引用事实要点与短摘录。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-ihchina-shiqian-shuochun",
+    "title": "农历二十四节气（石阡说春）项目页",
+    "authors": [
+      "中国非物质文化遗产网·中国非物质文化遗产数字博物馆"
+    ],
+    "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+    "published": null,
+    "url": "https://www.ihchina.cn/project_details/15062.html",
+    "citation": "中国非物质文化遗产网：\"农历二十四节气（石阡说春）\"，2011年第三批国家级非遗扩展项目，编号Ⅹ-68，贵州省石阡县。",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "\"说春\"是石阡侗族人民世代流传下来的一种在立春时节扮装\"春官\"说唱歌谣、劝农劳作的民俗表演活动，祝福风调雨顺、丰衣足食。……说春一般在每年春节或立春时开始，春分时结束。……\"春官\"是周代一种职官，执掌农耕事务。清乾隆《石阡府志》、县志已有当地说春习俗的记载。",
+    "locator": "项目详情页正文；项目序号516，类别民俗，类型扩展项目，保护单位石阡县文化馆；列有传承人封武（侗族）、封万明。",
+    "ai_summary": "确认石阡说春的申报地、批次与内容：立春时节春官说唱劝农，分\"说正春\"（含二十四个农事节气固定春词）与\"说野春\"；时间跨度为春节/立春至春分。",
+    "rights": "网站版权所有；仅引用事实要点与短摘录。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-xinhua-unesco-solarterms",
+    "title": "二十四节气入选《人类非物质文化遗产代表名录》",
+    "authors": [
+      "新华社记者"
+    ],
+    "publisher": "新华网",
+    "published": "2016-11-30",
+    "url": "http://www.xinhuanet.com/politics/2016-11/30/c_129385180.htm",
+    "citation": "新华社：《\"二十四节气\"入选联合国教科文组织人类非物质文化遗产代表作名录》，2016-11-30。",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "项目全称\"二十四节气——中国人通过观察太阳周年运动而形成的时间知识体系及其实践\"；2006年列入第一批国家级非遗名录；2011年九华立春祭、班春劝农、石阡说春列入扩展名录；2014年三门祭冬、壮族霜降节、苗族赶秋、安仁赶分社列入扩展名录；决议于2016年11月30日在亚的斯亚贝巴举行的第十一届政府间委员会常会通过。",
+    "locator": "报道正文；届会地点埃塞俄比亚亚的斯亚贝巴，会议期2016-11-28至12-02。",
+    "ai_summary": "国家通讯社通稿，给出入选日期、届会、项目全称、国家级非遗与扩展项目时间线，以及\"形成于黄河流域、以天象气温降水物候时序变化为观察基准\"的描述。",
+    "rights": "新华社版权所有；仅引用事实要点与短摘录。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-wikisource-yanjingsuishiji",
+    "title": "燕京歲時記（维基文库全文）",
+    "authors": [
+      "富察敦崇（清）"
+    ],
+    "publisher": "Wikisource（维基文库）",
+    "published": null,
+    "url": "https://zh.wikisource.org/wiki/燕京歲時記",
+    "citation": "富察敦崇：《燕京岁时记》，维基文库全文本，2026-09-16 读取。",
+    "source_type": "historical",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "打春即立春，在正月者居多。立春先一日，順天府官員至東直門外一里春場迎春。立春日，禮部呈進春山寶座，順天府呈進春牛圖。禮畢回署，引春牛而擊之，曰打春。……是日富家多食春餅，婦女等多買羅卜而食之，曰咬春，謂可以卻春困也。",
+    "locator": "\"打春\"条（正月部分，目录编号1.7，\"咬春\"内容在该条内非独立条目）；条后\"謹按\"引《禮部則例》述官方迎春礼仪。",
+    "ai_summary": "清末北京岁时志：立春前一日顺天府官员赴东直门外春场迎春，立春日礼部进春山宝座、顺天府进春牛图、击春牛曰打春（官方礼仪）；当日富家食春饼、妇女买萝卜食之曰咬春\"谓可以卻春困\"。咬春不独立成条，系于打春条内。",
+    "rights": "原文属公有领域古籍；维基文库文本依其站点许可。仅记录元数据与短摘录。",
+    "verification": "human-verified"
+  }
+]

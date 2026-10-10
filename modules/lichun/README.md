@@ -1,6 +1,6 @@
 # 立春 · Beginning of Spring
 
-> Prototype · Cultural content: draft · Reference scaffold, not a completed experience.
+> In Development · Cultural content: draft · Reference scaffold, not a completed experience.
 
 Identity: `lichun` / spring / order 01.
 

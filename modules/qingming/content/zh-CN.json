@@ -2,7 +2,217 @@
   "schema_version": "0.1.0",
   "term_id": "qingming",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "清明是什么",
+        "en": "What is Pure Brightness"
+      },
+      "claim_ids": [
+        "qingming-c1",
+        "qingming-c2",
+        "qingming-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "清明与自然",
+        "en": "Pure Brightness and Nature"
+      },
+      "claim_ids": [
+        "qingming-c4",
+        "qingming-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "清明与人们的生活",
+        "en": "Pure Brightness and People"
+      },
+      "claim_ids": [
+        "qingming-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "qingming-c7",
+        "qingming-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "qingming-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳黄经等分黄道24段。",
+        "en": "The 24 solar terms divide the ecliptic equally."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "qingming-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "清明是二十四节气中的第五个：太阳到达黄经15°，在公历4月4日至6日。",
+        "en": "Qingming is the fifth term: the Sun reaches 15°, around April 4-6."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；交节日期由紫金山天文台逐年计算发布",
+      "source_ids": [
+        "source-ihchina-qingming-feature",
+        "source-xinhua-qingming-2024"
+      ],
+      "knowledge_ids": [
+        "sci-qingming-longitude-15"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "qingming-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "清明是二十四节气中唯一演变为传统节日的节气（清明节）。寒食节的祭扫习俗在唐代并入清明。",
+        "en": "Qingming is the only solar term that evolved into a major festival, absorbing Hanshi (Cold Food) tomb-sweeping customs during the Tang dynasty."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；交节日期由紫金山天文台逐年计算发布",
+      "source_ids": [
+        "source-ihchina-qingming-feature",
+        "source-xinhua-qingming-2024"
+      ],
+      "knowledge_ids": [
+        "sci-qingming-longitude-15"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "qingming-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "清明时节江南多雨，\"清明时节雨纷纷\"有气候基础。",
+        "en": "The Jiangnan region sees frequent rain during Qingming."
+      },
+      "region": [
+        "中国（统计覆盖部分省会城市；结论聚焦江南/长江中下游，北方结论相反）"
+      ],
+      "period": "统计口径1951-2010年；稿件发布于2015-04-03",
+      "source_ids": [
+        "source-weather-com-qingming-rain",
+        "source-ihchina-qingming-feature"
+      ],
+      "knowledge_ids": [
+        "sci-qingming-jiangnan-rain"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "qingming-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人记录的清明三候：「桐始华、田鼠化为鴽、虹始见」。桐花初放、虹霓初现。",
+        "en": "Ancient texts: paulownia blooms, field mice transform into quails, rainbows first appear."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《逸周书·时训》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-qingming-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "qingming-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "在山西介休，\"介休寒食清明习俗\"是国家级非遗扩展项目。介休被视为寒食节源地。",
+        "en": "In Jiexiu, Shanxi, the Hanshi-Qingming customs are recognized national intangible heritage. Jiexiu is considered the birthplace of the Cold Food festival."
+      },
+      "region": [
+        "中国山西省晋中市介休市"
+      ],
+      "period": "国家级非遗扩展项目（清明节Ⅹ-2子项）；地域渊源叙述与绵山/介子推传说相关（传说层另卡）",
+      "source_ids": [
+        "source-ihchina-qingming-project"
+      ],
+      "knowledge_ids": [
+        "region-jiexiu-hanshi-qingming"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "qingming-c7",
+      "kind": "interpretation",
+      "text": {
+        "zh-CN": "清明兼具肃穆（祭扫）与生机（踏青），反映中国人对生死与季节的理解。",
+        "en": "Qingming holds both solemnity (tomb-sweeping) and vitality (spring outing)."
+      },
+      "region": [],
+      "period": "当代（项目解释层）",
+      "source_ids": [
+        "source-wikisource-jingchu-suishiji",
+        "source-qingming-tangliudian-juan2"
+      ],
+      "knowledge_ids": [
+        "hist-qingming-hanshi-merger"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "qingming-c8",
+      "kind": "opinion",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

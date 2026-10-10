@@ -2,7 +2,218 @@
   "schema_version": "0.1.0",
   "term_id": "xiaoman",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "小满是什么",
+        "en": "What is Grain Buds"
+      },
+      "claim_ids": [
+        "xiaoman-c1",
+        "xiaoman-c2",
+        "xiaoman-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "小满与自然",
+        "en": "Grain Buds and Nature"
+      },
+      "claim_ids": [
+        "xiaoman-c4",
+        "xiaoman-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "小满与人们的生活",
+        "en": "Grain Buds and People"
+      },
+      "claim_ids": [
+        "xiaoman-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "xiaoman-c7",
+        "xiaoman-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "xiaoman-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳黄经等分黄道24段。",
+        "en": "The 24 solar terms divide the ecliptic equally."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoman-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "小满是二十四节气中的第八个：太阳到达黄经60°。",
+        "en": "Xiaoman is the eighth term: the Sun reaches 60°."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年机构专题与2024年机构稿沿用同一表述",
+      "source_ids": [
+        "source-ihchina-xiaoman-feature",
+        "source-xinhua-xiaoman-2024"
+      ],
+      "knowledge_ids": [
+        "sci-xiaoman-longitude-60"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoman-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "小满是农历四月的\"中气\"。名称意为麦粒开始饱满但未全熟。",
+        "en": "Xiaoman is the zhongqi of the fourth lunar month, meaning grain begins to fill but is not yet ripe."
+      },
+      "region": [
+        "中国（传统历法编算规则）"
+      ],
+      "period": "现行农历编算口径；GB/T 33661-2017 为现行国家标准（正文条款待人工核读）",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-yueling-qishierhou-wikisource"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-jieqi-zhongqi"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoman-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "小满时节气温升高，北方冬小麦进入灌浆期。",
+        "en": "Rising temperatures bring winter wheat into its grain-filling stage."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年机构专题与2024年机构稿沿用同一表述",
+      "source_ids": [
+        "source-ihchina-xiaoman-feature",
+        "source-xinhua-xiaoman-2024"
+      ],
+      "knowledge_ids": [
+        "sci-xiaoman-longitude-60"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoman-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人记录的小满三候：「苦菜秀、靡草死、麥秋至》。苦菜开花，麦子渐熟。",
+        "en": "Ancient texts: sow thistle blooms, delicate grasses wither, wheat approaches harvest."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《逸周书》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-ihchina-xiaoman-feature"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-xiaoman-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoman-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "在江苏盛泽，小满戏（演剧酬神）是小满节气的地方传统。",
+        "en": "In Shengze, Jiangsu, Xiaoman opera performances honor the season."
+      },
+      "region": [
+        "中国江苏省苏州市吴江区盛泽镇"
+      ],
+      "period": "先蚕祠建于清道光年间（建年两说：1827文化报/1840文旅部）；小满演戏传统延续，2024年为\"四季村晚\"示范展示点",
+      "source_ids": [
+        "source-mct-shengze-canfa",
+        "source-ihchina-xiaoman-zheli-2015"
+      ],
+      "knowledge_ids": [
+        "region-shengze-xiaoman-xi"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoman-c7",
+      "kind": "interpretation",
+      "text": {
+        "zh-CN": "小满的\"满\"是渐进而非圆满——中国人的处世哲学中留有余地的智慧。",
+        "en": "Xiaoman's \"fullness\" is progressive, not complete — reflecting a philosophy of leaving room."
+      },
+      "region": [],
+      "period": "当代（项目解释层）",
+      "source_ids": [
+        "source-wikisource-qiminyaoshu"
+      ],
+      "knowledge_ids": [
+        "hist-qimin-zhonggu-shixu"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "xiaoman-c8",
+      "kind": "opinion",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

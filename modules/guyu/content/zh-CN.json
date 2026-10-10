@@ -2,7 +2,218 @@
   "schema_version": "0.1.0",
   "term_id": "guyu",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "谷雨是什么",
+        "en": "What is Grain Rain"
+      },
+      "claim_ids": [
+        "guyu-c1",
+        "guyu-c2",
+        "guyu-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "谷雨与自然",
+        "en": "Grain Rain and Nature"
+      },
+      "claim_ids": [
+        "guyu-c4",
+        "guyu-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "谷雨与人们的生活",
+        "en": "Grain Rain and People"
+      },
+      "claim_ids": [
+        "guyu-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "guyu-c7",
+        "guyu-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "guyu-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳黄经等分黄道24段。",
+        "en": "The 24 solar terms divide the ecliptic equally."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "guyu-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "谷雨是二十四节气中的第六个：太阳到达黄经30°，春季最后一个节气。",
+        "en": "Guyu is the sixth and final spring term: the Sun reaches 30°."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2022年机构稿仍在沿用同一表述",
+      "source_ids": [
+        "source-ihchina-guyu-feature",
+        "source-xinhua-guyu-2022"
+      ],
+      "knowledge_ids": [
+        "sci-guyu-longitude-30"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "guyu-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "谷雨是农历三月的\"中气\"。宋《岁时广记》引三统历：「穀雨者言雨以生百穀」。",
+        "en": "Guyu is the zhongqi of the third lunar month. Its name means \"rain that brings forth grain.\""
+      },
+      "region": [
+        "中国（传统历法编算规则）"
+      ],
+      "period": "现行农历编算口径；GB/T 33661-2017 为现行国家标准（正文条款待人工核读）",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-yueling-qishierhou-wikisource"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-jieqi-zhongqi"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "guyu-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "谷雨时节降雨增多，是春播关键窗口。",
+        "en": "Increased rainfall makes Guyu a critical sowing window."
+      },
+      "region": [
+        "中国（机构表述口径；\"降雨增多\"为节气气候经验概括，非分区气候统计）"
+      ],
+      "period": "当代机构/媒体科普口径（2017非遗网稿、2022新华社稿）",
+      "source_ids": [
+        "source-ihchina-guyu-feature",
+        "source-xinhua-guyu-2022"
+      ],
+      "knowledge_ids": [
+        "sci-guyu-rain-sowing-window"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "guyu-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人记录的谷雨三候：「萍始生、鳴鸠拂其羽、戴勝降于桑」。浮萍初生，布谷催耕。",
+        "en": "Ancient texts: duckweed appears, doves preen, hoopoes descend on mulberry trees."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《逸周书》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-ihchina-guyu-feature"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-guyu-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "guyu-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "在河南洛阳，谷雨时节的牡丹花会延续至今，\"谷雨三朝看牡丹\"。",
+        "en": "In Luoyang, Henan, the peony festival around Guyu continues today."
+      },
+      "region": [
+        "中国河南省洛阳市"
+      ],
+      "period": "唐宋赏花习俗（页面引诗文）；1982年牡丹定为市花；1983年首届花会（4月15日-25日）；2008年列入国家级非遗（第二批）；2011年升格为“中国洛阳牡丹文化节”，延续至今",
+      "source_ids": [
+        "source-ihchina-guyu-luoyang-mudan",
+        "source-mct-guyu-luoyang-peony"
+      ],
+      "knowledge_ids": [
+        "region-guyu-luoyang-mudan"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "guyu-c7",
+      "kind": "interpretation",
+      "text": {
+        "zh-CN": "谷雨的名字直接连接了降水与谷物：雨生百谷，是一个关于丰收预兆的节气。",
+        "en": "The name directly links rain to grain — a term about harvest prospects."
+      },
+      "region": [],
+      "period": "当代（项目解释层）",
+      "source_ids": [
+        "source-wikisource-suiguangji"
+      ],
+      "knowledge_ids": [
+        "hist-suiguangji-jieqi-kaoju"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "guyu-c8",
+      "kind": "opinion",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

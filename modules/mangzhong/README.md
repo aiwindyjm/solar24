@@ -1,6 +1,6 @@
 # 芒种 · Grain in Ear
 
-> Planned · Cultural content: draft · Reference scaffold, not a completed experience.
+> In Development · Cultural content: draft · Reference scaffold, not a completed experience.
 
 Identity: `mangzhong` / summer / order 09.
 

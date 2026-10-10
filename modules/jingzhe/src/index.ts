@@ -1,3 +1,5 @@
 import manifest from '../module.manifest.json';
-import { defineSkeleton } from '@solar24/module-runtime';
-export default defineSkeleton(manifest);
+import content from '../content/zh-CN.json';
+import { defineProduction } from '@solar24/module-runtime';
+
+export default defineProduction(manifest, content);

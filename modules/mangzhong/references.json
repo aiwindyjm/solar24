@@ -1,1 +1,154 @@
-[]
+[
+  {
+    "id": "source-pmo-almanac-qa",
+    "title": "历书科普问题解答",
+    "authors": [
+      "中国科学院紫金山天文台"
+    ],
+    "publisher": "紫金山天文台官网科普动态",
+    "published": "2022-03-17",
+    "url": "http://www.pmo.cas.cn/xwdt2019/kpdt2019/202203/t20220317_6399980.html",
+    "citation": "中国科学院紫金山天文台：《历书科普问题解答》，2022-03-17。",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "一年的二十四节气，反映了地球在绕太阳运行轨道上的不同位置，属于阳历范畴。在阳历中节气日期变化不大，但在农历中节气日期却非常不固定。……农历闰月的安排是人为的规定……取其中最先出现的一个不包含中气（即雨水……）的农历月为闰月。",
+    "locator": "\"为什么农历有的月份没有中气\"等问答条目；页面另含农历月大小、年三十有无、双立春/无立春等解答。",
+    "ai_summary": "中国历法权威计算机构（紫金山天文台编算《中国天文年历》）的科普问答：节气属阳历成分、农历为阴阳合历；朔日定初一；冬至定十一月；两冬至间含13个朔望月则置闰、取首个无中气之月；节气日期公历稳定、农历漂移的原因；立春2月4日左右与春节1月21日-2月20日变动可产生双立春/无立春年。",
+    "rights": "机构官网公开内容；仅引用要点与短摘录。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-hko-solar-terms",
+    "title": "The 24 Solar Terms",
+    "authors": [
+      "Hong Kong Observatory"
+    ],
+    "publisher": "Hong Kong Observatory",
+    "published": "2020-05-18 (page revision)",
+    "url": "https://www.hko.gov.hk/en/gts/time/24solarterms.htm",
+    "citation": "Hong Kong Observatory. The 24 Solar Terms. Calendar; revision 18 May 2020.",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "The 24 solar terms divide the ecliptic into 24 equal segments, with 15 degrees of the Sun's longitude between the terms.",
+    "locator": "Paragraph beginning From the Earth's perspective; next paragraph discusses regional climate and agriculture.",
+    "ai_summary": "页面介绍黄经15度分段、节气名称与天气农业经验，并限定为古代中国中部气候的部分反映。",
+    "rights": "Source retains rights; metadata and limited excerpt only; no image reuse.",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-ihchina-mangzhong-feature",
+    "title": "东风染尽三千顷——二十四节气之芒种（节气专题）",
+    "authors": [
+      "中国非物质文化遗产保护中心（页面署名）"
+    ],
+    "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+    "published": "2017-06-05",
+    "url": "https://www.ihchina.cn/solar_details/6969.html",
+    "citation": "中国非物质文化遗产网：《东风染尽三千顷——二十四节气之芒种》，节气专题页，2026-09-16 读取。",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "二十四节气的第九个节气是芒种，每年6月6日前后，太阳到达黄经75°时芒种节气开始，今年的芒种时间是2017年6月5日（农历丁酉年五月十一日）。芒种是一个反映农业物候现象的节气，\"芒\"字指麦类等作物的收获，\"种\"字是指谷黍类作物的播种……《月令七十二候集解》记载：\"五月节，谓有芒之种谷可稼种矣。\"……芒种节气的物候特征是：\"一候螳螂生；二候鹏始鸣；三候反舌无声。\"……芒种至夏至是秋熟作物播种、移栽、苗期管理和全面进入夏收、夏种、夏管这\"三夏\"的大忙时节……芒种后，华南东南季风雨带稳定，是一年中降水最多的时节，长江中下游地区先后进入梅雨季节……通常芒种节气百花开始凋零，民间多在芒种这天举行祭祀花神仪式，饯送花神归位……此习俗今已不存，但曹雪芹在《红楼梦》第二十七回中提到了芒种送花神……安苗是皖南的农事习俗，始于明初。……贵州东南部一带的侗族青年男女，每年芒种前后都要举办打泥巴仗节。……在南方，每年五、六月是梅子成熟的季节……",
+    "locator": "\"节气概说\"\"物候\"\"农事农谚\"\"节气习俗\"（送花神/安苗/打泥巴仗/煮梅）各节；农谚九条（芒种有雨豌豆收等）；页面创建时间2017-06-05。",
+    "ai_summary": "国家级非遗机构芒种专题：定义（第九个节气、黄经75°、6月6日前后、2017年实例）、命名释义（芒=麦收、种=播种）、三候（页面作\"鹏始鸣\"，系\"鵙\"之讹，与《月令》维基文库本及新华网稿不一致）、三夏大忙、长江中下游梅雨/空梅风险、农谚九条、送花神（称\"此习俗今已不存\"并引红楼梦）、安苗（皖南、\"始于明初\"无出处）、打泥巴仗（黔东南侗族）、煮梅（南方）。",
+    "rights": "机构官网公开页面；仅引用要点与短摘录，配图一律不用。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-xinhua-mangzhong-2024",
+    "title": "文化中国行·诗意节令｜芒种：风吹麦成浪 静待稻花香",
+    "authors": [
+      "新华网（记者稿，署名以原页为准）"
+    ],
+    "publisher": "新华网",
+    "published": "2024-06-05",
+    "url": "http://www.news.cn/20240605/dc4c4867dac0442ca1b875eb21199856/c.html",
+    "citation": "新华网：《文化中国行·诗意节令｜芒种：风吹麦成浪 静待稻花香》，2024-06-05。",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "芒种是二十四节气中的第九个节气。每年6月5日至7日之间，当太阳位于黄经75度时，芒种如约而至，仲夏至此开启。……（引《月令七十二候集解》）\"五月节，谓有芒之种谷可稼种矣。\"……芒种分为三候：一候螳螂生，二候鵙始鸣，三候反舌无声。……农谚\"芒种芒种，连收带种\"……俗话\"春争日，夏争时\"……（引陆游《时雨》）\"时雨及芒种，四野皆插秧。家家麦饭美，处处菱歌长。\"",
+    "locator": "导语节气定义段、三候段、农谚段、白居易/陆游引诗段（另引《芒种后经旬无日不雨偶得长句》全诗）。",
+    "ai_summary": "新华社2024年芒种科普稿：黄经75度、公历6月5日至7日交节、第九个节气、仲夏开始；引《月令七十二候集解》命名句（注明元代吴澄编著）；三候（作\"鵙始鸣\"）；农谚\"芒种芒种，连收带种\"与\"春争日，夏争时\"；麦收抢收与抢插稻秧的农事描述；引白居易（田家少闲月四句）、陆游《时雨》前四句与《芒种后经旬无日不雨偶得长句》全诗。",
+    "rights": "新华社稿；仅引用要点与短摘录。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-yueling-qishierhou-wikisource",
+    "title": "月令七十二候集解（维基文库全文）",
+    "authors": [
+      "传统题名：吴澄"
+    ],
+    "publisher": "Wikisource（维基文库）",
+    "published": null,
+    "url": "https://zh.wikisource.org/wiki/月令七十二候集解",
+    "citation": "《月令七十二候集解》，传统题名（元）吴澄撰，维基文库全文本，2026-09-16 读取。",
+    "source_type": "historical",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "立春，正月節。立，建始也。五行之氣往者過來者續于此。而春木之氣始至，故謂之立也。立夏、秋、冬同。……東風解凍。凍結于冬，遇春風而解散……蟄蟲始振。蟄，藏也；振，動也。密藏之蟲，因氣至，而皆蘇動之矣……魚陟負冰。陟，升也。魚當盛寒伏水底而遂暖，至正月陽氣至，則上遊而近冰，故曰負。",
+    "locator": "全书第一节\"立春\"，维基文库全文页；三候条目依次位于立春节之内。",
+    "ai_summary": "该书将立春列为全书首节，给出\"立，建始也\"的定义，并按五日一候列立春三候：东风解冻、蛰虫始振、鱼陟负冰，各附简注。紧随其后为雨水节。",
+    "rights": "原文属公有领域古籍；维基文库文本依其站点许可提供。仅记录元数据与短摘录。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-wikisource-hongloumeng-chengjia-ch27",
+    "title": "紅樓夢（程甲本）/二十七：滴翠亭楊妃戲彩蝶 埋香冢飛燕泣殘紅",
+    "authors": [
+      "曹雪芹（著）；程伟元、高鹗（整理刊行）"
+    ],
+    "publisher": "维基文库",
+    "published": null,
+    "url": "https://zh.wikisource.org/wiki/%E7%B4%85%E6%A8%93%E5%A4%A2%EF%BC%88%E7%A8%8B%E7%94%B2%E6%9C%AC%EF%BC%89/%E4%BA%8C%E5%8D%81%E4%B8%83",
+    "citation": "曹雪芹：《红楼梦（程甲本）》第二十七回，维基文库，2026-09-16 读取。",
+    "source_type": "historical",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "至次日乃是四月二十六日，原來這日未時交芒種節。尙古風俗：凡交芒種節的這日，都要設擺各色禮物，祭餞花神，言芒種一過，便是夏日了，衆花皆卸，花神退位，須要餞行。閨中更興這件風俗，所以大觀園中之人都早起來了。那些女孩子們，或用花瓣柳枝編成轎馬的，或用綾錦紗羅叠成干旄旌幢的，都用綵線繫了。每一颗樹，每一枝花上，都繫了這些物事。滿園裡繡帶飄飄，花枝招展。更兼這些人打扮的桃羞杏讓，燕妬鶯慚，一時也道不盡。",
+    "locator": "第二十七回开篇（回目：滴翠亭楊妃戲彩蝶 埋香冢飛燕泣殘紅）；同回下文即黛玉葬桥段（埋香冢）。",
+    "ai_summary": "《红楼梦》程甲本第二十七回开篇：小说内叙事日期为\"四月二十六日……未時交芒種節\"，称饯花神为\"尙古風俗\"，写闺中人以花瓣柳枝编轿马、绫锦纱罗叠旌幢系于花树饯送花神。是\"芒种饯花神\"最著名的一手文学文本；属小说描写，非风俗志。",
+    "rights": "18世纪作品，公有领域；维基文库录文自由使用。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-xinhua-unesco-solarterms",
+    "title": "二十四节气入选《人类非物质文化遗产代表名录》",
+    "authors": [
+      "新华社记者"
+    ],
+    "publisher": "新华网",
+    "published": "2016-11-30",
+    "url": "http://www.xinhuanet.com/politics/2016-11/30/c_129385180.htm",
+    "citation": "新华社：《\"二十四节气\"入选联合国教科文组织人类非物质文化遗产代表作名录》，2016-11-30。",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "项目全称\"二十四节气——中国人通过观察太阳周年运动而形成的时间知识体系及其实践\"；2006年列入第一批国家级非遗名录；2011年九华立春祭、班春劝农、石阡说春列入扩展名录；2014年三门祭冬、壮族霜降节、苗族赶秋、安仁赶分社列入扩展名录；决议于2016年11月30日在亚的斯亚贝巴举行的第十一届政府间委员会常会通过。",
+    "locator": "报道正文；届会地点埃塞俄比亚亚的斯亚贝巴，会议期2016-11-28至12-02。",
+    "ai_summary": "国家通讯社通稿，给出入选日期、届会、项目全称、国家级非遗与扩展项目时间线，以及\"形成于黄河流域、以天象气温降水物候时序变化为观察基准\"的描述。",
+    "rights": "新华社版权所有；仅引用事实要点与短摘录。",
+    "verification": "human-verified"
+  },
+  {
+    "id": "source-ihchina-jiuhua-lichunji",
+    "title": "农历二十四节气（九华立春祭）项目页",
+    "authors": [
+      "中国非物质文化遗产网·中国非物质文化遗产数字博物馆"
+    ],
+    "publisher": "中国艺术研究院（中国非物质文化遗产保护中心）",
+    "published": null,
+    "url": "https://www.ihchina.cn/project_details/15060.html",
+    "citation": "中国非物质文化遗产网：\"农历二十四节气（九华立春祭）\"，2011年第三批国家级非遗扩展项目，编号Ⅹ-68，浙江省衢州市柯城区。",
+    "source_type": "institutional",
+    "access": "direct-read",
+    "accessed": "2026-09-16",
+    "original_excerpt": "以农历立春日为祭祀日，九华梧桐祖殿是立春祭主要活动场所。主要活动有：祭拜春神句芒、迎春接福赐求五谷丰登、供祭品、扮芒神、焚香迎奉、扎春牛、演戏酬神、踏青、鞭春牛等。鞭春牛是整个立春祭活动的重要环节，由选定的人装扮成芒神鞭打春牛。",
+    "locator": "项目详情页正文\"基本信息\"与\"主要内容\"部分；项目序号516，保护单位衢州市柯城区文化馆。",
+    "ai_summary": "国家级非遗权威机构项目页，确认九华立春祭的申报地、批次、类别（民俗）与仪式构成，鞭春牛为核心环节，与劝农春耕相关联。",
+    "rights": "网站版权所有；仅引用事实要点与短摘录。",
+    "verification": "human-verified"
+  }
+]

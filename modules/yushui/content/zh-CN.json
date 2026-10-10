@@ -2,7 +2,219 @@
   "schema_version": "0.1.0",
   "term_id": "yushui",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "雨水是什么",
+        "en": "What is Rain Water"
+      },
+      "claim_ids": [
+        "yushui-c1",
+        "yushui-c2",
+        "yushui-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "雨水与自然",
+        "en": "Rain Water and Nature"
+      },
+      "claim_ids": [
+        "yushui-c4",
+        "yushui-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "雨水与人们的生活",
+        "en": "Rain Water and People"
+      },
+      "claim_ids": [
+        "yushui-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "yushui-c7",
+        "yushui-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "yushui-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳黄经等分黄道24段，每段15°。节气是太阳位置的刻度，不是天气预言。",
+        "en": "The 24 solar terms divide the ecliptic into 24 equal segments. They mark the Sun's position, not weather."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "yushui-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "雨水是二十四节气中的第二个：太阳到达黄经330°，通常在公历2月18日至20日。",
+        "en": "Yushui (Rain Water) is the second solar term: the Sun reaches 330°, around February 18-20."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017年起有国家标准表述（正文未直读）",
+      "source_ids": [
+        "source-xinhua-yushui-feature",
+        "source-ihchina-yushui-feature"
+      ],
+      "knowledge_ids": [
+        "sci-yushui-longitude-330"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "yushui-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "雨水是农历正月的\"中气\"——农历月序由中气锚定，不含中气的月份被定为闰月。",
+        "en": "Yushui is the zhongqi (mid-term) of the first lunar month, anchoring the calendar's month sequence."
+      },
+      "region": [
+        "中国（传统历法编算规则）"
+      ],
+      "period": "现行农历编算口径；GB/T 33661-2017 为现行国家标准（正文条款待人工核读）",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-yueling-qishierhou-wikisource"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-jieqi-zhongqi"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "yushui-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "雨水时节气温回升、降水增多，此时冷空气仍活跃，乍暖还寒。",
+        "en": "Temperatures rise and precipitation increases, yet cold snaps remain frequent."
+      },
+      "region": [
+        "表述锚定东亚季风区（北半球中纬度）；页面级全国分布断言本轮未逐区核验"
+      ],
+      "period": "现代气象学口径（2022年机构科普稿表述）",
+      "source_ids": [
+        "source-xinhua-yushui-feature",
+        "source-ihchina-yushui-feature"
+      ],
+      "knowledge_ids": [
+        "sci-yushui-rain-transition"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "yushui-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人记录的雨水三候：「獭祭鱼、候雁北、草木萌动」。这是古典文本观察。",
+        "en": "Ancient texts record: otters lay out fish, geese fly north, plants begin to sprout."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-xinhua-yushui-feature"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-yushui-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "yushui-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "在四川广汉，正月十六举行的\"拉保保\"（为孩子认干爹）盛会与雨水节气同期，但按农历日而非节气日定期。",
+        "en": "In Guanghan, Sichuan, the La Baobao festival (godparent matching for children) runs on lunar January 16, concurrent with but not anchored to Yushui."
+      },
+      "region": [
+        "中国四川省德阳市广汉市（主会场房湖公园、金雁公园；辐射成都、绵阳等地参与者）"
+      ],
+      "period": "当代活态实践；2003年广汉市政府命名\"保保文化节\"，2007年入选首批四川省非物质文化遗产名录（省级）",
+      "source_ids": [
+        "source-cnr-guanghan-baobao",
+        "source-xinhua-guanghan-baobao"
+      ],
+      "knowledge_ids": [
+        "region-guanghan-yushui-baobaojie"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "yushui-c7",
+      "kind": "interpretation",
+      "text": {
+        "zh-CN": "雨水的名字记录了一个农时判断：早春的雨决定返青作物的收成。\"润物细无声\"至今仍是汉语的标准意象。",
+        "en": "The name encodes a farming truth: early spring rain decides the harvest. \"Moistening all things, finely, without a sound\" remains a standard Chinese image."
+      },
+      "region": [],
+      "period": "当代（项目解释层）",
+      "source_ids": [
+        "source-ihchina-yushui-feature",
+        "source-xinhua-yushui-feature"
+      ],
+      "knowledge_ids": [
+        "trad-yushui-nongshi"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "yushui-c8",
+      "kind": "opinion",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

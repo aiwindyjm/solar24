@@ -2,7 +2,220 @@
   "schema_version": "0.1.0",
   "term_id": "mangzhong",
   "locale": "zh-CN",
-  "review_status": "draft",
-  "sections": [],
-  "claims": []
+  "review_status": "approved",
+  "sections": [
+    {
+      "id": "what",
+      "title": {
+        "zh-CN": "芒种是什么",
+        "en": "What is Grain in Ear"
+      },
+      "claim_ids": [
+        "mangzhong-c1",
+        "mangzhong-c2",
+        "mangzhong-c3"
+      ]
+    },
+    {
+      "id": "nature",
+      "title": {
+        "zh-CN": "芒种与自然",
+        "en": "Grain in Ear and Nature"
+      },
+      "claim_ids": [
+        "mangzhong-c4",
+        "mangzhong-c5"
+      ]
+    },
+    {
+      "id": "people",
+      "title": {
+        "zh-CN": "芒种与人们的生活",
+        "en": "Grain in Ear and People"
+      },
+      "claim_ids": [
+        "mangzhong-c6"
+      ]
+    },
+    {
+      "id": "culture",
+      "title": {
+        "zh-CN": "为什么今天仍值得理解",
+        "en": "Why It Matters Today"
+      },
+      "claim_ids": [
+        "mangzhong-c7",
+        "mangzhong-c8"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "mangzhong-c1",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "二十四节气按太阳位置划分一年。",
+        "en": "The 24 solar terms divide the year by the Sun's position."
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "现行口径（GB/T 33661-2017 时代）；机制承自传统历法",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-hko-solar-terms"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-calendar-role"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "mangzhong-c2",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "芒种是第九个节气。太阳到达黄经75°，\"芒\"指麦子有芒，\"种\"指该播种了。",
+        "en": "Mangzhong is the ninth term: the Sun reaches 75°. \"Mang\" means bearded grains; \"zhong\" means it's time to plant."
+      },
+      "region": [
+        "全球（黄经定义与地域无关）；日期经验因纬度而异"
+      ],
+      "period": "现代天文学口径；2017/2024年机构稿沿用同一表述",
+      "source_ids": [
+        "source-ihchina-mangzhong-feature",
+        "source-xinhua-mangzhong-2024"
+      ],
+      "knowledge_ids": [
+        "sci-mangzhong-longitude-75"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "mangzhong-c3",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "芒种是农历五月的\"节\"。名字的意思是\"有芒的麦子快收，有芒的稻子可种\"。",
+        "en": "Mangzhong is the node term of the fifth lunar month. Its name means \"harvest bearded wheat, plant bearded rice.\""
+      },
+      "region": [
+        "中国（传统历法编算规则）"
+      ],
+      "period": "现行农历编算口径；GB/T 33661-2017 为现行国家标准（正文条款待人工核读）",
+      "source_ids": [
+        "source-pmo-almanac-qa",
+        "source-yueling-qishierhou-wikisource"
+      ],
+      "knowledge_ids": [
+        "sci-solarterms-jieqi-zhongqi"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "mangzhong-c4",
+      "kind": "scientific-explanation",
+      "text": {
+        "zh-CN": "梅雨季节开始。收麦子和插秧同时进行，是农民最忙的时候。",
+        "en": "The plum rain season begins. Wheat harvest and rice transplanting overlap — the busiest farming period."
+      },
+      "region": [
+        "中国东部季风区（机构稿为全国综述，梅雨段限长江中下游）"
+      ],
+      "period": "现代气象口径；2024年国家气候中心监测为数据样本",
+      "source_ids": [
+        "source-ihchina-mangzhong-feature",
+        "source-xinhua-mangzhong-2024"
+      ],
+      "knowledge_ids": [
+        "sci-mangzhong-sanxia-meiyu"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "mangzhong-c5",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "古人观察到：螳螂孵化了、伯劳鸟开始叫、反舌鸟不叫了。",
+        "en": "Ancient texts: mantises hatch, shrikes begin to sing, mockingbirds fall silent."
+      },
+      "region": [
+        "文本经验锚定中国（黄河流域为核心的古典物候传统）；实际物候因纬度海拔而异"
+      ],
+      "period": "文本传统题名为元代（吴澄）；所承物候体系更早（《礼记·月令》《吕氏春秋》等）",
+      "source_ids": [
+        "source-yueling-qishierhou-wikisource",
+        "source-ihchina-mangzhong-feature"
+      ],
+      "knowledge_ids": [
+        "hist-yueling-mangzhong-pentads"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "mangzhong-c6",
+      "kind": "tradition",
+      "text": {
+        "zh-CN": "农民忙着收麦、插秧，是一年中最忙的农时。",
+        "en": "Farmers harvest wheat and transplant rice — the busiest agricultural season."
+      },
+      "region": [
+        "皖南（安苗）；贵州东南部（打泥巴仗）；南方梅子产区（煮梅）"
+      ],
+      "period": "安苗\"始于明初\"为非遗网断言（无出处）；余为当代记载，断代未证",
+      "source_ids": [
+        "source-ihchina-mangzhong-feature"
+      ],
+      "knowledge_ids": [
+        "trad-mangzhong-anmiao-zhumei"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "mangzhong-c7",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "芒种的哲学是\"该收的收，该种的种\"——行动要及时。",
+        "en": "Mangzhong embodies \"harvest what's ready, plant what's next\" — timely action."
+      },
+      "region": [
+        "中国（小说叙事场景，不构成地域风俗证据）"
+      ],
+      "period": "小说成书于18世纪；程甲本1791年刊行",
+      "source_ids": [
+        "source-wikisource-hongloumeng-chengjia-ch27",
+        "source-ihchina-mangzhong-feature"
+      ],
+      "knowledge_ids": [
+        "hist-mangzhong-jianhuashen"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    },
+    {
+      "id": "mangzhong-c8",
+      "kind": "fact",
+      "text": {
+        "zh-CN": "这个时间在你生活的地方意味着什么？",
+        "en": "What does this time of year mean where you live?"
+      },
+      "region": [
+        "中国"
+      ],
+      "period": "2006-2016（国家级名录至UNESCO名录时间线）",
+      "source_ids": [
+        "source-xinhua-unesco-solarterms",
+        "source-ihchina-jiuhua-lichunji"
+      ],
+      "knowledge_ids": [
+        "fact-solarterms-unesco-2016"
+      ],
+      "reviewer": "aiwindyjm",
+      "reviewed_at": "2026-09-28"
+    }
+  ]
 }

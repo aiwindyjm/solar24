@@ -1,6 +1,6 @@
 # 冬至 · Winter Solstice
 
-> Planned · Cultural content: draft · Reference scaffold, not a completed experience.
+> In Development · Cultural content: draft · Reference scaffold, not a completed experience.
 
 Identity: `dongzhi` / winter / order 22.
 

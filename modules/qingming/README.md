@@ -1,6 +1,6 @@
 # 清明 · Clear and Bright
 
-> Planned · Cultural content: draft · Reference scaffold, not a completed experience.
+> In Development · Cultural content: draft · Reference scaffold, not a completed experience.
 
 Identity: `qingming` / spring / order 05.
 

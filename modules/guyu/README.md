@@ -1,6 +1,6 @@
 # 谷雨 · Grain Rain
 
-> Planned · Cultural content: draft · Reference scaffold, not a completed experience.
+> In Development · Cultural content: draft · Reference scaffold, not a completed experience.
 
 Identity: `guyu` / spring / order 06.
 
