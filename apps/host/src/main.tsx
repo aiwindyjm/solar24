@@ -69,7 +69,7 @@ function App() {
         <h1>Solar24</h1>
         <p lang="en">How does humanity experience time?</p>
         <p>认识中国二十四节气，分享世界不同地方的自然与时间经验。</p>
-        <p className="notice">工程骨架预览 · 文化内容尚未发布</p>
+        <p className="notice">24 个节气生产内容已上线 · <a href="https://solar24-demo.solar24.workers.dev/" target="_blank" rel="noopener">体验互动版 →</a></p>
       </header>
       <nav aria-label="二十四节气">
         <ol>
@@ -90,6 +90,11 @@ function App() {
         <p role="status">{message}</p>
         <div ref={target} />
       </main>
+      <aside className="community" aria-label="来自世界的表达">
+        <h3>来自世界的表达</h3>
+        <p>不同地方的人如何理解相近的自然时间节点。</p>
+        <p className="empty">还没有社区分享。<a href="https://github.com/aiwindyjm/solar24/issues/new?template=community-expression.md&labels=community-expression" target="_blank" rel="noopener">成为第一位分享者 →</a></p>
+      </aside>
       <footer>Culture &gt; Experience &gt; Design &gt; Technology</footer>
     </>
   );

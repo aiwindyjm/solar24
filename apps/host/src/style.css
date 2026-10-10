@@ -73,3 +73,22 @@ footer {
 .skip:focus {
   position: static;
 }
+.community {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  border-top: 2px solid #235b50;
+  background: #f4f8f5;
+  border-radius: 0 0 8px 8px;
+}
+.community h3 {
+  font-size: 1.3rem;
+  color: #235b50;
+  margin-bottom: 0.5rem;
+}
+.community .empty {
+  font-style: italic;
+  color: #667;
+}
+.notice a {
+  font-weight: 600;
+}
