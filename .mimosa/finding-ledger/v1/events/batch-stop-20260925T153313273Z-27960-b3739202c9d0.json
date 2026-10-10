@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "stop-20260925T153313273Z-27960-b3739202c9d0",
+  "runId": "20260925T153313273Z-27960-b3739202c9d0",
+  "runStatus": "inconclusive",
+  "coverage": {
+    "status": "partial",
+    "reasons": [
+      {
+        "code": "changed_file_unreadable",
+        "stage": "candidate-select",
+        "target": ".tmp/audit-survey.py",
+        "detail": "observed changed file no longer exists or cannot be read",
+        "affectsCompletion": true
+      },
+      {
+        "code": "changed_file_unreadable",
+        "stage": "candidate-select",
+        "target": ".tmp/audit-facts.py",
+        "detail": "observed changed file no longer exists or cannot be read",
+        "affectsCompletion": true
+      },
+      {
+        "code": "changed_file_unreadable",
+        "stage": "candidate-select",
+        "target": ".tmp/audit-depth.py",
+        "detail": "observed changed file no longer exists or cannot be read",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "candidate-select",
+        "target": ".tmp/audit-survey.py",
+        "detail": "changed_file_unreadable: observed changed file no longer exists or cannot be read",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "candidate-select",
+        "target": ".tmp/audit-facts.py",
+        "detail": "changed_file_unreadable: observed changed file no longer exists or cannot be read",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "candidate-select",
+        "target": ".tmp/audit-depth.py",
+        "detail": "changed_file_unreadable: observed changed file no longer exists or cannot be read",
+        "affectsCompletion": true
+      }
+    ]
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "Stop"
+  },
+  "revision": "8f9304cd4ebeb40f4c6416ac18fac69ab6cc78fa",
+  "diffHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "rulesVersion": "unavailable",
+  "sessionHash": "ab3deaf919f9f0d3c02390c6f6ed38a7e18dc3e2a7ae3f025a5b9d99bfc333b7",
+  "reportRef": ".mimosa/reports/task-review-sess_e70f6227-e80e-4b58-9405-80d68e756245-20260925T153313273Z-27960-b3739202c9d0.json",
+  "events": [],
+  "observedFindingIds": [],
+  "verifiedFiles": [],
+  "recordedAt": "2026-09-25T15:33:13.750Z"
+}

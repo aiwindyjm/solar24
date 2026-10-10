@@ -1,0 +1,1631 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Solar24 · 天地有时 · 水墨宇宙 V2</title>
+    <style>
+      :root {
+        --paper: #e8e8e8;
+        --ink: #232323;
+        --muted: #5d5d5d;
+        --seal: #933b31;
+        --line: #a4a4a4;
+        --serif: 'STKaiti', 'KaiTi', 'Kaiti SC', 'SimSun', serif;
+        --sans: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 14px;
+      }
+      button,
+      a,
+      input {
+        touch-action: manipulation;
+      }
+      button {
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+      }
+      button:focus-visible,
+      a:focus-visible,
+      input:focus-visible,
+      summary:focus-visible {
+        outline: 3px solid var(--seal);
+        outline-offset: 5px;
+      }
+      button:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      button {
+        background: none;
+        border: 0;
+      }
+      a {
+        color: inherit;
+        text-underline-offset: 5px;
+      }
+      .skip {
+        position: fixed;
+        top: -70px;
+        left: 20px;
+        z-index: 50;
+        background: var(--paper);
+        padding: 15px;
+      }
+      .skip:focus {
+        top: 10px;
+      }
+      .world {
+        position: relative;
+        min-height: 900px;
+        height: 100svh;
+        overflow: hidden;
+        isolation: isolate;
+        background: radial-gradient(
+          ellipse at 50% 46%,
+          #f4f4f4 0%,
+          #e6e6e6 43%,
+          #c8c8c8 78%,
+          #969696 130%
+        );
+      }
+      #ink-sky {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        pointer-events: none;
+      }
+      .grain {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 10;
+        opacity: 0.035;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23000' filter='url(%23n)' opacity='.8' d='M0 0h150v150H0z'/%3E%3C/svg%3E");
+      }
+      header {
+        height: 100px;
+        position: relative;
+        z-index: 12;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 4%;
+        gap: 20px;
+        border-bottom: 1px solid #7a7a7a55;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .seal {
+        display: grid;
+        place-content: center;
+        background: var(--seal);
+        color: #efefef;
+        font-family: var(--serif);
+        font-size: 20px;
+        width: 38px;
+        height: 46px;
+        border: 3px double #dadada;
+        line-height: 1.05;
+      }
+      .brand b {
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: 26px;
+        letter-spacing: 7px;
+      }
+      .brand small {
+        display: block;
+        font:
+          10px Georgia,
+          serif;
+        letter-spacing: 4px;
+        margin-top: 6px;
+      }
+      .camera-nav {
+        display: flex;
+        gap: 30px;
+      }
+      .camera-nav button {
+        min-height: 44px;
+        padding: 8px 12px;
+        font-family: var(--serif);
+        font-size: 20px;
+        letter-spacing: 3px;
+        position: relative;
+      }
+      .camera-nav button[aria-pressed='true']:after {
+        content: '';
+        height: 5px;
+        width: 5px;
+        background: var(--seal);
+        position: absolute;
+        bottom: 0;
+        left: calc(50% - 3px);
+        border-radius: 50%;
+      }
+      .header-note {
+        font-size: 11px;
+        letter-spacing: 3px;
+      }
+      .stage {
+        position: absolute;
+        inset: 100px 0 180px;
+        min-height: 600px;
+      }
+      .cosmic-orbits {
+        position: absolute;
+        width: 110%;
+        height: 110%;
+        left: -5%;
+        top: -6%;
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      .left-poem {
+        position: absolute;
+        left: 6%;
+        top: 20%;
+        z-index: 3;
+        display: flex;
+        gap: 26px;
+        align-items: flex-start;
+      }
+      .left-poem h1 {
+        writing-mode: vertical-rl;
+        font-family: var(--serif);
+        font-size: clamp(44px, 4.9vw, 76px);
+        font-weight: 400;
+        letter-spacing: 16px;
+        margin: 0;
+        line-height: 1.35;
+      }
+      .left-poem p {
+        writing-mode: vertical-rl;
+        font-family: var(--serif);
+        font-size: 15px;
+        letter-spacing: 5px;
+        margin: 6px 0 0;
+        line-height: 2.2;
+        color: #505050;
+      }
+      .left-poem .mini-seal {
+        writing-mode: vertical-rl;
+        border: 1px solid var(--seal);
+        color: var(--seal);
+        font-family: var(--serif);
+        font-size: 14px;
+        letter-spacing: 4px;
+        padding: 7px 3px;
+        position: absolute;
+        top: 330px;
+        left: 18px;
+      }
+      .mandala {
+        position: absolute;
+        width: min(57vw, 730px);
+        aspect-ratio: 1;
+        left: 51%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition:
+          transform 1000ms cubic-bezier(0.22, 0.75, 0.2, 1),
+          opacity 800ms;
+        will-change: transform;
+      }
+      .mandala svg {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+      .term-buttons {
+        position: absolute;
+        inset: 0;
+      }
+      .term-button {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        min-height: 44px;
+        min-width: 48px;
+        font-family: var(--serif);
+        font-size: 18px;
+        letter-spacing: 2px;
+        border-radius: 0;
+        z-index: 4;
+      }
+      .term-button[aria-pressed='true'] {
+        color: var(--seal);
+        font-weight: 700;
+      }
+      .term-button[aria-pressed='true']:after {
+        content: '';
+        display: block;
+        margin: 2px auto 0;
+        width: 4px;
+        height: 4px;
+        background: var(--seal);
+        border-radius: 50%;
+      }
+      .term-button:hover {
+        background: #f3f3f3a8;
+      }
+      .taiji-turn {
+        transform-origin: 400px 400px;
+        transition: transform 950ms cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      .ring-focus {
+        transform-origin: 400px 400px;
+        transition: transform 650ms ease-out;
+      }
+      .term-aside {
+        position: absolute;
+        right: 6%;
+        top: 20%;
+        width: 130px;
+        text-align: center;
+        transition: opacity 400ms;
+      }
+      .term-index {
+        font-family: Georgia, serif;
+        font-size: 13px;
+        letter-spacing: 3px;
+        color: var(--muted);
+      }
+      .term-aside h2 {
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: 74px;
+        writing-mode: vertical-rl;
+        margin: 23px auto 15px;
+        letter-spacing: 15px;
+        line-height: 1.2;
+      }
+      .term-aside .term-season {
+        font-family: var(--serif);
+        font-size: 16px;
+        letter-spacing: 6px;
+        margin: 6px 0 24px;
+      }
+      .enter-story {
+        writing-mode: vertical-rl;
+        min-height: 104px;
+        min-width: 44px;
+        margin: auto;
+        border-left: 1px solid #808080;
+        border-right: 1px solid #808080;
+        font-family: var(--serif);
+        letter-spacing: 5px;
+        font-size: 15px;
+        padding: 13px 10px;
+      }
+      .branch {
+        position: absolute;
+        width: 230px;
+        height: 220px;
+        right: -50px;
+        bottom: -195px;
+        opacity: 0.85;
+        pointer-events: none;
+      }
+      .stage-caption {
+        position: absolute;
+        bottom: 0;
+        left: 30%;
+        right: 27%;
+        text-align: center;
+        font-family: var(--serif);
+        font-size: 16px;
+        letter-spacing: 6px;
+      }
+      .layer-key {
+        position: absolute;
+        left: 6%;
+        bottom: 0;
+        color: #505050;
+        font-size: 10px;
+        letter-spacing: 2px;
+        line-height: 2;
+      }
+      .solar-scene {
+        position: absolute;
+        inset: 4% 14%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 850ms;
+        pointer-events: none;
+      }
+      .solar-scene svg {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+      .universe-copy {
+        position: absolute;
+        right: 6%;
+        top: 28%;
+        writing-mode: vertical-rl;
+        font-family: var(--serif);
+        letter-spacing: 5px;
+        font-size: 16px;
+        line-height: 2.6;
+        opacity: 0;
+        visibility: hidden;
+      }
+      .cosmic-location {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 11px;
+        letter-spacing: 3px;
+        white-space: nowrap;
+        color: #555555;
+        opacity: 0;
+        transition: opacity 700ms;
+      }
+      [data-camera='cosmos'] .mandala {
+        transform: translate(-50%, -50%) scale(0.28) rotate(-35deg);
+        opacity: 0;
+        pointer-events: none;
+      }
+      [data-camera='cosmos'] .term-aside {
+        opacity: 0;
+        visibility: hidden;
+      }
+      [data-camera='cosmos'] .solar-scene {
+        opacity: 1;
+        visibility: visible;
+      }
+      [data-camera='cosmos'] .universe-copy {
+        opacity: 1;
+        visibility: visible;
+      }
+      [data-camera='cosmos'] .cosmic-location {
+        opacity: 1;
+      }
+      [data-camera='story'] .mandala {
+        transform: translate(-70%, -50%) scale(0.87);
+      }
+      [data-camera='story'] .term-aside {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .time-dock {
+        position: absolute;
+        bottom: 41px;
+        left: 5%;
+        right: 5%;
+        z-index: 13;
+        border-top: 1px solid #75757599;
+        padding: 20px 0 0;
+        display: grid;
+        grid-template-columns: 205px 1fr 150px;
+        gap: 32px;
+        align-items: center;
+      }
+      .date-trigger {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        text-align: left;
+        min-height: 62px;
+        border-right: 1px solid #7b7b7b77;
+      }
+      .date-trigger .day {
+        font-family: Georgia, serif;
+        font-size: 47px;
+        line-height: 1;
+      }
+      .date-trigger small {
+        font-size: 10px;
+        letter-spacing: 2px;
+        display: block;
+        margin-bottom: 8px;
+      }
+      .date-trigger strong {
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: 3px;
+      }
+      .month-ruler {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        gap: 3px;
+        padding: 10px 0;
+      }
+      .month-ruler:before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        top: 28px;
+        border-top: 1px solid #6f6f6f66;
+      }
+      .month-ruler button {
+        position: relative;
+        min-width: 30px;
+        min-height: 50px;
+        font-family: Georgia, serif;
+        font-size: 13px;
+        background: var(--paper);
+        padding: 8px 4px 15px;
+      }
+      .month-ruler button:after {
+        content: '';
+        position: absolute;
+        bottom: 3px;
+        left: 50%;
+        height: 6px;
+        width: 1px;
+        background: #6d6d6d;
+      }
+      .month-ruler button[aria-pressed='true'] {
+        color: var(--seal);
+        font-weight: bold;
+      }
+      .month-ruler button[aria-pressed='true']:after {
+        height: 10px;
+        background: var(--seal);
+        width: 2px;
+      }
+      .dock-label {
+        font-size: 10px;
+        letter-spacing: 3px;
+        color: #505050;
+        margin-top: 7px;
+      }
+      .transport {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        justify-content: flex-end;
+      }
+      .transport button {
+        border: 1px solid #848484;
+        min-width: 44px;
+        min-height: 44px;
+        font-size: 17px;
+      }
+      .transport .play {
+        font-size: 12px;
+        min-width: 50px;
+      }
+      .bottom-note {
+        position: absolute;
+        bottom: 11px;
+        left: 5%;
+        right: 5%;
+        font-size: 10px;
+        color: #555555;
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        letter-spacing: 1px;
+        z-index: 14;
+        line-height: 1.7;
+      }
+      .calendar-pop {
+        position: absolute;
+        left: 5%;
+        bottom: 157px;
+        width: 350px;
+        background: #f1f1f1f5;
+        box-shadow: 0 10px 55px #20202024;
+        border: 1px solid #a1a1a1;
+        padding: 22px;
+        z-index: 22;
+      }
+      .pop-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #a3a3a3;
+        padding-bottom: 10px;
+      }
+      .pop-head strong {
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: 23px;
+        letter-spacing: 3px;
+      }
+      .close {
+        min-width: 44px;
+        min-height: 44px;
+        font-size: 23px;
+      }
+      .week,
+      .days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+      }
+      .week span {
+        text-align: center;
+        font-size: 11px;
+        padding: 12px 0;
+        color: #5c5c5c;
+      }
+      .days button {
+        min-height: 43px;
+        font-family: Georgia, serif;
+        font-size: 15px;
+      }
+      .days button[aria-pressed='true'] {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .calendar-pop p {
+        font-size: 11px;
+        line-height: 1.8;
+        color: #5c5c5c;
+        margin: 15px 0 0;
+      }
+      .story-panel {
+        position: absolute;
+        right: 5%;
+        top: 6%;
+        width: 330px;
+        bottom: 10px;
+        overflow-y: auto;
+        background: #eeeeeef5;
+        border-left: 1px solid #919191;
+        padding: 28px 30px;
+        z-index: 15;
+        box-shadow: -20px 0 60px #e5e5e580;
+      }
+      .story-panel .eyebrow {
+        font-size: 10px;
+        letter-spacing: 3px;
+        color: var(--seal);
+        margin: 0 0 18px;
+      }
+      .story-panel h2 {
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 1.55;
+        letter-spacing: 4px;
+        margin: 0 0 25px;
+      }
+      .story-panel .close {
+        float: right;
+        margin-top: -16px;
+        margin-right: -17px;
+      }
+      .story-panel details {
+        border-top: 1px solid #ababab;
+      }
+      .story-panel summary {
+        font-family: var(--serif);
+        font-size: 18px;
+        padding: 20px 0;
+        cursor: pointer;
+        line-height: 1.7;
+      }
+      .story-panel details p {
+        font-size: 13px;
+        color: #555555;
+        line-height: 1.9;
+        margin: 0 0 20px;
+      }
+      .story-panel .invite {
+        font-family: var(--serif);
+        font-size: 19px;
+        line-height: 1.8;
+        letter-spacing: 2px;
+        margin-top: 30px;
+      }
+      .mobile-selector {
+        display: none;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+      }
+      @media (min-width: 1550px) {
+        .mandala {
+          width: 780px;
+        }
+        .stage {
+          inset: 100px 0 195px;
+        }
+      }
+      @media (max-width: 1050px) {
+        .left-poem {
+          left: 4%;
+          gap: 12px;
+        }
+        .left-poem h1 {
+          font-size: 48px;
+        }
+        .left-poem p {
+          font-size: 13px;
+        }
+        .term-aside {
+          right: 3%;
+          width: 95px;
+        }
+        .term-aside h2 {
+          font-size: 55px;
+        }
+        .mandala {
+          width: 64vw;
+          left: 52%;
+        }
+        .term-button {
+          font-size: 16px;
+        }
+        .stage-caption {
+          font-size: 13px;
+        }
+        .header-note {
+          display: none;
+        }
+        .time-dock {
+          grid-template-columns: 160px 1fr 140px;
+          gap: 18px;
+        }
+        .story-panel {
+          width: 300px;
+          right: 3%;
+        }
+        [data-camera='story'] .mandala {
+          transform: translate(-75%, -50%) scale(0.85);
+        }
+      }
+      @media (max-width: 700px) {
+        .world {
+          height: auto;
+          min-height: 1040px;
+        }
+        .world[data-camera='story'] {
+          min-height: 1140px;
+        }
+        header {
+          height: 85px;
+          margin: 0 6%;
+          gap: 10px;
+        }
+        .brand {
+          gap: 10px;
+        }
+        .brand b {
+          font-size: 20px;
+          letter-spacing: 4px;
+        }
+        .brand small {
+          font-size: 8px;
+          letter-spacing: 2px;
+        }
+        .seal {
+          width: 29px;
+          height: 38px;
+          font-size: 16px;
+        }
+        .camera-nav {
+          gap: 5px;
+        }
+        .camera-nav button {
+          font-size: 17px;
+          letter-spacing: 1px;
+          padding: 8px;
+        }
+        .stage {
+          inset: 85px 0 245px;
+          min-height: 0;
+        }
+        .left-poem {
+          top: 28px;
+          left: 7%;
+          gap: 14px;
+        }
+        .left-poem h1 {
+          writing-mode: horizontal-tb;
+          font-size: 39px;
+          letter-spacing: 8px;
+        }
+        .left-poem p {
+          position: absolute;
+          top: 65px;
+          left: 0;
+          writing-mode: horizontal-tb;
+          white-space: nowrap;
+          font-size: 12px;
+          letter-spacing: 4px;
+        }
+        .left-poem .mini-seal {
+          display: none;
+        }
+        .mandala {
+          width: 94vw;
+          left: 50%;
+          top: 47%;
+          max-width: 550px;
+        }
+        .term-button {
+          font-size: 14px;
+          min-width: 38px;
+          min-height: 36px;
+          letter-spacing: 0;
+        }
+        .term-aside {
+          top: auto;
+          bottom: 44px;
+          right: 7%;
+          width: auto;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+        }
+        .term-aside h2 {
+          writing-mode: horizontal-tb;
+          font-size: 41px;
+          margin: 0;
+          letter-spacing: 5px;
+        }
+        .term-aside .term-index {
+          font-size: 10px;
+        }
+        .term-aside .term-season {
+          display: none;
+        }
+        .enter-story {
+          writing-mode: horizontal-tb;
+          min-height: 44px;
+          min-width: 80px;
+          border-right: 0;
+          border-left: 0;
+          border-bottom: 1px solid #808080;
+          font-size: 13px;
+          letter-spacing: 1px;
+          padding: 10px 0;
+        }
+        .branch {
+          display: none;
+        }
+        .stage-caption {
+          bottom: 6px;
+          left: 5%;
+          right: 5%;
+          font-size: 12px;
+          letter-spacing: 4px;
+        }
+        .layer-key {
+          display: none;
+        }
+        .solar-scene {
+          inset: 20% 3% 16%;
+        }
+        .cosmic-location {
+          top: 145px;
+          font-size: 9px;
+          letter-spacing: 1px;
+        }
+        .universe-copy {
+          top: auto;
+          bottom: 70px;
+          left: 7%;
+          right: auto;
+          writing-mode: horizontal-tb;
+          letter-spacing: 2px;
+          font-size: 14px;
+        }
+        .time-dock {
+          left: 7%;
+          right: 7%;
+          bottom: 70px;
+          grid-template-columns: 1fr 135px;
+          gap: 10px;
+          padding-top: 12px;
+        }
+        .date-trigger {
+          grid-column: 1;
+          grid-row: 1;
+          min-height: 55px;
+          border-right: 0;
+        }
+        .date-trigger .day {
+          font-size: 38px;
+        }
+        .date-trigger small {
+          font-size: 9px;
+        }
+        .date-trigger strong {
+          font-size: 13px;
+        }
+        .ruler-wrap {
+          grid-column: 1/3;
+          grid-row: 2;
+        }
+        .month-ruler button {
+          min-width: 0;
+          flex: 1;
+          font-size: 11px;
+          min-height: 44px;
+        }
+        .month-ruler {
+          padding-top: 3px;
+        }
+        .month-ruler:before {
+          top: 21px;
+        }
+        .transport {
+          grid-column: 2;
+          grid-row: 1;
+          gap: 5px;
+        }
+        .transport button {
+          min-width: 39px;
+          min-height: 44px;
+        }
+        .transport .play {
+          min-width: 46px;
+        }
+        .dock-label {
+          font-size: 9px;
+          letter-spacing: 2px;
+        }
+        .bottom-note {
+          bottom: 10px;
+          left: 7%;
+          right: 7%;
+          font-size: 9px;
+          display: block;
+        }
+        .bottom-note span {
+          display: block;
+          max-width: 100%;
+        }
+        .calendar-pop {
+          left: 5%;
+          right: 5%;
+          bottom: 264px;
+          width: auto;
+          padding: 15px;
+        }
+        .days button {
+          min-height: 44px;
+        }
+        .story-panel {
+          right: 5%;
+          left: 5%;
+          top: 225px;
+          bottom: 18px;
+          width: auto;
+          padding: 20px 24px;
+          box-shadow: none;
+        }
+        .story-panel h2 {
+          font-size: 30px;
+          line-height: 1.4;
+        }
+        .story-panel .eyebrow {
+          margin-bottom: 10px;
+        }
+        .story-panel summary {
+          font-size: 18px;
+          padding: 14px 0;
+        }
+        .story-panel .invite {
+          font-size: 17px;
+          margin: 18px 0 0;
+        }
+        [data-camera='story'] .mandala {
+          transform: translate(-50%, -100%) scale(0.36);
+          opacity: 0.35;
+        }
+        [data-camera='story'] .stage-caption {
+          display: none;
+        }
+        [data-camera='story'] .left-poem p {
+          top: 57px;
+        }
+        .cosmic-orbits {
+          opacity: 0.25;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+          animation: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#scene" class="skip">跳到节气场景</a>
+    <main class="world" id="world" data-camera="terms">
+      <canvas id="ink-sky" aria-hidden="true"></canvas>
+      <div class="grain" aria-hidden="true"></div>
+      <header>
+        <div class="brand">
+          <span class="seal" aria-hidden="true">廿<br />四</span>
+          <div><b>岁时</b><small>S O L A R 2 4</small></div>
+        </div>
+        <nav class="camera-nav" aria-label="切换观察尺度">
+          <button data-camera="cosmos" aria-pressed="false">观天</button
+          ><button data-camera="terms" aria-pressed="true">察时</button
+          ><button data-camera="story" aria-pressed="false">入春</button>
+        </nav>
+        <span class="header-note">天地为卷 · 节气为序</span>
+      </header>
+      <div class="stage" id="scene" tabindex="-1">
+        <svg
+          class="cosmic-orbits"
+          viewBox="0 0 1500 800"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <g fill="none" stroke="#808080" stroke-width=".7">
+            <ellipse cx="760" cy="399" rx="668" ry="245" transform="rotate(-21 760 399)" />
+            <ellipse cx="760" cy="399" rx="735" ry="290" transform="rotate(24 760 399)" />
+            <ellipse cx="760" cy="399" rx="498" ry="353" stroke-dasharray="1 10" />
+          </g>
+          <g fill="#727272">
+            <circle cx="109" cy="492" r="3" />
+            <circle cx="1290" cy="444" r="3" />
+            <circle cx="1194" cy="229" r="2" />
+          </g>
+        </svg>
+        <div class="left-poem">
+          <h1 id="poem-title">天地有时</h1>
+          <p id="poem-sub">一阴一阳之间 · 四时流转</p>
+          <span class="mini-seal">岁序</span>
+        </div>
+        <p class="cosmic-location">银河系中的太阳系 / 地球的家园</p>
+        <div
+          class="mandala"
+          id="mandala"
+          role="group"
+          aria-label="太极、八卦与二十四节气构成的艺术轮盘；八卦排列不表示历法对应"
+        >
+          <svg viewBox="0 0 800 800" role="img" aria-label="黑白水墨太极与多层刻度；外圈为节气选择">
+            <defs>
+              <filter id="ink-edge" x="-15%" y="-15%" width="130%" height="130%">
+                <feTurbulence
+                  type="fractalNoise"
+                  baseFrequency=".026"
+                  numOctaves="3"
+                  seed="19"
+                  result="n"
+                />
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="7" />
+              </filter>
+              <filter id="soft-ink">
+                <feTurbulence
+                  type="fractalNoise"
+                  baseFrequency=".04"
+                  numOctaves="2"
+                  seed="8"
+                  result="n"
+                />
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="2.5" />
+              </filter>
+              <radialGradient id="center-paper">
+                <stop offset="0" stop-color="#f5f5f5" />
+                <stop offset="1" stop-color="#e1e1e1" />
+              </radialGradient>
+            </defs>
+            <circle cx="400" cy="400" r="345" fill="none" stroke="#737373" stroke-width=".6" />
+            <circle cx="400" cy="400" r="309" fill="none" stroke="#858585" stroke-width=".7" />
+            <g filter="url(#ink-edge)" fill="none" stroke="#2a2a2a">
+              <circle
+                cx="400"
+                cy="400"
+                r="273"
+                stroke-width="31"
+                opacity=".9"
+                stroke-dasharray="1550 150"
+                transform="rotate(52 400 400)"
+              />
+              <circle cx="400" cy="400" r="293" stroke-width="2" opacity=".62" />
+              <circle cx="400" cy="400" r="250" stroke-width="4" opacity=".75" />
+              <circle
+                cx="400"
+                cy="400"
+                r="228"
+                stroke-width="8"
+                opacity=".23"
+                stroke-dasharray="1110 320"
+                transform="rotate(-15 400 400)"
+              />
+            </g>
+            <g id="outer-ticks"></g>
+            <g
+              id="seasons-ring"
+              font-family="KaiTi,SimSun,serif"
+              font-size="27"
+              fill="#ebebeb"
+              text-anchor="middle"
+            >
+              <text x="400" y="135">春</text>
+              <text x="674" y="409">夏</text>
+              <text x="400" y="683">秋</text>
+              <text x="126" y="409">冬</text>
+            </g>
+            <circle cx="400" cy="400" r="217" fill="url(#center-paper)" opacity=".72" />
+            <circle cx="400" cy="400" r="215" fill="none" stroke="#7c7c7c" stroke-width=".7" />
+            <g id="trigrams"></g>
+            <circle cx="400" cy="400" r="125" fill="none" stroke="#565656" stroke-width=".8" />
+            <circle
+              cx="400"
+              cy="400"
+              r="116"
+              fill="none"
+              stroke="#8c8c8c"
+              stroke-width=".5"
+              stroke-dasharray="2 5"
+            />
+            <g class="taiji-turn" id="taiji">
+              <g filter="url(#soft-ink)">
+                <circle cx="400" cy="400" r="101" fill="#262626" />
+                <path
+                  d="M400 299 A101 101 0 0 1 400 501 A50.5 50.5 0 0 1 400 400 A50.5 50.5 0 0 0 400 299"
+                  fill="#f1f1f1"
+                />
+                <circle cx="400" cy="349.5" r="12" fill="#f1f1f1" />
+                <circle cx="400" cy="450.5" r="12" fill="#262626" />
+              </g>
+            </g>
+            <g id="ring-focus" class="ring-focus">
+              <path d="M395 45L400 56L405 45" fill="#933b31" />
+              <circle
+                cx="400"
+                cy="400"
+                r="357"
+                fill="none"
+                stroke="#933b31"
+                stroke-width="1.5"
+                stroke-dasharray="58 2185"
+                transform="rotate(-95 400 400)"
+              />
+            </g>
+          </svg>
+          <div id="term-buttons" class="term-buttons"></div>
+        </div>
+        <div
+          class="solar-scene"
+          aria-label="太阳和地球关系的艺术示意，不按比例，非实时星空"
+          role="img"
+        >
+          <svg viewBox="0 0 1100 690">
+            <defs>
+              <radialGradient id="sun-wash">
+                <stop stop-color="#f4f4f4" />
+                <stop offset=".7" stop-color="#dedede" />
+                <stop offset="1" stop-color="#bebebe" stop-opacity=".1" />
+              </radialGradient>
+              <radialGradient id="earth-wash" cx=".2" cy=".35">
+                <stop stop-color="#e6e6e6" />
+                <stop offset=".45" stop-color="#858585" />
+                <stop offset="1" stop-color="#2f2f2f" />
+              </radialGradient>
+            </defs>
+            <g fill="none" stroke="#757575" stroke-width="1">
+              <ellipse cx="500" cy="335" rx="355" ry="179" transform="rotate(-18 500 335)" />
+              <ellipse
+                cx="500"
+                cy="335"
+                rx="447"
+                ry="254"
+                transform="rotate(-18 500 335)"
+                stroke-dasharray="2 9"
+              />
+            </g>
+            <circle cx="500" cy="335" r="104" fill="url(#sun-wash)" />
+            <circle cx="500" cy="335" r="49" fill="#ededed" stroke="#8c8c8c" stroke-width="1" />
+            <circle cx="832" cy="216" r="48" fill="url(#earth-wash)" />
+            <ellipse
+              cx="832"
+              cy="216"
+              rx="24"
+              ry="48"
+              fill="none"
+              stroke="#bcbcbc"
+              stroke-opacity=".6"
+            />
+            <ellipse
+              cx="832"
+              cy="216"
+              rx="48"
+              ry="17"
+              fill="none"
+              stroke="#bcbcbc"
+              stroke-opacity=".6"
+            />
+            <path d="M813 154L851 278" stroke="#555555" stroke-width="1" />
+            <text
+              x="500"
+              y="425"
+              text-anchor="middle"
+              font-family="KaiTi,SimSun,serif"
+              font-size="24"
+              fill="#343434"
+            >
+              日
+            </text>
+            <path d="M876 196L930 156H977" fill="none" stroke="#666666" />
+            <text x="931" y="143" font-family="KaiTi,SimSun,serif" font-size="22" fill="#343434">
+              地球
+            </text>
+            <text
+              x="499"
+              y="596"
+              text-anchor="middle"
+              font-family="KaiTi,SimSun,serif"
+              font-size="18"
+              letter-spacing="8"
+              fill="#515151"
+            >
+              从一颗星球 · 看一年的流转
+            </text>
+          </svg>
+        </div>
+        <div class="universe-copy">仰观天象<br />俯察岁时</div>
+        <aside class="term-aside">
+          <span class="term-index" id="term-index">壹 / 廿四</span>
+          <h2 id="term-name">立春</h2>
+          <p class="term-season" id="term-season">春之始</p>
+          <button id="enter-story" class="enter-story">入此节气 ↓</button
+          ><svg class="branch" viewBox="0 0 230 220" aria-hidden="true">
+            <g fill="none" stroke="#474747" stroke-linecap="round">
+              <path d="M195 215Q102 125 87 25" stroke-width="3" />
+              <path
+                d="M152 171Q73 135 38 80 M107 89Q161 71 182 23 M111 113Q62 73 28 48 M165 184Q194 134 208 108"
+                stroke-width="1.5"
+              />
+            </g>
+            <g fill="#474747">
+              <path
+                d="M90 54Q59 38 64 18Q88 28 90 54 M110 100Q135 101 142 81Q116 78 110 100 M65 107Q38 109 30 90Q58 83 65 107 M165 177Q167 149 183 147Q188 170 165 177"
+              />
+              <ellipse cx="181" cy="24" rx="4" ry="9" transform="rotate(30 181 24)" />
+            </g>
+          </svg>
+        </aside>
+        <p class="stage-caption" id="stage-caption">阴阳相生 · 二十四节气</p>
+        <div class="layer-key">太极意象 / 八卦符号<br />四时 / 二十四节气</div>
+        <aside class="story-panel" id="story-panel" hidden aria-label="立春故事结构">
+          <button class="close" id="close-story" aria-label="收起故事">×</button>
+          <p class="eyebrow">壹 · 立春 / 内容结构</p>
+          <h2>一岁之始，<br />春从何来。</h2>
+          <details open>
+            <summary>天上的刻度</summary>
+            <p>把太阳的周年视位置，与年轮中的立春连接起来。具体天文说明沿用人工审核后的内容。</p>
+          </details>
+          <details>
+            <summary>历上的两种日子</summary>
+            <p>
+              在下方历日展开立春与春节的对照；同一个场景中，看见太阳刻度与农历日期的关系。精确数据待核验。
+            </p>
+          </details>
+          <details>
+            <summary>地上的迎春</summary>
+            <p>
+              以一个已审核的地方故事接近人的生活。影像、声音与引文将保留地点、时代、来源和许可。
+            </p>
+          </details>
+          <p class="invite">此时此地，<br />你的春天是什么模样？</p>
+        </aside>
+      </div>
+      <section class="calendar-pop" id="calendar-pop" hidden aria-label="场景内历日">
+        <div class="pop-head">
+          <strong id="calendar-title">二〇二六 · 二月</strong
+          ><button id="close-calendar" class="close" aria-label="收起历日">×</button>
+        </div>
+        <div class="week" aria-hidden="true">
+          <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span
+          ><span>日</span>
+        </div>
+        <div class="days" id="calendar-days" role="group" aria-label="选择公历日期"></div>
+        <p>历日构图示意。农历与精确交节换算尚未接入；日期选择不代表当前所选节气的交节日。</p>
+      </section>
+      <section class="time-dock" aria-label="同一场景中的历日与轮转控制">
+        <button
+          class="date-trigger"
+          id="open-calendar"
+          aria-expanded="false"
+          aria-controls="calendar-pop"
+        >
+          <span class="day" id="date-day">01</span
+          ><span><small id="date-year-month">2026 / 02</small><strong>展开历日 ＋</strong></span>
+        </button>
+        <div class="ruler-wrap">
+          <div class="month-ruler" id="month-ruler" role="group" aria-label="选择示例月份"></div>
+          <div class="dock-label">公历示意 · 二〇二六 / 选择月份与日期</div>
+        </div>
+        <div class="transport">
+          <button id="previous" aria-label="上一个节气">←</button
+          ><button class="play" id="play" aria-pressed="false">轮转</button
+          ><button id="next" aria-label="下一个节气">→</button>
+        </div>
+      </section>
+      <footer class="bottom-note">
+        <span>艺术概念 V2 · 卦象排列非历法对应 · 星河与植物为艺术意象</span
+        ><span
+          ><a href="solar24-world-calendar-concept.html">初稿</a> /
+          <a href="solar24-ink-cosmos-v2.md">设计说明</a></span
+        >
+      </footer>
+      <p class="sr-only" id="status" role="status"></p>
+    </main>
+    <script>
+      const names = [
+        '立春',
+        '雨水',
+        '惊蛰',
+        '春分',
+        '清明',
+        '谷雨',
+        '立夏',
+        '小满',
+        '芒种',
+        '夏至',
+        '小暑',
+        '大暑',
+        '立秋',
+        '处暑',
+        '白露',
+        '秋分',
+        '寒露',
+        '霜降',
+        '立冬',
+        '小雪',
+        '大雪',
+        '冬至',
+        '小寒',
+        '大寒',
+      ];
+      const numerals = [
+        '壹',
+        '贰',
+        '叁',
+        '肆',
+        '伍',
+        '陆',
+        '柒',
+        '捌',
+        '玖',
+        '拾',
+        '十一',
+        '十二',
+        '十三',
+        '十四',
+        '十五',
+        '十六',
+        '十七',
+        '十八',
+        '十九',
+        '二十',
+        '廿一',
+        '廿二',
+        '廿三',
+        '廿四',
+      ];
+      const months = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'];
+      const byId = (id) => document.getElementById(id),
+        ns = 'http://www.w3.org/2000/svg';
+      let selected = 0,
+        month = 1,
+        day = 1,
+        camera = 'terms',
+        timer = null;
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+      function svgEl(tag, attrs, parent) {
+        const el = document.createElementNS(ns, tag);
+        Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
+        parent.append(el);
+        return el;
+      }
+      for (let i = 0; i < 144; i++) {
+        const a = ((i * 2.5 - 90) * Math.PI) / 180;
+        svgEl(
+          'line',
+          {
+            x1: 400 + Math.cos(a) * (i % 6 === 0 ? 289 : 295),
+            y1: 400 + Math.sin(a) * (i % 6 === 0 ? 289 : 295),
+            x2: 400 + Math.cos(a) * 303,
+            y2: 400 + Math.sin(a) * 303,
+            stroke: '#636363',
+            'stroke-width': i % 6 === 0 ? 1.3 : 0.6,
+          },
+          byId('outer-ticks'),
+        );
+      }
+      // The eight symbols are a graphic study, not a directional or seasonal mapping.
+      const gua = [
+        ['乾', [1, 1, 1]],
+        ['兑', [1, 1, 0]],
+        ['离', [1, 0, 1]],
+        ['震', [1, 0, 0]],
+        ['巽', [0, 1, 1]],
+        ['坎', [0, 1, 0]],
+        ['艮', [0, 0, 1]],
+        ['坤', [0, 0, 0]],
+      ];
+      gua.forEach(([name, lines], i) => {
+        const a = i * 45,
+          g = svgEl(
+            'g',
+            { transform: `rotate(${a} 400 400)`, 'aria-hidden': 'true' },
+            byId('trigrams'),
+          );
+        lines.forEach((solid, j) => {
+          const y = 231 - j * 10;
+          if (solid) svgEl('rect', { x: 377, y, width: 46, height: 5, fill: '#303030' }, g);
+          else {
+            svgEl('rect', { x: 377, y, width: 19, height: 5, fill: '#303030' }, g);
+            svgEl('rect', { x: 404, y, width: 19, height: 5, fill: '#303030' }, g);
+          }
+        });
+        const text = svgEl(
+          'text',
+          {
+            x: 400,
+            y: 270,
+            'text-anchor': 'middle',
+            fill: '#585858',
+            'font-size': 15,
+            'font-family': 'KaiTi,SimSun,serif',
+          },
+          g,
+        );
+        text.textContent = name;
+      });
+      names.forEach((name, i) => {
+        const a = ((i * 15 - 90) * Math.PI) / 180,
+          b = document.createElement('button');
+        b.className = 'term-button';
+        b.style.left = 50 + 40.8 * Math.cos(a) + '%';
+        b.style.top = 50 + 40.8 * Math.sin(a) + '%';
+        b.textContent = name;
+        b.dataset.term = i;
+        b.setAttribute('aria-label', `选择${name}`);
+        b.addEventListener('click', () => {
+          stopPlay();
+          choose(i);
+        });
+        byId('term-buttons').append(b);
+      });
+      function choose(i) {
+        selected = (i + 24) % 24;
+        byId('term-name').textContent = names[selected];
+        byId('term-index').textContent = numerals[selected] + ' / 廿四';
+        byId('term-season').textContent =
+          selected === 0 ? '春之始' : ['春时', '夏时', '秋时', '冬时'][Math.floor(selected / 6)];
+        byId('enter-story').textContent = selected === 0 ? '入此节气 ↓' : '筹备中 · 查看';
+        document
+          .querySelectorAll('[data-term]')
+          .forEach((b) =>
+            b.setAttribute('aria-pressed', String(Number(b.dataset.term) === selected)),
+          );
+        byId('taiji').style.transform = `rotate(${selected * 15}deg)`;
+        byId('ring-focus').style.transform = `rotate(${selected * 15}deg)`;
+        byId('status').textContent = `正在浏览${names[selected]}；日期为独立的历日示意。`;
+      }
+      function setCamera(value) {
+        stopPlay();
+        if (value === 'story') choose(0);
+        camera = value;
+        byId('world').dataset.camera = value;
+        document
+          .querySelectorAll('nav [data-camera]')
+          .forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.camera === value)));
+        byId('story-panel').hidden = value !== 'story';
+        byId('poem-title').textContent = value === 'cosmos' ? '天地之间' : '天地有时';
+        byId('poem-sub').textContent =
+          value === 'cosmos' ? '一颗地球 · 一年光阴' : '一阴一阳之间 · 四时流转';
+        byId('stage-caption').textContent =
+          value === 'cosmos' ? '空间关系示意 · 非实时星历 · 不按比例' : '阴阳相生 · 二十四节气';
+        byId('mandala').inert = value === 'cosmos';
+        byId('term-buttons').inert = value === 'story';
+        byId('status').textContent = {
+          cosmos: '观天：太阳与地球关系示意。',
+          terms: '察时：选择节气，底部可展开历日。',
+          story: '立春故事结构已展开，时间场景仍然保留。',
+        }[value];
+        drawSky();
+      }
+      document
+        .querySelectorAll('nav [data-camera]')
+        .forEach((b) => b.addEventListener('click', () => setCamera(b.dataset.camera)));
+      byId('close-story').addEventListener('click', () => {
+        setCamera('terms');
+        document.querySelector('nav [data-camera="story"]').focus();
+      });
+      byId('enter-story').addEventListener('click', () => {
+        if (selected === 0) setCamera('story');
+        else {
+          byId('term-season').textContent = '体验筹备中';
+          byId('status').textContent = `${names[selected]}体验筹备中；立春是首个故事样本。`;
+        }
+      });
+      function stopPlay() {
+        if (timer) clearInterval(timer);
+        timer = null;
+        byId('play').textContent = '轮转';
+        byId('play').setAttribute('aria-pressed', 'false');
+      }
+      byId('play').addEventListener('click', () => {
+        if (timer) {
+          stopPlay();
+          return;
+        }
+        if (camera !== 'terms') setCamera('terms');
+        byId('play').textContent = '暂停';
+        byId('play').setAttribute('aria-pressed', 'true');
+        timer = setInterval(() => choose(selected + 1), reduced.matches ? 2400 : 1500);
+      });
+      byId('previous').addEventListener('click', () => {
+        stopPlay();
+        choose(selected - 1);
+      });
+      byId('next').addEventListener('click', () => {
+        stopPlay();
+        choose(selected + 1);
+      });
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stopPlay();
+      });
+      reduced.addEventListener('change', stopPlay);
+      function toggleCalendar(open) {
+        byId('calendar-pop').hidden = !open;
+        byId('open-calendar').setAttribute('aria-expanded', String(open));
+        if (open) {
+          stopPlay();
+          byId('close-calendar').focus();
+        } else byId('open-calendar').focus();
+      }
+      byId('open-calendar').addEventListener('click', () =>
+        toggleCalendar(byId('calendar-pop').hidden),
+      );
+      byId('close-calendar').addEventListener('click', () => toggleCalendar(false));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (!byId('calendar-pop').hidden) toggleCalendar(false);
+          else if (camera === 'story') {
+            setCamera('terms');
+            document.querySelector('nav [data-camera="story"]').focus();
+          }
+        }
+      });
+      for (let m = 0; m < 12; m++) {
+        const b = document.createElement('button');
+        b.textContent = String(m + 1).padStart(2, '0');
+        b.setAttribute('aria-label', `选择2026年${m + 1}月`);
+        b.dataset.month = m;
+        b.addEventListener('click', () => {
+          month = m;
+          drawCalendar();
+        });
+        byId('month-ruler').append(b);
+      }
+      function updateDay() {
+        byId('date-day').textContent = String(day).padStart(2, '0');
+        byId('date-year-month').textContent = `2026 / ${String(month + 1).padStart(2, '0')}`;
+        document
+          .querySelectorAll('[data-day]')
+          .forEach((b) => b.setAttribute('aria-pressed', String(Number(b.dataset.day) === day)));
+      }
+      function drawCalendar() {
+        const count = new Date(Date.UTC(2026, month + 1, 0)).getUTCDate(),
+          offset = (new Date(Date.UTC(2026, month, 1)).getUTCDay() + 6) % 7;
+        day = Math.min(day, count);
+        byId('calendar-title').textContent = `二〇二六 · ${months[month]}月`;
+        byId('calendar-days').replaceChildren();
+        for (let i = 0; i < offset; i++) {
+          const s = document.createElement('span');
+          s.setAttribute('aria-hidden', 'true');
+          byId('calendar-days').append(s);
+        }
+        for (let d = 1; d <= count; d++) {
+          const b = document.createElement('button');
+          b.textContent = d;
+          b.dataset.day = d;
+          b.setAttribute('aria-label', `2026年${month + 1}月${d}日`);
+          b.addEventListener('click', () => {
+            day = d;
+            updateDay();
+            byId('status').textContent =
+              `已选择2026年${month + 1}月${day}日，年轮保持${names[selected]}的浏览位置。`;
+          });
+          byId('calendar-days').append(b);
+        }
+        document
+          .querySelectorAll('[data-month]')
+          .forEach((b) =>
+            b.setAttribute('aria-pressed', String(Number(b.dataset.month) === month)),
+          );
+        updateDay();
+      }
+      function drawSky() {
+        const canvas = byId('ink-sky'),
+          r = byId('world').getBoundingClientRect(),
+          dpr = Math.min(devicePixelRatio || 1, 1.5);
+        canvas.width = r.width * dpr;
+        canvas.height = r.height * dpr;
+        const ctx = canvas.getContext('2d');
+        ctx.scale(dpr, dpr);
+        const w = r.width,
+          h = r.height;
+        let seed = 2442;
+        const rand = () => {
+          seed = (seed * 1664525 + 1013904223) >>> 0;
+          return seed / 4294967296;
+        };
+        const dab = document.createElement('canvas');
+        dab.width = dab.height = 64;
+        const brush = dab.getContext('2d');
+        const wash = brush.createRadialGradient(32, 32, 0, 32, 32, 32);
+        wash.addColorStop(0, 'rgba(25,25,25,.12)');
+        wash.addColorStop(0.4, 'rgba(25,25,25,.045)');
+        wash.addColorStop(1, 'rgba(25,25,25,0)');
+        brush.fillStyle = wash;
+        brush.fillRect(0, 0, 64, 64);
+        // Ink galaxy: editorial artwork, not a measured sky map.
+        for (let i = 0; i < 7500; i++) {
+          const t = rand() * Math.PI * 6,
+            arm = i % 3,
+            spread = (rand() - 0.5) * 0.2,
+            rad = 0.1 + t * 0.021;
+          let x = Math.cos(t + arm * 2.094) * rad * w * 1.26,
+            y = Math.sin(t + arm * 2.094) * rad * h * 0.46;
+          const rot = -0.32,
+            xx = x * Math.cos(rot) - y * Math.sin(rot),
+            yy = x * Math.sin(rot) + y * Math.cos(rot);
+          x = w * 0.51 + xx + spread * w;
+          y = h * 0.43 + yy + spread * h * 0.6;
+          const size = rand() < 0.12 ? rand() * 24 + 9 : rand() * 1.6 + 0.3;
+          if (size > 8) {
+            ctx.drawImage(dab, x - size, y - size, size * 2, size * 2);
+            continue;
+          }
+          ctx.beginPath();
+          ctx.ellipse(x, y, size, size * 0.65, rand() * Math.PI, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(30,30,30,${(camera === 'cosmos' ? 0.08 : 0.055) * (rand() * 0.8 + 0.2)})`;
+          ctx.fill();
+        }
+        for (let i = 0; i < 170; i++) {
+          const x = rand() * w,
+            y = rand() * h * 0.9;
+          ctx.fillStyle = rand() > 0.65 ? 'rgba(248,248,248,.85)' : 'rgba(53,53,53,.18)';
+          const s = rand() * 1.2 + 0.3;
+          ctx.beginPath();
+          ctx.arc(x, y, s, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+      let resizeTask;
+      addEventListener('resize', () => {
+        clearTimeout(resizeTask);
+        resizeTask = setTimeout(drawSky, 120);
+      });
+      choose(0);
+      drawCalendar();
+      setCamera('terms');
+    </script>
+  </body>
+</html>

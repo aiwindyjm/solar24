@@ -1,0 +1,15 @@
+{
+  "name": "@solar24/module-qiufen",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node ../../scripts/module.mjs dev qiufen",
+    "build": "node ../../scripts/module.mjs build qiufen",
+    "test": "node ../../scripts/module.mjs test qiufen"
+  },
+  "dependencies": {
+    "@solar24/module-runtime": "workspace:*",
+    "@solar24/protocol": "workspace:*"
+  }
+}

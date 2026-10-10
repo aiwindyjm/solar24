@@ -1,0 +1,58 @@
+async page => {
+ const check=(v,m)=>{if(!v)throw Error(m)};
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.setViewportSize({width:1269,height:1066});
+ await page.goto('http://127.0.0.1:5176/#daxue/seasons');await page.waitForTimeout(1500);
+ if(await page.getByRole('button',{name:'Switch to Chinese',exact:true}).count())await page.getByRole('button',{name:'Switch to Chinese',exact:true}).click();
+ const dial=await page.locator('.wheel-layer').boundingBox();
+ const names=['自然','物候','农事','生活','意义'];
+ for(let i=0;i<5;i++) {
+  await page.locator('.culture-strip button').nth(i).click();await page.waitForTimeout(720);
+  check(await page.locator('.topic-reading').count()===1,'Exactly one topic');
+  check(await page.locator('.topic-reading').getAttribute('data-category')===String(i),'Correct topic');
+  check(await page.locator('#story-title').innerText()===names[i]+'卷','Independent title');
+  check(await page.locator('.book-chapter').count()===0,'No multi-chapter list');
+  check(await page.locator('.scroll-paper').evaluate(el=>el.scrollTop)===0,'New scroll starts at top');
+  check(await page.locator('.chapter-provenance').getAttribute('open')===null,'Fresh source disclosure');
+  await page.locator('.chapter-provenance > summary').click();
+  check(await page.locator('.chapter-provenance').getAttribute('open')!==null,'Source can unfold');
+  if(i===1)await page.screenshot({path:'output/playwright/solar24-v5-topic-phenology.png'});
+ }
+ check(JSON.stringify(dial)===JSON.stringify(await page.locator('.wheel-layer').boundingBox()),'Dial stays fixed');
+ await page.locator('.culture-strip button').nth(0).click();await page.waitForTimeout(50);
+ await page.locator('.culture-strip button').nth(3).click();await page.waitForTimeout(50);
+ await page.locator('.culture-strip button').nth(2).click();await page.waitForTimeout(720);
+ check(await page.locator('#story-title').innerText()==='农事卷','Latest topic wins');
+ await page.screenshot({path:'output/playwright/solar24-v5-topic-agriculture.png'});
+ await page.locator('.stepper button').last().click();await page.waitForTimeout(1500);
+ check(await page.locator('.topic-reading').getAttribute('data-category')==='2','Preserves topic on term change');
+ check(await page.locator('.scroll-title').innerText()==='冬至','Term title changed');
+ await page.keyboard.press('Escape');await page.waitForTimeout(1050);
+ check(await page.locator('.culture-strip button').nth(2).evaluate(el=>document.activeElement===el),'Focus return');
+ await page.getByRole('button',{name:'Switch to English',exact:true}).click();
+ await page.setViewportSize({width:1280,height:720});
+ await page.locator('.culture-strip button').nth(4).click();await page.waitForTimeout(720);
+ check(await page.locator('#story-title').innerText()==='Meaning','English topic');
+ await page.screenshot({path:'output/playwright/solar24-v5-topic-en-720.png'});
+ await page.keyboard.press('Escape');await page.waitForTimeout(1050);
+ await page.setViewportSize({width:390,height:844});
+ await page.locator('.culture-strip button').nth(1).click();await page.waitForTimeout(750);
+ const paper=await page.locator('.reading-scroll').boundingBox();
+ const tools=await page.locator('.dial-tools').boundingBox();
+ const categories=await page.locator('.culture-strip').boundingBox();
+ check(paper.y+paper.height<=tools.y,'Tools not covered');
+ check(categories.y+categories.height<=844,'Mobile entrances visible');
+ check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'No overflow');
+ await page.screenshot({path:'output/playwright/solar24-v5-topic-mobile.png'});
+ await page.locator('.culture-strip button').nth(0).click();await page.waitForTimeout(750);
+ check(await page.locator('.topic-reading').count()===1,'Mobile independent topic');
+ await page.locator('.dial-tools button').last().click();await page.waitForTimeout(1050);
+ check(await page.locator('.scroll-mount').isHidden(),'Journey closes scroll');
+ await page.locator('.dial-tools button').last().click();
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await page.locator('.culture-strip button').nth(2).click();
+ check(await page.locator('.scroll-mount').evaluate(el=>getComputedStyle(el).animationName)==='none','Reduced motion');
+ await page.keyboard.press('Escape');await page.emulateMedia({reducedMotion:'no-preference'});
+ check(errors.length===0,errors.join(';'));
+ return {passed:true,paper,tools,categories,errors};
+}

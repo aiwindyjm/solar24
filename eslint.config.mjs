@@ -8,6 +8,8 @@ export default tseslint.config(
       'coverage/**',
       'playwright-report/**',
       'test-results/**',
+      // 2026-09-17: .tmp/ 是审计/修复轮的 git-ignored 草稿目录（一次性分析脚本），不参与 lint
+      '.tmp/**',
     ],
   },
   js.configs.recommended,

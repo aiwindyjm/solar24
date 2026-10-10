@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "stop-20260917T083304488Z-37156-fc0a0207167e",
+  "runId": "20260917T083304488Z-37156-fc0a0207167e",
+  "runStatus": "completed",
+  "coverage": {
+    "status": "complete",
+    "reasons": []
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "Stop"
+  },
+  "revision": "7418d799e778b5b802fad975deddd8123fc27b7b",
+  "diffHash": "747a47d35820e081565ea7d1da6504bc73c12019b79f7134bf60da3497c2cc29",
+  "rulesVersion": "unavailable",
+  "sessionHash": "70929c60982bdf5c04ac361834691b24f5080da5da0c191d85e7aa959235440e",
+  "reportRef": ".mimosa/reports/task-review-sess_28d175bc-858b-4df0-90df-6be8b78d6b48-20260917T083304488Z-37156-fc0a0207167e.json",
+  "events": [],
+  "observedFindingIds": [],
+  "verifiedFiles": [
+    {
+      "file": "scripts/kb-stats.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "skills/solar24-cultural-research/workflows/route.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "tests/research/routing.test.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    }
+  ],
+  "recordedAt": "2026-09-17T08:33:05.021Z"
+}

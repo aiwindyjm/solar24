@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "stop-20260926T085944710Z-28052-d5878cb9957e",
+  "runId": "20260926T085944710Z-28052-d5878cb9957e",
+  "runStatus": "completed",
+  "coverage": {
+    "status": "complete",
+    "reasons": []
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "Stop"
+  },
+  "revision": "8f9304cd4ebeb40f4c6416ac18fac69ab6cc78fa",
+  "diffHash": "541891a003a5a873925af9cd5caf7731f4326c5babd3e334cf6e6151515d0e7a",
+  "rulesVersion": "unavailable",
+  "sessionHash": "ab3deaf919f9f0d3c02390c6f6ed38a7e18dc3e2a7ae3f025a5b9d99bfc333b7",
+  "reportRef": ".mimosa/reports/task-review-sess_e70f6227-e80e-4b58-9405-80d68e756245-20260926T085944710Z-28052-d5878cb9957e.json",
+  "events": [],
+  "observedFindingIds": [],
+  "verifiedFiles": [
+    {
+      "file": "tests/research/ai-review.test.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "packages/protocol/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "scripts/validate.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": ".tmp/classify.py",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": ".tmp/ai-review-write.py",
+      "direct": "complete",
+      "projectContext": "partial"
+    }
+  ],
+  "recordedAt": "2026-09-26T08:59:45.099Z"
+}

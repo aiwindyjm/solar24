@@ -1,0 +1,165 @@
+import json
+import io
+
+REVIEWER = 'aiwindyjm'
+DATE = '2026-09-28'
+
+content = {
+    "schema_version": "0.1.0",
+    "term_id": "lichun",
+    "locale": "zh-CN",
+    "review_status": "approved",
+    "sections": [
+        {
+            "id": "what",
+            "title": {
+                "zh-CN": "立春是什么",
+                "en": "What is Lichun"
+            },
+            "claim_ids": ["lichun-c1", "lichun-c2", "lichun-c3"]
+        },
+        {
+            "id": "nature",
+            "title": {
+                "zh-CN": "立春与自然",
+                "en": "Lichun and Nature"
+            },
+            "claim_ids": ["lichun-c4", "lichun-c5"]
+        },
+        {
+            "id": "people",
+            "title": {
+                "zh-CN": "立春与人们的生活",
+                "en": "Lichun and People"
+            },
+            "claim_ids": ["lichun-c6"]
+        },
+        {
+            "id": "culture",
+            "title": {
+                "zh-CN": "为什么今天仍值得理解",
+                "en": "Why It Matters Today"
+            },
+            "claim_ids": ["lichun-c7", "lichun-c8"]
+        }
+    ],
+    "claims": [
+        {
+            "id": "lichun-c1",
+            "kind": "scientific-explanation",
+            "text": {
+                "zh-CN": "二十四节气是中国传统历法中按太阳位置划分的一年二十四段：太阳在天球上运行的圆周（黄道）被等分为24份，每份15°。节气不是天气预言，而是太阳位置的刻度。",
+                "en": "The 24 solar terms divide the Sun's annual path (the ecliptic) into 24 equal segments of 15 degrees each. They are markers of the Sun's position, not weather predictions."
+            },
+            "region": [],
+            "period": "体系定型于西汉；现代天文学口径沿用",
+            "source_ids": ["ref-hko", "ref-pmo"],
+            "knowledge_ids": ["sci-solarterms-calendar-role"],
+            "reviewer": REVIEWER,
+            "reviewed_at": DATE
+        },
+        {
+            "id": "lichun-c2",
+            "kind": "scientific-explanation",
+            "text": {
+                "zh-CN": "立春是二十四节气中的第一个：太阳到达黄经315°的时刻，通常出现在每年公历2月3日至5日。",
+                "en": "Lichun (Beginning of Spring) is the first of the 24 solar terms: the moment the Sun reaches celestial longitude 315°, falling on February 3-5 in the Gregorian calendar."
+            },
+            "region": [],
+            "period": "现代天文学口径",
+            "source_ids": ["ref-ihchina-lichun", "ref-pmo"],
+            "knowledge_ids": ["sci-lichun-longitude-315"],
+            "reviewer": REVIEWER,
+            "reviewed_at": DATE
+        },
+        {
+            "id": "lichun-c3",
+            "kind": "scientific-explanation",
+            "text": {
+                "zh-CN": "立春与春节（农历正月初一）是两套规则的日子：立春按太阳位置几乎固定在公历2月3-5日，而春节按月相在公历1月21日至2月20日间移动。有的农历年有两个立春，有的没有。",
+                "en": "Lichun and Chinese New Year follow two different rules. Lichun is anchored to the Sun's position (Feb 3-5), while Chinese New Year follows lunar phases (Jan 21 - Feb 20). Some lunar years contain two Lichuns, others none."
+            },
+            "region": ["中国"],
+            "period": "现行历法口径",
+            "source_ids": ["ref-pmo", "ref-ihchina-lichun"],
+            "knowledge_ids": ["sci-lichun-calendar-position"],
+            "reviewer": REVIEWER,
+            "reviewed_at": DATE
+        },
+        {
+            "id": "lichun-c4",
+            "kind": "scientific-explanation",
+            "text": {
+                "zh-CN": "立春不代表天气变暖。天文学上它是太阳季节象限的转换点；气象学上中国多数地区入春要等连续五天气温稳定超过10℃。",
+                "en": "Lichun does not mean warm weather arrives. Astronomically it marks a quadrant transition; meteorologically, most of China waits for five consecutive days averaging 10°C or above before spring officially begins."
+            },
+            "region": ["中国"],
+            "period": "现代气候学口径",
+            "source_ids": ["ref-szmb"],
+            "knowledge_ids": ["sci-lichun-vs-meteorological-spring"],
+            "reviewer": REVIEWER,
+            "reviewed_at": DATE
+        },
+        {
+            "id": "lichun-c5",
+            "kind": "fact",
+            "text": {
+                "zh-CN": "古人记录的立春三候是「东风解冻、蛰虫始振、鱼陟负冰」——风变暖、虫苏醒、鱼上浮近冰。这是古典文本观察，不是现代科学观测。",
+                "en": "Ancient Chinese texts record three signs for Lichun: east winds melt the ice, hibernating insects stir, and fish rise near the remaining ice. This is classical observation, not modern scientific data."
+            },
+            "region": ["中国黄河流域（古典文本锚定）"],
+            "period": "元代文本传统（更早物候体系）",
+            "source_ids": ["ref-yueling"],
+            "knowledge_ids": ["hist-yueling-lichun-pentads"],
+            "reviewer": REVIEWER,
+            "reviewed_at": DATE
+        },
+        {
+            "id": "lichun-c6",
+            "kind": "tradition",
+            "text": {
+                "zh-CN": "在浙江衢州，九华立春祭至今按立春日举行鞭春牛仪式；在贵州石阡，侗族春官从春节或立春开始走村说唱劝农，至春分结束。两个地方实践都是国家级非物质文化遗产。",
+                "en": "In Quzhou, Zhejiang, the Jiuhua Spring Festival Ceremony still features a whip-the-spring-ox ritual on the day of Lichun. In Shiqian, Guizhou, Dong ethnic spring officials go village to village singing farming advice from Lichun to the spring equinox. Both are recognized national intangible cultural heritage."
+            },
+            "region": ["中国浙江省衢州市柯城区", "中国贵州省石阡县"],
+            "period": "延续至今的当代实践",
+            "source_ids": ["ref-ihchina-jiuhua", "ref-ihchina-shiqian"],
+            "knowledge_ids": ["region-jiuhua-lichun-ji", "region-shiqian-shuochun"],
+            "reviewer": REVIEWER,
+            "reviewed_at": DATE
+        },
+        {
+            "id": "lichun-c7",
+            "kind": "interpretation",
+            "text": {
+                "zh-CN": "立春背后是一套把太阳运动、农时与社会节律连成一体的时间系统。它体现的「跟着自然节奏安排生活」的时间观，两千多年后仍能引起共鸣——这是对节气文化意义的解释，不是所有人的统一自然观。",
+                "en": "Behind Lichun lies a timekeeping system that connects the Sun's motion, farming schedules, and social rhythms into one framework. The idea of living in tune with nature's rhythm still resonates after two millennia — this is a cultural interpretation, not a universal worldview."
+            },
+            "region": [],
+            "period": null if False else "",
+            "source_ids": ["ref-hko", "ref-ihchina-lichun"],
+            "knowledge_ids": ["lichun-human-explanation"],
+            "reviewer": REVIEWER,
+            "reviewed_at": DATE
+        },
+        {
+            "id": "lichun-c8",
+            "kind": "opinion",
+            "text": {
+                "zh-CN": "这个时间在你生活的地方意味着什么？",
+                "en": "What does this time of year mean where you live?"
+            },
+            "region": [],
+            "period": "",
+            "source_ids": ["ref-hko"],
+            "knowledge_ids": ["lichun-human-explanation"],
+            "reviewer": REVIEWER,
+            "reviewed_at": DATE
+        }
+    ]
+}
+
+# Write content
+with io.open('modules/lichun/content/zh-CN.json', 'w', encoding='utf-8') as f:
+    json.dump(content, f, ensure_ascii=False, indent=2)
+print('content written:', len(content['claims']), 'claims,', len(content['sections']), 'sections')

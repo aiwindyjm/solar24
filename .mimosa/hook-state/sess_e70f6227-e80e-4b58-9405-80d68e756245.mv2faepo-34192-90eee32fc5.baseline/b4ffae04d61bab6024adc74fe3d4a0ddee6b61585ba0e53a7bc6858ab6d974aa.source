@@ -1,0 +1,187 @@
+import json
+import io
+import os
+
+MODS = r'E:\Users\Administrator\Documents\Desktop\24节气\modules'
+
+# English translations for 16 terms' 8-slot claims
+# These are concise English renderings of the zh-CN claim statements
+EN_TRANSLATIONS = {
+    'jingzhe': {
+        1: 'The 24 solar terms divide the ecliptic into 24 equal segments. They mark the Sun\'s position, not weather predictions.',
+        2: 'Jingzhe (Awakening of Insects) is the third term: the Sun reaches 345°. Thunder awakens hibernating creatures.',
+        3: 'Jingzhe is the jie (node term) of the second lunar month, paired with Chunfen.',
+        4: 'Rising temperatures and first thunder stir insects from winter dormancy.',
+        5: 'Ancient texts record three signs: peach blossoms open, orioles sing, eagles transform into doves.',
+        6: 'Traditional practices include "driving away insects" and preparing fields for spring plowing.',
+        7: 'Jingzhe marks nature\'s awakening — a moment of renewal in the agricultural calendar.',
+        8: 'What does this time of year mean where you live?',
+    },
+    'lixia': {
+        1: 'The 24 solar terms divide the ecliptic into 24 equal segments.',
+        2: 'Lixia (Beginning of Summer) is the seventh term: the Sun reaches 45°.',
+        3: 'Lixia is the jie of the fourth lunar month, paired with Xiaoman.',
+        4: 'Temperatures rise significantly; summer growing season begins.',
+        5: 'Ancient texts: mole crickets sing, earthworms emerge, snake gourd vines grow.',
+        6: 'Traditional customs include "weighing people" (for health) and eating "three fresh foods" of early summer.',
+        7: 'Lixia marks the shift from spring growth to summer abundance.',
+        8: 'What does this time of year mean where you live?',
+    },
+    'mangzhong': {
+        1: 'The 24 solar terms divide the ecliptic into 24 equal segments.',
+        2: 'Mangzhong (Grain in Ear) is the ninth term: the Sun reaches 75°.',
+        3: 'Mangzhong is the jie of the fifth lunar month. Its name means "bearded grains are ready for harvest."',
+        4: 'The plum rain season begins; wheat is harvested while rice is transplanted.',
+        5: 'Ancient texts: mantises hatch, shrikes begin to sing, mockingbirds fall silent.',
+        6: 'Farmers harvest winter wheat and transplant rice seedlings in the busiest agricultural period.',
+        7: 'Mangzhong embodies the principle of timely action — harvest and planting converge.',
+        8: 'What does this time of year mean where you live?',
+    },
+    'xiazhi': {
+        1: 'The 24 solar terms divide the ecliptic into 24 equal segments.',
+        2: 'Xiazhi (Summer Solstice) is the tenth term: the Sun reaches 90°. Longest day in the Northern Hemisphere.',
+        3: 'Xiazhi is the zhongqi of the fifth lunar month. It was historically a significant festival.',
+        4: 'Peak sunlight; days begin to shorten after this point.',
+        5: 'Ancient texts: deer antlers fall, cicadas begin to sing, a semi-summer herb blooms.',
+        6: 'Traditional custom: eating noodles ("Winter solstice dumplings, summer solstice noodles").',
+        7: 'At maximum light, the return of darkness begins — the yin-yang turning point.',
+        8: 'What does this time of year mean where you live?',
+    },
+    'xiaoshu': {
+        1: 'The 24 solar terms divide the ecliptic into 24 equal segments.',
+        2: 'Xiaoshu (Minor Heat) is the eleventh term: the Sun reaches 105°.',
+        3: 'Xiaoshu is the jie of the sixth lunar month. Heat intensifies but has not peaked.',
+        4: 'Heat increases; the "three fu" period of hottest days approaches.',
+        5: 'Ancient texts: warm winds arrive, crickets move to walls, hawks learn to hunt.',
+        6: 'Customs include eating dumplings and seeking shade; "hiding from the heat" is traditional.',
+        7: 'Minor heat marks the building of summer intensity before its peak.',
+        8: 'What does this time of year mean where you live?',
+    },
+    'dashu': {
+        1: 'The 24 solar terms divide the ecliptic into 24 equal segments.',
+        2: 'Dashu (Major Heat) is the twelfth term: the Sun reaches 120°. The hottest period.',
+        3: 'Dashu is the zhongqi of the sixth lunar month. "Fu" (hidden heat) reaches maximum.',
+        4: 'Peak heat and humidity; thunderstorms bring temporary relief.',
+        5: 'Ancient texts: rotting grass becomes fireflies, soil moistens with humid heat, heavy rains fall.',
+        6: 'In Taizhou, Zhejiang, the "Dashu boat" festival sends wishes for health and harvest.',
+        7: 'Major heat embodies extremes — from the most intense heat comes the turn toward autumn.',
+        8: 'What does this time of year mean where you live?',
+    },
+    'chushu': {
+        1: 'The 24 solar terms divide the ecliptic into 24 equal segments.',
+        2: 'Chushu (End of Heat) is the fourteenth term: the Sun reaches 150°.',
+        3: 'Chushu is the zhongqi of the seventh lunar month. Heat begins to retreat.',
+        4: 'Temperatures gradually fall; "autumn tiger" heat may linger briefly.',
+        5: 'Ancient texts: hawks sacrifice birds, heaven and earth grow solemn, grains ripen.',
+        6: 'Coastal communities celebrate the fishing season opening; people eat duck for nourishment.',
+        7: 'Chushu marks the transition from summer intensity to autumn clarity.',
+        8: 'What does this time of year mean where you live?',
+    },
+    'bailu': {
+        1: 'The 24 solar terms divide the ecliptic into 24 equal segments.',
+        2: 'Bailu (White Dew) is the fifteenth term: the Sun reaches 165°.',
+        3: 'Bailu is the jie of the eighth lunar month. Morning dew appears white.',
+        4: 'Night temperatures drop; moisture condenses as visible dew.',
+        5: 'Ancient texts: wild geese arrive, swallows depart, birds store food for winter.',
+        6: 'Tea lovers prize "White Dew tea"; people collect morning dew for medicinal use.',
+        7: 'White Dew signals autumn\'s quiet arrival — visible in the morning grass.',
+        8: 'What does this time of year mean where you live?',
+    },
+    'qiufen': {
+        1: 'The 24 solar terms divide the ecliptic into 24 equal segments.',
+        2: 'Qiufen (Autumn Equinox) is the sixteenth term: the Sun reaches 180°. Day and night equal.',
+        3: 'Qiufen is the zhongqi of the eighth lunar month, traditionally near Mid-Autumn Festival.',
+        4: 'Cool, crisp air; harvest season reaches its peak.',
+        5: 'Ancient texts: thunder ceases, insects seal their burrows, waters begin to dry.',
+        6: 'China\'s "Harvest Festival" (celebrating farmers) is set on the Autumn Equinox.',
+        7: 'The equinox restores balance — equal light and dark before winter\'s descent.',
+        8: 'What does this time of year mean where you live?',
+    },
+    'hanlu': {
+        1: 'The 24 solar terms divide the ecliptic into 24 equal segments.',
+        2: 'Hanlu (Cold Dew) is the seventeenth term: the Sun reaches 195°.',
+        3: 'Hanlu is the jie of the ninth lunar month. Dew turns cold.',
+        4: 'Temperatures drop noticeably; frost approaches.',
+        5: 'Ancient texts: wild geese arrive as guests, sparrows enter the sea as clams, chrysanthemums bloom yellow.',
+        6: 'Chrysanthemum viewing, drinking chrysanthemum wine, and eating sesame are traditional.',
+        7: 'Cold Dew deepens autumn — a season of letting go and preparing for winter.',
+        8: 'What does this time of year mean where you live?',
+    },
+    'shuangjiang': {
+        1: 'The 24 solar terms divide the ecliptic into 24 equal segments.',
+        2: 'Shuangjiang (Frost\'s Descent) is the eighteenth term: the Sun reaches 210°.',
+        3: 'Shuangjiang is the zhongqi of the ninth lunar month. First frost appears.',
+        4: 'Frost kills remaining vegetation; winter preparation begins.',
+        5: 'Ancient texts: jackals sacrifice prey, grass and trees yellow and fall, insects burrow deep.',
+        6: 'Eating persimmons during Frost\'s Descent is a widespread custom.',
+        7: 'Frost\'s Descent is autumn\'s farewell — beauty in the final golden leaves.',
+        8: 'What does this time of year mean where you live?',
+    },
+    'lidong': {
+        1: 'The 24 solar terms divide the ecliptic into 24 equal segments.',
+        2: 'Lidong (Beginning of Winter) is the nineteenth term: the Sun reaches 225°.',
+        3: 'Lidong is the jie of the tenth lunar month. Winter begins.',
+        4: 'Temperatures drop; northern regions may see first snow.',
+        5: 'Ancient texts: water begins to freeze, ground starts to harden, pheasants enter the sea as clams.',
+        6: 'Northern custom: eating dumplings on Lidong; southern custom: nourishing foods.',
+        7: 'Beginning of Winter marks nature\'s retreat into stillness and storage.',
+        8: 'What does this time of year mean where you live?',
+    },
+    'xiaoxue': {
+        1: 'The 24 solar terms divide the ecliptic into 24 equal segments.',
+        2: 'Xiaoxue (Minor Snow) is the twentieth term: the Sun reaches 240°.',
+        3: 'Xiaoxue is the zhongqi of the tenth lunar month. Light snow may fall.',
+        4: 'First snows dust the landscape; temperatures continue falling.',
+        5: 'Ancient texts: rainbows hide (ice replaces rain), heaven\'s air rises, earth\'s air descends.',
+        6: 'Traditional pickle-making season begins: "Minor Snow for pickled vegetables."',
+        7: 'Minor Snow brings the first white dusting — winter\'s quiet announcement.',
+        8: 'What does this time of year mean where you live?',
+    },
+    'daxue': {
+        1: 'The 24 solar terms divide the ecliptic into 24 equal segments.',
+        2: 'Daxue (Major Snow) is the twenty-first term: the Sun reaches 255°.',
+        3: 'Daxue is the jie of the eleventh lunar month. Snow accumulates.',
+        4: 'Heavy snow blankets the north; "snowflakes are six-pointed" (ancient observation).',
+        5: 'Ancient texts: cold birds stop singing, tigers begin to mate, iris grass sprouts.',
+        6: '"Minor Snow for pickles, Major Snow for cured meat" — preservation season peaks.',
+        7: 'Major Snow covers the earth in silence — a season of waiting and preserving.',
+        8: 'What does this time of year mean where you live?',
+    },
+    'xiaohan': {
+        1: 'The 24 solar terms divide the ecliptic into 24 equal segments.',
+        2: 'Xiaohan (Minor Cold) is the twenty-third term: the Sun reaches 285°.',
+        3: 'Xiaohan is the jie of the twelfth lunar month. Cold deepens.',
+        4: 'Often the coldest period; "Minor Cold, Great Cold — cold without wind."',
+        5: 'Ancient texts: wild geese begin returning north, magpies start nesting, pheasants call.',
+        6: 'Nanjing custom: eating rice with vegetables; Guangzhou custom: glutinous rice porridge.',
+        7: 'Minor Cold tests endurance — yet the first signs of returning light appear.',
+        8: 'What does this time of year mean where you live?',
+    },
+    'dahan': {
+        1: 'The 24 solar terms divide the ecliptic into 24 equal segments.',
+        2: 'Dahan (Major Cold) is the twenty-fourth and final term: the Sun reaches 300°.',
+        3: 'Dahan is the zhongqi of the twelfth lunar month. The cycle nears completion.',
+        4: 'The deepest cold; yet days are already lengthening toward spring.',
+        5: 'Ancient texts: hens begin to lay, raptors hunt fiercely, ice thickens to its core.',
+        6: 'Preparation for Spring Festival intensifies; "Major Cold" welcomes the new year.',
+        7: 'Major Cold is both ending and beginning — the darkest moment before Lichun returns.',
+        8: 'What does this time of year mean where you live?',
+    },
+}
+
+updated = 0
+for slug, translations in EN_TRANSLATIONS.items():
+    p = os.path.join(MODS, slug, 'content', 'zh-CN.json')
+    if not os.path.exists(p):
+        continue
+    c = json.load(io.open(p, encoding='utf-8'))
+    for i, claim in enumerate(c['claims']):
+        num = i + 1
+        if num in translations:
+            claim['text']['en'] = translations[num]
+            updated += 1
+    with io.open(p, 'w', encoding='utf-8') as f:
+        json.dump(c, f, ensure_ascii=False, indent=2)
+    print(f'{slug}: en updated for {len(translations)} claims')
+
+print(f'\nTotal claims updated: {updated}')

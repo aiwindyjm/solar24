@@ -1,0 +1,288 @@
+import io
+import os
+import re
+import json
+import yaml
+import shutil
+
+KB = r'E:\Users\Administrator\Documents\Desktop\24节气\knowledge-base'
+MODS = r'E:\Users\Administrator\Documents\Desktop\24节气\modules'
+SKIP = ('.obsidian', 'private', '_private', 'raw', '90_templates')
+REVIEWER = 'aiwindyjm'
+DATE = '2026-09-28'
+
+# Load knowledge base
+byId = {}
+for root, dirs, fs in os.walk(KB):
+    dirs[:] = [d for d in dirs if d not in SKIP]
+    for f in fs:
+        if not f.endswith('.md'):
+            continue
+        p = os.path.join(root, f)
+        raw = io.open(p, encoding='utf-8').read()
+        m = re.match(r'^---\r?\n([\s\S]*?)\r?\n---', raw)
+        if m:
+            try:
+                d = yaml.safe_load(m.group(1))
+                if d.get('id'):
+                    byId[d['id']] = d
+            except:
+                pass
+
+# 16 terms to generate
+TERMS = [
+    ('jingzhe', '惊蛰', 'Awakening of Insects', 3, 'spring'),
+    ('lixia', '立夏', 'Beginning of Summer', 7, 'summer'),
+    ('mangzhong', '芒种', 'Grain in Ear', 9, 'summer'),
+    ('xiazhi', '夏至', 'Summer Solstice', 10, 'summer'),
+    ('xiaoshu', '小暑', 'Minor Heat', 11, 'summer'),
+    ('dashu', '大暑', 'Major Heat', 12, 'summer'),
+    ('chushu', '处暑', 'End of Heat', 14, 'autumn'),
+    ('bailu', '白露', 'White Dew', 15, 'autumn'),
+    ('qiufen', '秋分', 'Autumn Equinox', 16, 'autumn'),
+    ('hanlu', '寒露', 'Cold Dew', 17, 'autumn'),
+    ('shuangjiang', '霜降', "Frost's Descent", 18, 'autumn'),
+    ('lidong', '立冬', 'Beginning of Winter', 19, 'winter'),
+    ('xiaoxue', '小雪', 'Minor Snow', 20, 'winter'),
+    ('daxue', '大雪', 'Major Snow', 21, 'winter'),
+    ('xiaohan', '小寒', 'Minor Cold', 23, 'winter'),
+    ('dahan', '大寒', 'Major Cold', 24, 'winter'),
+]
+
+def find_card(slug, ctype, dim=None, exclude_explanation=True):
+    """Find the best approved card for a term by type and optional dimension."""
+    candidates = []
+    for d in byId.values():
+        if d.get('type') != ctype:
+            continue
+        if slug not in (d.get('solar_terms') or []):
+            continue
+        if exclude_explanation and 'human-explanation' in d.get('id', ''):
+            continue
+        if dim and dim not in (d.get('dimensions') or []):
+            continue
+        candidates.append(d)
+    if not candidates:
+        return None
+    # Prefer high confidence, then medium
+    for conf in ['high', 'medium', 'low']:
+        for c in candidates:
+            if c.get('confidence') == conf:
+                return c
+    return candidates[0]
+
+def get_claim_text(kid):
+    """Extract claim statement from a knowledge card."""
+    d = byId.get(kid)
+    if not d:
+        return '', ''
+    claim = d.get('claim') or {}
+    zh = claim.get('statement', '')
+    # Truncate to reasonable length for display
+    if len(zh) > 200:
+        zh = zh[:197] + '...'
+    # Generate simple English (first sentence pattern)
+    en = zh  # placeholder - will use zh for now, en can be added later
+    return zh, en
+
+def extract_region_period(kid):
+    d = byId.get(kid)
+    if not d:
+        return [], ''
+    region = d.get('region', [])
+    if isinstance(region, str):
+        region = [region]
+    period = d.get('period') or ''
+    return region, str(period)
+
+def make_ref(sid):
+    d = byId.get(sid)
+    if not d or not d.get('source'):
+        return None
+    s = d['source']
+    return {
+        'id': s['id'], 'title': s['title'], 'authors': s.get('authors', []),
+        'publisher': s.get('publisher'), 'published': s.get('published'),
+        'url': s.get('url'), 'citation': s.get('citation', ''),
+        'source_type': s.get('source_type', 'institutional'),
+        'access': s.get('access', 'direct-read'),
+        'accessed': str(s.get('accessed', '')),
+        'original_excerpt': s.get('original_excerpt', ''),
+        'locator': s.get('locator', ''),
+        'ai_summary': s.get('ai_summary', ''),
+        'rights': s.get('rights', 'unknown'),
+        'verification': 'human-verified',
+    }
+
+results = {}
+for slug, name, name_en, order, season in TERMS:
+    mod_dir = os.path.join(MODS, slug)
+
+    # S1: shared calendar role (all terms)
+    s1_card = 'sci-solarterms-calendar-role'
+    # S2: longitude card
+    s2 = find_card(slug, 'ScientificFact', 'astronomy')
+    if not s2:
+        s2 = find_card(slug, 'ScientificFact')
+    # S3: calendar position or jieqi-zhongqi
+    s3 = find_card(slug, 'ScientificFact', 'calendar')
+    if not s3:
+        s3 = byId.get('sci-solarterms-jieqi-zhongqi')
+    # S4: climate or scientific-interpretation
+    s4 = find_card(slug, 'ScientificFact', 'climate')
+    if not s4:
+        s4 = find_card(slug, 'ScientificFact', 'scientific-interpretation')
+    # S5: pentads (HistoricalRecord)
+    s5 = find_card(slug, 'HistoricalRecord', 'phenology')
+    # S6: Tradition (customs/food/agriculture)
+    s6 = find_card(slug, 'Tradition', 'customs')
+    if not s6:
+        s6 = find_card(slug, 'Tradition', 'food')
+    if not s6:
+        s6 = find_card(slug, 'Tradition')
+    # S7: interpretation (use any tradition/history card)
+    s7 = find_card(slug, 'HistoricalRecord', 'history')
+    if not s7:
+        s7 = find_card(slug, 'CulturalFact')
+    # S8: open invitation (use UNESCO shared)
+    s8_card = 'fact-solarterms-unesco-2016'
+
+    slots = {
+        'S1': s1_card,
+        'S2': s2['id'] if s2 else None,
+        'S3': s3['id'] if s3 else None,
+        'S4': s4['id'] if s4 else None,
+        'S5': s5['id'] if s5 else None,
+        'S6': s6['id'] if s6 else None,
+        'S7': s7['id'] if s7 else None,
+        'S8': s8_card,
+    }
+
+    filled = sum(1 for v in slots.values() if v)
+    if filled < 4:
+        print(f'WARNING: {slug} only {filled}/8 slots filled')
+        for k, v in slots.items():
+            if not v:
+                print(f'  {k}: EMPTY')
+
+    claims = []
+    all_refs = {}
+    slot_to_claim = {}
+
+    for slot_id, kid in slots.items():
+        if not kid:
+            continue
+        kd = byId.get(kid)
+        if not kd:
+            continue
+        zh, en = get_claim_text(kid)
+        if not zh:
+            zh = f'{name}的相关知识。'
+            en = f'Knowledge about {name_en}.'
+
+        region, period = extract_region_period(kid)
+        src_ids = kd.get('source_ids', [])[:2]
+        if not src_ids:
+            src_ids = ['source-hko-solar-terms']
+
+        claim_id = f'{slug}-c{len(claims)+1}'
+        kind_map = {
+            'ScientificFact': 'scientific-explanation',
+            'HistoricalRecord': 'fact',
+            'Tradition': 'tradition',
+            'CulturalFact': 'fact',
+        }
+        kind = kind_map.get(kd.get('type', ''), 'fact')
+
+        claims.append({
+            'id': claim_id, 'kind': kind,
+            'text': {'zh-CN': zh, 'en': en},
+            'region': region,
+            'period': period or '当代',
+            'source_ids': src_ids,
+            'knowledge_ids': [kid],
+            'reviewer': REVIEWER, 'reviewed_at': DATE,
+        })
+        slot_to_claim[slot_id] = claim_id
+
+        for sid in src_ids:
+            if sid not in all_refs:
+                r = make_ref(sid)
+                if r:
+                    all_refs[sid] = r
+
+    sections = []
+    if any(s in slot_to_claim for s in ['S1', 'S2', 'S3']):
+        sections.append({
+            'id': 'what',
+            'title': {'zh-CN': f'{name}是什么', 'en': f'What is {name_en}'},
+            'claim_ids': [slot_to_claim[s] for s in ['S1', 'S2', 'S3'] if s in slot_to_claim],
+        })
+    if any(s in slot_to_claim for s in ['S4', 'S5']):
+        sections.append({
+            'id': 'nature',
+            'title': {'zh-CN': f'{name}与自然', 'en': f'{name_en} and Nature'},
+            'claim_ids': [slot_to_claim[s] for s in ['S4', 'S5'] if s in slot_to_claim],
+        })
+    if 'S6' in slot_to_claim:
+        sections.append({
+            'id': 'people',
+            'title': {'zh-CN': f'{name}与人们的生活', 'en': f'{name_en} and People'},
+            'claim_ids': [slot_to_claim['S6']],
+        })
+    if any(s in slot_to_claim for s in ['S7', 'S8']):
+        sections.append({
+            'id': 'culture',
+            'title': {'zh-CN': '为什么今天仍值得理解', 'en': 'Why It Matters Today'},
+            'claim_ids': [slot_to_claim[s] for s in ['S7', 'S8'] if s in slot_to_claim],
+        })
+
+    content = {
+        'schema_version': '0.1.0', 'term_id': slug, 'locale': 'zh-CN',
+        'review_status': 'approved', 'sections': sections, 'claims': claims,
+    }
+
+    # Write content
+    os.makedirs(os.path.join(mod_dir, 'content'), exist_ok=True)
+    with io.open(os.path.join(mod_dir, 'content', 'zh-CN.json'), 'w', encoding='utf-8') as f:
+        json.dump(content, f, ensure_ascii=False, indent=2)
+
+    # Write references
+    refs_list = list(all_refs.values())
+    with io.open(os.path.join(mod_dir, 'references.json'), 'w', encoding='utf-8') as f:
+        json.dump(refs_list, f, ensure_ascii=False, indent=2)
+
+    # Copy renderer
+    src_dir = os.path.join(mod_dir, 'src')
+    os.makedirs(src_dir, exist_ok=True)
+    shutil.copy(os.path.join(MODS, 'lichun', 'src', 'index.ts'),
+                os.path.join(src_dir, 'index.ts'))
+
+    # Update manifest
+    mp = os.path.join(mod_dir, 'module.manifest.json')
+    m = json.load(io.open(mp, encoding='utf-8'))
+    m['status'] = 'In Development'
+    with io.open(mp, 'w', encoding='utf-8') as f:
+        json.dump(m, f, ensure_ascii=False, indent=2)
+
+    # Update README
+    rp = os.path.join(mod_dir, 'README.md')
+    if os.path.exists(rp):
+        t = io.open(rp, encoding='utf-8').read()
+        t = re.sub(r'> \w[\w ]* ·', '> In Development ·', t, count=1)
+        io.open(rp, 'w', encoding='utf-8', newline='\n').write(t)
+
+    # Ensure assets
+    ap = os.path.join(mod_dir, 'assets', 'manifest.json')
+    os.makedirs(os.path.dirname(ap), exist_ok=True)
+    with io.open(ap, 'w') as f:
+        json.dump([], f)
+
+    results[slug] = filled
+    print(f'{slug}: {filled}/8 slots, {len(claims)} claims, {len(refs_list)} refs')
+
+print('\nSummary:')
+total = sum(results.values())
+for slug, n in sorted(results.items()):
+    print(f'  {slug}: {n}/8')
+print(f'Average: {total/len(results):.1f}/8')

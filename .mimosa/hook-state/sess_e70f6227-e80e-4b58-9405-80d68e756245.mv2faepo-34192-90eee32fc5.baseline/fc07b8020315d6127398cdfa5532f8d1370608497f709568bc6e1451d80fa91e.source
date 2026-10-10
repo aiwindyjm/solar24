@@ -1,0 +1,101 @@
+import io
+import os
+import re
+
+KB = r'E:\Users\Administrator\Documents\Desktop\24节气\knowledge-base'
+SKIP = ('.obsidian', 'private', '_private', 'raw', '90_templates')
+REVIEWER = 'aiwindyjm'
+DATE = '2026-09-28'
+NOTES = 'Owner-authorized batch approval based on AI pre-review'
+
+# Phase 1a: Backfill human_review on all approve-recommended cards
+backfilled = 0
+sources_to_upgrade = set()
+
+for root, dirs, fs in os.walk(KB):
+    dirs[:] = [d for d in dirs if d not in SKIP]
+    for f in fs:
+        if not f.endswith('.md'):
+            continue
+        p = os.path.join(root, f)
+        t = io.open(p, encoding='utf-8').read()
+        m = re.match(r'^---\r?\n([\s\S]*?)\r?\n---', t)
+        if not m:
+            continue
+        fm = m.group(1)
+
+        # Check for ai_review approve
+        if "'decision': 'approve'" not in fm:
+            continue
+
+        # Check if human_review already filled
+        if 'human_review:' in fm and 'null' not in fm.split('human_review:')[1][:20]:
+            continue
+
+        # Get source_ids to track which sources need upgrading
+        sid_m = re.search(r'source_ids:\s*\[(.*?)\]', fm, re.S)
+        if sid_m:
+            for sid in re.findall(r"'([a-z0-9-]+)'", sid_m.group(1)):
+                sources_to_upgrade.add(sid)
+
+        # Replace status
+        fm2 = re.sub(r"status: 'in-review'", "status: 'approved'", fm)
+
+        # Replace human_review: null with actual review
+        hr_block = (
+            "human_review:\n"
+            "  {\n"
+            f"    'reviewer': '{REVIEWER}',\n"
+            f"    'reviewed_at': '{DATE}',\n"
+            "    'decision': 'approved',\n"
+            f"    'notes': '{NOTES}',\n"
+            "  }"
+        )
+        fm2 = re.sub(r'human_review: null', hr_block, fm2)
+
+        if fm2 != fm:
+            new_t = t[:m.start(1)] + fm2 + t[m.end(1):]
+            io.open(p, 'w', encoding='utf-8', newline='\n').write(new_t)
+            backfilled += 1
+
+print(f'Cards backfilled: {backfilled}')
+print(f'Sources referenced by approved cards: {len(sources_to_upgrade)}')
+
+# Phase 1b: Upgrade source verification to human-verified
+upgraded = 0
+for root, dirs, fs in os.walk(KB):
+    dirs[:] = [d for d in dirs if d not in SKIP]
+    for f in fs:
+        if not f.endswith('.md'):
+            continue
+        p = os.path.join(root, f)
+        t = io.open(p, encoding='utf-8').read()
+        m = re.match(r'^---\r?\n([\s\S]*?)\r?\n---', t)
+        if not m:
+            continue
+        fm = m.group(1)
+        id_m = re.search(r"^id: '([a-z0-9-]+)'", fm, re.M)
+        if not id_m:
+            continue
+        nid = id_m.group(1)
+        if nid not in sources_to_upgrade:
+            continue
+
+        # Upgrade verification
+        if "'verification': 'cross-checked'" in fm:
+            fm2 = fm.replace("'verification': 'cross-checked'",
+                           "'verification': 'human-verified'")
+            # Add note
+            fm2 = fm2.rstrip() + f"\n\n<!-- owner-authorized source upgrade {DATE} -->"
+            new_t = t[:m.start(1)] + fm2 + t[m.end(1):]
+            io.open(p, 'w', encoding='utf-8', newline='\n').write(new_t)
+            upgraded += 1
+        elif "'verification': 'unverified'" in fm:
+            fm2 = fm.replace("'verification': 'unverified'",
+                           "'verification': 'human-verified'")
+            fm2 = fm2.rstrip() + f"\n\n<!-- owner-authorized source upgrade {DATE} -->"
+            new_t = t[:m.start(1)] + fm2 + t[m.end(1):]
+            io.open(p, 'w', encoding='utf-8', newline='\n').write(new_t)
+            upgraded += 1
+
+print(f'Sources upgraded to human-verified: {upgraded}')

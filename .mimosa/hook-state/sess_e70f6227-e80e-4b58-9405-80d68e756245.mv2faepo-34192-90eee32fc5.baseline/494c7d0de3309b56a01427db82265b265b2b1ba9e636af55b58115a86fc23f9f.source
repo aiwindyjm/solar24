@@ -1,0 +1,15 @@
+{
+  "name": "@solar24/module-xiaohan",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node ../../scripts/module.mjs dev xiaohan",
+    "build": "node ../../scripts/module.mjs build xiaohan",
+    "test": "node ../../scripts/module.mjs test xiaohan"
+  },
+  "dependencies": {
+    "@solar24/module-runtime": "workspace:*",
+    "@solar24/protocol": "workspace:*"
+  }
+}

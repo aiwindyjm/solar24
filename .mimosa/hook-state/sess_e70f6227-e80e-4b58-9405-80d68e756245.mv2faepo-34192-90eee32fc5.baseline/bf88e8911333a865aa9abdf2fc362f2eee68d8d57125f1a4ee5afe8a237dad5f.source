@@ -1,0 +1,49 @@
+import io
+import re
+import collections
+import json
+
+t = io.open('.tmp/routing-s6.md', encoding='utf-8').read()
+rows = re.findall(
+    r'\| ([a-z0-9-]+) \| (\S+) \| (\w+) \| (\w+) \| (\w)\S*?(\d+)\S*? \| \*\*([\w-]+)\*\* \| (.+?) \|',
+    t, re.M,
+)
+print('routed:', len(rows))
+CLAIM = {'CulturalFact', 'ScientificFact', 'HistoricalRecord', 'Tradition',
+         'RegionalExpression', 'GlobalExpression'}
+claims = [r for r in rows if r[1] in CLAIM]
+print('claims:', len(claims))
+
+approve, hold, revise = [], [], []
+for r in claims:
+    rid, typ, imp, risk, tier, indep, route, finds = (
+        r[0], r[1], r[2], r[3], r[4], int(r[5]), r[6], r[7])
+    codes = [c.strip() for c in finds.split(',') if c.strip() and c.strip() not in ('-', '\u2014')]
+    blockers = {'no-source', 'insufficient-evidence', 'weak-source-low-confidence',
+                'epistemic-confidence-conflict', 'legend-as-fact', 'excerpt-as-read',
+                'contested-open'}
+    if set(codes) & blockers:
+        hold.append([rid, typ, sorted(set(codes) & blockers)])
+        continue
+    if route in ('auto-candidate', 'human-review-required') and not codes:
+        approve.append([rid, typ, risk, tier, indep])
+        continue
+    revise.append([rid, typ, codes])
+
+out = {'approve': approve, 'hold': hold, 'revise': revise}
+io.open('.tmp/ai-review-worksheet.json', 'w', encoding='utf-8').write(
+    json.dumps(out, ensure_ascii=False, indent=1))
+print('APPROVE:', len(approve), '| HOLD:', len(hold), '| REVISE:', len(revise))
+
+LC_DEPS = {'sci-lichun-longitude-315', 'sci-lichun-calendar-position',
+           'sci-lichun-vs-meteorological-spring', 'hist-yueling-lichun-pentads',
+           'region-jiuhua-lichun-ji', 'region-shiqian-shuochun',
+           'lichun-human-explanation'}
+print('\nLC deps classified:')
+for c in LC_DEPS:
+    bucket = next((k for k, v in out.items() if any(x[0] == c for x in v)), 'MISSING')
+    detail = next((x for x in out.get(bucket, []) if x[0] == c), None)
+    print(' ', c, '->', bucket, detail[2:] if detail and len(detail) > 2 else '')
+
+SHARED = sorted(set(r[0] for r in claims if r[2] == 'system'))
+print('\nsystem cards (%d):' % len(SHARED), SHARED)

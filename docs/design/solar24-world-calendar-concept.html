@@ -1,0 +1,1483 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Solar24 · 一年的形状 · 交互概念稿</title>
+    <style>
+      :root {
+        --space: #111a1b;
+        --ink: #f2f0e8;
+        --muted: #b7c5c0;
+        --gold: #d9b77a;
+        --green: #95c0a9;
+        --line: #3d5050;
+        --paper: #f5f3ec;
+        --forest: #233c35;
+        --serif: 'Songti SC', 'SimSun', 'Noto Serif CJK SC', Georgia, serif;
+        --sans: 'Microsoft YaHei', 'PingFang SC', Arial, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--space);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 16px;
+      }
+      button,
+      a,
+      input {
+        touch-action: manipulation;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+      }
+      a {
+        color: inherit;
+      }
+      button:focus-visible,
+      a:focus-visible {
+        outline: 3px solid var(--gold);
+        outline-offset: 5px;
+      }
+      button {
+        color: inherit;
+      }
+      button:disabled {
+        cursor: not-allowed;
+      }
+      button:hover:not(:disabled) {
+        filter: brightness(1.12);
+      }
+      [hidden] {
+        display: none !important;
+      }
+      .skip {
+        position: absolute;
+        left: 24px;
+        top: -70px;
+        padding: 12px;
+        background: var(--paper);
+        color: var(--forest);
+        z-index: 10;
+      }
+      .skip:focus {
+        top: 10px;
+      }
+      header {
+        height: 100px;
+        margin: 0 4.5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--line);
+        gap: 24px;
+      }
+      .brand {
+        background: none;
+        border: 0;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        padding: 8px 0;
+      }
+      .brandmark {
+        width: 34px;
+        height: 34px;
+        border: 1px solid var(--gold);
+        border-radius: 50%;
+        position: relative;
+      }
+      .brandmark:before,
+      .brandmark:after {
+        content: '';
+        position: absolute;
+        left: 15px;
+        top: -5px;
+        height: 42px;
+        width: 1px;
+        background: var(--gold);
+      }
+      .brandmark:after {
+        transform: rotate(90deg);
+      }
+      .brandname {
+        font-family: Georgia, serif;
+        font-size: 25px;
+        letter-spacing: 4px;
+      }
+      .brandname small {
+        display: block;
+        font-family: var(--sans);
+        font-size: 10px;
+        letter-spacing: 5px;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+      nav {
+        display: flex;
+        gap: 28px;
+      }
+      nav button {
+        background: none;
+        border: 0;
+        padding: 18px 1px;
+        color: var(--muted);
+        font-size: 14px;
+        position: relative;
+      }
+      nav button[aria-current='page'] {
+        color: var(--ink);
+      }
+      nav button[aria-current='page']:after {
+        content: '';
+        height: 2px;
+        background: var(--gold);
+        position: absolute;
+        bottom: 4px;
+        left: 0;
+        right: 0;
+      }
+      .edition {
+        font-size: 12px;
+        color: var(--muted);
+        letter-spacing: 1px;
+      }
+      main {
+        max-width: 1600px;
+        margin: auto;
+      }
+      section {
+        padding: 0 4.5%;
+      }
+      .hero {
+        min-height: 690px;
+        display: grid;
+        grid-template-columns: 0.85fr 1.4fr;
+        align-items: center;
+        gap: 3%;
+      }
+      .kicker {
+        font-size: 12px;
+        letter-spacing: 3px;
+        color: var(--gold);
+        margin: 0 0 28px;
+        line-height: 1.8;
+      }
+      .hero h1 {
+        font-family: var(--serif);
+        font-size: clamp(44px, 4.7vw, 72px);
+        font-weight: 400;
+        line-height: 1.35;
+        margin: 0 0 28px;
+        letter-spacing: 3px;
+      }
+      .intro {
+        color: var(--muted);
+        line-height: 1.95;
+        font-size: 15px;
+        max-width: 345px;
+        margin: 0 0 28px;
+      }
+      .textlink {
+        padding: 12px 0;
+        background: none;
+        border: 0;
+        border-bottom: 1px solid var(--gold);
+        font-size: 14px;
+      }
+      .textlink span {
+        margin-left: 28px;
+      }
+      .quiet {
+        background: none;
+        border: 1px solid var(--line);
+        padding: 10px 16px;
+        min-height: 44px;
+      }
+      .primary {
+        background: var(--gold);
+        color: var(--space);
+        border: 0;
+        padding: 13px 23px;
+        min-height: 48px;
+        font-size: 14px;
+      }
+      .outline {
+        background: none;
+        border: 1px solid var(--line);
+        padding: 12px 20px;
+        min-height: 48px;
+        font-size: 14px;
+      }
+      .wheelarea {
+        position: relative;
+        width: 100%;
+        max-width: 700px;
+        justify-self: center;
+      }
+      .wheel {
+        width: 100%;
+        aspect-ratio: 1;
+        position: relative;
+      }
+      .wheel svg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        pointer-events: none;
+      }
+      .term {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        background: transparent;
+        border: 0;
+        width: 55px;
+        min-height: 44px;
+        font-size: 15px;
+        letter-spacing: 2px;
+        color: var(--muted);
+        z-index: 2;
+        border-radius: 2px;
+      }
+      .term[aria-pressed='true'] {
+        color: var(--gold);
+        font-weight: 700;
+        background: #263331;
+        outline: 1px solid var(--gold);
+      }
+      .wheel-center {
+        position: absolute;
+        left: 25%;
+        top: 30%;
+        width: 50%;
+        height: 42%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .wheel-center .chapter {
+        font-size: 11px;
+        letter-spacing: 3px;
+        color: var(--green);
+      }
+      .wheel-center h2 {
+        font-family: var(--serif);
+        font-size: clamp(46px, 5.6vw, 86px);
+        font-weight: 400;
+        letter-spacing: 12px;
+        margin: 17px 0 6px;
+        padding-left: 12px;
+      }
+      .wheel-center .en {
+        font-family: Georgia, serif;
+        font-size: 16px;
+        color: var(--muted);
+        font-style: italic;
+        margin: 0 0 20px;
+      }
+      .wheel-center .open {
+        font-size: 13px;
+        background: none;
+        border: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 10px 4px;
+      }
+      .wheel-note {
+        text-align: center;
+        color: var(--muted);
+        font-size: 11px;
+        letter-spacing: 1px;
+        margin-top: -8px;
+        line-height: 1.8;
+      }
+      .wheel-steps {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        margin: 14px 0 20px;
+      }
+      .wheel-steps button {
+        border: 1px solid var(--line);
+        background: none;
+        min-width: 44px;
+        height: 44px;
+      }
+      .wheel-steps span {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .mobile-terms {
+        display: none;
+      }
+      .floor {
+        border-top: 1px solid var(--line);
+        margin: 12px 0 0;
+        padding: 25px 0 35px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 28px;
+      }
+      .floor button {
+        padding: 0;
+        background: none;
+        border: 0;
+        text-align: left;
+      }
+      .floor small {
+        display: block;
+        color: var(--muted);
+        font-size: 11px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+      }
+      .floor b {
+        font-weight: 400;
+        font-size: 16px;
+      }
+      .floor b span {
+        float: right;
+        color: var(--gold);
+      }
+      .view-head {
+        padding: 42px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 30px;
+      }
+      .view-head h1 {
+        font-family: var(--serif);
+        font-size: 44px;
+        font-weight: 400;
+        margin: 10px 0 20px;
+      }
+      .view-head .kicker {
+        margin-bottom: 8px;
+      }
+      .view-head p {
+        max-width: 470px;
+        line-height: 1.9;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .scale-nav {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        font-size: 13px;
+        color: var(--muted);
+        margin: 26px 0;
+      }
+      .scale-nav span {
+        border-bottom: 1px solid var(--line);
+        padding: 12px 18px;
+      }
+      .scale-nav .earth-scale {
+        border-color: var(--green);
+        color: var(--green);
+      }
+      .cosmos-layout {
+        display: grid;
+        grid-template-columns: 1.65fr 0.75fr;
+        align-items: center;
+        gap: 36px;
+        padding: 15px 0 45px;
+      }
+      .space-diagram {
+        width: 100%;
+        height: auto;
+      }
+      .cosmos-side h2 {
+        font-family: var(--serif);
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 1.6;
+      }
+      .cosmos-side p {
+        font-size: 14px;
+        line-height: 1.95;
+        color: var(--muted);
+      }
+      .factline {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid var(--line);
+        padding: 16px 0;
+        font-size: 13px;
+      }
+      .factline span {
+        color: var(--muted);
+      }
+      .cosmos-side .primary {
+        margin-top: 25px;
+      }
+      .diagram-note {
+        font-size: 12px;
+        color: var(--muted);
+        text-align: center;
+      }
+      .light {
+        background: var(--paper);
+        color: var(--forest);
+        padding-top: 1px;
+        padding-bottom: 48px;
+        min-height: calc(100vh - 100px);
+      }
+      .light .kicker {
+        color: #705522;
+      }
+      .light .view-head p {
+        color: #4e6259;
+      }
+      .light .quiet,
+      .light .outline {
+        border-color: #89998d;
+      }
+      .light button:focus-visible {
+        outline-color: #88611f;
+      }
+      .calendar-layout {
+        display: grid;
+        grid-template-columns: 1.4fr 0.8fr;
+        gap: 7%;
+        margin: 26px 0 55px;
+      }
+      .monthhead {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #b6c0b5;
+      }
+      .monthhead h2 {
+        font-family: Georgia, var(--serif);
+        font-size: 32px;
+        font-weight: 400;
+        margin: 0;
+      }
+      .monthhead button {
+        border: 1px solid #9ca99f;
+        background: none;
+        width: 44px;
+        height: 44px;
+      }
+      .monthhead .monthnav {
+        display: flex;
+        gap: 8px;
+      }
+      .weekdays,
+      .days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+      }
+      .weekdays span {
+        font-size: 12px;
+        text-align: center;
+        padding: 20px 0;
+        color: #536759;
+      }
+      .days button {
+        background: none;
+        border: 0;
+        border-top: 1px solid #c7cec3;
+        min-height: 70px;
+        font-family: Georgia, serif;
+        font-size: 20px;
+        position: relative;
+      }
+      .days button[aria-pressed='true'] {
+        background: var(--forest);
+        color: var(--paper);
+        outline: 2px solid var(--forest);
+        outline-offset: -2px;
+      }
+      .days .blank {
+        border-top: 1px solid #c7cec3;
+      }
+      .calendar-caption {
+        font-size: 12px;
+        line-height: 1.9;
+        color: #52665b;
+        margin-top: 22px;
+      }
+      .date-side {
+        padding: 25px 0 0;
+      }
+      .date-side .big-date {
+        font-family: Georgia, serif;
+        font-size: 100px;
+        line-height: 1;
+        margin: 18px 0 26px;
+      }
+      .date-side .date-label {
+        font-size: 14px;
+        color: #52665b;
+      }
+      .date-row {
+        padding: 20px 0;
+        border-top: 1px solid #b6c0b5;
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        font-size: 14px;
+      }
+      .date-row span {
+        color: #52665b;
+      }
+      .date-side .primary {
+        background: var(--forest);
+        color: var(--paper);
+        margin-top: 22px;
+      }
+      .calendar-foot {
+        border-top: 1px solid #b6c0b5;
+        padding-top: 26px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+      }
+      .calendar-foot b {
+        font-family: var(--serif);
+        font-size: 21px;
+        font-weight: 400;
+      }
+      .calendar-foot p {
+        font-size: 13px;
+        line-height: 1.9;
+        color: #52665b;
+      }
+      .story-head {
+        padding: 45px 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .story-head button {
+        background: none;
+        border: 0;
+        border-bottom: 1px solid #89998d;
+        padding: 12px 0;
+        font-size: 13px;
+      }
+      .story-head .kicker {
+        margin: 0;
+      }
+      .story-hero {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 9%;
+        padding: 40px 0 60px;
+        align-items: center;
+      }
+      .story-hero h1 {
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: clamp(46px, 5vw, 72px);
+        line-height: 1.4;
+        margin: 0 0 30px;
+      }
+      .story-hero p {
+        font-size: 16px;
+        line-height: 1.95;
+        color: #52665b;
+        max-width: 460px;
+      }
+      .story-orbit {
+        aspect-ratio: 1;
+        border: 1px solid #9baa9e;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        max-width: 390px;
+        width: 100%;
+        justify-self: center;
+      }
+      .story-orbit:before {
+        content: '';
+        position: absolute;
+        inset: 28px;
+        border: 1px dashed #aab5aa;
+        border-radius: 50%;
+      }
+      .story-orbit .large {
+        font-family: var(--serif);
+        font-size: 96px;
+        font-weight: 400;
+        letter-spacing: 14px;
+        padding-left: 14px;
+      }
+      .story-orbit .axis {
+        position: absolute;
+        left: 10%;
+        width: 80%;
+        height: 1px;
+        background: #aab5aa;
+        top: 70%;
+      }
+      .story-orbit .dot {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #876b3d;
+        top: 22%;
+        left: 7%;
+      }
+      .story-orbit small {
+        position: absolute;
+        bottom: 17%;
+        font-size: 12px;
+        letter-spacing: 2px;
+      }
+      .chapters {
+        border-top: 1px solid #b6c0b5;
+      }
+      .chapters details {
+        border-bottom: 1px solid #b6c0b5;
+        padding: 0;
+      }
+      .chapters summary {
+        cursor: pointer;
+        padding: 24px 0;
+        font-size: 21px;
+        font-family: var(--serif);
+        min-height: 60px;
+      }
+      .chapters summary span {
+        font-family: Georgia, serif;
+        color: #705522;
+        font-size: 14px;
+        margin-right: 25px;
+      }
+      .chapters details p {
+        margin: 0 0 27px 47px;
+        max-width: 780px;
+        font-size: 15px;
+        line-height: 1.95;
+        color: #52665b;
+      }
+      .invitation {
+        padding: 55px 0 8px;
+      }
+      .invitation p {
+        font-family: var(--serif);
+        font-size: 28px;
+        line-height: 1.6;
+      }
+      .invitation small {
+        font-size: 13px;
+        color: #52665b;
+      }
+      .review-foot {
+        padding: 18px 4.5%;
+        font-size: 11px;
+        letter-spacing: 1px;
+        color: var(--muted);
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        border-top: 1px solid var(--line);
+        line-height: 1.8;
+      }
+      .review-foot a {
+        text-underline-offset: 4px;
+      }
+      .status {
+        min-height: 1.8em;
+        font-size: 13px;
+        color: var(--muted);
+        text-align: center;
+        margin: 10px 0;
+      }
+      .noscript {
+        padding: 35px;
+        line-height: 1.8;
+      }
+      @media (min-width: 1500px) {
+        .hero {
+          min-height: 760px;
+        }
+        .wheelarea {
+          max-width: 760px;
+        }
+      }
+      @media (max-width: 950px) {
+        header {
+          height: 86px;
+        }
+        nav {
+          gap: 18px;
+        }
+        .edition {
+          display: none;
+        }
+        .hero {
+          grid-template-columns: 0.8fr 1.2fr;
+          min-height: 620px;
+          gap: 0;
+        }
+        .hero h1 {
+          font-size: 42px;
+        }
+        .intro {
+          font-size: 14px;
+        }
+        .term {
+          font-size: 13px;
+          width: 48px;
+        }
+        .wheel-center .chapter {
+          letter-spacing: 1px;
+          font-size: 10px;
+        }
+        .wheel-center .en {
+          font-size: 13px;
+        }
+        .wheel-center h2 {
+          font-size: 51px;
+          margin: 10px 0;
+        }
+        .cosmos-layout {
+          grid-template-columns: 1.2fr 0.8fr;
+        }
+        .calendar-layout {
+          gap: 5%;
+        }
+      }
+      @media (max-width: 650px) {
+        header {
+          margin: 0 6%;
+          height: 82px;
+          gap: 10px;
+        }
+        .brandname {
+          font-size: 18px;
+          letter-spacing: 2px;
+        }
+        .brandname small {
+          font-size: 8px;
+          letter-spacing: 2px;
+        }
+        .brandmark {
+          width: 25px;
+          height: 25px;
+        }
+        .brandmark:before,
+        .brandmark:after {
+          left: 11px;
+          top: -4px;
+          height: 31px;
+        }
+        nav {
+          gap: 13px;
+        }
+        nav button {
+          font-size: 13px;
+        }
+        section {
+          padding-left: 6%;
+          padding-right: 6%;
+        }
+        .hero {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          padding-top: 38px;
+          min-height: 0;
+        }
+        .hero .kicker {
+          margin-bottom: 18px;
+        }
+        .hero h1 {
+          font-size: 38px;
+          line-height: 1.4;
+          letter-spacing: 2px;
+          margin-bottom: 19px;
+        }
+        .hero h1 br:nth-of-type(2) {
+          display: none;
+        }
+        .intro {
+          max-width: 100%;
+          margin-bottom: 8px;
+        }
+        .hero .textlink {
+          margin-bottom: 14px;
+        }
+        .wheelarea {
+          margin-top: 15px;
+        }
+        .term {
+          display: none;
+        }
+        .wheel-center h2 {
+          font-size: 60px;
+        }
+        .wheel-center .chapter {
+          font-size: 10px;
+        }
+        .wheel-center .en {
+          font-size: 14px;
+        }
+        .wheel-center {
+          left: 20%;
+          width: 60%;
+          top: 24%;
+          height: 54%;
+        }
+        .wheel-note {
+          font-size: 10px;
+          margin: 3px 0 12px;
+        }
+        .mobile-terms {
+          display: flex;
+          gap: 8px;
+          overflow-x: auto;
+          padding: 8px 4px 12px;
+        }
+        .mobile-terms button {
+          white-space: nowrap;
+          min-height: 44px;
+          min-width: 55px;
+          background: none;
+          border: 1px solid var(--line);
+          font-size: 13px;
+        }
+        .mobile-terms button[aria-pressed='true'] {
+          border-color: var(--gold);
+          color: var(--gold);
+          background: #263331;
+        }
+        .floor {
+          grid-template-columns: 1fr;
+          padding-top: 5px;
+          gap: 0;
+        }
+        .floor button {
+          padding: 20px 0;
+          border-bottom: 1px solid var(--line);
+        }
+        .floor small {
+          margin-bottom: 7px;
+        }
+        .view-head {
+          padding-top: 30px;
+          display: block;
+        }
+        .view-head h1 {
+          font-size: 34px;
+        }
+        .view-head p {
+          font-size: 14px;
+        }
+        .cosmos-layout {
+          display: block;
+          padding-top: 0;
+        }
+        .cosmos-side {
+          padding-top: 20px;
+        }
+        .cosmos-side h2 {
+          font-size: 28px;
+        }
+        .scale-nav {
+          gap: 6px;
+          font-size: 11px;
+          margin: 8px 0;
+        }
+        .scale-nav span {
+          padding: 10px 7px;
+        }
+        .calendar-layout {
+          grid-template-columns: 1fr;
+          margin-top: 25px;
+        }
+        .date-side {
+          border-top: 1px solid #b6c0b5;
+          margin-top: 24px;
+        }
+        .date-side .big-date {
+          font-size: 72px;
+        }
+        .days button {
+          min-height: 55px;
+          font-size: 18px;
+        }
+        .calendar-foot {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+        .calendar-foot p {
+          margin-bottom: 0;
+        }
+        .story-head {
+          padding: 28px 0 12px;
+        }
+        .story-head .kicker {
+          font-size: 10px;
+          letter-spacing: 1px;
+        }
+        .story-hero {
+          grid-template-columns: 1fr;
+          padding: 28px 0 38px;
+          gap: 28px;
+        }
+        .story-hero h1 {
+          font-size: 45px;
+        }
+        .story-orbit {
+          max-width: 270px;
+        }
+        .story-orbit .large {
+          font-size: 74px;
+        }
+        .chapters summary {
+          font-size: 18px;
+        }
+        .chapters details p {
+          margin-left: 0;
+        }
+        .invitation p {
+          font-size: 24px;
+        }
+        .review-foot {
+          display: block;
+          font-size: 10px;
+          padding-left: 6%;
+          padding-right: 6%;
+        }
+        .review-foot span {
+          display: block;
+          margin-bottom: 5px;
+        }
+      }
+      @media (max-width: 650px) {
+        .hero h1 br:nth-of-type(2) {
+          display: initial;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto !important;
+          transition: none !important;
+          animation: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">跳到内容</a>
+    <header>
+      <button class="brand" data-view="wheel" aria-label="Solar24，回到年轮">
+        <span class="brandmark" aria-hidden="true"></span
+        ><span class="brandname">SOLAR24<small>时间 · 自然 · 人</small></span>
+      </button>
+      <nav aria-label="主要视图">
+        <button data-view="wheel" aria-current="page">年轮</button
+        ><button data-view="cosmos">宇宙</button><button data-view="calendar">历日</button>
+      </nav>
+      <span class="edition">一年的形状 / DESIGN STUDY 01</span>
+    </header>
+    <main id="main" tabindex="-1">
+      <noscript
+        ><p class="noscript">
+          这是需要 JavaScript
+          的交互概念稿。完整结构与静态说明请阅读同目录的设计文档；正式产品须提供无 JavaScript
+          的阅读路径。
+        </p></noscript
+      >
+      <section id="view-wheel">
+        <div class="hero">
+          <div>
+            <p class="kicker">一颗地球 · 一年光阴 · 二十四个刻度</p>
+            <h1>在一年的<br />流转中，<br />找到此刻。</h1>
+            <p class="intro">
+              把时间拉远，看见地球与太阳。<br />把时间拉近，走进一个地方的生活。<br />从二十四节气，认识我们共同经历的一年。
+            </p>
+            <button class="textlink" data-view="cosmos">
+              从宇宙开始 <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <div class="wheelarea">
+            <div
+              class="wheel"
+              id="term-wheel"
+              role="group"
+              aria-label="二十四节气顺序环，点击选择节气"
+            >
+              <svg viewBox="0 0 700 700" aria-hidden="true" id="wheel-svg">
+                <circle cx="350" cy="350" r="286" fill="none" stroke="#3d5050" />
+                <circle cx="350" cy="350" r="230" fill="none" stroke="#6b7e71" stroke-width="0.7" />
+                <circle
+                  cx="350"
+                  cy="350"
+                  r="177"
+                  fill="none"
+                  stroke="#3d5050"
+                  stroke-dasharray="2 7"
+                />
+                <path d="M350 152V180 M350 520V548 M152 350H180 M520 350H548" stroke="#6b7e71" />
+                <g id="ticks"></g>
+                <g id="selection-mark"></g>
+              </svg>
+              <div class="wheel-center">
+                <span class="chapter" id="season-label">SPRING / 春 · 01</span>
+                <h2 id="selected-term">立春</h2>
+                <p class="en" id="selected-en">Beginning of Spring</p>
+                <button class="open" id="open-term">进入立春 →</button>
+              </div>
+            </div>
+            <div class="mobile-terms" id="mobile-terms" role="group" aria-label="节气列表"></div>
+            <p class="wheel-note">节气顺序示意 · 非天体轨道 · 相邻节气并非等长日数</p>
+            <div class="wheel-steps">
+              <button id="prev-term" aria-label="上一个节气">←</button
+              ><span id="selected-count">浏览 01 / 24</span
+              ><button id="next-term" aria-label="下一个节气">→</button>
+            </div>
+            <p class="status" id="wheel-status" role="status"></p>
+          </div>
+        </div>
+        <div class="floor">
+          <button data-view="cosmos">
+            <small>01 / 空间的尺度</small><b>我们在何处 <span>↗</span></b>
+          </button>
+          <button data-view="calendar">
+            <small>02 / 时间的读法</small><b>打开一页历日 <span>↗</span></b>
+          </button>
+          <button data-view="story">
+            <small>03 / 第一个故事</small><b>从立春，走进生活 <span>↗</span></b>
+          </button>
+        </div>
+      </section>
+      <section id="view-cosmos" hidden>
+        <div class="view-head">
+          <div>
+            <p class="kicker">01 / 从远处，看我们生活的地方</p>
+            <h1>时间，也有空间的形状。</h1>
+          </div>
+          <p>先找到地球，再理解一年。<br />沿着尺度走近，看见太阳、地球与节气之间的关系。</p>
+        </div>
+        <div class="scale-nav" aria-label="空间层级">
+          <span>银河系</span><span aria-hidden="true">→</span><span>太阳系</span
+          ><span aria-hidden="true">→</span><span class="earth-scale">地球 · 我们的家园</span>
+        </div>
+        <div class="cosmos-layout">
+          <div>
+            <svg
+              class="space-diagram"
+              viewBox="0 0 820 540"
+              role="img"
+              aria-labelledby="space-title space-desc"
+            >
+              <title id="space-title">太阳与地球关系示意</title>
+              <desc id="space-desc">
+                太阳位于左侧，地球在右侧，以连接线表示两者关系。只用于表达页面构想，不表示实时位置、大小、距离或运动轨道。
+              </desc>
+              <circle
+                cx="270"
+                cy="270"
+                r="210"
+                fill="none"
+                stroke="#3d5050"
+                stroke-dasharray="2 8"
+              />
+              <circle cx="270" cy="270" r="143" fill="none" stroke="#3d5050" />
+              <path d="M270 60V85 M270 455V480 M60 270H85 M455 270H480" stroke="#8d9d8f" />
+              <circle cx="270" cy="270" r="68" fill="#d9b77a" />
+              <path d="M362 270H601" stroke="#b49b6e" stroke-width="1" />
+              <path d="M587 265L601 270L587 275" fill="none" stroke="#b49b6e" />
+              <text
+                x="451"
+                y="248"
+                text-anchor="middle"
+                fill="#b7c5c0"
+                font-size="13"
+                font-family="sans-serif"
+              >
+                太阳光
+              </text>
+              <circle cx="656" cy="270" r="51" fill="#719889" />
+              <path d="M656 219A51 51 0 0 1 656 321Z" fill="#293f3e" />
+              <ellipse
+                cx="656"
+                cy="270"
+                rx="24"
+                ry="51"
+                fill="none"
+                stroke="#b1c6b6"
+                stroke-opacity=".65"
+              />
+              <ellipse
+                cx="656"
+                cy="270"
+                rx="51"
+                ry="17"
+                fill="none"
+                stroke="#b1c6b6"
+                stroke-opacity=".65"
+              />
+              <text
+                x="270"
+                y="378"
+                text-anchor="middle"
+                fill="#f2f0e8"
+                font-size="22"
+                font-family="serif"
+              >
+                太阳
+              </text>
+              <text
+                x="270"
+                y="402"
+                text-anchor="middle"
+                fill="#b7c5c0"
+                font-size="11"
+                font-family="sans-serif"
+                letter-spacing="3"
+              >
+                SUN
+              </text>
+              <text
+                x="656"
+                y="365"
+                text-anchor="middle"
+                fill="#f2f0e8"
+                font-size="22"
+                font-family="serif"
+              >
+                地球
+              </text>
+              <text
+                x="656"
+                y="390"
+                text-anchor="middle"
+                fill="#95c0a9"
+                font-size="11"
+                font-family="sans-serif"
+                letter-spacing="2"
+              >
+                OUR HOME
+              </text>
+            </svg>
+            <p class="diagram-note">关系示意 · 圆线为视觉辅助 · 非实时位置 · 不按比例</p>
+          </div>
+          <div class="cosmos-side">
+            <p class="kicker">从地球，读懂一年</p>
+            <h2>同一个时间，<br />不同地方的生活。</h2>
+            <p>先从太阳系的视角理解地球，再切换到地球上的观察视角，认识太阳在天空中的周年变化。</p>
+            <div class="factline"><span>拉远看</span><b>太阳与地球</b></div>
+            <div class="factline"><span>站在地球上看</span><b>太阳的视位置</b></div>
+            <div class="factline"><span>走进生活</span><b>二十四节气</b></div>
+            <button class="primary" data-view="wheel">回到一年的年轮 →</button>
+          </div>
+        </div>
+      </section>
+      <section class="light" id="view-calendar" hidden>
+        <div class="view-head">
+          <div>
+            <p class="kicker">02 / 把天上的时间，放进日常</p>
+            <h1>同一天，几种读法。</h1>
+          </div>
+          <p>公历、农历与节气，在这里相遇。<br />从一个日期出发，走向它所在的季节故事。</p>
+        </div>
+        <div class="calendar-layout">
+          <div>
+            <div class="monthhead">
+              <h2 id="month-label">2026 / 02</h2>
+              <div class="monthnav">
+                <button id="prev-month" aria-label="上个月">←</button
+                ><button id="next-month" aria-label="下个月">→</button>
+              </div>
+            </div>
+            <div class="weekdays" aria-hidden="true">
+              <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span
+              ><span>六</span><span>日</span>
+            </div>
+            <div class="days" id="calendar-days" role="group" aria-label="选择公历日期"></div>
+            <p class="calendar-caption">
+              概念演示：可选择公历日期。农历、交节标记及与年轮的日期联动，待核验数据接入后启用。
+            </p>
+          </div>
+          <aside class="date-side">
+            <p class="kicker">你正在浏览 / 公历</p>
+            <div class="big-date" id="day-label">01</div>
+            <p class="date-label" id="full-date">2026 年 2 月 1 日 · 星期日</p>
+            <div class="date-row"><span>农历日期</span><b>待核验数据</b></div>
+            <div class="date-row"><span>交节时刻</span><b>待核验数据</b></div>
+            <div class="date-row"><span>首个故事</span><b>立春 · 内容设计中</b></div>
+            <button class="primary" data-view="story">看看立春的故事结构 →</button>
+            <p class="calendar-caption">故事入口独立于当前示例日期；不表示所选日期正在交立春。</p>
+          </aside>
+        </div>
+        <div class="calendar-foot">
+          <div>
+            <b>公历 · 定位一天</b>
+            <p>方便查找日期、切换月份，回到自己的日常。</p>
+          </div>
+          <div>
+            <b>农历 · 理解另一种编排</b>
+            <p>展开月份与月相、太阳周年运动之间的关系。</p>
+          </div>
+          <div>
+            <b>节气 · 走进一段时间</b>
+            <p>从交节时刻，进入当地自然与人们的生活。</p>
+          </div>
+        </div>
+      </section>
+      <section class="light" id="view-story" hidden>
+        <div class="story-head">
+          <button data-view="wheel">← 回到年轮</button>
+          <p class="kicker">中国表达 / 立春 / 故事结构预览</p>
+        </div>
+        <div class="story-hero">
+          <div>
+            <p class="kicker">03 / 从一个刻度，走进一个地方</p>
+            <h1>春天，<br />从哪里开始？</h1>
+            <p>
+              从太阳的位置，到历日的编排，<br />再到一个地方的人如何迎接这段时间。<br />用一个故事，连接我们刚刚看见的世界。
+            </p>
+            <button class="outline" data-view="calendar">先看看历日 →</button>
+          </div>
+          <div class="story-orbit" role="img" aria-label="立春篇章标识，非轨道图">
+            <span class="dot" aria-hidden="true"></span><span class="large">立春</span
+            ><span class="axis" aria-hidden="true"></span><small>LICHUN / CHAPTER 01</small>
+          </div>
+        </div>
+        <div class="chapters">
+          <details open>
+            <summary><span>01</span>它在一年中的什么位置？</summary>
+            <p>
+              这一章保留年轮中的立春标记，展开太阳位置的解释。让用户把刚刚操作的时间刻度，与“立春”这个名字连接起来。
+            </p>
+          </details>
+          <details>
+            <summary><span>02</span>立春以后，当地就暖了吗？</summary>
+            <p>
+              用经审核的说明，区分节气的天文定义与当地气候；自然案例注明地域、年代和资料类型，古典物候记载与现代观测分别呈现。
+            </p>
+          </details>
+          <details>
+            <summary><span>03</span>立春，为什么和春节不同？</summary>
+            <p>
+              日历在这里成为解释的一部分。并排展示同一年中公历、农历、立春与春节的位置，具体日期待核验后呈现。
+            </p>
+          </details>
+          <details>
+            <summary><span>04</span>一个地方的人，怎样迎接这段时间？</summary>
+            <p>
+              首个故事从九华立春祭或石阡说春中选择一个已审案例，呈现地点、活动与时间。使用有许可的地方资料，读者可展开来源。
+            </p>
+          </details>
+        </div>
+        <div class="invitation">
+          <p>这个时间，<br />在你生活的地方意味着什么？</p>
+          <small>中国的故事是起点。下一步，是听见不同地方的人。</small>
+        </div>
+      </section>
+    </main>
+    <footer class="review-foot">
+      <span>交互概念稿 · 文化正文与历法数据尚未获审 · 非已上线产品</span
+      ><a href="solar24-world-calendar-concept.md">阅读完整设计说明 ↗</a>
+    </footer>
+    <script>
+      const terms = [
+        ['立春', 'Beginning of Spring'],
+        ['雨水', 'Rain Water'],
+        ['惊蛰', 'Awakening of Insects'],
+        ['春分', 'Spring Equinox'],
+        ['清明', 'Pure Brightness'],
+        ['谷雨', 'Grain Rain'],
+        ['立夏', 'Beginning of Summer'],
+        ['小满', 'Grain Buds'],
+        ['芒种', 'Grain in Ear'],
+        ['夏至', 'Summer Solstice'],
+        ['小暑', 'Minor Heat'],
+        ['大暑', 'Major Heat'],
+        ['立秋', 'Beginning of Autumn'],
+        ['处暑', 'End of Heat'],
+        ['白露', 'White Dew'],
+        ['秋分', 'Autumn Equinox'],
+        ['寒露', 'Cold Dew'],
+        ['霜降', 'Frost Descent'],
+        ['立冬', 'Beginning of Winter'],
+        ['小雪', 'Minor Snow'],
+        ['大雪', 'Major Snow'],
+        ['冬至', 'Winter Solstice'],
+        ['小寒', 'Minor Cold'],
+        ['大寒', 'Major Cold'],
+      ];
+      const seasons = ['SPRING / 春', 'SUMMER / 夏', 'AUTUMN / 秋', 'WINTER / 冬'];
+      let selected = 0,
+        year = 2026,
+        month = 1,
+        day = 1;
+      const byId = (id) => document.getElementById(id);
+      const svgNS = 'http://www.w3.org/2000/svg';
+      for (let i = 0; i < 120; i++) {
+        const a = ((i * 3 - 90) * Math.PI) / 180;
+        const tick = document.createElementNS(svgNS, 'line');
+        const r = i % 5 === 0 ? 247 : 257;
+        Object.entries({
+          x1: 350 + Math.cos(a) * r,
+          y1: 350 + Math.sin(a) * r,
+          x2: 350 + Math.cos(a) * 266,
+          y2: 350 + Math.sin(a) * 266,
+          stroke: i % 5 === 0 ? '#9aaa98' : '#3d5050',
+          'stroke-width': i % 5 === 0 ? 1.3 : 1,
+        }).forEach(([k, v]) => tick.setAttribute(k, v));
+        byId('ticks').append(tick);
+      }
+      terms.forEach(([name], i) => {
+        const angle = ((i * 15 - 90) * Math.PI) / 180;
+        const b = document.createElement('button');
+        b.className = 'term';
+        b.textContent = name;
+        b.style.left = 50 + 44 * Math.cos(angle) + '%';
+        b.style.top = 50 + 44 * Math.sin(angle) + '%';
+        b.dataset.term = String(i);
+        b.setAttribute('aria-label', `选择${name}，第${i + 1}个节气`);
+        b.addEventListener('click', () => choose(i));
+        byId('term-wheel').append(b);
+        const m = b.cloneNode(true);
+        m.className = '';
+        m.removeAttribute('style');
+        m.addEventListener('click', () => choose(i));
+        byId('mobile-terms').append(m);
+      });
+      function choose(i) {
+        selected = (i + 24) % 24;
+        const [name, en] = terms[selected];
+        byId('selected-term').textContent = name;
+        byId('selected-en').textContent = en;
+        byId('season-label').textContent =
+          seasons[Math.floor(selected / 6)] + ' · ' + String(selected + 1).padStart(2, '0');
+        byId('selected-count').textContent = `浏览 ${String(selected + 1).padStart(2, '0')} / 24`;
+        byId('open-term').textContent = selected === 0 ? '进入立春 →' : '查看筹备状态 →';
+        document
+          .querySelectorAll('[data-term]')
+          .forEach((b) =>
+            b.setAttribute('aria-pressed', String(Number(b.dataset.term) === selected)),
+          );
+        const a = ((selected * 15 - 90) * Math.PI) / 180;
+        byId('selection-mark').replaceChildren();
+        const dot = document.createElementNS(svgNS, 'circle');
+        Object.entries({
+          cx: 350 + 230 * Math.cos(a),
+          cy: 350 + 230 * Math.sin(a),
+          r: 5,
+          fill: '#d9b77a',
+        }).forEach(([k, v]) => dot.setAttribute(k, v));
+        byId('selection-mark').append(dot);
+        byId('wheel-status').textContent =
+          selected === 0 ? '立春为首个完整体验的设计样本' : `${name}：保留入口，内容体验尚在筹备。`;
+        saveHash();
+      }
+      let view = 'wheel';
+      function showView(v, focus = true) {
+        view = ['wheel', 'cosmos', 'calendar', 'story'].includes(v) ? v : 'wheel';
+        document
+          .querySelectorAll('main>section')
+          .forEach((s) => (s.hidden = s.id !== 'view-' + view));
+        document.querySelectorAll('nav [data-view]').forEach((b) => {
+          if (b.dataset.view === view) b.setAttribute('aria-current', 'page');
+          else b.removeAttribute('aria-current');
+        });
+        saveHash();
+        if (focus) {
+          byId('main').focus({ preventScroll: true });
+          window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+      }
+      function saveHash() {
+        if (typeof view === 'undefined') return;
+        const value = `${view}/${selected}/${year}-${month + 1}-${day}`;
+        history.replaceState(null, '', '#' + value);
+      }
+      document
+        .querySelectorAll('[data-view]')
+        .forEach((b) => b.addEventListener('click', () => showView(b.dataset.view)));
+      byId('prev-term').addEventListener('click', () => choose(selected - 1));
+      byId('next-term').addEventListener('click', () => choose(selected + 1));
+      byId('open-term').addEventListener('click', () => {
+        if (selected === 0) showView('story');
+        else
+          byId('wheel-status').textContent =
+            `${terms[selected][0]}的完整体验尚在筹备。你可以继续转动年轮，或从立春开始。`;
+      });
+      function drawCalendar() {
+        byId('month-label').textContent = year + ' / ' + String(month + 1).padStart(2, '0');
+        byId('calendar-days').replaceChildren();
+        const first = (new Date(Date.UTC(year, month, 1)).getUTCDay() + 6) % 7,
+          count = new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
+        day = Math.min(day, count);
+        for (let i = 0; i < first; i++) {
+          const blank = document.createElement('span');
+          blank.className = 'blank';
+          blank.setAttribute('aria-hidden', 'true');
+          byId('calendar-days').append(blank);
+        }
+        for (let d = 1; d <= count; d++) {
+          const b = document.createElement('button');
+          b.textContent = String(d);
+          b.setAttribute('aria-label', `${year}年${month + 1}月${d}日`);
+          b.setAttribute('aria-pressed', String(d === day));
+          b.addEventListener('click', () => {
+            day = d;
+            updateDate();
+            document
+              .querySelectorAll('#calendar-days button')
+              .forEach((x, i) => x.setAttribute('aria-pressed', String(i + 1 === d)));
+          });
+          byId('calendar-days').append(b);
+        }
+        byId('prev-month').disabled = year === 2026 && month === 0;
+        byId('next-month').disabled = year === 2026 && month === 11;
+        updateDate();
+      }
+      function updateDate() {
+        byId('day-label').textContent = String(day).padStart(2, '0');
+        byId('full-date').textContent =
+          `${year} 年 ${month + 1} 月 ${day} 日 · 星期${'日一二三四五六'[new Date(Date.UTC(year, month, day)).getUTCDay()]}`;
+        saveHash();
+      }
+      byId('prev-month').addEventListener('click', () => {
+        if (month > 0) {
+          month--;
+          drawCalendar();
+        }
+      });
+      byId('next-month').addEventListener('click', () => {
+        if (month < 11) {
+          month++;
+          drawCalendar();
+        }
+      });
+      const saved = location.hash.slice(1).split('/');
+      if (saved[0]) view = saved[0];
+      if (saved[1] && /^\d+$/.test(saved[1])) selected = Math.min(23, Number(saved[1]));
+      if (saved[2]) {
+        const d = saved[2].match(/^2026-(\d{1,2})-(\d{1,2})$/);
+        if (d) {
+          month = Math.max(0, Math.min(11, Number(d[1]) - 1));
+          day = Math.max(1, Math.min(31, Number(d[2])));
+        }
+      }
+      choose(selected);
+      drawCalendar();
+      showView(view, false);
+    </script>
+  </body>
+</html>

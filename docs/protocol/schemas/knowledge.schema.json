@@ -23,6 +23,7 @@
         "VisualAsset",
         "AudioAsset",
         "InteractionIdea",
+        "HumanExplanation",
         "ResearchNote",
         "Source"
       ]
@@ -60,6 +61,7 @@
         "type": "string",
         "enum": [
           "astronomy",
+          "calendar",
           "climate",
           "phenology",
           "agriculture",
@@ -130,6 +132,24 @@
         "low",
         "medium",
         "high"
+      ]
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "impact_level": {
+      "type": "string",
+      "enum": [
+        "system",
+        "term",
+        "regional",
+        "creative",
+        "global"
       ]
     },
     "contested": {
@@ -261,6 +281,13 @@
             "personal-observation"
           ]
         },
+        "access": {
+          "type": "string",
+          "enum": [
+            "direct-read",
+            "search-excerpt"
+          ]
+        },
         "accessed": {
           "anyOf": [
             {
@@ -304,6 +331,7 @@
         "url",
         "citation",
         "source_type",
+        "access",
         "accessed",
         "original_excerpt",
         "locator",
@@ -523,6 +551,7 @@
         "status": {
           "type": "string",
           "enum": [
+            "candidate",
             "draft",
             "submitted",
             "reviewing",
@@ -587,6 +616,111 @@
         "consent",
         "status",
         "featured"
+      ],
+      "additionalProperties": false
+    },
+    "explanation": {
+      "type": "object",
+      "properties": {
+        "audience": {
+          "type": "string",
+          "minLength": 1
+        },
+        "one_sentence": {
+          "type": "object",
+          "properties": {
+            "zh-CN": {
+              "type": "string",
+              "minLength": 1
+            },
+            "en": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "zh-CN",
+            "en"
+          ],
+          "additionalProperties": false
+        },
+        "summary": {
+          "type": "object",
+          "properties": {
+            "zh-CN": {
+              "type": "string",
+              "minLength": 1
+            },
+            "en": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "zh-CN",
+            "en"
+          ],
+          "additionalProperties": false
+        },
+        "expanded": {
+          "type": "object",
+          "properties": {
+            "zh-CN": {
+              "type": "string",
+              "minLength": 1
+            },
+            "en": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "zh-CN",
+            "en"
+          ],
+          "additionalProperties": false
+        },
+        "why_it_matters": {
+          "type": "object",
+          "properties": {
+            "zh-CN": {
+              "type": "string",
+              "minLength": 1
+            },
+            "en": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "zh-CN",
+            "en"
+          ],
+          "additionalProperties": false
+        },
+        "supporting_knowledge_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "audience",
+        "one_sentence",
+        "summary",
+        "expanded",
+        "why_it_matters",
+        "supporting_knowledge_ids",
+        "limitations"
       ],
       "additionalProperties": false
     },
@@ -701,6 +835,48 @@
         "conflicts",
         "conclusions",
         "human_questions"
+      ],
+      "additionalProperties": false
+    },
+    "ai_review": {
+      "type": "object",
+      "properties": {
+        "reviewer_model": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+        },
+        "decision": {
+          "type": "string",
+          "enum": [
+            "approve",
+            "revise",
+            "hold",
+            "reject"
+          ]
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "reviewer_model",
+        "reviewed_at",
+        "decision",
+        "findings",
+        "notes"
       ],
       "additionalProperties": false
     }

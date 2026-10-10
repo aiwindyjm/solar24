@@ -1,0 +1,66 @@
+async page => {
+  const check=(v,m)=>{if(!v)throw Error(m)};
+  const errors=[], external=[];
+  page.on('pageerror',e=>errors.push(e.message));
+  await page.unroute('**/*');
+  await page.route('**/*',route=>{
+    const url=route.request().url();
+    if(/^https?:/.test(url)&&!url.startsWith('http://127.0.0.1:5176/')) {
+      external.push(url);return route.abort();
+    }
+    return route.continue();
+  });
+  await page.setViewportSize({width:1269,height:1066});
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.goto('http://127.0.0.1:5176/#qiufen/seasons');
+  const ids=['lichun','yushui','jingzhe','chunfen','qingming','guyu','lixia','xiaoman','mangzhong','xiazhi','xiaoshu','dashu','liqiu','chushu','bailu','qiufen','hanlu','shuangjiang','lidong','xiaoxue','daxue','dongzhi','xiaohan','dahan'];
+  let chapters=0, contexts=0;
+  for(const language of ['en','zh']) {
+    const switcher=page.getByRole('button',{name:language==='zh'?'Switch to Chinese':'Switch to English',exact:true});
+    if(await switcher.count())await switcher.click();
+    for(const id of ids){
+      await page.goto('http://127.0.0.1:5176/#'+id+'/seasons');
+      for(let chapter=0;chapter<5;chapter++){
+        await page.locator('.culture-strip button').nth(chapter).click();
+        const article=page.locator('.scroll-paper');
+        check((await article.locator('.chapter-body > p').first().innerText()).length>25,id+' text');
+        if(chapter<4){
+          await article.locator('.reading-references > summary').click();
+          check(await article.locator('.reference-books cite').count()>0,id+' local titles');
+          check(await article.locator('.reference-books .reference-publisher').first().isVisible(),id+' local publisher');
+          check(!await article.locator('a').first().isVisible(),id+' external links hidden');
+          check(!/pending human|草稿|待人工|研究状态|note-|humanReview|cross-checked|unverified/i.test(await article.innerText()),id+' internal text leaked');
+          await article.locator('.reference-originals > summary').click();
+          check(await article.locator('a').first().isVisible(),id+' optional link');
+          check(await article.locator('a').first().getAttribute('target')==='_blank',id+' external target');
+        }else check(await article.locator('.reading-references').count()===0,id+' no empty references');
+        chapters++;
+      }
+      await page.goto('http://127.0.0.1:5176/#'+id+'/life');
+      await page.locator('.hotspots button').nth(2).click();
+      await page.locator('.life-context > summary').click();
+      await page.locator('.life-context .reading-references > summary').click();
+      check(await page.locator('.life-context .reference-books cite').count()>0,id+' life bibliography');
+      check(!await page.locator('.life-context a').first().isVisible(),id+' life optional links');
+      check(!/草稿|待人工|研究状态|pending human/i.test(await page.locator('.life-context').innerText()),id+' life internal copy');
+      contexts++;
+    }
+  }
+  await page.goto('http://127.0.0.1:5176/#qiufen/seasons');
+  await page.locator('.culture-strip button').nth(3).click();
+  await page.locator('.scroll-paper .reading-references > summary').click();
+  await page.screenshot({path:'output/playwright/solar24-v5-reading-references-desktop.png'});
+  await page.setViewportSize({width:390,height:844});
+  await page.locator('.scroll-paper .reading-references > summary').scrollIntoViewIfNeeded();
+  check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'mobile overflow');
+  await page.screenshot({path:'output/playwright/solar24-v5-reading-references-mobile.png'});
+  await page.setViewportSize({width:1280,height:720});
+  await page.goto('http://127.0.0.1:5176/#qiufen/cosmos');
+  await page.locator('.astronomy-note > details > summary').click();
+  await page.locator('.astronomy-note .reading-references > summary').click();
+  check(await page.locator('.astronomy-note .reference-books cite').count()===2,'astronomy bibliography');
+  check(!await page.locator('.astronomy-note a').first().isVisible(),'astronomy optional links');
+  check(external.length===0,'Unexpected external requests: '+external.join());
+  check(errors.length===0,'Errors: '+errors.join());
+  return {chapters,contexts,externalRequests:external,pageErrors:errors,passed:true};
+}

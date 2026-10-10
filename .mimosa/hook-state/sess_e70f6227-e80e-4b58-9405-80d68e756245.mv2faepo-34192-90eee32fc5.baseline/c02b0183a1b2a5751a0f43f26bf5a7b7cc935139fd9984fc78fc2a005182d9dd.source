@@ -1,0 +1,55 @@
+import io
+import re
+
+KB = r'E:\Users\Administrator\Documents\Desktop\24节气\knowledge-base\03_notes'
+
+UP = {
+ 'trad-lichun-nongshi': ('R13', ['source-wikisource-suisizuanyao', 'source-wikisource-shoushitongkao'],
+  '''- **农书直读环（2026-09-25，R13）**：《四时纂要》正月（直读）：「自立春即得正月節，凡陰陽避忌，宜依正月法」；正月条目首列「耕地、鋤麥…備種子、揀耕牛法」——唐末农书的正月清单以备耕与冬麦管理为主，与"备耕动员"主线吻合。《授时通考》卷42辑《禮記·月令》「孟春之月天子乃以元日祈穀於上帝…躬耕帝耤」——立春所在孟春的国家农事礼（制度层见 [[02_shared/hist-quannong-institutional-chain|劝农制度链]]）。'''),
+ 'trad-yushui-nongshi': ('R14', ['source-wikisource-suisizuanyao', 'source-wikisource-qiminyaoshu'],
+  '''- **农书直读环（2026-09-25，R14）**：《四时纂要》正月（直读）：「雨水為正月中氣」。《齐民要术》种谷第三（直读）：「二月上旬及麻、菩楊生種者爲上時」——北魏黄河流域谷子播种的上时窗口起于二月上旬（雨水至惊蛰之间），与"春耕备耕由南向北展开"的现代叙述在农书层有对应物（口径为北魏黄河流域，非现代全国）。'''),
+ 'trad-mangzhong-nongshi': ('R15', ['source-wikisource-suisizuanyao'],
+  '''- **农书直读环（2026-09-25，R15）**：《四时纂要》五月（直读）：「自芒種即得五月節」；五月条目有「暵麥地」（晒麦地）及種苴麻、種麻良日等——五月上旬麦收晾地与麻类播种的结构，是"芒种收麦种麻"经验的唐末北方农书对应物（口径：唐末北方，非现代全国农事）。'''),
+ 'trad-xiazhi-nongshi': ('R16', ['source-wikisource-suisizuanyao'],
+  '''- **农书直读环（2026-09-25，R16）**：《四时纂要》五月（直读）：「夏至，五月中氣」；「夏至日次立八尺之表，得影一尺六寸，宜黍」——夏至圭表测影实践与"宜黍"占辞并载于农书（占辞属占候层，不作科学引用）；夏至在农书中的身份是"五月中气+测影基准点"。'''),
+ 'trad-qiufen-nongshi': ('R17', ['source-wikisource-suisizuanyao', 'source-wikisource-shoushitongkao'],
+  '''- **农书直读环（2026-09-25，R17）**：《四时纂要》八月（直读）：「秋分，八月中氣」；「秋分先立一丈表」（八尺表得影七尺三寸七分，宜麻）；八月条目「種大麥、種小麥、漬麥種」。《授时通考》卷42辑《禮記·月令》「仲秋之月乃勸種麥毋或失時」——秋分所在仲秋=经典劝种麦+麦作播种窗口（占影尺寸属占候层）。'''),
+ 'trad-dongzhi-nongshi': ('R18', ['source-wikisource-suisizuanyao'],
+  '''- **农书直读环（2026-09-25，R18）**：《四时纂要》十一月（直读）：「冬至，十一月中氣」；「冬至日，先立一丈表，得影一尺…」；「冬至後一日得壬，炎旱千里」逐日占壬；条目「試穀種、貯雪水」——冬至在农书中同时是中气、圭表测影基准与冬藏备种节点（占壬属占候层，不作科学引用）。'''),
+}
+
+for fname, (rid, add_srcs, block) in UP.items():
+    p = KB + '\\' + fname + '.md'
+    t = io.open(p, encoding='utf-8').read()
+    # 1) insert evidence block before first "## AI 摘要"
+    assert '## AI 摘要' in t, fname
+    t = t.replace('## AI 摘要', block + '\n\n## AI 摘要', 1)
+    # 2) extend source_ids
+    m = re.search(r"source_ids: \[(.*?)\]", t)
+    assert m, fname
+    cur = m.group(1).strip()
+    items = [x.strip().strip("'") for x in cur.split(',') if x.strip().strip("'")]
+    for s in add_srcs:
+        if s not in items:
+            items.append(s)
+    new_list = ', '.join("'" + s + "'" for s in items)
+    t = t[: m.start()] + 'source_ids: [' + new_list + ']' + t[m.end():]
+    # 3) append change record
+    t = t.rstrip() + ('\n- 2026-09-25（%s，第二轮·农书层）：新增农书直读环（唐末《四时纂要》逐月条目/北魏《齐民要术》/清《授时通考》辑录，均为其时代与地域口径，非现代全国农事）；source_ids 扩充。\n' % rid)
+    io.open(p, 'w', encoding='utf-8', newline='\n').write(t)
+    print('upgraded', fname)
+
+# progress rows R13-R18
+p2 = KB + r'\07_research\round2-progress.md'
+t2 = io.open(p2, encoding='utf-8').read()
+outs = {'R13': '立春农事卡+农书环', 'R14': '雨水农事卡+农书环', 'R15': '芒种农事卡+农书环',
+        'R16': '夏至农事卡+农书环', 'R17': '秋分农事卡+农书环', 'R18': '冬至农事卡+农书环'}
+for rid, out in outs.items():
+    t2 = re.sub(r'\| %s \| 农书 \| ([^|]+) \| todo \|' % rid,
+                lambda m, rid=rid, out=out: '| %s | 农书 | %s | done | %s |' % (rid, m.group(1).strip(), out), t2)
+log = '''### R13-R18（2026-09-25）六节气农事卡农书层升级
+无新抓取（复用 R04-R12 直读成果）。trad-{lichun,yushui,mangzhong,xiazhi,qiufen,dongzhi}-nongshi 六卡各增"农书直读环"证据块+source_ids 扩充+修改记录；每处均带时代地域口径（北魏/唐末/清官修）并显式标注占候层不作科学引用。阶段1（农书体系 R04-R18）完成：新增 Source 4（齐民要术/四时纂要/授时通考/东京梦华录主页）+6张卡、升级卡7张。
+'''
+t2 = t2.replace('### R10-R12（2026-09-25）', log + '\n### R10-R12（2026-09-25）')
+io.open(p2, 'w', encoding='utf-8', newline='\n').write(t2)
+print('progress updated')

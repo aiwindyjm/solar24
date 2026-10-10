@@ -1,0 +1,15 @@
+{
+  "name": "@solar24/module-guyu",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node ../../scripts/module.mjs dev guyu",
+    "build": "node ../../scripts/module.mjs build guyu",
+    "test": "node ../../scripts/module.mjs test guyu"
+  },
+  "dependencies": {
+    "@solar24/module-runtime": "workspace:*",
+    "@solar24/protocol": "workspace:*"
+  }
+}

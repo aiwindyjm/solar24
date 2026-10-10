@@ -1,0 +1,52 @@
+async page => {
+ const check=(v,m)=>{if(!v)throw Error(m)};
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.setViewportSize({width:1269,height:1066});
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await page.goto('http://127.0.0.1:5176/#lichun/life');await page.waitForTimeout(800);
+ if(await page.getByRole('button',{name:'Switch to English',exact:true}).count())await page.getByRole('button',{name:'Switch to English',exact:true}).click();
+ const ids=['lichun','yushui','jingzhe','chunfen','qingming','guyu','lixia','xiaoman','mangzhong','xiazhi','xiaoshu','dashu','liqiu','chushu','bailu','qiufen','hanlu','shuangjiang','lidong','xiaoxue','daxue','dongzhi','xiaohan','dahan'];
+ const results=[];
+ for(const id of ids){
+  await page.goto('http://127.0.0.1:5176/#'+id+'/life');
+  await page.waitForTimeout(100);
+  check(await page.locator('.hotspots button').count()===3,id+' has 3 places');
+  check(await page.locator('.culture-strip').count()===0,id+' has no duplicate book');
+  const labels=await page.locator('.hotspots button span').allTextContents();
+  await page.locator('.hotspots button').nth(0).click();
+  const listening=await page.locator('.listening-moment p').innerText();
+  await page.locator('.life-context > summary').click();
+  check((await page.locator('.life-context > p').innerText()).length>40,id+' nature context');
+  await page.getByRole('button',{name:'Return to the landscape',exact:true}).click();
+  await page.locator('.hotspots button').nth(1).click();
+  const gesture=await page.locator('.season-drawing').getAttribute('data-gesture');
+  const initial=await page.locator('.season-drawing').innerHTML();
+  await page.locator('#field-time').focus();await page.keyboard.press('End');
+  check(await page.locator('.season-drawing').innerHTML()!==initial,id+' gesture responds');
+  check(await page.locator('#field-time').inputValue()===(id==='dongzhi'?'81':'100'),id+' keyboard range');
+  await page.locator('.life-context > summary').click();
+  await page.locator('.life-context > details > summary').click();
+  check(await page.locator('.life-context a').count()>0,id+' sources');
+  check((await page.locator('.life-context small').innerText()).includes('pending human review'),id+' draft');
+  const action=await page.locator('.field-moment h3').innerText();
+  if(id==='dongzhi'){
+   check(await page.getByRole('button',{name:'Add one day',exact:false}).isDisabled(),'Count caps at81');
+   await page.getByRole('button',{name:'Begin again',exact:true}).click();
+   await page.getByRole('button',{name:'Add one day',exact:false}).click();
+   check(await page.locator('#field-time').inputValue()==='1','One click one count');
+  }
+  await page.getByRole('button',{name:'Return to the landscape',exact:true}).click();
+  await page.locator('.hotspots button').nth(2).click();
+  const memory=await page.locator('.memory-moment label').innerText();
+  await page.locator('.life-context > summary').click();
+  check((await page.locator('.life-context > p').innerText()).length>40,id+' human context');
+  await page.getByRole('button',{name:'Return to the landscape',exact:true}).click();
+  check(await page.locator('.hotspots button').nth(2).evaluate(el=>document.activeElement===el),id+' focus restored');
+  results.push({id,gesture,labels,listening,action,memory});
+ }
+ check(new Set(results.map(r=>r.memory)).size===24,'24 unique memory prompts');
+ check(new Set(results.map(r=>r.action)).size===24,'24 unique actions');
+ check(await page.locator('canvas').count()===1,'Single renderer');
+ check(errors.length===0,errors.join(';'));
+ return {count:results.length,modes:[...new Set(results.map(r=>r.gesture))],errors,passed:true};
+}

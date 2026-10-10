@@ -1,0 +1,57 @@
+async page => {
+  await page.emulateMedia({reducedMotion: 'reduce'});
+  await page.clock.install({time: new Date('2026-09-20T12:00:00Z')});
+  await page.clock.pauseAt(new Date('2026-09-20T12:00:01Z'));
+  await page.goto('http://127.0.0.1:5176/#daxue/seasons');
+  await page.evaluate(() => localStorage.setItem('solar24-v5-language', 'en'));
+  await page.reload();
+  const check = (value, label) => { if (!value) throw new Error(label); };
+  const date = () => page.locator('.date-trigger').innerText();
+  await page.getByRole('button', {name:'Journey through a year', exact:true}).click();
+  check(page.url().endsWith('#lichun/seasons'), 'Tour must start at Lichun');
+  check((await date()).includes('04\n2026 · 02'), 'Tour starts on February 4');
+  await page.locator('.date-trigger').click();
+  await page.clock.runFor(600);
+  check((await date()).startsWith('05'), 'Open calendar must tick');
+  check(await page.getByRole('button', {name:'2026-2-5',exact:true}).getAttribute('aria-pressed') === 'true', 'Calendar selected day follows the clock');
+  await page.clock.runFor(13 * 600);
+  check(page.url().endsWith('#yushui/seasons'), 'Rain Water boundary');
+  check((await date()).startsWith('18'), 'Rain Water date');
+  await page.getByRole('button', {name:'Pause motion',exact:true}).click();
+  const pausedDate = await date();
+  await page.clock.runFor(6000);
+  check(await date() === pausedDate, 'Pause stops calendar');
+  await page.getByRole('button', {name:'Resume motion',exact:true}).click();
+  await page.evaluate(() => {
+    Object.defineProperty(document, 'hidden', {configurable:true, get:() => true});
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  await page.clock.runFor(6000);
+  check(await date() === pausedDate, 'Hidden page stops calendar');
+  await page.evaluate(() => {
+    delete document.hidden;
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  await page.clock.runFor(600);
+  check((await date()).startsWith('19'), 'Visible page resumes without catching up');
+  await page.clock.runFor(316 * 600);
+  check((await date()).includes('01\n2027 · 01'), 'December crosses into January 2027');
+  await page.clock.runFor(4 * 600);
+  check(page.url().endsWith('#xiaohan/seasons'), 'Minor Cold follows December solstice');
+  await page.clock.runFor(15 * 600);
+  check(page.url().endsWith('#dahan/seasons'), 'Major Cold follows Minor Cold');
+  await page.clock.runFor(15 * 600);
+  check(page.url().endsWith('#lichun/seasons'), 'Full cycle wraps to Lichun');
+  check((await date()).includes('04\n2026 · 02'), 'Calendar loops with the same reference cycle');
+  await page.getByRole('button', {name:'2026-2-20',exact:true}).click();
+  const manualDate = await date();
+  await page.clock.runFor(1200);
+  check(await date() === manualDate, 'Manual date stops tour');
+  check(page.url().endsWith('#yushui/seasons'), 'Manual date selects corresponding term');
+  check(await page.getByRole('button', {name:'Journey through a year',exact:true}).isVisible(), 'Tour button resets');
+  await page.getByRole('button', {name:'Close calendar',exact:true}).click();
+  check(await page.locator('.date-trigger').evaluate(el => el === document.activeElement), 'Calendar returns keyboard focus');
+  const report = {status:'passed', checks:15, cycleDays:365, tickMs:600, calendarOpen:true, reducedMotion:true};
+  await page.evaluate(report => { window.solar24ClockCheck = report; }, report);
+  return report;
+}

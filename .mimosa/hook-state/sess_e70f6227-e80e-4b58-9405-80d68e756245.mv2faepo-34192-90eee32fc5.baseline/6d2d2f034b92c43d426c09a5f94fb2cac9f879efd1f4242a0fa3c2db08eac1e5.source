@@ -1,0 +1,37 @@
+import io
+import re
+
+KB = r'E:\Users\Administrator\Documents\Desktop\24节气\knowledge-base'
+
+# qiufen: multiline source_ids format
+p = KB + r'\03_notes\trad-qiufen-nongshi.md'
+t = io.open(p, encoding='utf-8').read()
+block = '''- **农书直读环（2026-09-25，R17）**：《四时纂要》八月（直读）：「秋分，八月中氣」；「秋分先立一丈表」（八尺表得影七尺三寸七分，宜麻）；八月条目「種大麥、種小麥、漬麥種」。《授时通考》卷42辑《禮記·月令》「仲秋之月乃勸種麥毋或失時」——秋分所在仲秋=经典劝种麦+麦作播种窗口（占影尺寸属占候层）。'''
+assert '## AI 摘要' in t
+t = t.replace('## AI 摘要', block + '\n\n## AI 摘要', 1)
+t = t.replace("  ['source-ihchina-qiufen-feature', 'source-xinhua-qiufen-2024', 'source-xinhua-qiufen-2022', 'source-people-fengshoujie-2025']",
+              "  [\n    'source-ihchina-qiufen-feature',\n    'source-xinhua-qiufen-2024',\n    'source-xinhua-qiufen-2022',\n    'source-people-fengshoujie-2025',\n    'source-wikisource-suisizuanyao',\n    'source-wikisource-shoushitongkao',\n  ]")
+t = t.rstrip() + '\n- 2026-09-25（R17，第二轮·农书层）：新增农书直读环（唐末《四时纂要》八月条目/清《授时通考》辑《礼记·月令》仲秋劝种麦）；source_ids 扩充。\n'
+io.open(p, 'w', encoding='utf-8', newline='\n').write(t)
+print('upgraded qiufen')
+
+# dongzhi: single-line format
+p = KB + r'\03_notes\trad-dongzhi-nongshi.md'
+t = io.open(p, encoding='utf-8').read()
+block = '''- **农书直读环（2026-09-25，R18）**：《四时纂要》十一月（直读）：「冬至，十一月中氣」；「冬至日，先立一丈表，得影一尺…」；「冬至後一日得壬，炎旱千里」逐日占壬；条目「試穀種、貯雪水」——冬至在农书中同时是中气、圭表测影基准与冬藏备种节点（占壬属占候层，不作科学引用）。'''
+assert '## AI 摘要' in t
+t = t.replace('## AI 摘要', block + '\n\n## AI 摘要', 1)
+t = t.replace("source_ids: ['source-ihchina-dongzhi-feature']",
+              "source_ids: ['source-ihchina-dongzhi-feature', 'source-wikisource-suisizuanyao']")
+t = t.rstrip() + '\n- 2026-09-25（R18，第二轮·农书层）：新增农书直读环（唐末《四时纂要》十一月条目）；source_ids 扩充。\n'
+io.open(p, 'w', encoding='utf-8', newline='\n').write(t)
+print('upgraded dongzhi')
+
+# progress
+p2 = KB + r'\07_research\round2-progress.md'
+t2 = io.open(p2, encoding='utf-8').read()
+for rid, out in [('R17', '秋分农事卡+农书环'), ('R18', '冬至农事卡+农书环')]:
+    t2 = re.sub(r'\| %s \| 农书 \| ([^|]+) \| todo \|' % rid,
+                lambda m, rid=rid, out=out: '| %s | 农书 | %s | done | %s |' % (rid, m.group(1).strip(), out), t2)
+io.open(p2, 'w', encoding='utf-8', newline='\n').write(t2)
+print('progress updated')

@@ -1,0 +1,25 @@
+async page => {
+  const errors=[];
+  page.on('pageerror', error=>errors.push(error.message));
+  await page.addInitScript(()=>{
+    const original=HTMLCanvasElement.prototype.getContext;
+    HTMLCanvasElement.prototype.getContext=function(type,...args){
+      if(type.includes('webgl'))return null;
+      return original.call(this,type,...args);
+    };
+  });
+  await page.setViewportSize({width:1269,height:1066});
+  await page.reload();
+  await page.locator('.fallback-scene').waitFor();
+  if(await page.locator('.hotspots button').count()!==3)throw Error('Missing fallback hotspots');
+  await page.locator('.hotspots button').nth(1).click();
+  await page.locator('#field-time').fill('80');
+  if(await page.locator('.season-drawing').getAttribute('data-gesture')!=='shelter')throw Error('Wrong fallback gesture');
+  await page.locator('.life-context > summary').click();
+  await page.screenshot({path:'output/playwright/solar24-v5-life-season-fallback.png'});
+  await page.getByRole('button',{name:'Return to the landscape',exact:true}).click();
+  await page.locator('.hotspots button').nth(2).click();
+  if(!await page.locator('#season-memory').isVisible())throw Error('Missing memory');
+  if(errors.length)throw Error(errors.join('\n'));
+  return {fallback:true,gesture:true,memory:true,pageErrors:errors};
+}

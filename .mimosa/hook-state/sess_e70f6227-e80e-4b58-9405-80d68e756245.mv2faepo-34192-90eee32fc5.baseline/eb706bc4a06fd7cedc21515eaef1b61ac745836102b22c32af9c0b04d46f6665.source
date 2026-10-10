@@ -1,0 +1,92 @@
+import json
+import io
+import os
+import re
+import yaml
+
+KB = r'E:\Users\Administrator\Documents\Desktop\24节气\knowledge-base'
+REVIEWER = 'aiwindyjm'
+DATE = '2026-09-28'
+
+# Load source notes to build references
+SKIP = ('.obsidian', 'private', '_private', 'raw', '90_templates')
+byId = {}
+for root, dirs, fs in os.walk(KB):
+    dirs[:] = [d for d in dirs if d not in SKIP]
+    for f in fs:
+        if not f.endswith('.md'):
+            continue
+        p = os.path.join(root, f)
+        raw = io.open(p, encoding='utf-8').read()
+        m = re.match(r'^---\r?\n([\s\S]*?)\r?\n---', raw)
+        if m:
+            try:
+                d = yaml.safe_load(m.group(1))
+                if d.get('id'):
+                    byId[d['id']] = d
+            except:
+                pass
+
+# Source IDs needed by claims (matching knowledge card source_ids)
+NEEDED_SOURCES = [
+    'source-pmo-almanac-qa',
+    'source-hko-solar-terms',
+    'source-ihchina-lichun-feature',
+    'source-szmb-season-division',
+    'source-yueling-qishierhou-wikisource',
+    'source-ihchina-jiuhua-lichunji',
+    'source-ihchina-shiqian-shuochun',
+    'source-xinhua-unesco-solarterms',
+]
+
+refs = []
+for sid in NEEDED_SOURCES:
+    d = byId.get(sid)
+    if not d or not d.get('source'):
+        print(f'WARNING: {sid} not found')
+        continue
+    s = d['source']
+    refs.append({
+        'id': s['id'],
+        'title': s['title'],
+        'authors': s.get('authors', []),
+        'publisher': s.get('publisher'),
+        'published': s.get('published'),
+        'url': s.get('url'),
+        'citation': s.get('citation', ''),
+        'source_type': s.get('source_type', 'institutional'),
+        'access': s.get('access', 'direct-read'),
+        'accessed': str(s.get('accessed', '')),
+        'original_excerpt': s.get('original_excerpt', ''),
+        'locator': s.get('locator', ''),
+        'ai_summary': s.get('ai_summary', ''),
+        'rights': s.get('rights', 'unknown'),
+        'verification': 'human-verified',
+    })
+
+with io.open(r'E:\Users\Administrator\Documents\Desktop\24节气\modules\lichun\references.json', 'w', encoding='utf-8') as f:
+    json.dump(refs, f, ensure_ascii=False, indent=2)
+print(f'references written: {len(refs)} sources')
+
+# Now update content claims to use matching source_ids
+content_path = r'E:\Users\Administrator\Documents\Desktop\24节气\modules\lichun\content\zh-CN.json'
+content = json.load(io.open(content_path, encoding='utf-8'))
+
+SOURCE_MAP = {
+    'lichun-c1': ['source-pmo-almanac-qa', 'source-hko-solar-terms'],
+    'lichun-c2': ['source-ihchina-lichun-feature', 'source-pmo-almanac-qa'],
+    'lichun-c3': ['source-pmo-almanac-qa', 'source-ihchina-lichun-feature'],
+    'lichun-c4': ['source-szmb-season-division'],
+    'lichun-c5': ['source-yueling-qishierhou-wikisource'],
+    'lichun-c6': ['source-ihchina-jiuhua-lichunji', 'source-ihchina-shiqian-shuochun'],
+    'lichun-c7': ['source-hko-solar-terms', 'source-ihchina-lichun-feature'],
+    'lichun-c8': ['source-hko-solar-terms'],
+}
+
+for claim in content['claims']:
+    if claim['id'] in SOURCE_MAP:
+        claim['source_ids'] = SOURCE_MAP[claim['id']]
+
+with io.open(content_path, 'w', encoding='utf-8') as f:
+    json.dump(content, f, ensure_ascii=False, indent=2)
+print('content source_ids updated')

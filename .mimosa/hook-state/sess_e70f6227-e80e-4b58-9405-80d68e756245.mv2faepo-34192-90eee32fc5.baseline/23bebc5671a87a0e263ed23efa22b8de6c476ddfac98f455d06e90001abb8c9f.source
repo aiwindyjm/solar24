@@ -1,0 +1,10 @@
+async page => {
+ await page.setViewportSize({width:1269,height:1066});
+ await page.goto('http://127.0.0.1:5176/#daxue/life');await page.waitForTimeout(2300);
+ if(await page.getByRole('button',{name:'Switch to Chinese',exact:true}).count())await page.getByRole('button',{name:'Switch to Chinese',exact:true}).click();
+ await page.screenshot({path:'output/playwright/solar24-v5-life-season-daxue.png'});
+ await page.locator('.hotspots button').nth(1).click();await page.waitForTimeout(2300);
+ await page.locator('#field-time').fill('75');
+ await page.screenshot({path:'output/playwright/solar24-v5-life-season-shelter.png'});
+ return {title:await page.locator('.life-participation h3').innerText(),gesture:await page.locator('.season-drawing').getAttribute('data-gesture'),panel:await page.locator('.life-participation').boundingBox()};
+}

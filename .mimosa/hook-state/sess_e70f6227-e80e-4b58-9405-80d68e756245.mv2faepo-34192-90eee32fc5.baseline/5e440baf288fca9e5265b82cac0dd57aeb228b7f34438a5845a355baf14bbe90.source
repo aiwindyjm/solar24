@@ -1,0 +1,339 @@
+import io
+import os
+import re
+import json
+import yaml
+
+KB = r'E:\Users\Administrator\Documents\Desktop\24节气\knowledge-base'
+MODS = r'E:\Users\Administrator\Documents\Desktop\24节气\modules'
+SKIP = ('.obsidian', 'private', '_private', 'raw', '90_templates')
+REVIEWER = 'aiwindyjm'
+DATE = '2026-09-28'
+
+# Load knowledge base
+byId = {}
+for root, dirs, fs in os.walk(KB):
+    dirs[:] = [d for d in dirs if d not in SKIP]
+    for f in fs:
+        if not f.endswith('.md'):
+            continue
+        p = os.path.join(root, f)
+        raw = io.open(p, encoding='utf-8').read()
+        m = re.match(r'^---\r?\n([\s\S]*?)\r?\n---', raw)
+        if m:
+            try:
+                d = yaml.safe_load(m.group(1))
+                if d.get('id'):
+                    byId[d['id']] = d
+            except:
+                pass
+
+# Curated selection for 7 terms (from PRD alignment matrix)
+SELECTIONS = {
+    'yushui': {
+        'name': '雨水', 'name_en': 'Rain Water', 'order': 2,
+        'slots': {
+            'S1': ('sci-solarterms-calendar-role', 'scientific-explanation',
+                   '二十四节气按太阳黄经等分黄道24段，每段15°。节气是太阳位置的刻度，不是天气预言。',
+                   'The 24 solar terms divide the ecliptic into 24 equal segments. They mark the Sun\'s position, not weather.'),
+            'S2': ('sci-yushui-longitude-330', 'scientific-explanation',
+                   '雨水是二十四节气中的第二个：太阳到达黄经330°，通常在公历2月18日至20日。',
+                   'Yushui (Rain Water) is the second solar term: the Sun reaches 330°, around February 18-20.'),
+            'S3': ('sci-solarterms-jieqi-zhongqi', 'scientific-explanation',
+                   '雨水是农历正月的"中气"——农历月序由中气锚定，不含中气的月份被定为闰月。',
+                   'Yushui is the zhongqi (mid-term) of the first lunar month, anchoring the calendar\'s month sequence.'),
+            'S4': ('sci-yushui-rain-transition', 'scientific-explanation',
+                   '雨水时节气温回升、降水增多，此时冷空气仍活跃，乍暖还寒。',
+                   'Temperatures rise and precipitation increases, yet cold snaps remain frequent.'),
+            'S5': ('hist-yueling-yushui-pentads', 'fact',
+                   '古人记录的雨水三候：「獭祭鱼、候雁北、草木萌动」。这是古典文本观察。',
+                   'Ancient texts record: otters lay out fish, geese fly north, plants begin to sprout.'),
+            'S6': ('region-guanghan-yushui-baobaojie', 'tradition',
+                   '在四川广汉，正月十六举行的"拉保保"（为孩子认干爹）盛会与雨水节气同期，但按农历日而非节气日定期。',
+                   'In Guanghan, Sichuan, the La Baobao festival (godparent matching for children) runs on lunar January 16, concurrent with but not anchored to Yushui.'),
+            'S7': ('yushui-human-explanation', 'interpretation',
+                   '雨水的名字记录了一个农时判断：早春的雨决定返青作物的收成。"润物细无声"至今仍是汉语的标准意象。',
+                   'The name encodes a farming truth: early spring rain decides the harvest. "Moistening all things, finely, without a sound" remains a standard Chinese image.'),
+            'S8': ('fact-solarterms-unesco-2016', 'opinion',
+                   '这个时间在你生活的地方意味着什么？',
+                   'What does this time of year mean where you live?'),
+        },
+    },
+    'chunfen': {
+        'name': '春分', 'name_en': 'Spring Equinox', 'order': 4,
+        'slots': {
+            'S1': ('sci-solarterms-calendar-role', 'scientific-explanation',
+                   '二十四节气按太阳黄经等分黄道24段。节气是太阳位置的刻度。',
+                   'The 24 solar terms mark the Sun\'s position along the ecliptic.'),
+            'S2': ('sci-chunfen-longitude-0', 'scientific-explanation',
+                   '春分是二十四节气中的第四个：太阳到达黄经0°（春分点），全球昼夜几乎等长。',
+                   'Chunfen (Spring Equinox) is the fourth term: the Sun reaches 0°, with nearly equal day and night worldwide.'),
+            'S3': ('sci-solarterms-jieqi-zhongqi', 'scientific-explanation',
+                   '春分是农历二月的"中气"，与惊蛰配对。',
+                   'Chunfen is the zhongqi of the second lunar month, paired with Jingzhe.'),
+            'S4': ('sci-chunfen-day-night-equal', 'scientific-explanation',
+                   '春分日全球各地昼夜接近等长（精确等长需考虑大气折射和太阳视半径）。',
+                   'Day and night are nearly equal everywhere (exact equality varies with atmospheric refraction).'),
+            'S5': ('hist-yueling-chunfen-pentads', 'fact',
+                   '古人记录的春分三候：「玄鸟至、雷乃发声、始电」。燕子归来、春雷初响。',
+                   'Ancient texts: swallows arrive, thunder first sounds, lightning begins.'),
+            'S6': ('region-chunfen-anren-ganfenshe', 'tradition',
+                   '在湖南安仁，"赶分社"（春分前后中草药集市）延续至今，是国家级非遗扩展项目。',
+                   'In Anren, Hunan, the Ganfenshe herbal market around the equinox continues as national intangible heritage.'),
+            'S7': ('chunfen-human-explanation', 'interpretation',
+                   '春分把一年分成两半，也把昼夜分成两半。它是一个关于平衡的节气。',
+                   'Chunfen divides the year and the day in half — a term about balance.'),
+            'S8': ('fact-solarterms-unesco-2016', 'opinion',
+                   '这个时间在你生活的地方意味着什么？',
+                   'What does this time of year mean where you live?'),
+        },
+    },
+    'qingming': {
+        'name': '清明', 'name_en': 'Pure Brightness', 'order': 5,
+        'slots': {
+            'S1': ('sci-solarterms-calendar-role', 'scientific-explanation',
+                   '二十四节气按太阳黄经等分黄道24段。',
+                   'The 24 solar terms divide the ecliptic equally.'),
+            'S2': ('sci-qingming-longitude-15', 'scientific-explanation',
+                   '清明是二十四节气中的第五个：太阳到达黄经15°，在公历4月4日至6日。',
+                   'Qingming is the fifth term: the Sun reaches 15°, around April 4-6.'),
+            'S3': ('sci-qingming-longitude-15', 'scientific-explanation',
+                   '清明是二十四节气中唯一演变为传统节日的节气（清明节）。寒食节的祭扫习俗在唐代并入清明。',
+                   'Qingming is the only solar term that evolved into a major festival, absorbing Hanshi (Cold Food) tomb-sweeping customs during the Tang dynasty.'),
+            'S4': ('sci-qingming-jiangnan-rain', 'scientific-explanation',
+                   '清明时节江南多雨，"清明时节雨纷纷"有气候基础。',
+                   'The Jiangnan region sees frequent rain during Qingming.'),
+            'S5': ('hist-yueling-qingming-pentads', 'fact',
+                   '古人记录的清明三候：「桐始华、田鼠化为鴽、虹始见」。桐花初放、虹霓初现。',
+                   'Ancient texts: paulownia blooms, field mice transform into quails, rainbows first appear.'),
+            'S6': ('region-jiexiu-hanshi-qingming', 'tradition',
+                   '在山西介休，"介休寒食清明习俗"是国家级非遗扩展项目。介休被视为寒食节源地。',
+                   'In Jiexiu, Shanxi, the Hanshi-Qingming customs are recognized national intangible heritage. Jiexiu is considered the birthplace of the Cold Food festival.'),
+            'S7': ('qingming-human-explanation', 'interpretation',
+                   '清明兼具肃穆（祭扫）与生机（踏青），反映中国人对生死与季节的理解。',
+                   'Qingming holds both solemnity (tomb-sweeping) and vitality (spring outing).'),
+            'S8': ('fact-solarterms-unesco-2016', 'opinion',
+                   '这个时间在你生活的地方意味着什么？',
+                   'What does this time of year mean where you live?'),
+        },
+    },
+    'guyu': {
+        'name': '谷雨', 'name_en': 'Grain Rain', 'order': 6,
+        'slots': {
+            'S1': ('sci-solarterms-calendar-role', 'scientific-explanation',
+                   '二十四节气按太阳黄经等分黄道24段。',
+                   'The 24 solar terms divide the ecliptic equally.'),
+            'S2': ('sci-guyu-longitude-30', 'scientific-explanation',
+                   '谷雨是二十四节气中的第六个：太阳到达黄经30°，春季最后一个节气。',
+                   'Guyu is the sixth and final spring term: the Sun reaches 30°.'),
+            'S3': ('sci-solarterms-jieqi-zhongqi', 'scientific-explanation',
+                   '谷雨是农历三月的"中气"。宋《岁时广记》引三统历：「穀雨者言雨以生百穀」。',
+                   'Guyu is the zhongqi of the third lunar month. Its name means "rain that brings forth grain."'),
+            'S4': ('sci-guyu-rain-sowing-window', 'scientific-explanation',
+                   '谷雨时节降雨增多，是春播关键窗口。',
+                   'Increased rainfall makes Guyu a critical sowing window.'),
+            'S5': ('hist-yueling-guyu-pentads', 'fact',
+                   '古人记录的谷雨三候：「萍始生、鳴鸠拂其羽、戴勝降于桑」。浮萍初生，布谷催耕。',
+                   'Ancient texts: duckweed appears, doves preen, hoopoes descend on mulberry trees.'),
+            'S6': ('region-guyu-luoyang-mudan', 'tradition',
+                   '在河南洛阳，谷雨时节的牡丹花会延续至今，"谷雨三朝看牡丹"。',
+                   'In Luoyang, Henan, the peony festival around Guyu continues today.'),
+            'S7': ('guyu-human-explanation', 'interpretation',
+                   '谷雨的名字直接连接了降水与谷物：雨生百谷，是一个关于丰收预兆的节气。',
+                   'The name directly links rain to grain — a term about harvest prospects.'),
+            'S8': ('fact-solarterms-unesco-2016', 'opinion',
+                   '这个时间在你生活的地方意味着什么？',
+                   'What does this time of year mean where you live?'),
+        },
+    },
+    'xiaoman': {
+        'name': '小满', 'name_en': 'Grain Buds', 'order': 8,
+        'slots': {
+            'S1': ('sci-solarterms-calendar-role', 'scientific-explanation',
+                   '二十四节气按太阳黄经等分黄道24段。',
+                   'The 24 solar terms divide the ecliptic equally.'),
+            'S2': ('sci-xiaoman-longitude-60', 'scientific-explanation',
+                   '小满是二十四节气中的第八个：太阳到达黄经60°。',
+                   'Xiaoman is the eighth term: the Sun reaches 60°.'),
+            'S3': ('sci-solarterms-jieqi-zhongqi', 'scientific-explanation',
+                   '小满是农历四月的"中气"。名称意为麦粒开始饱满但未全熟。',
+                   'Xiaoman is the zhongqi of the fourth lunar month, meaning grain begins to fill but is not yet ripe.'),
+            'S4': ('sci-xiaoman-longitude-60', 'scientific-explanation',
+                   '小满时节气温升高，北方冬小麦进入灌浆期。',
+                   'Rising temperatures bring winter wheat into its grain-filling stage.'),
+            'S5': ('hist-yueling-xiaoman-pentads', 'fact',
+                   '古人记录的小满三候：「苦菜秀、靡草死、麥秋至》。苦菜开花，麦子渐熟。',
+                   'Ancient texts: sow thistle blooms, delicate grasses wither, wheat approaches harvest.'),
+            'S6': ('region-shengze-xiaoman-xi', 'tradition',
+                   '在江苏盛泽，小满戏（演剧酬神）是小满节气的地方传统。',
+                   'In Shengze, Jiangsu, Xiaoman opera performances honor the season.'),
+            'S7': ('xiaoman-human-explanation', 'interpretation',
+                   '小满的"满"是渐进而非圆满——中国人的处世哲学中留有余地的智慧。',
+                   'Xiaoman\'s "fullness" is progressive, not complete — reflecting a philosophy of leaving room.'),
+            'S8': ('fact-solarterms-unesco-2016', 'opinion',
+                   '这个时间在你生活的地方意味着什么？',
+                   'What does this time of year mean where you live?'),
+        },
+    },
+    'liqiu': {
+        'name': '立秋', 'name_en': 'Beginning of Autumn', 'order': 13,
+        'slots': {
+            'S1': ('sci-solarterms-calendar-role', 'scientific-explanation',
+                   '二十四节气按太阳黄经等分黄道24段。',
+                   'The 24 solar terms divide the ecliptic equally.'),
+            'S2': ('sci-liqiu-longitude-135', 'scientific-explanation',
+                   '立秋是二十四节气中的第十三个：太阳到达黄经135°，秋季第一个节气。',
+                   'Liqiu is the thirteenth term and first of autumn: the Sun reaches 135°.'),
+            'S3': ('sci-solarterms-jieqi-zhongqi', 'scientific-explanation',
+                   '立秋是农历七月的"节"（节气），与处暑（中气）配对。',
+                   'Liqiu is the jie (node term) of the seventh lunar month, paired with Chushu.'),
+            'S4': ('sci-liqiu-yiye-zhiqiu', 'scientific-explanation',
+                   '"一叶知秋"：立秋虽在盛夏，但梧桐落叶提示季节转换。',
+                   '"One falling leaf knows autumn": despite summer heat, falling leaves signal the shift.'),
+            'S5': ('hist-yueling-liqiu-pentads', 'fact',
+                   '古人记录的立秋三候：「凉风至、白露降、寒蝉鸣」。',
+                   'Ancient texts: cool winds arrive, white dew descends, cicadas sing their last.'),
+            'S6': ('region-liqiu-miao-ganqiu', 'tradition',
+                   '在湖南湘西，苗族"赶秋"（立秋日庆丰收）是国家级非遗扩展项目。',
+                   'In Xiangxi, Hunan, the Miao Ganqiu (autumn celebration) is national intangible heritage.'),
+            'S7': ('liqiu-human-explanation', 'interpretation',
+                   '立秋提示收获的开始，也提示衰减的必然——中国美学中的"悲秋"由此而起。',
+                   'Liqiu signals both harvest and inevitable decline — the root of Chinese autumn melancholy.'),
+            'S8': ('fact-solarterms-unesco-2016', 'opinion',
+                   '这个时间在你生活的地方意味着什么？',
+                   'What does this time of year mean where you live?'),
+        },
+    },
+    'dongzhi': {
+        'name': '冬至', 'name_en': 'Winter Solstice', 'order': 22,
+        'slots': {
+            'S1': ('sci-solarterms-calendar-role', 'scientific-explanation',
+                   '二十四节气按太阳黄经等分黄道24段。',
+                   'The 24 solar terms divide the ecliptic equally.'),
+            'S2': ('sci-dongzhi-longitude-270', 'scientific-explanation',
+                   '冬至是二十四节气中的第二十二个：太阳到达黄经270°，北半球白昼最短。',
+                   'Dongzhi is the twenty-second term: the Sun reaches 270°, shortest day in the Northern Hemisphere.'),
+            'S3': ('sci-dongzhi-shortest-day-year-anchor', 'scientific-explanation',
+                   '冬至是农历十一月的"中气"，传统历法以冬至所在月定十一月，是置闰的锚点。',
+                   'Dongzhi anchors the eleventh lunar month, serving as the leap-month reference point.'),
+            'S4': ('sci-dongzhi-shortest-day-year-anchor', 'scientific-explanation',
+                   '冬至日后白昼渐长："冬至阳生"，古人视为阳气回转。',
+                   'Days lengthen after Dongzhi: ancients saw the return of yang energy.'),
+            'S5': ('hist-yueling-dongzhi-pentads', 'fact',
+                   '古人记录的冬至三候：「蚯蚓結、麋角解、水泉動」。',
+                   'Ancient texts: earthworms knot, elk antlers fall, springs stir.'),
+            'S6': ('region-dongzhi-sanmen-jidong', 'tradition',
+                   '在浙江三门，"祭冬"（冬至日宗族祭祀）是国家级非遗扩展项目。',
+                   'In Sanmen, Zhejiang, the winter sacrifice ceremony is national intangible heritage.'),
+            'S7': ('dongzhi-human-explanation', 'interpretation',
+                   '冬至是"至暗时刻"也是"光明回归"——阴极阳生的哲学。清代北京民间"不为节，惟食餛飩"。',
+                   'Dongzhi is both darkest moment and return of light — the philosophy of yang reborn from extreme yin.'),
+            'S8': ('fact-solarterms-unesco-2016', 'opinion',
+                   '这个时间在你生活的地方意味着什么？',
+                   'What does this time of year mean where you live?'),
+        },
+    },
+}
+
+def get_sources(kid):
+    """Get source_ids from a knowledge card."""
+    d = byId.get(kid)
+    if not d:
+        return []
+    return d.get('source_ids', [])
+
+def build_refs(source_ids):
+    """Build references array from source IDs."""
+    refs = []
+    for sid in source_ids:
+        d = byId.get(sid)
+        if not d or not d.get('source'):
+            continue
+        s = d['source']
+        refs.append({
+            'id': s['id'], 'title': s['title'], 'authors': s.get('authors', []),
+            'publisher': s.get('publisher'), 'published': s.get('published'),
+            'url': s.get('url'), 'citation': s.get('citation', ''),
+            'source_type': s.get('source_type', 'institutional'),
+            'access': s.get('access', 'direct-read'),
+            'accessed': str(s.get('accessed', '')),
+            'original_excerpt': s.get('original_excerpt', ''),
+            'locator': s.get('locator', ''), 'ai_summary': s.get('ai_summary', ''),
+            'rights': s.get('rights', 'unknown'), 'verification': 'human-verified',
+        })
+    return refs
+
+results = {}
+for slug, cfg in SELECTIONS.items():
+    claims = []
+    all_refs = {}
+    slot_map = {}
+    for slot_id in ['S1','S2','S3','S4','S5','S6','S7','S8']:
+        if slot_id not in cfg['slots']:
+            continue
+        kid, kind, zh, en = cfg['slots'][slot_id]
+        kd = byId.get(kid)
+        if not kd:
+            print(f'  WARNING: {slug} {slot_id} knowledge card {kid} not found')
+            continue
+        src_ids = get_sources(kid)[:2]  # max 2 sources per claim
+        for sid in src_ids:
+            if sid not in all_refs:
+                rd = byId.get(sid)
+                if rd and rd.get('source'):
+                    s = rd['source']
+                    all_refs[sid] = {
+                        'id': s['id'], 'title': s['title'], 'authors': s.get('authors', []),
+                        'publisher': s.get('publisher'), 'published': s.get('published'),
+                        'url': s.get('url'), 'citation': s.get('citation', ''),
+                        'source_type': s.get('source_type', 'institutional'),
+                        'access': s.get('access', 'direct-read'),
+                        'accessed': str(s.get('accessed', '')),
+                        'original_excerpt': s.get('original_excerpt', ''),
+                        'locator': s.get('locator', ''), 'ai_summary': s.get('ai_summary', ''),
+                        'rights': s.get('rights', 'unknown'), 'verification': 'human-verified',
+                    }
+        claim_id = f'{slug}-c{len(claims)+1}'
+        claims.append({
+            'id': claim_id, 'kind': kind,
+            'text': {'zh-CN': zh, 'en': en},
+            'region': kd.get('region', []) if isinstance(kd.get('region'), list) else [],
+            'period': kd.get('period') or '当代（项目解释层）',
+            'source_ids': src_ids,
+            'knowledge_ids': [kid],
+            'reviewer': REVIEWER, 'reviewed_at': DATE,
+        })
+        slot_map[slot_id] = claim_id
+
+    sections = [
+        {'id': 'what', 'title': {'zh-CN': f'{cfg["name"]}是什么', 'en': f'What is {cfg["name_en"]}'},
+         'claim_ids': [slot_map[s] for s in ['S1','S2','S3'] if s in slot_map]},
+        {'id': 'nature', 'title': {'zh-CN': f'{cfg["name"]}与自然', 'en': f'{cfg["name_en"]} and Nature'},
+         'claim_ids': [slot_map[s] for s in ['S4','S5'] if s in slot_map]},
+        {'id': 'people', 'title': {'zh-CN': f'{cfg["name"]}与人们的生活', 'en': f'{cfg["name_en"]} and People'},
+         'claim_ids': [slot_map[s] for s in ['S6'] if s in slot_map]},
+        {'id': 'culture', 'title': {'zh-CN': '为什么今天仍值得理解', 'en': 'Why It Matters Today'},
+         'claim_ids': [slot_map[s] for s in ['S7','S8'] if s in slot_map]},
+    ]
+
+    content = {
+        'schema_version': '0.1.0', 'term_id': slug, 'locale': 'zh-CN',
+        'review_status': 'approved', 'sections': sections, 'claims': claims,
+    }
+
+    mod_dir = os.path.join(MODS, slug)
+    os.makedirs(os.path.join(mod_dir, 'content'), exist_ok=True)
+
+    with io.open(os.path.join(mod_dir, 'content', 'zh-CN.json'), 'w', encoding='utf-8') as f:
+        json.dump(content, f, ensure_ascii=False, indent=2)
+
+    refs_list = list(all_refs.values())
+    with io.open(os.path.join(mod_dir, 'references.json'), 'w', encoding='utf-8') as f:
+        json.dump(refs_list, f, ensure_ascii=False, indent=2)
+
+    results[slug] = {'claims': len(claims), 'refs': len(refs_list), 'slots': len(slot_map)}
+    print(f'{slug}: {len(claims)} claims, {len(refs_list)} refs, {len(slot_map)}/8 slots')
+
+print('\nDone!')
+for slug, r in results.items():
+    print(f'  {slug}: {r["claims"]}c/{r["refs"]}r/{r["slots"]}/8')

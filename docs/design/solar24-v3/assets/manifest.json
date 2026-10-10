@@ -1,0 +1,153 @@
+{
+  "source": "24节气图标.png",
+  "sha256": "c9d2af13bf002b20d203c5280a289070595af07143861a580c5de4c58b25eca9",
+  "rights": "User supplied for this local prototype; public redistribution license unconfirmed.",
+  "mapping": "Assumed row-major order, Lichun through Dahan; original sheet has no labels.",
+  "processing": "Crop, near-white matte removal, WebP resize; original unchanged.",
+  "assets": [
+    {
+      "slug": "lichun",
+      "cell": [0, 0],
+      "crop": [0, 0, 640, 540],
+      "file": "lichun.webp"
+    },
+    {
+      "slug": "yushui",
+      "cell": [0, 1],
+      "crop": [640, 0, 640, 540],
+      "file": "yushui.webp"
+    },
+    {
+      "slug": "jingzhe",
+      "cell": [0, 2],
+      "crop": [1280, 0, 640, 540],
+      "file": "jingzhe.webp"
+    },
+    {
+      "slug": "chunfen",
+      "cell": [0, 3],
+      "crop": [1920, 0, 640, 540],
+      "file": "chunfen.webp"
+    },
+    {
+      "slug": "qingming",
+      "cell": [0, 4],
+      "crop": [2560, 0, 640, 540],
+      "file": "qingming.webp"
+    },
+    {
+      "slug": "guyu",
+      "cell": [0, 5],
+      "crop": [3200, 0, 640, 540],
+      "file": "guyu.webp"
+    },
+    {
+      "slug": "lixia",
+      "cell": [1, 0],
+      "crop": [0, 540, 640, 540],
+      "file": "lixia.webp"
+    },
+    {
+      "slug": "xiaoman",
+      "cell": [1, 1],
+      "crop": [640, 540, 640, 540],
+      "file": "xiaoman.webp"
+    },
+    {
+      "slug": "mangzhong",
+      "cell": [1, 2],
+      "crop": [1280, 540, 640, 540],
+      "file": "mangzhong.webp"
+    },
+    {
+      "slug": "xiazhi",
+      "cell": [1, 3],
+      "crop": [1920, 540, 640, 540],
+      "file": "xiazhi.webp"
+    },
+    {
+      "slug": "xiaoshu",
+      "cell": [1, 4],
+      "crop": [2560, 540, 640, 540],
+      "file": "xiaoshu.webp"
+    },
+    {
+      "slug": "dashu",
+      "cell": [1, 5],
+      "crop": [3200, 540, 640, 540],
+      "file": "dashu.webp"
+    },
+    {
+      "slug": "liqiu",
+      "cell": [2, 0],
+      "crop": [0, 1080, 640, 540],
+      "file": "liqiu.webp"
+    },
+    {
+      "slug": "chushu",
+      "cell": [2, 1],
+      "crop": [640, 1080, 640, 540],
+      "file": "chushu.webp"
+    },
+    {
+      "slug": "bailu",
+      "cell": [2, 2],
+      "crop": [1280, 1080, 640, 540],
+      "file": "bailu.webp"
+    },
+    {
+      "slug": "qiufen",
+      "cell": [2, 3],
+      "crop": [1920, 1080, 640, 540],
+      "file": "qiufen.webp"
+    },
+    {
+      "slug": "hanlu",
+      "cell": [2, 4],
+      "crop": [2560, 1080, 640, 540],
+      "file": "hanlu.webp"
+    },
+    {
+      "slug": "shuangjiang",
+      "cell": [2, 5],
+      "crop": [3200, 1080, 640, 540],
+      "file": "shuangjiang.webp"
+    },
+    {
+      "slug": "lidong",
+      "cell": [3, 0],
+      "crop": [0, 1620, 640, 540],
+      "file": "lidong.webp"
+    },
+    {
+      "slug": "xiaoxue",
+      "cell": [3, 1],
+      "crop": [640, 1620, 640, 540],
+      "file": "xiaoxue.webp"
+    },
+    {
+      "slug": "daxue",
+      "cell": [3, 2],
+      "crop": [1280, 1620, 640, 540],
+      "file": "daxue.webp"
+    },
+    {
+      "slug": "dongzhi",
+      "cell": [3, 3],
+      "crop": [1920, 1620, 640, 540],
+      "file": "dongzhi.webp"
+    },
+    {
+      "slug": "xiaohan",
+      "cell": [3, 4],
+      "crop": [2560, 1620, 640, 540],
+      "file": "xiaohan.webp"
+    },
+    {
+      "slug": "dahan",
+      "cell": [3, 5],
+      "crop": [3200, 1620, 640, 540],
+      "file": "dahan.webp"
+    }
+  ]
+}

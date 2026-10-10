@@ -1,0 +1,50 @@
+import io
+import re
+
+KB = r'E:\Users\Administrator\Documents\Desktop\24节气\knowledge-base'
+
+UP = {
+ 'trad-lixia-nongshi': ('R42', '立夏三候进入农书候应链：《農桑通訣》（元王祯，经《授时通考》卷04辑录，直读）「孟夏立夏節氣初五日螻蟈鳴次五日蚯蚓出後五日王生」——立夏在农书中的时序身份由候应链给出（口径：元代农书辑于清官修）。'),
+ 'trad-xiaoman-nongshi': ('R42', '《農桑通訣》（经卷04辑录，直读）「小滿中氣初五日苦菜秀次五日靡草死後五日麥秋至」——「麥秋至」把麦收季直接编入小满三候，是"小满=麦子灌浆将熟"的农书层对应物。'),
+ 'trad-mangzhong-nongshi': ('R42', '梅雨起算第三说（异文登记）：《瑣碎錄》（经卷04辑录，直读）「立夏後逢庚日爲入梅，芒種後逢辰日爲出梅」——出梅干支与《岁时广记》卷二所录"逢壬"说不同，入梅出梅诸说再+1（另见 [[03_notes/hist-meiyu-song-texts|梅雨文本卡]]）。'),
+ 'trad-xiazhi-nongshi': ('R42', '《農桑通訣》夏至候应「初五日鹿角解次五日蜩始鳴後五日半夏生」（直读）；《四民月令》（经卷04辑录）「五月六月可菑麥田」——夏至前后麦田休闲整治的东汉农书指令（转引层）。'),
+ 'trad-xiaoshu-nongshi': ('R42', '《農桑通訣》（经卷04辑录，直读）「季夏小暑節氣初五日溫風至次五日蟋蟀居壁後五日鷹始鷙」——小暑候应链（蟋蟀居壁=避暑入户的物候信号）。'),
+ 'trad-dashu-nongshi': ('R42', '《農桑通訣》（经卷04辑录，直读）「大暑中氣初五日腐草爲螢」后继土潤溽暑大雨時行——大暑候应链把高温高湿与萤季并入农时框架。'),
+ 'trad-liqiu-nongshi': ('R42', '《陶朱公書》（经卷05辑录，直读）「稻田立秋後不添水晒十餘日謂之擱稻」——立秋稻田晒田（搁稻）技术指令；另《農桑通訣》立秋後五日「禾乃登」（卷05）。'),
+ 'trad-chushu-nongshi': ('R42', '《農桑通訣》（经卷05辑录，直读）立秋节「後五日禾乃登」，次处暑气初五日「鷹乃祭鳥……後五日禾乃登」——处暑=禾谷登场的候应表达。'),
+ 'trad-hanlu-nongshi': ('R42', '《齊民要術》九月条（经卷05辑录，直读）「九月治場圃塗囷倉修竇窖繕五兵習戰射以備寒凍窮厄之冦」——寒露-霜降时段的场圃仓窖整备指令；另《國語》注寒露雨后「五日天根朝見水潦盡竭」。'),
+ 'trad-shuangjiang-nongshi': ('R42', '《詩·豳風》箋（经卷05辑录，直读）「九月霜降始寒，蠶績之功成，可以授衣矣」——霜降与授衣的经学注释链；《農政全書》霜降信条「後來信必嚴毒」为占候层。'),
+ 'trad-dahan-nongshi': ('R43', '《農桑通訣》（经卷06辑录，直读）季冬「小寒節氣初五日雁北鄉次五日鵲始巢後五日雉始鴝次大寒中氣初五日雞始乳欵冬華次五日征鳥厲疾後五日水澤腹堅」，卷六总结句「凡此六氣一十八候皆冬氣正養藏之令」——冬季六气十八候的农书候应链与"养藏"总纲；《大戴禮》「方冬三月草木落庶虞藏五榖必入於倉」为冬藏经典层。'),
+}
+
+for fname, (rid, text) in UP.items():
+    p = KB + '\\03_notes\\' + fname + '.md'
+    t = io.open(p, encoding='utf-8').read()
+    block = '- **农书直读环（2026-09-25，%s·第三阶段）**：%s\n' % (rid, text)
+    assert '## AI 摘要' in t, fname
+    t = t.replace('## AI 摘要', block + '\n## AI 摘要', 1)
+    m = re.search(r'source_ids: \[(.*?)\]', t, re.S)
+    items = [x.strip().strip("'") for x in m.group(1).split(',') if x.strip()]
+    if 'source-wikisource-shoushitongkao' not in items:
+        items.append('source-wikisource-shoushitongkao')
+    t = t[:m.start()] + 'source_ids: [' + ', '.join("'" + s + "'" for s in items) + ']' + t[m.end():]
+    t = t.rstrip() + ('\n- 2026-09-25（%s，第三阶段）：新增《授时通考》卷04-06辑录农书直读环；source_ids 扩充。\n' % rid)
+    io.open(p, 'w', encoding='utf-8', newline='\n').write(t)
+    print('upgraded', fname)
+
+p = KB + '\\04_sources\\source-wikisource-shoushitongkao.md'
+t = io.open(p, encoding='utf-8').read()
+t = t.replace('+卷42（勸課門首卷：经书劝农训+历代劝农记事，2026-09-25 curl直读）；',
+              '+卷42（勸課門首卷）+卷04（夏時）/卷05（秋時）/卷06（冬時）（2026-09-25 直读：農桑通訣十八候链、陶朱公搁稻、崔寔白露种麦、瑣碎錄入梅出梅辰日异文、大戴禮冬藏）；')
+io.open(p, 'w', encoding='utf-8', newline='\n').write(t)
+print('sstk source updated')
+
+p2 = KB + '\\07_research\\round2-progress.md'
+t2 = io.open(p2, encoding='utf-8').read()
+for rid in ['R42', 'R43']:
+    t2 = re.sub(r'\| %s \| A广度 \| ([^|]+) \| todo \|' % rid,
+                lambda m, rid=rid: '| %s | A广度 | %s | done | 11张农事卡书证环 |' % (rid, m.group(1).strip()), t2)
+log = '\n### R42-R43（2026-09-25）授时通考卷4-6直读\n抓取=3 WebFetch（卷5成功；卷4/6两次瞬时超时）+curl直连重试成功（本地代理一度拒连，直连路径恢复——已记手册追加区）；产出=11张 trad-*-nongshi 卡新增农书直读环（立夏/小满/芒种/夏至/小暑/大暑/立秋/处暑/寒露/霜降/大寒），含元《農桑通訣》十八候链、陶朱公搁稻、崔寔白露种麦、社前种麦；异文新发现：出梅干支"逢辰"（琐碎录·卷4）vs"逢壬"（岁时广记卷2）第三说。**24/24节气书证全覆盖达成（原8缺口清零）**。\n'
+t2 = t2.replace('### R42 启动（2026-09-25）', log + '\n### R42 启动（2026-09-25）')
+io.open(p2, 'w', encoding='utf-8', newline='\n').write(t2)
+print('progress updated')

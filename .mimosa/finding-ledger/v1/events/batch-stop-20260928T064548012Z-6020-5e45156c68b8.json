@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "stop-20260928T064548012Z-6020-5e45156c68b8",
+  "runId": "20260928T064548012Z-6020-5e45156c68b8",
+  "runStatus": "inconclusive",
+  "coverage": {
+    "status": "partial",
+    "reasons": [
+      {
+        "code": "changed_file_unreadable",
+        "stage": "candidate-select",
+        "target": "modules/lichun/src/index.tsx",
+        "detail": "observed changed file no longer exists or cannot be read",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "candidate-select",
+        "target": "modules/lichun/src/index.tsx",
+        "detail": "changed_file_unreadable: observed changed file no longer exists or cannot be read",
+        "affectsCompletion": true
+      }
+    ]
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "Stop"
+  },
+  "revision": "8f9304cd4ebeb40f4c6416ac18fac69ab6cc78fa",
+  "diffHash": "19d3124678389a6e28cb51e3455937b34998c03b6ed92fad47278602230196e8",
+  "rulesVersion": "unavailable",
+  "sessionHash": "ab3deaf919f9f0d3c02390c6f6ed38a7e18dc3e2a7ae3f025a5b9d99bfc333b7",
+  "reportRef": ".mimosa/reports/task-review-sess_e70f6227-e80e-4b58-9405-80d68e756245-20260928T064548012Z-6020-5e45156c68b8.json",
+  "events": [],
+  "observedFindingIds": [],
+  "verifiedFiles": [
+    {
+      "file": ".tmp/phase1-backfill.py",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "packages/protocol/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": ".tmp/phase2-content.py",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": ".tmp/phase2-refs.py",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "modules/lichun/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    }
+  ],
+  "recordedAt": "2026-09-28T06:45:48.456Z"
+}

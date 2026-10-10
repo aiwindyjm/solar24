@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "mimosa-finding-history/v1",
+  "runId": "20260930T093922064Z-29384-9df14197ce84",
+  "runStatus": "inconclusive",
+  "errors": [
+    "scan:.tmp/stage9-batch.py: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:.tmp/stage9-renderers.py: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/yushui/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/xiaoman/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/qingming/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/liqiu/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/guyu/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/dongzhi/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/chunfen/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+  ],
+  "target": ".",
+  "revision": "8f9304cd4ebeb40f4c6416ac18fac69ab6cc78fa",
+  "diffHash": "86e788b733d1e6ea2a08bfdd8d5ca0f376c8647e8df93f6e58c94996819eed82",
+  "rulesVersion": "unavailable",
+  "recordedAt": "2026-09-30T09:39:22.064Z",
+  "timing": {
+    "startedAt": "2026-09-30T09:39:19.490Z",
+    "completedAt": "2026-09-30T09:39:22.064Z",
+    "durationMs": 2574
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "modelCalls": 0,
+    "measurement": "known-zero"
+  },
+  "findings": {
+    "total": 0,
+    "bySeverity": {},
+    "byStatus": {}
+  },
+  "coverage": {
+    "status": "partial",
+    "reasonCounts": {
+      "scanner_failed": 9,
+      "project_check_failed": 9
+    }
+  },
+  "evidenceBoundary": "static_only",
+  "immutableReport": ".mimosa/reports/task-review-sess_e70f6227-e80e-4b58-9405-80d68e756245-20260930T093922064Z-29384-9df14197ce84.json"
+}

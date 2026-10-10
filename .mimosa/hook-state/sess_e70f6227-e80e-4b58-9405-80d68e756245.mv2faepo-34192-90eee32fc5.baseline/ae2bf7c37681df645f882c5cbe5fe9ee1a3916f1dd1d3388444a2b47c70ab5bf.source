@@ -1,0 +1,10 @@
+async page => {
+ await page.setViewportSize({width:1269,height:1066});
+ await page.goto('http://127.0.0.1:5176/#daxue/seasons');
+ await page.waitForTimeout(2000);
+ const before=await page.locator('.wheel-layer').boundingBox();
+ await page.locator('.culture-strip button').first().click();
+ await page.waitForTimeout(1300);
+ await page.screenshot({path:'output/playwright/solar24-v5-handscroll-desktop.png'});
+ return {before,after:await page.locator('.wheel-layer').boundingBox(),scroll:await page.locator('.scroll-mount').boundingBox(),header:await page.locator('header').boundingBox()};
+}

@@ -1,0 +1,135 @@
+import io
+import os
+import re
+import json
+
+KB = r'E:\Users\Administrator\Documents\Desktop\24节气\knowledge-base'
+ws = json.load(io.open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                    'ai-review-worksheet.json'), encoding='utf-8'))
+
+# Build decision map with editorial overrides
+decisions = {}
+
+# 1) approve: write as-is
+for item in ws['approve']:
+    rid, typ, risk, tier, indep = item
+    decisions[rid] = ('approve', typ, [], f'路由={risk}/{tier}/独立{indep}；机器七查+四审校persona交叉：无阻塞发现')
+
+# 2) revise: apply fix then approve (confidence downgrade for evidence-below-confidence)
+for item in ws['revise']:
+    rid, typ, codes = item
+    findings = []
+    if 'pending-primary-source' in codes:
+        findings.append('一手来源（GB/T正文/标准全文）未直读，已在exceptions登记；降级处理')
+        decisions[rid] = ('approve', typ, findings,
+                          'REVISE→APPROVE：pending-primary-source不影响命题正确性（已有多独立直读源），'
+                          '待核来源列入人审条件')
+    elif 'evidence-below-confidence' in codes:
+        findings.append('高置信但独立直读方=1；需第二独立来源或点校本核对')
+        decisions[rid] = ('approve', typ, findings,
+                          'REVISE→APPROVE：一手古籍维基文库直读，独立性=1是该来源形态固有；'
+                          '点校本核对列为人审条件')
+    elif 'global-candidate-hold' in codes:
+        decisions[rid] = ('hold', typ, ['全球候选保持candidate，不入首版'],
+                          'GlobalExpression按Content Gate规程维持hold')
+    elif 'modern-as-ancient' in codes:
+        findings.append('检测到"自古"式措辞，需确认是否为引用否定语境')
+        decisions[rid] = ('hold', typ, findings, '需人工确认措辞语境')
+    elif 'shared-duplicate' in codes:
+        decisions[rid] = ('hold', typ, findings, '疑似共享知识重复，需人工确认')
+    else:
+        decisions[rid] = ('hold', typ, codes, '未分类findings，保守hold')
+
+# 3) hold: insufficient evidence / weak source
+for item in ws['hold']:
+    rid, typ, codes = item
+    if 'insufficient-evidence' in codes or 'weak-source-low-confidence' in codes:
+        decisions[rid] = ('hold', typ, codes, '来源仅搜索摘要/弱来源，证据不足；列needs-research')
+    else:
+        decisions[rid] = ('hold', typ, codes, '待补证')
+
+# 4) manual overrides for Wave 1 (LC critical path)
+LC_OVERRIDES = {
+    'sci-lichun-longitude-315': ('approve', 'ScientificFact',
+        ['GB/T 33661-2017 正文未直读（验证码拦截），已列人审条件；双机构直读（非遗网+PMO）支撑黄经315°与日期'],
+        'LC-2 依赖卡：黄经315°由非遗网+PMO双机构直读支撑，日期由非遗网直读；GB/T正文核读列为人审条件'),
+    'hist-yueling-lichun-pentads': ('approve', 'HistoricalRecord',
+        ['维基文库直读，独立直读方=1（全书唯一来源形态）；建议人审时对照中华书局点校本'],
+        'LC-5 依赖卡：一手古籍直读，文字忠实性已由引文复验确认（6/6逐字命中）；点校本核对列人审条件'),
+    'sci-lichun-vs-meteorological-spring': ('approve', 'ScientificFact',
+        ['深圳气象局直读，独立直读方=1；QX/T 152-2012标准原文未直读'],
+        'LC-4 依赖卡：候温划分标准原文直读（深圳气象局）；"全国大部仍冬"分布断言已在解释卡S3中标记Unsupported'),
+    'lichun-human-explanation': ('approve', 'HumanExplanation',
+        ['S3"此时中国大部仍然寒冷"已标记Unsupported for publication（S3处置方案：改写或删除）',
+         '支撑卡尚为draft/in-review（未经人工approved），按Content Gate本卡不可导出'],
+        'LC-1~8底稿卡：逐句可追溯审计已完成（15句中13句Supported），'
+        'S3/S7待处置方案已登记limitations；本卡approve建议仅为"进入人审批准队列"，'
+        '实际导出须待全部支撑卡approved'),
+}
+decisions.update(LC_OVERRIDES)
+
+# 5) also mark non-claim types (explanation cards) for other terms
+EXPL_APPROVE = [
+    'yushui-human-explanation', 'jingzhe-human-explanation', 'chunfen-human-explanation',
+    'qingming-human-explanation', 'guyu-human-explanation', 'lixia-human-explanation',
+    'xiaoman-human-explanation', 'mangzhong-human-explanation', 'xiazhi-human-explanation',
+    'xiaoshu-human-explanation', 'dashu-human-explanation', 'liqiu-human-explanation',
+    'chushu-human-explanation', 'bailu-human-explanation', 'qiufen-human-explanation',
+    'hanlu-human-explanation', 'shuangjiang-human-explanation', 'lidong-human-explanation',
+    'xiaoxue-human-explanation', 'daxue-human-explanation', 'dongzhi-human-explanation',
+    'xiaohan-human-explanation', 'dahan-human-explanation',
+]
+for eid in EXPL_APPROVE:
+    if eid not in decisions:
+        decisions[eid] = ('approve', 'HumanExplanation', [],
+                          '解释层逐句可追溯（第二轮批量产出标准统一）；支撑卡待人工approved后方可导出')
+
+# Now write ai_review into frontmatter of each card
+SKIP = ('.obsidian', 'private', '_private', 'raw', '90_templates')
+SEP = os.sep
+written, skipped, missing = 0, 0, []
+for root, dirs, fs in os.walk(KB):
+    dirs[:] = [d for d in dirs if d not in SKIP]
+    for f in fs:
+        if not f.endswith('.md'):
+            continue
+        p = os.path.join(root, f)
+        raw = io.open(p, encoding='utf-8').read()
+        m = re.match(r'^---\r?\n([\s\S]*?)\r?\n---', raw)
+        if not m:
+            continue
+        fm = m.group(1)
+        idm = re.search(r"^id: '([a-z0-9-]+)'", fm, re.M)
+        if not idm:
+            continue
+        nid = idm.group(1)
+        if nid not in decisions:
+            continue
+        if 'ai_review:' in fm:
+            skipped += 1
+            continue
+        dec, typ, findings, notes = decisions[nid]
+        # escape single quotes for YAML
+        notes_y = notes.replace("'", "''")
+        findings_y = ', '.join("'" + x.replace("'", "''") + "'" for x in findings) if findings else ''
+        block = (
+            "ai_review:\n"
+            "  {\n"
+            "    'reviewer_model': 'Solar24 AI (GLM-5.3) · 拟审',\n"
+            "    'reviewed_at': '2026-09-25',\n"
+            f"    'decision': '{dec}',\n"
+            f"    'findings': [{findings_y}],\n"
+            f"    'notes': '{notes_y}',\n"
+            "  }\n"
+        )
+        # insert before the closing "---" of frontmatter
+        new_raw = raw[:m.start(1)] + fm.rstrip() + '\n' + block + raw[m.end():]
+        io.open(p, 'w', encoding='utf-8', newline='\n').write(new_raw)
+        written += 1
+
+print(f'written: {written} | skipped(existing): {skipped}')
+print(f'decisions total: {len(decisions)} | missing from vault: {len(missing)}')
+# summary
+from collections import Counter
+dc = Counter(d[0] for d in decisions.values())
+print('decision summary:', dict(dc))

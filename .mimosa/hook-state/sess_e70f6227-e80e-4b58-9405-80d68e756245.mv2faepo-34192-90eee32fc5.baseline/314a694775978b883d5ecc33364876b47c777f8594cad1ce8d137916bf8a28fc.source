@@ -1,0 +1,15 @@
+async page => {
+  const results=[];
+  for(const [language,url] of [['en','https://github.com/aiwindyjm/solar24'],['zh','https://github.com/aiwindyjm/solar24/blob/main/README.zh-CN.md']]){
+    await page.goto(url);
+    const image=page.locator(`article img[src*="walkthrough-${language}.gif"]`).first();
+    await image.waitFor({state:'visible'});
+    await image.scrollIntoViewIfNeeded();
+    await page.waitForFunction(lang=>Array.from(document.querySelectorAll('article img')).some(i=>i.src.includes('walkthrough-'+lang+'.gif')&&i.complete&&i.naturalWidth===640),language);
+    await image.screenshot({path:`output/playwright/github-gif-${language}-1.png`});
+    await page.waitForTimeout(1800);
+    await image.screenshot({path:`output/playwright/github-gif-${language}-2.png`});
+    results.push({language,url,loaded:await image.evaluate(i=>({width:i.naturalWidth,height:i.naturalHeight,src:i.src}))});
+  }
+  return results;
+}

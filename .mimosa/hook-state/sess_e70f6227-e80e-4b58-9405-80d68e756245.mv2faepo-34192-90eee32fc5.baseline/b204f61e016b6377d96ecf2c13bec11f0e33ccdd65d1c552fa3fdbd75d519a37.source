@@ -1,0 +1,57 @@
+async page => {
+ const check=(v,m)=>{if(!v)throw Error(m)};
+ await page.addInitScript(()=>{
+  const Base=window.AudioContext;
+  window.__lifeAudio=[];
+  window.AudioContext=class extends Base {
+   constructor(...args){super(...args);window.__lifeAudio.push({context:this,filters:[]});}
+   createBiquadFilter(){const f=super.createBiquadFilter();window.__lifeAudio.find(x=>x.context===this).filters.push(f);return f;}
+  };
+ });
+ await page.setViewportSize({width:1280,height:720});
+ await page.goto('http://127.0.0.1:5176/#daxue/life');await page.reload();await page.waitForTimeout(650);
+ check(await page.evaluate(()=>window.__lifeAudio.length)===0,'Sound off by default');
+ await page.locator('.hotspots button').nth(0).click();
+ await page.locator('.listening-moment .life-action').click();await page.waitForTimeout(1500);
+ const winter=await page.evaluate(()=>({n:new Set(window.__lifeAudio.map(x=>x.context)).size,state:window.__lifeAudio[0].context.state,hz:window.__lifeAudio[0].filters[0].frequency.value}));
+ check(winter.state==='running','Audio starts after gesture');
+ await page.getByRole('button',{name:'Pause motion',exact:true}).click();await page.waitForTimeout(100);
+ check(await page.evaluate(()=>window.__lifeAudio[0].context.state)==='suspended','Pause suspends audio');
+ await page.getByRole('button',{name:'Resume motion',exact:true}).click();await page.waitForTimeout(100);
+ await page.getByRole('button',{name:'Return to the landscape',exact:true}).click();
+ await page.goto('http://127.0.0.1:5176/#yushui/life');await page.waitForTimeout(1800);
+ const rain=await page.evaluate(()=>({n:new Set(window.__lifeAudio.map(x=>x.context)).size,state:window.__lifeAudio[0].context.state,hz:window.__lifeAudio[0].filters[0].frequency.value}));
+ check(rain.n===1,'Term change reuses AudioContext');
+ check(rain.hz>winter.hz+300,'Rain and winter have different sound colours');
+ await page.locator('.hotspots button').nth(0).click();
+ await page.locator('.listening-moment .life-action').click();await page.waitForTimeout(100);
+ check(await page.evaluate(()=>window.__lifeAudio[0].context.state)==='closed','Sound cleanup');
+ await page.getByRole('button',{name:'Return to the landscape',exact:true}).click();
+ await page.goto('http://127.0.0.1:5176/#dongzhi/life');await page.waitForTimeout(120);
+ await page.locator('.hotspots button').nth(1).click();
+ await page.locator('#field-time').fill('45');
+ await page.screenshot({path:'output/playwright/solar24-v5-life-season-dongzhi-720.png'});
+ await page.getByRole('button',{name:'Return to the landscape',exact:true}).click();
+ await page.goto('http://127.0.0.1:5176/#daxue/life');await page.waitForTimeout(120);
+ const original=await page.evaluate(()=>localStorage.getItem('solar24-v5-memory-daxue'));
+ await page.locator('.hotspots button').nth(2).click();
+ await page.locator('#season-memory').fill('QA winter memory');await page.locator('.memory-actions button').click();
+ await page.reload();await page.waitForTimeout(650);
+ await page.locator('.hotspots button').nth(2).click();
+ check(await page.locator('#season-memory').inputValue()==='QA winter memory','Memory persists');
+ await page.locator('.life-context > summary').click();
+ check((await page.locator('.life-context > p').innerText()).includes('Nanjing'),'Winter story region present');
+ await page.setViewportSize({width:390,height:844});
+ await page.locator('.life-participation').scrollIntoViewIfNeeded();
+ await page.screenshot({path:'output/playwright/solar24-v5-life-season-memory-mobile.png'});
+ check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Mobile no overflow');
+ await page.getByRole('button',{name:'Return to the landscape',exact:true}).click();
+ await page.goto('http://127.0.0.1:5176/#guyu/life');await page.waitForTimeout(120);
+ await page.locator('.hotspots button').nth(2).click();
+ check(await page.locator('#season-memory').inputValue()!=='QA winter memory','Memory isolated by term');
+ await page.getByRole('button',{name:'Return to the landscape',exact:true}).click();
+ await page.locator('.hotspots button').nth(1).click();await page.locator('#field-time').fill('85');
+ await page.screenshot({path:'output/playwright/solar24-v5-life-season-tea-mobile.png'});
+ await page.evaluate(value=>{if(value===null)localStorage.removeItem('solar24-v5-memory-daxue');else localStorage.setItem('solar24-v5-memory-daxue',value)},original);
+ return {winter,rain,passed:true};
+}

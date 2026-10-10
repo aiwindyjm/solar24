@@ -1,0 +1,17 @@
+async page => {
+ await page.setViewportSize({width:1269,height:1066});
+ await page.goto('http://127.0.0.1:5176/#daxue/seasons');await page.waitForTimeout(1600);
+ if(await page.getByRole('button',{name:'Switch to English',exact:true}).count())await page.getByRole('button',{name:'Switch to English',exact:true}).click();
+ await page.locator('.culture-strip button').first().click();await page.waitForTimeout(1200);
+ await page.screenshot({path:'output/playwright/solar24-v5-handscroll-en.png'});
+ await page.getByRole('button',{name:'Switch to Chinese',exact:true}).click();await page.waitForTimeout(250);
+ await page.screenshot({path:'output/playwright/solar24-v5-handscroll-desktop.png'});
+ await page.setViewportSize({width:390,height:844});await page.waitForTimeout(500);
+ await page.screenshot({path:'output/playwright/solar24-v5-handscroll-mobile-zh.png'});
+ await page.getByRole('button',{name:'Switch to English',exact:true}).click();await page.waitForTimeout(250);
+ await page.screenshot({path:'output/playwright/solar24-v5-handscroll-mobile-en.png'});
+ await page.setViewportSize({width:1280,height:720});await page.waitForTimeout(500);
+ await page.screenshot({path:'output/playwright/solar24-v5-handscroll-720.png'});
+ await page.keyboard.press('Escape');await page.waitForTimeout(1200);
+ return {header:await page.locator('header').boundingBox(),canvas:await page.locator('canvas').count()};
+}

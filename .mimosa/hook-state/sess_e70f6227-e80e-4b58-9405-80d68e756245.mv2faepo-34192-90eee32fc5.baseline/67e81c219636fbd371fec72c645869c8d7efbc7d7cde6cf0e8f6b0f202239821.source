@@ -1,0 +1,137 @@
+import io
+
+KB = r'E:\Users\Administrator\Documents\Desktop\24节气\knowledge-base'
+
+# R10/R11: update shoushitongkao source
+p = KB + r'\04_sources\source-wikisource-shoushitongkao.md'
+t = io.open(p, encoding='utf-8').read()
+t = t.replace("'verification': 'unverified',", "'verification': 'cross-checked',")
+old_loc = "'locator': '主页目录+四库提要；"
+new_loc = "'locator': '主页目录+卷03（天時門·春時：春总论+正二三月经书农书引文，2026-09-25直读）+卷42（勸課門首卷：经书劝农训+历代劝农记事，2026-09-25 curl直读）；主页目录+四库提要；"
+assert old_loc in t
+t = t.replace(old_loc, new_loc)
+t = t.rstrip() + '\n\n## 卷次读取记录\n\n- 卷03、卷42（2026-09-25，R10-R11）。异文登记：卷03引齐民要术种谷句作「穀雨三月上旬及清明節桃始華爲中時」，与齐民要术直读本「三月上旬及清明節、桃始花爲中時」有「穀雨」前缀与「華/花」之异——已在种谷时序卡登记。\n'
+io.open(p, 'w', encoding='utf-8', newline='\n').write(t)
+print('sstk source updated')
+
+HDR = '''---
+schema_version: '0.1.0'
+id: '{id}'
+type: '{typ}'
+title: '{title}'
+solar_terms: []
+season: null
+dimensions: {dims}
+region: ['中国（官修全国视野；所引前代文献各有地域）']
+period: '清乾隆敕撰（1742）；所引文献自先秦至明'
+language: 'zh-CN'
+status: 'draft'
+epistemic: '{epi}'
+confidence: 'medium'
+risk_level: 'medium'
+impact_level: 'system'
+contested: false
+source_ids: {srcs}
+author: 'Solar24 AI research agent (GLM)'
+created: '2026-09-25'
+updated: '2026-09-25'
+human_review: null
+claim:
+  {{
+    'statement': '{claim}',
+    'exceptions': ['{exc}'],
+  }}
+---
+
+# {title}
+
+## 研究问题
+
+{rq}
+
+## 证据（原文与定位）
+
+{evi}
+
+## AI 摘要 / 解释
+
+{interp}
+
+## 适用条件、例外与分歧
+
+- 《授时通考》为清代官修汇编：引用既保存前代文献，也体现清代官方知识框架；「引某书曰」的文字与所引原书逐条核对（已发现齐民要术引文异文一处，见种谷时序卡）。
+- 朱熹劝农文为南宋地方官劝农实例，地域时代限定明确。
+
+## 关联
+
+[[02_shared/README|共享知识]] · [[02_shared/hist-nongshu-shiyi-concept|农书时宜概念]] · [[02_topics/history|历史维度]]{extra}
+
+## 待人工确认
+
+- 与《授时通考》整理本核对；朱熹劝农文与《朱文公文集》原卷核对。
+
+## 修改记录
+
+- 2026-09-25（R10-R12，第二轮）：建卡，证据为维基文库卷03/卷42直读。
+'''
+
+cards = [
+ dict(id='hist-shoushitongkao-quanke-juan42', typ='HistoricalRecord',
+   title='《授时通考》劝课门：从经书劝农训到朱熹劝农文',
+   dims="['history', 'agriculture']",
+   epi='fact',
+   srcs="['source-wikisource-shoushitongkao']",
+   claim='《授时通考》卷四十二（劝课门首卷）以《易》井卦「勞民勸相」、《詩》「教民稼穡務農急也」、《禮記·月令》孟春「祈穀於上帝…躬耕帝耤」等经书文本确立劝农的经典依据，继而按时代辑录历代劝农举措，至宋代收录州县劝农记事与朱熹劝农文（「職在勸農…勸課不勤」及冬耕、粪种、及时栽插等具体农事指令）。',
+   exc='卷42为经书训+记事辑录结构，汉代诏令部分本轮未逐条读毕',
+   rq='清官修农书如何组织「劝农」知识？有无宋代地方劝农的一手文本？',
+   evi='''逐字直读（卷42，curl代理raw）：
+- 经书层：《易》「井君子以勞民勸相」；《詩·鄘風》「靈雨既零…説于桑田…教民稼穡務農急也」；《禮記·月令》「孟春之月天子乃以元日祈穀於上帝…帥三公九卿諸大夫躬耕帝耤」「仲秋之月乃勸種麥毋或失時」
+- 记事层：《宋史·高宗本紀》「頒諸農書於郡邑…立州縣墾田增虧賞罰格」；朱文公文集劝农文：「當職久處田間習知穡事兹忝郡寄職在勸農…皆緣長吏勸課不勤…一大凡秋間收成之後須趁冬月以前便將户下所有田段一例犁翻凍令酥脆…一秧苖既長便須及時趁早栽插莫令遲緩」''',
+   interp='劝课门的编纂结构本身就是「劝农作为国家制度」的证据：经典依据（经）→历史举措（史）→操作指令（地方劝农文）三层。朱熹劝农文证明宋代劝农已落到县级具体农事指令——与立春鞭春民俗、九华立春祭（当代遗存）构成同一条制度的古代文本端与当代实践端。',
+   extra=' · [[02_topics/agriculture|农业维度]]'),
+ dict(id='hist-quannong-institutional-chain', typ='CulturalFact',
+   title='劝农制度链：月令躬耕→宋代劝农文→清代官修→当代立春非遗',
+   dims="['history', 'agriculture', 'customs']",
+   epi='fact',
+   srcs="['source-wikisource-shoushitongkao', 'source-wikisource-yanjingsuishiji', 'source-ihchina-jiuhua-lichunji', 'source-ihchina-shiqian-shuochun']",
+   claim='「以官方礼仪劝促农时」是一条可追溯的制度链：先秦经典层面《礼记·月令》孟春祈穀、躬耕帝耤、仲秋勸種麥（经《授时通考》卷42辑录）；宋代地方层面朱熹等州县官发布劝农文（卷42辑录）；清末北京仍有官方迎春/打春礼（《燕京岁时记》）；当代浙江衢州九华立春祭、贵州石阡说春作为国家级非遗延续——「节气×国家劝农」从经典训令到活态实践两端均有直读文献。',
+   exc='链条各环节的地域与层级不同（经典训令/地方官文/都城礼俗/村落祭祀），不得表述为单一连续「全国制度」',
+   rq='「立春劝农」一类表述背后的制度史证据链能否闭合？',
+   evi='''- 先秦经典：《禮記·月令》孟春祈穀+躬耕帝耤、仲秋勸種麥（《授时通考》卷42辑录，直读）
+- 宋地方：朱熹劝农文「職在勸農…勸課不勤」（卷42辑录，直读）
+- 清都城：《燕京岁时记》打春条「立春先一日，順天府官員至東直門外一里春場迎春…引春牛而擊之，曰打春」（已直读，见 [[03_notes/hist-yanjing-dachun-yaochun|燕京卡]]）
+- 当代：九华立春祭（鞭春牛为核心环节）、石阡说春（春官说唱劝农）（非遗网项目页直读，见两张地域卡）''',
+   interp='本卡把原先分散的民俗卡接进制度史叙事：节气的「知识体系及其实践」（UNESCO 表述）中，「实践」一端的国家/官府线索有了四点直读链条。分层表述警示：经典训令（文本）不等于各朝代全国执行（史实待考）；村落祭祀是地方延续而非全国制度存续的证据。',
+   extra=' · [[03_notes/region-jiuhua-lichun-ji|九华立春祭]]'),
+]
+
+for c in cards:
+    t = HDR.format(**c)
+    with io.open(KB + '\\02_shared\\' + c['id'] + '.md', 'w', encoding='utf-8', newline='\n') as f:
+        f.write(t)
+    print('card', c['id'])
+
+# R10: strengthen shiyi-concept card
+p3 = KB + r'\02_shared\hist-nongshu-shiyi-concept.md'
+t3 = io.open(p3, encoding='utf-8').read()
+t3 = t3.replace('## 证据（原文与定位）', '''## 证据（原文与定位）
+
+- 《氾勝之書》（经《授时通考》卷03天時門·春時辑录，2026-09-25直读）：「種禾無期，因地爲時，三月榆莢時雨膏地强可種禾。」——西汉农书的时宜总纲句，与齐民要术「順天時，量地利」前后相承。''')
+t3 = t3.replace('source_ids: [\'source-wikisource-qiminyaoshu\']', "source_ids: ['source-wikisource-qiminyaoshu', 'source-wikisource-shoushitongkao']")
+t3 = t3.rstrip() + '\n- 2026-09-25（R10）：补《氾胜之书》时宜句（授时通考卷03辑录）与齐民要术引文异文登记。\n'
+io.open(p3, 'w', encoding='utf-8', newline='\n').write(t3)
+print('shiyi card strengthened')
+
+# progress rows R10-R12
+p4 = KB + r'\07_research\round2-progress.md'
+t4 = io.open(p4, encoding='utf-8').read()
+for rid, out in [('R10', '授时通考卷03直读'), ('R11', '卷42直读+劝课卡'), ('R12', '劝农制度链卡+时宜卡补强')]:
+    import re
+    t4 = re.sub(r'\| %s \| 农书 \| ([^|]+) \| todo \|' % rid,
+                lambda m, rid=rid, out=out: '| %s | 农书 | %s | done | %s |' % (rid, m.group(1).strip(), out), t4)
+log = '''### R10-R12（2026-09-25）授时通考
+直读=卷03（天時門·春時，WebFetch：引《氾勝之書》種禾無期因地爲時+齐民要术异文）+卷42（勸課門首卷，curl代理raw：经书劝农训+朱熹劝农文）；产出=[[02_shared/hist-shoushitongkao-quanke-juan42|劝课门卡]]、[[02_shared/hist-quannong-institutional-chain|劝农制度链卡]]（月令→朱熹→燕京→九华/石阡四点闭合）；时宜概念卡补氾胜之书句；Source升级cross-checked（异文登记）。预算=2次抓取。**工程教训**：python批处理脚本内ASCII双引号嵌套导致整段失败一次，改用「」与三引号重写——已记入手册追加区。
+'''
+t4 = t4.replace('### R04-R05（2026-09-25）', log + '\n### R04-R05（2026-09-25）')
+io.open(p4, 'w', encoding='utf-8', newline='\n').write(t4)
+print('progress updated')

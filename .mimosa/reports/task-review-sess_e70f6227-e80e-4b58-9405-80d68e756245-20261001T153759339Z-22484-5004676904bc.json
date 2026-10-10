@@ -1,0 +1,811 @@
+{
+  "schema_version": "mimosa-task-review/v2",
+  "run_id": "20261001T153759339Z-22484-5004676904bc",
+  "run_status": "inconclusive",
+  "errors": [
+    {
+      "stage": "candidate-select",
+      "target": "modules/dongzhi/src/index.ts",
+      "reason": "candidate_limit_exceeded: 7 changed reviewable file(s) were not scanned because the limit is 20"
+    },
+    {
+      "stage": "scan",
+      "target": "packages/module-runtime/src/production-renderer.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "packages/module-runtime/src/index.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "apps/host/src/main.tsx",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "modules/yushui/src/index.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "modules/xiazhi/src/index.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "modules/xiaoxue/src/index.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "modules/xiaoshu/src/index.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "modules/xiaoman/src/index.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "modules/xiaohan/src/index.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "modules/shuangjiang/src/index.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "modules/qiufen/src/index.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "modules/qingming/src/index.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "modules/mangzhong/src/index.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "modules/lixia/src/index.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "modules/liqiu/src/index.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "modules/lidong/src/index.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "modules/lichun/src/index.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "modules/jingzhe/src/index.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "modules/hanlu/src/index.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    },
+    {
+      "stage": "scan",
+      "target": "modules/guyu/src/index.ts",
+      "reason": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+    }
+  ],
+  "coverage": {
+    "schema_version": "mimosa-hook-coverage/v1",
+    "status": "partial",
+    "scope": "hook_observed_diff",
+    "baseline": {
+      "complete": true,
+      "captured_files": 251,
+      "candidate_limit": 5000,
+      "truncated": false,
+      "enumeration_error_count": 0,
+      "snapshot_error_count": 0,
+      "compensated_target_count": 27
+    },
+    "change_tracking": {
+      "touched_observed": 3,
+      "touched_retained": 3,
+      "truncated": false,
+      "bash_mutation": true,
+      "bash_discovered": 27,
+      "bash_discovery_limit": 80,
+      "bash_discovery_truncated": false
+    },
+    "candidates": {
+      "eligible_files": 27,
+      "selected_files": 20,
+      "limit": 20,
+      "truncated": true
+    },
+    "scanning": {
+      "required_files": 20,
+      "scanned_files": 0,
+      "skipped_files": 0,
+      "failed_files": 20,
+      "project_checks_required": 0,
+      "project_checks_completed": 0
+    },
+    "notification": {
+      "eligible_findings": 0,
+      "detailed_findings": 0,
+      "detail_limit": 3,
+      "truncated": false
+    },
+    "reason_counts": {
+      "candidate_limit_exceeded": 1,
+      "scanner_failed": 20,
+      "project_check_failed": 21
+    },
+    "reasons": [
+      {
+        "code": "candidate_limit_exceeded",
+        "stage": "candidate-select",
+        "target": "modules/dongzhi/src/index.ts",
+        "detail": "7 changed reviewable file(s) were not scanned because the limit is 20",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "packages/module-runtime/src/production-renderer.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "packages/module-runtime/src/index.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "apps/host/src/main.tsx",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "modules/yushui/src/index.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "modules/xiazhi/src/index.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "modules/xiaoxue/src/index.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "modules/xiaoshu/src/index.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "modules/xiaoman/src/index.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "modules/xiaohan/src/index.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "modules/shuangjiang/src/index.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "modules/qiufen/src/index.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "modules/qingming/src/index.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "modules/mangzhong/src/index.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "modules/lixia/src/index.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "modules/liqiu/src/index.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "modules/lidong/src/index.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "modules/lichun/src/index.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "modules/jingzhe/src/index.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "modules/hanlu/src/index.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "scanner_failed",
+        "stage": "scan",
+        "target": "modules/guyu/src/index.ts",
+        "detail": "spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "candidate-select",
+        "target": "modules/dongzhi/src/index.ts",
+        "detail": "candidate_limit_exceeded: 7 changed reviewable file(s) were not scanned because the limit is 20",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "packages/module-runtime/src/production-renderer.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "packages/module-runtime/src/index.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "apps/host/src/main.tsx",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "modules/yushui/src/index.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "modules/xiazhi/src/index.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "modules/xiaoxue/src/index.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "modules/xiaoshu/src/index.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "modules/xiaoman/src/index.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "modules/xiaohan/src/index.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "modules/shuangjiang/src/index.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "modules/qiufen/src/index.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "modules/qingming/src/index.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "modules/mangzhong/src/index.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "modules/lixia/src/index.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "modules/liqiu/src/index.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "modules/lidong/src/index.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "modules/lichun/src/index.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "modules/jingzhe/src/index.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "modules/hanlu/src/index.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "scan",
+        "target": "modules/guyu/src/index.ts",
+        "detail": "scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+        "affects_completion": true
+      }
+    ],
+    "reasons_truncated": false
+  },
+  "generated_at": "2026-10-01T15:37:59.339Z",
+  "session_id": "sess_e70f6227-e80e-4b58-9405-80d68e756245",
+  "target": ".",
+  "revision": "8f9304cd4ebeb40f4c6416ac18fac69ab6cc78fa",
+  "rules_version": "unavailable",
+  "diff_hash": "9c74ba38169e44ea20e79882d5e67bdd7a1312a06357abd93589d89268eea12e",
+  "diff": {
+    "algorithm": "sha256",
+    "changed_file_count": 20,
+    "changed_files": [
+      {
+        "file": "apps/host/src/main.tsx",
+        "ranges": [
+          {
+            "start": 72,
+            "end": 72
+          },
+          {
+            "start": 93,
+            "end": 97
+          }
+        ],
+        "before_hash": "991c6b3e1861f3cbd8e028e0c8bd8c0282ee9cb24fc805c7b5a6a5abea9103b2",
+        "after_hash": "88a4aea2a34048b3aa37c1aae78b5865643eec4db161e44151c447cdb940ae1a"
+      },
+      {
+        "file": "modules/guyu/src/index.ts",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 5,
+            "end": 5
+          }
+        ],
+        "before_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a",
+        "after_hash": "63f0c2e338f0508978f9a047e684d297a3d6a8b5ab9762cae3201f49d719a729"
+      },
+      {
+        "file": "modules/hanlu/src/index.ts",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 5,
+            "end": 5
+          }
+        ],
+        "before_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a",
+        "after_hash": "63f0c2e338f0508978f9a047e684d297a3d6a8b5ab9762cae3201f49d719a729"
+      },
+      {
+        "file": "modules/jingzhe/src/index.ts",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 5,
+            "end": 5
+          }
+        ],
+        "before_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a",
+        "after_hash": "63f0c2e338f0508978f9a047e684d297a3d6a8b5ab9762cae3201f49d719a729"
+      },
+      {
+        "file": "modules/lichun/src/index.ts",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 5,
+            "end": 5
+          }
+        ],
+        "before_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a",
+        "after_hash": "63f0c2e338f0508978f9a047e684d297a3d6a8b5ab9762cae3201f49d719a729"
+      },
+      {
+        "file": "modules/lidong/src/index.ts",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 5,
+            "end": 5
+          }
+        ],
+        "before_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a",
+        "after_hash": "63f0c2e338f0508978f9a047e684d297a3d6a8b5ab9762cae3201f49d719a729"
+      },
+      {
+        "file": "modules/liqiu/src/index.ts",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 5,
+            "end": 5
+          }
+        ],
+        "before_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a",
+        "after_hash": "63f0c2e338f0508978f9a047e684d297a3d6a8b5ab9762cae3201f49d719a729"
+      },
+      {
+        "file": "modules/lixia/src/index.ts",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 5,
+            "end": 5
+          }
+        ],
+        "before_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a",
+        "after_hash": "63f0c2e338f0508978f9a047e684d297a3d6a8b5ab9762cae3201f49d719a729"
+      },
+      {
+        "file": "modules/mangzhong/src/index.ts",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 5,
+            "end": 5
+          }
+        ],
+        "before_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a",
+        "after_hash": "63f0c2e338f0508978f9a047e684d297a3d6a8b5ab9762cae3201f49d719a729"
+      },
+      {
+        "file": "modules/qingming/src/index.ts",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 5,
+            "end": 5
+          }
+        ],
+        "before_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a",
+        "after_hash": "63f0c2e338f0508978f9a047e684d297a3d6a8b5ab9762cae3201f49d719a729"
+      },
+      {
+        "file": "modules/qiufen/src/index.ts",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 5,
+            "end": 5
+          }
+        ],
+        "before_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a",
+        "after_hash": "63f0c2e338f0508978f9a047e684d297a3d6a8b5ab9762cae3201f49d719a729"
+      },
+      {
+        "file": "modules/shuangjiang/src/index.ts",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 5,
+            "end": 5
+          }
+        ],
+        "before_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a",
+        "after_hash": "63f0c2e338f0508978f9a047e684d297a3d6a8b5ab9762cae3201f49d719a729"
+      },
+      {
+        "file": "modules/xiaohan/src/index.ts",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 5,
+            "end": 5
+          }
+        ],
+        "before_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a",
+        "after_hash": "63f0c2e338f0508978f9a047e684d297a3d6a8b5ab9762cae3201f49d719a729"
+      },
+      {
+        "file": "modules/xiaoman/src/index.ts",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 5,
+            "end": 5
+          }
+        ],
+        "before_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a",
+        "after_hash": "63f0c2e338f0508978f9a047e684d297a3d6a8b5ab9762cae3201f49d719a729"
+      },
+      {
+        "file": "modules/xiaoshu/src/index.ts",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 5,
+            "end": 5
+          }
+        ],
+        "before_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a",
+        "after_hash": "63f0c2e338f0508978f9a047e684d297a3d6a8b5ab9762cae3201f49d719a729"
+      },
+      {
+        "file": "modules/xiaoxue/src/index.ts",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 5,
+            "end": 5
+          }
+        ],
+        "before_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a",
+        "after_hash": "63f0c2e338f0508978f9a047e684d297a3d6a8b5ab9762cae3201f49d719a729"
+      },
+      {
+        "file": "modules/xiazhi/src/index.ts",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 5,
+            "end": 5
+          }
+        ],
+        "before_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a",
+        "after_hash": "63f0c2e338f0508978f9a047e684d297a3d6a8b5ab9762cae3201f49d719a729"
+      },
+      {
+        "file": "modules/yushui/src/index.ts",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          },
+          {
+            "start": 5,
+            "end": 5
+          }
+        ],
+        "before_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a",
+        "after_hash": "63f0c2e338f0508978f9a047e684d297a3d6a8b5ab9762cae3201f49d719a729"
+      },
+      {
+        "file": "packages/module-runtime/src/index.tsx",
+        "ranges": [
+          {
+            "start": 3,
+            "end": 3
+          }
+        ],
+        "before_hash": "95ea7814195fcabdabbbc7150ab841fa18026915348fd28a791f6a699fe64384",
+        "after_hash": "ddcbcd62c00866b019e41acfdf5d08cd722a9edf0f76f82e1b7b3c551552eec1"
+      },
+      {
+        "file": "packages/module-runtime/src/production-renderer.ts",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 223
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "825fe14d7adb642d7644c836e95acaca0d4fd1bdb77a30809e7d7cbdade2efbf"
+      }
+    ]
+  },
+  "timing": {
+    "started_at": "2026-10-01T15:37:55.255Z",
+    "completed_at": "2026-10-01T15:37:59.339Z",
+    "duration_ms": 4084,
+    "measurement": "hook_wall_clock"
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "model_calls": 0,
+    "measurement": "known-zero"
+  },
+  "telemetry": {
+    "schemaVersion": "mimosa-gate-telemetry/v1",
+    "profile": "gate",
+    "operation": "Stop",
+    "outcome": "partial/INCONCLUSIVE",
+    "latencyMs": 4084,
+    "peakMemoryBytes": 109981696,
+    "memoryMeasurement": "max-observed-process-rss",
+    "scannedFiles": 0,
+    "cache": {
+      "hits": 0,
+      "misses": 0,
+      "measurement": "not-applicable"
+    },
+    "denyCount": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "total": 0,
+      "modelCalls": 0,
+      "measurement": "known-zero"
+    }
+  },
+  "finding_count": 0,
+  "rewake_finding_count": 0,
+  "evidence_boundary": {
+    "scan": "candidate",
+    "static_fix_verification": "observed_static_only",
+    "runtime_verification": "not_performed"
+  },
+  "finding_events": [],
+  "findings": [],
+  "artifacts": {
+    "immutable_report": ".mimosa/reports/task-review-sess_e70f6227-e80e-4b58-9405-80d68e756245-20261001T153759339Z-22484-5004676904bc.json",
+    "latest_report": ".mimosa/reports/task-review-sess_e70f6227-e80e-4b58-9405-80d68e756245.json",
+    "history_summary": ".mimosa/history/run-20261001T153759339Z-22484-5004676904bc.json"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@solar24/module-dashu",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node ../../scripts/module.mjs dev dashu",
+    "build": "node ../../scripts/module.mjs build dashu",
+    "test": "node ../../scripts/module.mjs test dashu"
+  },
+  "dependencies": {
+    "@solar24/module-runtime": "workspace:*",
+    "@solar24/protocol": "workspace:*"
+  }
+}

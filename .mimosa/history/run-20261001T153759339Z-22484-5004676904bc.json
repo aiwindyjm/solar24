@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "mimosa-finding-history/v1",
+  "runId": "20261001T153759339Z-22484-5004676904bc",
+  "runStatus": "inconclusive",
+  "errors": [
+    "candidate-select:modules/dongzhi/src/index.ts: candidate_limit_exceeded: 7 changed reviewable file(s) were not scanned because the limit is 20",
+    "scan:packages/module-runtime/src/production-renderer.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:packages/module-runtime/src/index.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:apps/host/src/main.tsx: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/yushui/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/xiazhi/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/xiaoxue/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/xiaoshu/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/xiaoman/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/xiaohan/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/shuangjiang/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/qiufen/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/qingming/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/mangzhong/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/lixia/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/liqiu/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/lidong/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/lichun/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/jingzhe/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/hanlu/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT",
+    "scan:modules/guyu/src/index.ts: scanner_failed: spawnSync C:\\Program Files\\nodejs\\node.exe ETIMEDOUT"
+  ],
+  "target": ".",
+  "revision": "8f9304cd4ebeb40f4c6416ac18fac69ab6cc78fa",
+  "diffHash": "9c74ba38169e44ea20e79882d5e67bdd7a1312a06357abd93589d89268eea12e",
+  "rulesVersion": "unavailable",
+  "recordedAt": "2026-10-01T15:37:59.339Z",
+  "timing": {
+    "startedAt": "2026-10-01T15:37:55.255Z",
+    "completedAt": "2026-10-01T15:37:59.339Z",
+    "durationMs": 4084
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "modelCalls": 0,
+    "measurement": "known-zero"
+  },
+  "findings": {
+    "total": 0,
+    "bySeverity": {},
+    "byStatus": {}
+  },
+  "coverage": {
+    "status": "partial",
+    "reasonCounts": {
+      "candidate_limit_exceeded": 1,
+      "scanner_failed": 20,
+      "project_check_failed": 21
+    }
+  },
+  "evidenceBoundary": "static_only",
+  "immutableReport": ".mimosa/reports/task-review-sess_e70f6227-e80e-4b58-9405-80d68e756245-20261001T153759339Z-22484-5004676904bc.json"
+}

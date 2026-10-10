@@ -1,0 +1,15 @@
+{
+  "name": "@solar24/module-mangzhong",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node ../../scripts/module.mjs dev mangzhong",
+    "build": "node ../../scripts/module.mjs build mangzhong",
+    "test": "node ../../scripts/module.mjs test mangzhong"
+  },
+  "dependencies": {
+    "@solar24/module-runtime": "workspace:*",
+    "@solar24/protocol": "workspace:*"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "stop-20260930T162012566Z-14000-9c7c93410667",
+  "runId": "20260930T162012566Z-14000-9c7c93410667",
+  "runStatus": "completed",
+  "coverage": {
+    "status": "complete",
+    "reasons": []
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "Stop"
+  },
+  "revision": "8f9304cd4ebeb40f4c6416ac18fac69ab6cc78fa",
+  "diffHash": "fb23b4516cfd6a4800ffb5ad2aa804ae792004b25f8f23190b32a1770a93312f",
+  "rulesVersion": "unavailable",
+  "sessionHash": "ab3deaf919f9f0d3c02390c6f6ed38a7e18dc3e2a7ae3f025a5b9d99bfc333b7",
+  "reportRef": ".mimosa/reports/task-review-sess_e70f6227-e80e-4b58-9405-80d68e756245-20260930T162012566Z-14000-9c7c93410667.json",
+  "events": [],
+  "observedFindingIds": [],
+  "verifiedFiles": [
+    {
+      "file": ".tmp/stage10-batch.py",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "modules/xiazhi/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "modules/xiaoxue/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "modules/xiaoshu/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "modules/xiaohan/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "modules/shuangjiang/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "modules/qiufen/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "modules/mangzhong/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "modules/lixia/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "modules/lidong/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "modules/jingzhe/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "modules/hanlu/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "modules/daxue/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "modules/dashu/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "modules/dahan/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "modules/chushu/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "modules/bailu/src/index.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    }
+  ],
+  "recordedAt": "2026-09-30T16:20:13.009Z"
+}

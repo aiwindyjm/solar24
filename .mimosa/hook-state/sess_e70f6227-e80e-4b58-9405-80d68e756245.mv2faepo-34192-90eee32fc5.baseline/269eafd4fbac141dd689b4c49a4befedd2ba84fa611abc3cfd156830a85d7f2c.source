@@ -1,0 +1,1 @@
+async page => await page.evaluate(()=>window.__lifeAudio.map(x=>({state:x.context.state,filter:x.filters.map(f=>f.frequency.value),same:x.context===window.__lifeAudio[0].context})))

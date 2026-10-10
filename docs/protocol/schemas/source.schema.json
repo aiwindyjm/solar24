@@ -65,6 +65,13 @@
         "personal-observation"
       ]
     },
+    "access": {
+      "type": "string",
+      "enum": [
+        "direct-read",
+        "search-excerpt"
+      ]
+    },
     "accessed": {
       "anyOf": [
         {
@@ -108,6 +115,7 @@
     "url",
     "citation",
     "source_type",
+    "access",
     "accessed",
     "original_excerpt",
     "locator",

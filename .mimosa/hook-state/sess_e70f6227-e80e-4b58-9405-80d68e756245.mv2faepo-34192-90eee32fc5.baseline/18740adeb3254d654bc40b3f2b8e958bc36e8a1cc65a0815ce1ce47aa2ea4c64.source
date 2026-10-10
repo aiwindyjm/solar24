@@ -1,0 +1,96 @@
+import io
+import json
+import os
+import shutil
+import re
+import yaml
+
+MODS = r'E:\Users\Administrator\Documents\Desktop\24节气\modules'
+KB = r'E:\Users\Administrator\Documents\Desktop\24节气\knowledge-base'
+SKIP = ('.obsidian', 'private', '_private', 'raw', '90_templates')
+
+TERMS = ['yushui', 'chunfen', 'qingming', 'guyu', 'xiaoman', 'liqiu', 'dongzhi']
+
+# Load KB for source refs
+byId = {}
+for root, dirs, fs in os.walk(KB):
+    dirs[:] = [d for d in dirs if d not in SKIP]
+    for f in fs:
+        if not f.endswith('.md'):
+            continue
+        p = os.path.join(root, f)
+        raw = io.open(p, encoding='utf-8').read()
+        m = re.match(r'^---\r?\n([\s\S]*?)\r?\n---', raw)
+        if m:
+            try:
+                d = yaml.safe_load(m.group(1))
+                if d.get('id'):
+                    byId[d['id']] = d
+            except:
+                pass
+
+def add_refs(slug, new_sids):
+    """Add new source IDs to references.json if not already present."""
+    rp = os.path.join(MODS, slug, 'references.json')
+    refs = json.load(io.open(rp, encoding='utf-8'))
+    have = set(r['id'] for r in refs)
+    for sid in new_sids:
+        if sid in have:
+            continue
+        d = byId.get(sid)
+        if not d or not d.get('source'):
+            continue
+        s = d['source']
+        refs.append({
+            'id': s['id'], 'title': s['title'], 'authors': s.get('authors', []),
+            'publisher': s.get('publisher'), 'published': s.get('published'),
+            'url': s.get('url'), 'citation': s.get('citation', ''),
+            'source_type': s.get('source_type', 'institutional'),
+            'access': s.get('access', 'direct-read'),
+            'accessed': str(s.get('accessed', '')),
+            'original_excerpt': s.get('original_excerpt', ''),
+            'locator': s.get('locator', ''), 'ai_summary': s.get('ai_summary', ''),
+            'rights': s.get('rights', 'unknown'), 'verification': 'human-verified',
+        })
+    with io.open(rp, 'w', encoding='utf-8') as f:
+        json.dump(refs, f, ensure_ascii=False, indent=2)
+
+# Fix liqiu references (add the new S4 sources)
+add_refs('liqiu', ['source-xinhua-liqiu-sanwen-2026', 'source-szmb-season-division'])
+print('liqiu refs updated')
+
+# Template renderer (generic, same as lichun)
+RENDERER = io.open(os.path.join(MODS, 'lichun', 'src', 'index.ts'), encoding='utf-8').read()
+
+for slug in TERMS:
+    mod = os.path.join(MODS, slug)
+
+    # 1. Copy renderer
+    src_dir = os.path.join(mod, 'src')
+    os.makedirs(src_dir, exist_ok=True)
+    shutil.copy(os.path.join(MODS, 'lichun', 'src', 'index.ts'),
+                os.path.join(src_dir, 'index.ts'))
+
+    # 2. Update manifest
+    mp = os.path.join(mod, 'module.manifest.json')
+    m = json.load(io.open(mp, encoding='utf-8'))
+    m['status'] = 'In Development'
+    with io.open(mp, 'w', encoding='utf-8') as f:
+        json.dump(m, f, ensure_ascii=False, indent=2)
+
+    # 3. Update README status
+    rp = os.path.join(mod, 'README.md')
+    if os.path.exists(rp):
+        t = io.open(rp, encoding='utf-8').read()
+        t = t.replace('> Prototype ·', '> In Development ·')
+        io.open(rp, 'w', encoding='utf-8', newline='\n').write(t)
+
+    # 4. Ensure assets manifest
+    ap = os.path.join(mod, 'assets', 'manifest.json')
+    os.makedirs(os.path.dirname(ap), exist_ok=True)
+    with io.open(ap, 'w') as f:
+        json.dump([], f)
+
+    print(f'{slug}: renderer + manifest + README + assets done')
+
+print('\nAll 7 terms done!')

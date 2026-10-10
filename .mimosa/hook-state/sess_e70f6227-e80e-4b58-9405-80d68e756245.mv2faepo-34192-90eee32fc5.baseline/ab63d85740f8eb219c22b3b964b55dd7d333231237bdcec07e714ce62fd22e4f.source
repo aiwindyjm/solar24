@@ -1,0 +1,22 @@
+async page => {
+  await page.waitForTimeout(700);
+  const en=await page.locator('html').getAttribute('lang')==='en';
+  await page.getByRole('button',{name:en?'Enter Summer Solstice':'进入夏至',exact:true}).click();
+  await page.waitForTimeout(1600);
+  await page.getByRole('button',{name:en?'Enter Autumn Equinox':'进入秋分',exact:true}).click();
+  await page.waitForTimeout(1600);
+  await page.locator('.culture-strip button').nth(0).click();
+  await page.waitForTimeout(1600);
+  await page.locator('.reading-close').click();
+  await page.locator('header nav button').nth(1).click();
+  await page.waitForTimeout(2300);
+  await page.locator('.lens-switch button').first().click();
+  await page.waitForTimeout(2100);
+  await page.locator('header nav button').nth(2).click();
+  await page.waitForTimeout(2300);
+  await page.locator('.hotspots button').nth(1).click();
+  await page.waitForTimeout(1200);
+  await page.locator('#field-time').fill('80');
+  await page.waitForTimeout(1500);
+  return {done:true};
+}

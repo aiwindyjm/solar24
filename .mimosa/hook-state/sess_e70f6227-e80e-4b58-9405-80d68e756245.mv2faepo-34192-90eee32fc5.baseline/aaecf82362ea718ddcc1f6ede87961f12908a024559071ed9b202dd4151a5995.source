@@ -1,0 +1,1 @@
+async page => ({focus:await page.evaluate(()=>document.activeElement?.outerHTML.slice(0,800)),inert:await page.locator('.culture-strip').evaluate(el=>el.inert)})

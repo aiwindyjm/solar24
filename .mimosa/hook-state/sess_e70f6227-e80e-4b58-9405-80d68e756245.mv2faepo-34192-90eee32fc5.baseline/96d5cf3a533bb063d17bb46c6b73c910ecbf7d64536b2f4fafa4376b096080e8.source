@@ -1,0 +1,37 @@
+from pathlib import Path
+w=Path(__file__).resolve().parent/'solar24-cloudflare'
+def write(p,s): (w/p).write_text(s.strip()+'\n',encoding='utf-8')
+def replace(p,a,b):
+ t=(w/p).read_text(encoding='utf-8')
+ assert a in t,(p,a[:60])
+ write(p,t.replace(a,b))
+p='docs/architecture/development.md';t=(w/p).read_text(encoding='utf-8');write(p,t.split('## 发布')[0]+'''## 共享 Demo 与生产 Host
+
+| 目标 | 开发 | 构建 | 输出 |
+| --- | --- | --- | --- |
+| V5 共享 Demo | `pnpm demo:dev`（5176） | `pnpm demo:build` | `docs/design/solar24-v5/dist` |
+| 生产 Host | `pnpm dev` | `pnpm build` | `apps/host/dist` |
+
+Demo 构建包含独立类型检查。`pnpm demo:preview` 在 5177 预览构建结果；`pnpm demo:deploy` 构建后通过 Wrangler 上传到 Cloudflare Workers Static Assets。使用锁文件中的本地 Wrangler，部署前完成账号授权。配置、验证和回退说明见[部署指南](../design/solar24-v5/DEPLOYMENT.md)。
+
+[英文站点](https://solar24-demo.solar24.workers.dev/?lang=en#lichun/seasons) / [中文站点](https://solar24-demo.solar24.workers.dev/?lang=zh#lichun/seasons)已上线，源码在 [GitHub](https://github.com/aiwindyjm/solar24)。只上传 Demo 的 dist，不上传仓库或知识库。相对资源路径与 hash 路由保持静态托管能力。
+
+生产 Host 的审核门槛保持不变；未来迁入模块的正文与素材独立审核。当前 Demo 需要 JavaScript，完整的无 JavaScript 阅读输出仍在路线中。GitHub CI 执行检查，不自动部署；修改说明文档不会触发线上内容更新。
+''')
+replace('docs/README.md','[How Solar24 Is Made · Development Journey](development-journey/README.md) / [V1–V4 演进](development-journey/prototype-evolution.md)','[制作过程](development-journey/README.md) / [How Solar24 Is Made](development-journey/README.en.md) / [V1–V5 演进](development-journey/prototype-evolution.md)\n- [V5 Demo 交付](development/v5-demo-release.md) / [部署与验证](design/solar24-v5/DEPLOYMENT-VALIDATION.md)')
+replace('docs/development/release-process.md','本阶段建立约定，不创建 tag 或 GitHub Release。','本文是持续适用的发布约定。V5 共享 Demo 已部署，见[实际交付记录](v5-demo-release.md)；本轮文档同步不创建新的应用版本号或 GitHub Release。')
+replace('docs/development/journey-community-delivery.md','# Development Journey + Community Music · 交付记录','# Development Journey + Community Music · 历史交付记录\n\n> 以下保留首次 Journey/社区规范交付时的状态。后续 V5 已上线；当前进度见 [V5 交付](v5-demo-release.md) 和 [制作过程](../development-journey/README.md)。')
+replace('docs/architecture/initialization-report.md','#', '#',) # preserve the original report unchanged; prefix a dated context note below
+p='docs/architecture/initialization-report.md';t=(w/p).read_text(encoding='utf-8');first,rest=t.split('\n',1);write(p,first+'\n\n> 历史记录：以下为初始化时的交付快照。当前 V5 Demo、GitHub 与部署状态见 [版本交付](../development/v5-demo-release.md)。\n'+rest)
+replace('docs/architecture/overview.md','## 制作过程与社区声音','''## 已上线的共享 Demo
+
+第五版位于 `docs/design/solar24-v5/`，以独立 Vite 构建部署到 Cloudflare Workers Static Assets。React/Three.js 场景、HTML 阅读层、Web Audio 和本地引用快照构成同一静态站点。没有服务器端应用逻辑，也没有运行时知识库读取。
+
+`pnpm demo:build` 与生产 Host 的 `pnpm build` 使用不同输出目录。公开 Demo 验证体验，生产 Host 继续消费 modules/protocol；本轮没有新增共享包或修改模块审核门槛。[当前路线](roadmap.md)按立春先行安排后续接入。
+
+## 制作过程与社区声音''')
+replace('modules/lichun/README.md','当前为可运行的静态骨架，尚无完成的文化故事/交互。没有在线 Demo。','本模块仍为生产 Host 的静态骨架。共享 V5 已提供[立春在线体验](https://solar24-demo.solar24.workers.dev/?lang=zh#lichun/seasons)，包括三种尺度、五类阅读和迎春参与；它的代码位于 `docs/design/solar24-v5/`，尚未迁入本模块。')
+replace('modules/lichun/README.md','[首个研究任务](../../knowledge-base/07_research/research-lichun-astronomy-plan.md) 尚未执行；下一阶段先证据后交互。','[首个研究任务](../../knowledge-base/07_research/research-lichun-astronomy-plan.md)保留初始化计划；当前共享 Demo 的选编依据见[引用快照](../../docs/design/solar24-v5/src/book-provenance.json)，生产模块接入按[当前路线](../../docs/architecture/roadmap.md)执行。')
+replace('docs/community/README.md','本阶段已建立音乐投稿指南、GitHub Issue Form、元数据 schema 和本地/PR 校验。没有收录作品、精选名单、在线投稿服务或正式音频。表单在合入 GitHub 默认分支后才会出现在 New issue 中；本地文件存在不表示线上已启用。','音乐投稿指南、GitHub Issue Form、元数据 schema 和本地/PR 校验已随仓库发布。[音乐投稿入口](https://github.com/aiwindyjm/solar24/issues/new?template=music-contribution.yml)可登记想法与作品链接。V5 的声音是合成环境音；当前没有声称收录社区曲目或建立精选名单，也没有独立音频上传服务。')
+replace('docs/community/music-contribution.md','表单需合入 GitHub 默认分支才可使用。','[表单已在 GitHub 主分支提供](https://github.com/aiwindyjm/solar24/issues/new?template=music-contribution.yml)。')
+print('Core journey and connected docs updated.')

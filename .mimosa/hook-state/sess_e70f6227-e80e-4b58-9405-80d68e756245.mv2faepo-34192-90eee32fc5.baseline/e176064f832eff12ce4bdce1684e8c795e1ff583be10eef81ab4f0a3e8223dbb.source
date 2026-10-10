@@ -1,0 +1,23 @@
+async page => {
+ await page.setViewportSize({width:1280,height:720});
+ await page.goto('http://127.0.0.1:5176/#yushui/seasons');await page.waitForTimeout(1500);
+ await page.locator('.culture-strip button').first().click();await page.waitForTimeout(1050);
+ await page.screenshot({path:'output/playwright/solar24-v5-veil-720.png'});
+ await page.keyboard.press('Escape');await page.waitForTimeout(1000);
+ if(await page.getByRole('button',{name:'Switch to English',exact:true}).count())await page.getByRole('button',{name:'Switch to English',exact:true}).click();
+ await page.locator('.culture-strip button').first().click();await page.waitForTimeout(1050);
+ await page.screenshot({path:'output/playwright/solar24-v5-veil-en-720.png'});
+ await page.setViewportSize({width:390,height:844});
+ await page.locator('.culture-strip button').first().click();await page.waitForTimeout(1100);
+ await page.screenshot({path:'output/playwright/solar24-v5-veil-mobile-en.png'});
+ const category=await page.locator('.culture-strip').boundingBox();
+ if(category.y+category.height>844)throw Error('English categories outside viewport');
+ await page.keyboard.press('Escape');await page.waitForTimeout(1000);
+ await page.getByRole('button',{name:'Switch to Chinese',exact:true}).click();
+ await page.locator('.culture-strip button').first().click();await page.waitForTimeout(1050);
+ await page.screenshot({path:'output/playwright/solar24-v5-veil-mobile.png'});
+ await page.keyboard.press('Escape');await page.waitForTimeout(1000);
+ await page.setViewportSize({width:1269,height:1066});
+ await page.goto('http://127.0.0.1:5176/#daxue/seasons');
+ return {category,passed:true};
+}

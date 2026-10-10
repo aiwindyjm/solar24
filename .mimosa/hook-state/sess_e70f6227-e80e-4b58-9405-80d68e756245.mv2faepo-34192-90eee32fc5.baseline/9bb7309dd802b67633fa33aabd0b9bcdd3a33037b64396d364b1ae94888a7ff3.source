@@ -1,0 +1,35 @@
+async page => {
+  const check = (value, label) => { if (!value) throw new Error(label); };
+  await page.goto('http://127.0.0.1:5176/#lichun/seasons');
+  await page.locator('.date-trigger').click();
+  await page.getByRole('button',{name:'2026-2-12',exact:true}).click();
+  await page.getByRole('button',{name:'Close calendar',exact:true}).click();
+  await page.getByRole('button',{name:'02Cosmos',exact:true}).click();
+  await page.goBack();
+  check((await page.locator('.date-trigger b').innerText()) === '12','Back preserves calendar day');
+  await page.goForward();
+  check((await page.locator('.date-trigger b').innerText()) === '12','Forward preserves calendar day');
+  await page.reload();
+  check((await page.locator('.date-trigger b').innerText()) === '12','Reload preserves calendar day');
+  await page.getByRole('button',{name:'01Seasons',exact:true}).click();
+  await page.getByRole('button',{name:'Journey through a year',exact:true}).click();
+  await page.locator('.date-trigger').click();
+  await page.waitForURL('**/#yushui/seasons', {timeout:20000});
+  check(page.url().endsWith('#yushui/seasons'),'Live clock passes first boundary after history restoration');
+  await page.getByRole('button',{name:'Pause motion',exact:true}).click();
+  await page.screenshot({path:'output/playwright/solar24-v5-book-calendar.png'});
+  await page.getByRole('button',{name:'Close calendar',exact:true}).click();
+  await page.getByRole('button',{name:'Stay here',exact:true}).click();
+  await page.locator('.culture-strip button').nth(3).click();
+  const slugs = ['lichun','yushui','jingzhe','chunfen','qingming','guyu','lixia','xiaoman','mangzhong','xiazhi','xiaoshu','dashu','liqiu','chushu','bailu','qiufen','hanlu','shuangjiang','lidong','xiaoxue','daxue','dongzhi','xiaohan','dahan'];
+  for (let i = 0; i < slugs.length; i++) {
+    await page.evaluate(slug => location.hash = `#${slug}/seasons`, slugs[i]);
+    await page.waitForFunction(index => document.querySelector('.reading-rail .eyebrow').textContent.includes(`${String(index+1).padStart(2,'0')} / 24`), i);
+    check(await page.locator('.book-chapter').count() === 5, `${slugs[i]} chapter count`);
+    check((await page.locator('#chapter-3 .chapter-body > p').first().innerText()).length > 50, `${slugs[i]} life content`);
+  }
+  await page.getByRole('button',{name:'Close story',exact:true}).click();
+  await page.getByRole('button',{name:'Resume motion',exact:true}).click();
+  await page.goto('http://127.0.0.1:5176/#lichun/seasons');
+  return {status:'passed', historyChecks:3, liveBoundary:true, booksChecked:24};
+}

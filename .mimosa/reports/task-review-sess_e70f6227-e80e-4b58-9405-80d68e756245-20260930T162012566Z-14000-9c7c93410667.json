@@ -1,0 +1,301 @@
+{
+  "schema_version": "mimosa-task-review/v2",
+  "run_id": "20260930T162012566Z-14000-9c7c93410667",
+  "run_status": "completed",
+  "errors": [],
+  "coverage": {
+    "schema_version": "mimosa-hook-coverage/v1",
+    "status": "complete",
+    "scope": "hook_observed_diff",
+    "baseline": {
+      "complete": true,
+      "captured_files": 249,
+      "candidate_limit": 5000,
+      "truncated": false,
+      "enumeration_error_count": 0,
+      "snapshot_error_count": 0,
+      "compensated_target_count": 17
+    },
+    "change_tracking": {
+      "touched_observed": 1,
+      "touched_retained": 1,
+      "truncated": false,
+      "bash_mutation": true,
+      "bash_discovered": 17,
+      "bash_discovery_limit": 80,
+      "bash_discovery_truncated": false
+    },
+    "candidates": {
+      "eligible_files": 17,
+      "selected_files": 17,
+      "limit": 20,
+      "truncated": false
+    },
+    "scanning": {
+      "required_files": 17,
+      "scanned_files": 17,
+      "skipped_files": 0,
+      "failed_files": 0,
+      "project_checks_required": 0,
+      "project_checks_completed": 0
+    },
+    "notification": {
+      "eligible_findings": 0,
+      "detailed_findings": 0,
+      "detail_limit": 3,
+      "truncated": false
+    },
+    "reason_counts": {},
+    "reasons": [],
+    "reasons_truncated": false
+  },
+  "generated_at": "2026-09-30T16:20:12.566Z",
+  "session_id": "sess_e70f6227-e80e-4b58-9405-80d68e756245",
+  "target": ".",
+  "revision": "8f9304cd4ebeb40f4c6416ac18fac69ab6cc78fa",
+  "rules_version": "unavailable",
+  "diff_hash": "fb23b4516cfd6a4800ffb5ad2aa804ae792004b25f8f23190b32a1770a93312f",
+  "diff": {
+    "algorithm": "sha256",
+    "changed_file_count": 17,
+    "changed_files": [
+      {
+        "file": ".tmp/stage10-batch.py",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 288
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "aa1849f0d4a80b1d204d16ad5fbbf48c5aed36aeaf549c4bc992b54e38297187"
+      },
+      {
+        "file": "modules/bailu/src/index.ts",
+        "ranges": [
+          {
+            "start": 2,
+            "end": 99
+          }
+        ],
+        "before_hash": "482fc7d24df4c79e1f855dce504fc0d270cd991771203c8dc37a89aed510d7be",
+        "after_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a"
+      },
+      {
+        "file": "modules/chushu/src/index.ts",
+        "ranges": [
+          {
+            "start": 2,
+            "end": 99
+          }
+        ],
+        "before_hash": "482fc7d24df4c79e1f855dce504fc0d270cd991771203c8dc37a89aed510d7be",
+        "after_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a"
+      },
+      {
+        "file": "modules/dahan/src/index.ts",
+        "ranges": [
+          {
+            "start": 2,
+            "end": 99
+          }
+        ],
+        "before_hash": "482fc7d24df4c79e1f855dce504fc0d270cd991771203c8dc37a89aed510d7be",
+        "after_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a"
+      },
+      {
+        "file": "modules/dashu/src/index.ts",
+        "ranges": [
+          {
+            "start": 2,
+            "end": 99
+          }
+        ],
+        "before_hash": "482fc7d24df4c79e1f855dce504fc0d270cd991771203c8dc37a89aed510d7be",
+        "after_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a"
+      },
+      {
+        "file": "modules/daxue/src/index.ts",
+        "ranges": [
+          {
+            "start": 2,
+            "end": 99
+          }
+        ],
+        "before_hash": "482fc7d24df4c79e1f855dce504fc0d270cd991771203c8dc37a89aed510d7be",
+        "after_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a"
+      },
+      {
+        "file": "modules/hanlu/src/index.ts",
+        "ranges": [
+          {
+            "start": 2,
+            "end": 99
+          }
+        ],
+        "before_hash": "482fc7d24df4c79e1f855dce504fc0d270cd991771203c8dc37a89aed510d7be",
+        "after_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a"
+      },
+      {
+        "file": "modules/jingzhe/src/index.ts",
+        "ranges": [
+          {
+            "start": 2,
+            "end": 99
+          }
+        ],
+        "before_hash": "482fc7d24df4c79e1f855dce504fc0d270cd991771203c8dc37a89aed510d7be",
+        "after_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a"
+      },
+      {
+        "file": "modules/lidong/src/index.ts",
+        "ranges": [
+          {
+            "start": 2,
+            "end": 99
+          }
+        ],
+        "before_hash": "482fc7d24df4c79e1f855dce504fc0d270cd991771203c8dc37a89aed510d7be",
+        "after_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a"
+      },
+      {
+        "file": "modules/lixia/src/index.ts",
+        "ranges": [
+          {
+            "start": 2,
+            "end": 99
+          }
+        ],
+        "before_hash": "482fc7d24df4c79e1f855dce504fc0d270cd991771203c8dc37a89aed510d7be",
+        "after_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a"
+      },
+      {
+        "file": "modules/mangzhong/src/index.ts",
+        "ranges": [
+          {
+            "start": 2,
+            "end": 99
+          }
+        ],
+        "before_hash": "482fc7d24df4c79e1f855dce504fc0d270cd991771203c8dc37a89aed510d7be",
+        "after_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a"
+      },
+      {
+        "file": "modules/qiufen/src/index.ts",
+        "ranges": [
+          {
+            "start": 2,
+            "end": 99
+          }
+        ],
+        "before_hash": "482fc7d24df4c79e1f855dce504fc0d270cd991771203c8dc37a89aed510d7be",
+        "after_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a"
+      },
+      {
+        "file": "modules/shuangjiang/src/index.ts",
+        "ranges": [
+          {
+            "start": 2,
+            "end": 99
+          }
+        ],
+        "before_hash": "482fc7d24df4c79e1f855dce504fc0d270cd991771203c8dc37a89aed510d7be",
+        "after_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a"
+      },
+      {
+        "file": "modules/xiaohan/src/index.ts",
+        "ranges": [
+          {
+            "start": 2,
+            "end": 99
+          }
+        ],
+        "before_hash": "482fc7d24df4c79e1f855dce504fc0d270cd991771203c8dc37a89aed510d7be",
+        "after_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a"
+      },
+      {
+        "file": "modules/xiaoshu/src/index.ts",
+        "ranges": [
+          {
+            "start": 2,
+            "end": 99
+          }
+        ],
+        "before_hash": "482fc7d24df4c79e1f855dce504fc0d270cd991771203c8dc37a89aed510d7be",
+        "after_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a"
+      },
+      {
+        "file": "modules/xiaoxue/src/index.ts",
+        "ranges": [
+          {
+            "start": 2,
+            "end": 99
+          }
+        ],
+        "before_hash": "482fc7d24df4c79e1f855dce504fc0d270cd991771203c8dc37a89aed510d7be",
+        "after_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a"
+      },
+      {
+        "file": "modules/xiazhi/src/index.ts",
+        "ranges": [
+          {
+            "start": 2,
+            "end": 99
+          }
+        ],
+        "before_hash": "482fc7d24df4c79e1f855dce504fc0d270cd991771203c8dc37a89aed510d7be",
+        "after_hash": "dd5b864c9b2dceca91d51e5e2e42b8e0824c88fae7dc2f6f5165edc6dafb773a"
+      }
+    ]
+  },
+  "timing": {
+    "started_at": "2026-09-30T16:20:10.875Z",
+    "completed_at": "2026-09-30T16:20:12.566Z",
+    "duration_ms": 1691,
+    "measurement": "hook_wall_clock"
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "model_calls": 0,
+    "measurement": "known-zero"
+  },
+  "telemetry": {
+    "schemaVersion": "mimosa-gate-telemetry/v1",
+    "profile": "gate",
+    "operation": "Stop",
+    "outcome": "complete",
+    "latencyMs": 1691,
+    "peakMemoryBytes": 153587712,
+    "memoryMeasurement": "max-observed-process-rss",
+    "scannedFiles": 17,
+    "cache": {
+      "hits": 0,
+      "misses": 0,
+      "measurement": "not-applicable"
+    },
+    "denyCount": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "total": 0,
+      "modelCalls": 0,
+      "measurement": "known-zero"
+    }
+  },
+  "finding_count": 0,
+  "rewake_finding_count": 0,
+  "evidence_boundary": {
+    "scan": "candidate",
+    "static_fix_verification": "observed_static_only",
+    "runtime_verification": "not_performed"
+  },
+  "finding_events": [],
+  "findings": [],
+  "artifacts": {
+    "immutable_report": ".mimosa/reports/task-review-sess_e70f6227-e80e-4b58-9405-80d68e756245-20260930T162012566Z-14000-9c7c93410667.json",
+    "latest_report": ".mimosa/reports/task-review-sess_e70f6227-e80e-4b58-9405-80d68e756245.json",
+    "history_summary": ".mimosa/history/run-20260930T162012566Z-14000-9c7c93410667.json"
+  }
+}

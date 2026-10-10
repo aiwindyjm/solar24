@@ -175,6 +175,7 @@
     "status": {
       "type": "string",
       "enum": [
+        "candidate",
         "draft",
         "submitted",
         "reviewing",

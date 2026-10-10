@@ -1,0 +1,201 @@
+import json
+import io
+import os
+
+MODS = r'E:\Users\Administrator\Documents\Desktop\24节气\modules'
+
+# 16 terms × 8 slots, hand-crafted reader-friendly prose (zh + en)
+# Format: {slug: {claim_index: (zh, en)}}
+# claim_index is 0-based (c1=0, c2=1, ...)
+REWRITES = {
+    'jingzhe': {
+        0: ('二十四节气按太阳位置划分一年，每段15°。节气是太阳的刻度，不是天气预报。', 'The 24 solar terms divide the year by the Sun\'s position. They are a solar calendar, not weather forecasts.'),
+        1: ('惊蛰是第三个节气。太阳到达黄经345°，在公历3月5日前后。春雷始鸣，冬眠的虫子被唤醒。', 'Jingzhe is the third term: the Sun reaches 345°, around March 5. Spring thunder awakens hibernating creatures.'),
+        2: ('惊蛰是农历二月的"节"。在传统历法中，它与春分配对，一节一中气。', 'Jingzhe is the "node term" of the second lunar month, paired with the Spring Equinox.'),
+        3: ('气温回升，第一声春雷响起。土壤解冻，虫子开始活动。', 'Rising temperatures bring the first thunder. Soil thaws and insects stir.'),
+        4: ('古人观察到的三候：桃花开了、黄鹂叫了、鹰变成鸠。这是古典记录，不是科学观测。', 'Ancient texts record: peach blossoms open, orioles sing, hawks become doves. Classical observation, not modern science.'),
+        5: ('传统习俗包括"驱虫"和准备春耕土地。', 'Traditional practices include pest-chasing rituals and preparing fields for spring plowing.'),
+        6: ('惊蛰是大自然苏醒的时刻——冬眠结束，生长重新开始。', 'Jingzhe marks nature\'s awakening — dormancy ends, growth resumes.'),
+        7: ('这个时间在你生活的地方意味着什么？', 'What does this time of year mean where you live?'),
+    },
+    'lixia': {
+        0: ('二十四节气按太阳位置划分一年。', 'The 24 solar terms divide the year by the Sun\'s position.'),
+        1: ('立夏是第七个节气。太阳到达黄经45°，夏季开始。', 'Lixia is the seventh term: the Sun reaches 45°, marking the start of summer.'),
+        2: ('立夏是农历四月的"节"，与小满配对。', 'Lixia is the node term of the fourth lunar month, paired with Xiaoman.'),
+        3: ('气温明显升高，夏季生长季开始。', 'Temperatures rise sharply; the summer growing season begins.'),
+        4: ('古人观察到：蝼蛄叫了、蚯蚓出了、王瓜藤长了。', 'Ancient texts: mole crickets sing, earthworms emerge, snake gourd vines grow.'),
+        5: ('传统习俗有"称人"（称体重祈健康）和吃"三新"（尝夏季首批时令食物）。', 'Customs include "weighing people" for health and tasting "three fresh foods" of early summer.'),
+        6: ('立夏标志着从春天的生长转向夏天的繁茂。', 'Lixia marks the shift from spring growth to summer abundance.'),
+        7: ('这个时间在你生活的地方意味着什么？', 'What does this time of year mean where you live?'),
+    },
+    'mangzhong': {
+        0: ('二十四节气按太阳位置划分一年。', 'The 24 solar terms divide the year by the Sun\'s position.'),
+        1: ('芒种是第九个节气。太阳到达黄经75°，"芒"指麦子有芒，"种"指该播种了。', 'Mangzhong is the ninth term: the Sun reaches 75°. "Mang" means bearded grains; "zhong" means it\'s time to plant.'),
+        2: ('芒种是农历五月的"节"。名字的意思是"有芒的麦子快收，有芒的稻子可种"。', 'Mangzhong is the node term of the fifth lunar month. Its name means "harvest bearded wheat, plant bearded rice."'),
+        3: ('梅雨季节开始。收麦子和插秧同时进行，是农民最忙的时候。', 'The plum rain season begins. Wheat harvest and rice transplanting overlap — the busiest farming period.'),
+        4: ('古人观察到：螳螂孵化了、伯劳鸟开始叫、反舌鸟不叫了。', 'Ancient texts: mantises hatch, shrikes begin to sing, mockingbirds fall silent.'),
+        5: ('农民忙着收麦、插秧，是一年中最忙的农时。', 'Farmers harvest wheat and transplant rice — the busiest agricultural season.'),
+        6: ('芒种的哲学是"该收的收，该种的种"——行动要及时。', 'Mangzhong embodies "harvest what\'s ready, plant what\'s next" — timely action.'),
+        7: ('这个时间在你生活的地方意味着什么？', 'What does this time of year mean where you live?'),
+    },
+    'xiazhi': {
+        0: ('二十四节气按太阳位置划分一年。', 'The 24 solar terms divide the year by the Sun\'s position.'),
+        1: ('夏至是第十个节气。太阳到达黄经90°，北半球白昼最长。', 'Xiazhi is the tenth term: the Sun reaches 90°, the longest day in the Northern Hemisphere.'),
+        2: ('夏至是农历五月的"中气"。在古代，夏至曾是一个重要节日。', 'Xiazhi is the mid-term of the fifth lunar month. It was historically a major festival.'),
+        3: ('阳光最充足。过了这一天，白昼开始变短。', 'Peak sunlight. After this day, days begin to shorten.'),
+        4: ('古人观察到：鹿角脱落、蝉开始鸣叫、半夏草开花。', 'Ancient texts: deer antlers fall, cicadas begin to sing, a summer herb blooms.'),
+        5: ('传统习俗："冬至饺子夏至面"——夏至这天吃面条。', 'Traditional custom: "Dumplings on winter solstice, noodles on summer solstice."'),
+        6: ('在光明最长的一天，黑暗的回归也开始了——阴阳的转折点。', 'At maximum light, the return of darkness begins — the yin-yang turning point.'),
+        7: ('这个时间在你生活的地方意味着什么？', 'What does this time of year mean where you live?'),
+    },
+    'xiaoshu': {
+        0: ('二十四节气按太阳位置划分一年。', 'The 24 solar terms divide the year by the Sun\'s position.'),
+        1: ('小暑是第十一个节气。太阳到达黄经105°，炎热加剧但未到顶点。', 'Xiaoshu is the eleventh term: the Sun reaches 105°. Heat builds but hasn\'t peaked.'),
+        2: ('小暑是农历六月的"节"。"三伏天"即将开始。', 'Xiaoshu is the node term of the sixth lunar month. The "three fu" hottest days approach.'),
+        3: ('越来越热。温风来了，蟋蟀躲到墙根，鹰开始学习飞行。', 'It gets hotter. Warm winds arrive, crickets move to walls, young hawks learn to fly.'),
+        4: ('古人观察到：温风至、蟋蟀居壁、鹰始击。', 'Ancient texts: warm winds arrive, crickets shelter on walls, hawks practice hunting.'),
+        5: ('习俗有吃饺子、避暑。"伏"就是"隐藏"——躲开最热的日子。', 'Customs include eating dumplings and seeking shade. "Fu" means "hidden" — lying low during peak heat.'),
+        6: ('小暑是炎热积累的阶段，大暑还在后面。', 'Xiaoshu is heat building toward its peak — the greatest intensity is yet to come.'),
+        7: ('这个时间在你生活的地方意味着什么？', 'What does this time of year mean where you live?'),
+    },
+    'dashu': {
+        0: ('二十四节气按太阳位置划分一年。', 'The 24 solar terms divide the year by the Sun\'s position.'),
+        1: ('大暑是第十二个节气。太阳到达黄经120°，一年中最热的时候。', 'Dashu is the twelfth term: the Sun reaches 120°. The hottest period of the year.'),
+        2: ('大暑是农历六月的"中气"。"伏天"达到顶点。', 'Dashu is the mid-term of the sixth lunar month. "Fu" heat reaches maximum.'),
+        3: ('酷热高湿。雷阵雨带来短暂降温。', 'Peak heat and humidity. Thunderstorms bring brief relief.'),
+        4: ('古人观察到：腐烂的草变成萤火虫、土地又湿又热、大雨倾盆。', 'Ancient texts: rotting grass becomes fireflies, soil steams with humidity, heavy rains pour.'),
+        5: ('浙江台州有"送大暑船"的民俗，祈求健康和丰收。', 'In Taizhou, Zhejiang, the "Dashu boat" festival sends wishes for health and harvest.'),
+        6: ('大暑是极热，但也是转折——最热的时候，秋天已在不远处。', 'Major heat is the extreme — yet from this peak, autumn is already near.'),
+        7: ('这个时间在你生活的地方意味着什么？', 'What does this time of year mean where you live?'),
+    },
+    'chushu': {
+        0: ('二十四节气按太阳位置划分一年。', 'The 24 solar terms divide the year by the Sun\'s position.'),
+        1: ('处暑是第十四个节气。太阳到达黄经150°，炎热开始退去。', 'Chushu is the fourteenth term: the Sun reaches 150°. Heat begins to retreat.'),
+        2: ('处暑是农历七月的"中气"。"处"是"终止"——暑天到此为止。', 'Chushu is the mid-term of the seventh lunar month. "Chu" means "end" — summer heat concludes.'),
+        3: ('气温逐渐下降。"秋老虎"可能短暂回热，但趋势是转凉。', 'Temperatures gradually fall. "Autumn tiger" heat may linger, but the trend is cooling.'),
+        4: ('古人观察到：鹰开始捕猎、天地间的气变得清肃、庄稼成熟了。', 'Ancient texts: hawks hunt, heaven and earth grow solemn, grains ripen.'),
+        5: ('沿海地区庆祝开渔节；民间吃鸭子进补。', 'Coastal communities celebrate the fishing season opening; people eat duck for nourishment.'),
+        6: ('处暑是从夏天的浓烈转向秋天的清爽。', 'Chushu marks the transition from summer intensity to autumn clarity.'),
+        7: ('这个时间在你生活的地方意味着什么？', 'What does this time of year mean where you live?'),
+    },
+    'bailu': {
+        0: ('二十四节气按太阳位置划分一年。', 'The 24 solar terms divide the year by the Sun\'s position.'),
+        1: ('白露是第十五个节气。太阳到达黄经165°，清晨的露水变白了。', 'Bailu is the fifteenth term: the Sun reaches 165°. Morning dew turns white.'),
+        2: ('白露是农历八月的"节"。温度下降，水汽凝成可见的露珠。', 'Bailu is the node term of the eighth lunar month. Falling temperatures turn vapor into visible dew.'),
+        3: ('夜间气温降低。清晨草叶上出现白色露珠——秋天的信号。', 'Night temperatures drop. White dew appears on grass each morning — autumn\'s signal.'),
+        4: ('古人观察到：大雁飞来、燕子离去、百鸟开始储备过冬食物。', 'Ancient texts: wild geese arrive, swallows depart, birds store food for winter.'),
+        5: ('茶客推崇"白露茶"；有人收集清晨露水当药用。', 'Tea lovers prize "White Dew tea"; some collect morning dew for traditional remedies.'),
+        6: ('白露是秋天悄悄到来的信号——就在清晨的草叶上。', 'White Dew is autumn arriving quietly — visible in the morning grass.'),
+        7: ('这个时间在你生活的地方意味着什么？', 'What does this time of year mean where you live?'),
+    },
+    'qiufen': {
+        0: ('二十四节气按太阳位置划分一年。', 'The 24 solar terms divide the year by the Sun\'s position.'),
+        1: ('秋分是第十六个节气。太阳到达黄经180°，全球昼夜几乎等长。', 'Qiufen is the sixteenth term: the Sun reaches 180°. Day and night are nearly equal worldwide.'),
+        2: ('秋分是农历八月的"中气"，通常在中秋节前后。', 'Qiufen is the mid-term of the eighth lunar month, typically near the Mid-Autumn Festival.'),
+        3: ('空气清爽干燥，收获季达到高峰。', 'Cool, crisp air; harvest season peaks.'),
+        4: ('古人观察到：雷声停了、虫子封住洞口、水面开始干涸。', 'Ancient texts: thunder ceases, insects seal their burrows, waters begin to recede.'),
+        5: ('中国的"农民丰收节"设在秋分日——庆祝农民的节日。', 'China\'s "Harvest Festival" is set on the Autumn Equinox — a day honoring farmers.'),
+        6: ('秋分恢复了平衡——昼夜等长，然后冬天开始占据上风。', 'The equinox restores balance — equal light and dark before winter\'s descent.'),
+        7: ('这个时间在你生活的地方意味着什么？', 'What does this time of year mean where you live?'),
+    },
+    'hanlu': {
+        0: ('二十四节气按太阳位置划分一年。', 'The 24 solar terms divide the year by the Sun\'s position.'),
+        1: ('寒露是第十七个节气。太阳到达黄经195°，露水变冷了。', 'Hanlu is the seventeenth term: the Sun reaches 195°. Dew turns cold.'),
+        2: ('寒露是农历九月的"节"。气温明显下降，霜冻将近。', 'Hanlu is the node term of the ninth lunar month. Temperatures drop noticeably; frost approaches.'),
+        3: ('气温骤降，早晚凉意明显。该添衣了。', 'Sharp temperature drops; morning and evening chill. Time to add layers.'),
+        4: ('古人观察到：大雁排成队来、雀鸟躲进海里变成蛤蜊、菊花开了。', 'Ancient texts: geese arrive in formation, sparrows enter the sea as clams, chrysanthemums bloom.'),
+        5: ('赏菊、喝菊花酒、吃芝麻是传统习俗。谚语说"白露身不露，寒露脚不露"。', 'Chrysanthemum viewing, drinking chrysanthemum wine, and eating sesame are traditional.'),
+        6: ('寒露加深了秋意——一个放下和准备过冬的季节。', 'Cold Dew deepens autumn — a season of letting go and preparing for winter.'),
+        7: ('这个时间在你生活的地方意味着什么？', 'What does this time of year mean where you live?'),
+    },
+    'shuangjiang': {
+        0: ('二十四节气按太阳位置划分一年。', 'The 24 solar terms divide the year by the Sun\'s position.'),
+        1: ('霜降是第十八个节气。太阳到达黄经210°，初霜出现。', 'Shuangjiang is the eighteenth term: the Sun reaches 210°. First frost appears.'),
+        2: ('霜降是农历九月的"中气"，秋天的最后一个节气。', 'Shuangjiang is the final mid-term of autumn in the ninth lunar month.'),
+        3: ('霜冻结束了最后的植被生长，过冬准备开始。', 'Frost ends the last vegetation growth; winter preparation begins.'),
+        4: ('古人观察到：豺狼捕猎、草木枯黄落叶、虫子钻入泥土深处。', 'Ancient texts: jackals hunt prey, plants yellow and fall, insects burrow deep.'),
+        5: ('霜降吃柿子是广泛流传的习俗。', 'Eating persimmons during Frost\'s Descent is a widespread custom.'),
+        6: ('霜降是秋天的告别——最后一片金黄叶落的美。', 'Frost\'s Descent is autumn\'s farewell — beauty in the final golden leaves.'),
+        7: ('这个时间在你生活的地方意味着什么？', 'What does this time of year mean where you live?'),
+    },
+    'lidong': {
+        0: ('二十四节气按太阳位置划分一年。', 'The 24 solar terms divide the year by the Sun\'s position.'),
+        1: ('立冬是第十九个节气。太阳到达黄经225°，冬季开始。', 'Lidong is the nineteenth term: the Sun reaches 225°. Winter begins.'),
+        2: ('立冬是农历十月的"节"。', 'Lidong is the node term of the tenth lunar month.'),
+        3: ('气温下降，北方地区可能出现初雪。', 'Temperatures drop; northern regions may see first snow.'),
+        4: ('古人观察到：水开始结冰、地面开始冻结、野鸡飞入大海变成蛤蜊。', 'Ancient texts: water begins to freeze, ground starts to harden, pheasants vanish into the sea.'),
+        5: ('北方习俗：立冬吃饺子。南方习俗：吃滋补食物。', 'Northern custom: dumplings on Lidong. Southern custom: nourishing foods.'),
+        6: ('立冬标志着大自然进入沉静和储藏的季节。', 'Beginning of Winter marks nature\'s retreat into stillness and storage.'),
+        7: ('这个时间在你生活的地方意味着什么？', 'What does this time of year mean where you live?'),
+    },
+    'xiaoxue': {
+        0: ('二十四节气按太阳位置划分一年。', 'The 24 solar terms divide the year by the Sun\'s position.'),
+        1: ('小雪是第二十个节气。太阳到达黄经240°，可能下小雪了。', 'Xiaoxue is the twentieth term: the Sun reaches 240°. Light snow may fall.'),
+        2: ('小雪是农历十月的"中气"。', 'Xiaoxue is the mid-term of the tenth lunar month.'),
+        3: ('初雪给大地披上薄薄的白。气温持续下降。', 'First snows dust the landscape white. Temperatures continue falling.'),
+        4: ('古人观察到：彩虹藏起来了（冰雪代替了雨）、天上的气上升、地下的气下降。', 'Ancient texts: rainbows hide (ice replaces rain), heaven\'s air rises, earth\'s air descends.'),
+        5: ('腌菜季节开始了："小雪腌菜，大雪腌肉。"', 'Pickle-making season begins: "Minor Snow for pickled vegetables, Major Snow for cured meat."'),
+        6: ('小雪带来冬天的第一个白色信号。', 'Minor Snow brings winter\'s first quiet announcement in white.'),
+        7: ('这个时间在你生活的地方意味着什么？', 'What does this time of year mean where you live?'),
+    },
+    'daxue': {
+        0: ('二十四节气按太阳位置划分一年。', 'The 24 solar terms divide the year by the Sun\'s position.'),
+        1: ('大雪是第二十一个节气。太阳到达黄经255°，积雪变厚。', 'Daxue is the twenty-first term: the Sun reaches 255°. Snow accumulates.'),
+        2: ('大雪是农历十一月的"节"。', 'Daxue is the node term of the eleventh lunar month.'),
+        3: ('大雪覆盖大地。古人说雪花是六瓣的——"凡草木花多五出，雪花独六出"。', 'Heavy snow blankets the earth. Ancient texts note snowflakes are six-pointed.'),
+        4: ('古人观察到：寒号鸟不叫了、老虎开始交配、兰草抽芽。', 'Ancient texts: cold birds fall silent, tigers begin to mate, iris grass sprouts.'),
+        5: ('"小雪腌菜，大雪腌肉"——腌腊肉的季节到了。', '"Minor Snow for pickles, Major Snow for cured meat" — preservation season peaks.'),
+        6: ('大雪用寂静覆盖大地——等待和储藏的季节。', 'Major Snow covers the earth in silence — a season of waiting and preserving.'),
+        7: ('这个时间在你生活的地方意味着什么？', 'What does this time of year mean where you live?'),
+    },
+    'xiaohan': {
+        0: ('二十四节气按太阳位置划分一年。', 'The 24 solar terms divide the year by the Sun\'s position.'),
+        1: ('小寒是第二十三个节气。太阳到达黄经285°，寒冷加深。', 'Xiaohan is the twenty-third term: the Sun reaches 285°. Cold deepens.'),
+        2: ('小寒是农历十二月的"节"。常常是一年中最冷的时期。', 'Xiaohan is the node term of the twelfth lunar month, often the coldest period.'),
+        3: ('天寒地冻。但白昼已经开始变长了——光明在回来。', 'Deep cold. Yet days are already lengthening — light is returning.'),
+        4: ('古人观察到：大雁开始北归、喜鹊开始筑巢、野鸡开始鸣叫。', 'Ancient texts: geese begin returning north, magpies start nesting, pheasants call.'),
+        5: ('南京人吃菜饭，广州人吃糯米饭。各地有各自的暖身食俗。', 'Nanjing custom: rice with vegetables. Guangzhou custom: glutinous rice porridge.'),
+        6: ('小寒考验忍耐——但回归的光明已经出现。', 'Minor Cold tests endurance — yet the first signs of returning light appear.'),
+        7: ('这个时间在你生活的地方意味着什么？', 'What does this time of year mean where you live?'),
+    },
+    'dahan': {
+        0: ('二十四节气按太阳位置划分一年。', 'The 24 solar terms divide the year by the Sun\'s position.'),
+        1: ('大寒是第二十四个也是最后一个节气。太阳到达黄经300°，一年将终。', 'Dahan is the twenty-fourth and final term: the Sun reaches 300°. The cycle nears completion.'),
+        2: ('大寒是农历十二月的"中气"。过了大寒，又是立春。', 'Dahan is the final mid-term of the twelfth lunar month. After Dahan comes Lichun again.'),
+        3: ('最深的寒冷。但白昼已经在变长，春天不远了。', 'The deepest cold. Yet days are already longer — spring is near.'),
+        4: ('古人观察到：母鸡开始下蛋、猛禽凌厉捕猎、冰冻到水的最深处。', 'Ancient texts: hens begin to lay, raptors hunt fiercely, ice thickens to its core.'),
+        5: ('春节的准备工作进入高潮。大寒迎新年。', 'Preparation for Spring Festival intensifies. Dahan welcomes the new year.'),
+        6: ('大寒既是结束也是开始——最暗的时刻之后，立春将再次到来。', 'Major Cold is both ending and beginning — after the darkest moment, Lichun returns.'),
+        7: ('这个时间在你生活的地方意味着什么？', 'What does this time of year mean where you live?'),
+    },
+}
+
+updated = 0
+for slug, rewrites in REWRITES.items():
+    p = os.path.join(MODS, slug, 'content', 'zh-CN.json')
+    c = json.load(io.open(p, encoding='utf-8'))
+    for idx, (zh, en) in rewrites.items():
+        if idx < len(c['claims']):
+            c['claims'][idx]['text']['zh-CN'] = zh
+            c['claims'][idx]['text']['en'] = en
+            updated += 1
+    with io.open(p, 'w', encoding='utf-8') as f:
+        json.dump(c, f, ensure_ascii=False, indent=2)
+    print(f'{slug}: {len(rewrites)} claims rewritten')
+
+print(f'\nTotal: {updated} claims rewritten')
+
+# Verify lengths
+over120 = []
+for slug in REWRITES:
+    p = os.path.join(MODS, slug, 'content', 'zh-CN.json')
+    c = json.load(io.open(p, encoding='utf-8'))
+    for i, cl in enumerate(c['claims']):
+        if len(cl['text']['zh-CN']) > 120:
+            over120.append(f'{slug}-c{i+1}: {len(cl["text"]["zh-CN"])} chars')
+if over120:
+    print(f'\nWARNING: {len(over120)} claims over 120 chars:')
+    for x in over120:
+        print(f'  {x}')
+else:
+    print('\nAll claims ≤120 chars ✓')

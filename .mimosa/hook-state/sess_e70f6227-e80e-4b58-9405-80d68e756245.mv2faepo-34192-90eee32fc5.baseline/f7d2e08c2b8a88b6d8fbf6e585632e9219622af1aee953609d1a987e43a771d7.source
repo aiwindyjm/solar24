@@ -1,0 +1,12 @@
+import config from '../playwright.config';
+
+export default {
+  ...config,
+  testDir: '../tests/e2e',
+  use: { ...config.use, baseURL: 'http://127.0.0.1:4183' },
+  webServer: {
+    command: 'pnpm --filter @solar24/host preview --port 4183 --strictPort',
+    url: 'http://127.0.0.1:4183',
+    reuseExistingServer: false,
+  },
+};

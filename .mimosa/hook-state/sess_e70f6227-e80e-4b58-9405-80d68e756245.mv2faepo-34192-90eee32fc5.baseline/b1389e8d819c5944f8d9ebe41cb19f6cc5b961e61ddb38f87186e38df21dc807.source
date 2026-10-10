@@ -1,0 +1,10 @@
+async page => {
+ await page.setViewportSize({width:1269,height:1066});
+ await page.goto('http://127.0.0.1:5176/#daxue/seasons');await page.waitForTimeout(1800);
+ if(await page.getByRole('button',{name:'Switch to Chinese',exact:true}).count()) await page.getByRole('button',{name:'Switch to Chinese',exact:true}).click();
+ await page.screenshot({path:'output/playwright/solar24-v5-veil-closed.png'});
+ const before=await page.locator('.wheel-layer').boundingBox();
+ await page.locator('.culture-strip button').first().click();await page.waitForTimeout(1200);
+ await page.screenshot({path:'output/playwright/solar24-v5-veil-daxue.png'});
+ return {before,after:await page.locator('.wheel-layer').boundingBox(),paper:await page.locator('.reading-scroll').boundingBox(),tools:await page.locator('.dial-tools').boundingBox(),categories:await page.locator('.culture-strip').boundingBox()};
+}

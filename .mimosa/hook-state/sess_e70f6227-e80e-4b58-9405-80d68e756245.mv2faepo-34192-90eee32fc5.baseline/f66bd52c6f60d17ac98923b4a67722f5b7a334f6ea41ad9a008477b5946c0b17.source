@@ -1,0 +1,54 @@
+import json
+from pathlib import Path
+
+notes = json.loads(Path('.tmp/v5-research-notes.json').read_text(encoding='utf-8'))
+slugs = 'lichun yushui jingzhe chunfen qingming guyu lixia xiaoman mangzhong xiazhi xiaoshu dashu liqiu chushu bailu qiufen hanlu shuangjiang lidong xiaoxue daxue dongzhi xiaohan dahan'.split()
+nature = [
+ 'sci-lichun-vs-meteorological-spring sci-lichun-calendar-position',
+ 'sci-yushui-rain-transition', 'sci-jingzhe-thunder-climate', 'sci-chunfen-day-night-equal',
+ 'hist-qingming-hanshi-merger', 'hist-guyu-naming-yushengbaigu sci-guyu-rain-sowing-window',
+ 'sci-lixia-vs-meteorological-summer', 'hist-xiaoman-naming-xiaodeyingman interp-xiaoman-modern-philosophy',
+ 'hist-mangzhong-naming sci-mangzhong-sanxia-meiyu', 'sci-xiazhi-longest-day',
+ 'sci-xiaoshu-climate-heat-humid sci-xiaoshu-sanfu-gengday-mechanism', 'sci-dashu-sanfu-zhongfu-heat',
+ 'sci-liqiu-vs-meteorological-autumn', 'hist-chushu-naming sci-chushu-climate-autumn-transition',
+ 'sci-bailu-dew-formation', 'sci-qiufen-day-night-equal', 'hist-hanlu-naming sci-hanlu-cooling-transition',
+ 'sci-shuangjiang-frost-formation', 'sci-lidong-vs-meteorological-winter',
+ 'sci-xiaoxue-not-necessarily-snow', 'sci-daxue-jieqi-vs-tianqi sci-daxue-snow-agronomy',
+ 'sci-dongzhi-shortest-day-year-anchor', 'sci-xiaohan-vs-dahan-temperature', 'sci-dahan-vs-xiaohan-cold',
+]
+life = [
+ 'hist-yanjing-dachun-yaochun region-shiqian-shuochun', 'region-guanghan-yushui-baobaojie',
+ 'region-hkg-ngokengkiu-daxiaoren', 'region-chunfen-anren-ganfenshe',
+ 'trad-qingming-customs trad-qingming-food hist-qingming-hanshi-merger',
+ 'trad-guyu-tea-toon region-guyu-luoyang-mudan', 'trad-lixia-chengren region-lixia-banshan',
+ 'region-shengze-xiaoman-xi', 'hist-mangzhong-jianhuashen', 'trad-xiazhi-mian',
+ 'trad-xiaoshu-shixin region-xiaoshu-xuzhou-fuyang', 'region-dashu-taizhou-dashuchuan',
+ 'region-liqiu-miao-ganqiu trad-liqiu-tieqiubiao', 'region-chushu-xiangshan-kaiyu hist-chushu-zhongyuan-hedeng',
+ 'trad-bailu-tea-rice-wine', 'fact-qiufen-harvest-festival-2018', 'hist-hanlu-chongyang-adjacent',
+ 'region-shuangjiangjie-tiandeng trad-shuangjiang-customs', 'trad-lidong-budong-jiaozi',
+ 'trad-xiaoxue-pickling-curing', 'trad-daxue-yanrou region-daxue-taiwan-wuyu',
+ 'trad-dongzhi-shijiu-xiaohantu region-dongzhi-sanmen-jidong',
+ 'trad-xiaohan-caifan-nuomifan trad-xiaohan-sanjiu', 'trad-dahan-weiya',
+]
+refs = {}
+for i, slug in enumerate(slugs):
+ longitude = f'sci-{slug}-longitude-{(315+i*15)%360}'
+ farm = f'trad-{slug}-nongshi'
+ if slug == 'jingzhe': farm = 'trad-jingzhe-nongyan-chungeng lit-weiyingwu-guantianjia'
+ if slug == 'lichun': farm += ' hist-yanjing-dachun-yaochun'
+ if slug == 'xiaoman': farm += ' hist-gjts-xiaoman-sanche'
+ if slug == 'daxue': farm = 'sci-daxue-snow-agronomy trad-daxue-ruixue'
+ signs = f'hist-yueling-{slug}-pentads'
+ if slug == 'dashu': signs += ' sci-dashu-firefly-entomology'
+ refs[slug] = [(longitude+' '+nature[i]).split(), signs.split(), farm.split(), life[i].split(), []]
+used = {id for chapters in refs.values() for ids in chapters for id in ids}
+result = {'editorialStatus': 'draft', 'humanReview': None, 'chapters': refs, 'notes': {}, 'sources': {}}
+for id in sorted(used):
+ n = notes[id]
+ result['notes'][id] = {'title':n['title'], 'region':n.get('region',[]), 'period':n.get('period'), 'status':n['status'], 'sources':n['source_ids']}
+ for sid in n['source_ids']:
+  s = notes[sid]['source']
+  result['sources'][sid] = {key:s.get(key) for key in ['title','publisher','url','access','verification']}
+target = Path('docs/design/solar24-v5/src/book-provenance.json')
+target.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(f'{len(refs)} terms; {len(used)} reference notes; {len(result["sources"])} sources. No knowledge notes modified.')
