@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import { ManifestSchema, type ModuleDefinition, type Preferences } from '@solar24/protocol';
+export { defineProduction } from './production-renderer';
 
 /** A factual-content-free reference renderer shared by the 24 module stubs. */
 export function defineSkeleton(input: unknown): ModuleDefinition {

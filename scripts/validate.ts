@@ -7,7 +7,9 @@ import {
   ReferencesSchema,
   AssetsSchema,
   assertPublishableNote,
+  assertAiReviewConsistency,
 } from '../packages/protocol/src/index.js';
+import { knowledgeReferenceProblem } from './content-checks.js';
 import { readNote } from './knowledge.js';
 import { checkMusicFiles } from './community-music.js';
 import { solarTermSlugs } from '../packages/protocol/src/index.js';
@@ -30,6 +32,11 @@ const noteFiles = files('knowledge-base').filter(
 );
 const notes = noteFiles.filter((p) => !p.includes('90_templates')).map(readNote);
 const byId = new Map(notes.map((n) => [n.id, n]));
+const idToPath = new Map(
+  noteFiles
+    .filter((p) => !p.includes('90_templates'))
+    .map((p) => [readNote(p).id, p.replace(/\\/g, '/')]),
+);
 check(byId.size === notes.length, 'Duplicate knowledge IDs');
 noteFiles.forEach(readNote);
 const modules = readdirSync('modules').filter((s) => !s.startsWith('_'));
@@ -86,8 +93,12 @@ for (const slug of modules) {
       const note = byId.get(id);
       check(note, `Missing knowledge ${id}`);
       if (content.review_status === 'approved') {
-        assertPublishableNote(note);
-        check(note.solar_terms.includes(slug), `Knowledge term mismatch ${id}`);
+        // 2026-09-18 审计 R05（复核收口起经 scripts/content-checks.ts 纯函数化，含 02_shared/ 目录约束）：
+        // 共享知识（solar_terms 为空的已批准 claim 卡）可被模块引用；其他节气私有卡仍拒绝。
+        check(
+          !knowledgeReferenceProblem(note, idToPath.get(id) ?? '', slug),
+          `Knowledge reference rejected: ${id} (${knowledgeReferenceProblem(note, idToPath.get(id) ?? '', slug)})`,
+        );
         check(
           claim.source_ids.every((s) => note.source_ids.includes(s)),
           `Evidence mismatch ${id}`,
@@ -114,12 +125,64 @@ for (const slug of modules) {
     if (m.status === 'Released') check(asset.rights_status === 'cleared', 'Asset rights pending');
   }
 }
+const claimTypes = [
+  'CulturalFact',
+  'ScientificFact',
+  'HistoricalRecord',
+  'Tradition',
+  'RegionalExpression',
+  'GlobalExpression',
+];
 for (const note of notes) {
   for (const term of note.solar_terms) check(modules.includes(term), `Unknown term ${term}`);
   for (const id of note.source_ids)
     check(byId.get(id)?.type === 'Source', `Unresolved source ${id}`);
   for (const ids of Object.values(note.links ?? {}))
     for (const id of ids) check(byId.has(id), `Unresolved knowledge link ${id}`);
+  assertAiReviewConsistency(note);
+  const sources = note.source_ids
+    .map((id) => byId.get(id))
+    .filter((n): n is NonNullable<typeof n> => n?.type === 'Source' && !!n.source)
+    .map((n) => n.source!);
+  if (claimTypes.includes(note.type)) {
+    if ((note.confidence === 'medium' || note.confidence === 'high') && sources.length === 0)
+      throw new Error(`Claim without sources cannot be ${note.confidence} confidence: ${note.id}`);
+    if (
+      (note.confidence === 'medium' || note.confidence === 'high') &&
+      !sources.some((s) => s.access === 'direct-read')
+    )
+      throw new Error(`Confidence ${note.confidence} requires a direct-read source: ${note.id}`);
+    if (note.confidence === 'high' && !sources.some((s) => s.verification !== 'unverified'))
+      throw new Error(`High confidence requires a cross-checked source: ${note.id}`);
+    if (
+      sources.length > 0 &&
+      sources.every((s) => s.access === 'search-excerpt') &&
+      note.confidence !== 'low' &&
+      note.confidence !== 'unknown'
+    )
+      throw new Error(`Search-excerpt-only sources cap confidence at low: ${note.id}`);
+    if (
+      note.epistemic === 'unverified' &&
+      note.confidence !== 'low' &&
+      note.confidence !== 'unknown'
+    )
+      throw new Error(`Epistemic unverified caps confidence at low: ${note.id}`);
+    if (note.status === 'approved' && !sources.every((s) => s.verification === 'human-verified'))
+      throw new Error(`Approved claim requires human-verified sources: ${note.id}`);
+  }
+  if (note.type === 'HumanExplanation') {
+    const supporting = note.explanation?.supporting_knowledge_ids ?? [];
+    check(supporting.length > 0, `HumanExplanation needs supporting knowledge: ${note.id}`);
+    for (const id of supporting) check(byId.has(id), `Unresolved supporting knowledge ${id}`);
+    if (note.status === 'approved')
+      for (const id of supporting) {
+        const sup = byId.get(id);
+        check(
+          sup?.status === 'approved' && sup.type !== 'Source',
+          `Approved explanation requires approved supporting knowledge: ${id}`,
+        );
+      }
+  }
   if (
     note.status === 'approved' &&
     [
